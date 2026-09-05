@@ -5,6 +5,8 @@ export interface SEOConfig {
   keywords: string;
   ogTitle: string;
   ogDescription: string;
+  path?: string;
+  image?: string;
 }
 
 // NavigationItem removido - não estava sendo usado

@@ -18,6 +18,14 @@ test('legacy dates are never promoted to verified publication dates',()=>{
   const feed=normalizeFeed({...data,schema_version:undefined,last_updated:'2026-06-18T12:00:00'},now);
   assert.equal(feed.articles[0].dateVerified,false);assert.equal(feed.stale,true);assert.equal(feed.updatedAt,'2026-06-18T12:00:00.000Z');
 });
+
+test('damaged legacy RSS markup is omitted without fabricating replacement prose',()=>{
+  const feed=normalizeFeed({...data,articles:[{...row,summary:'a href"https:news.google.comrssarticlesEncoded" target"_blank" Título'}]},now);
+  assert.equal(feed.articles.length,1);
+  assert.equal(feed.articles[0].summary,'');
+  assert.equal(feed.articles[0].title,row.title);
+  assert.equal(normalizeFeed(data,now).articles[0].summary,row.summary);
+});
 test('future, undated and synthetic articles are excluded',()=>{
   const feed=normalizeFeed({...data,articles:[{...row,date:'2026-09-04T12:00:00Z'},{...row,date:null},{...row,title:'Reconciliação: O Ministério da Igreja no Mundo'}]},now);
   assert.equal(feed.articles.length,0);

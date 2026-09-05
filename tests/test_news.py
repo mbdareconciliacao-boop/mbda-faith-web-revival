@@ -11,6 +11,12 @@ from scripts.news_scraper import ChristianNewsScraper
 
 
 class CollectorTests(unittest.TestCase):
+    def test_rss_html_becomes_bounded_text_without_attributes(self):
+        scraper = ChristianNewsScraper.__new__(ChristianNewsScraper)
+        self.assertEqual(scraper.clean_text('<a href="https://example.com/a">Notícia &amp; contexto</a><script>bad()</script>'), 'Notícia & contexto')
+        self.assertEqual(scraper.clean_text('Fé, oração e vida em comunidade.'), 'Fé, oração e vida em comunidade.')
+        self.assertLessEqual(len(scraper.clean_text('x' * 20000)), 16000)
+
     def test_preserves_last_good_when_empty(self):
         with tempfile.TemporaryDirectory() as root:
             target=Path(root)/'public/data/christian_news.json'

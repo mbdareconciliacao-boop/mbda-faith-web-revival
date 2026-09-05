@@ -7,8 +7,8 @@ export default function EventGallery() {
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(false);
   const [loaded, setLoaded] = useState(false);
-  const [paused, setPaused] = useState(() => window.matchMedia("(prefers-reduced-motion: reduce)").matches);
-  const [hidden, setHidden] = useState(document.hidden);
+  const [paused, setPaused] = useState(true);
+  const [hidden, setHidden] = useState(true);
   const [hovered, setHovered] = useState(false);
   const [focused, setFocused] = useState(false);
   const [failed, setFailed] = useState(false);
@@ -17,6 +17,8 @@ export default function EventGallery() {
     if (section.current) observer.observe(section.current);
     const visibility = () => setHidden(document.hidden);
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setPaused(motion.matches);
+    visibility();
     const preference = () => { if (motion.matches) setPaused(true); };
     document.addEventListener("visibilitychange", visibility);
     motion.addEventListener("change", preference);
@@ -54,7 +56,7 @@ export default function EventGallery() {
           <p>{BAPTISM_EVENT.description}</p>
           <a href={BAPTISM_EVENT.youtube} target="_blank" rel="noopener noreferrer" className="inline-link">Assistir à celebração <ExternalLink aria-hidden="true" /></a>
         </div>
-        <a href="#agenda" className="inline-link">Confira a agenda semanal <ChevronRight aria-hidden="true" /></a>
+        <a href="/agenda" className="inline-link">Confira a agenda semanal <ChevronRight aria-hidden="true" /></a>
         <div className="gallery-controls" onFocusCapture={() => setFocused(true)} onBlurCapture={event => { if (!event.currentTarget.contains(event.relatedTarget as Node)) setFocused(false); }}>
           <span className="gallery-position" aria-live={running ? "off" : "polite"}>{String(index+1).padStart(2,"0")} <span>/ {String(EVENT_PHOTOS.length).padStart(2,"0")}</span></span>
           <button className="icon-button" type="button" onClick={() => { setPaused(!paused); setFocused(false); }} aria-label={paused ? "Iniciar apresentação de fotos" : "Pausar apresentação de fotos"}>{paused ? <Play /> : <Pause />}</button>

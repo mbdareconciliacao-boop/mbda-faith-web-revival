@@ -1,10 +1,12 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
+import { useLocation } from "react-router-dom";
 
-const links = [["/#quem-somos", "A igreja"], ["/#agenda", "Agenda"], ["/#comunidade", "Comunidade"], ["/blog#livros", "Livros"], ["/#reconnews", "ReconNews"]] as const;
+const links = [["/mensagens", "Mensagens"], ["/estudos", "Estudos"], ["/livros", "Livros"], ["/noticias", "Notícias"], ["/igreja", "A igreja"]] as const;
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const { pathname } = useLocation();
   const trigger = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     const escape = (event: KeyboardEvent) => {
@@ -24,8 +26,8 @@ export default function SiteHeader() {
         {open ? <X /> : <Menu />}
       </button>
       <nav id="main-navigation" aria-label="Navegação principal" className={open ? "main-navigation is-open" : "main-navigation"}>
-        {links.map(([href, label]) => <a key={href} href={href} onClick={() => setOpen(false)}>{label}</a>)}
-        <a className="visit-link" href="/#contato" onClick={() => setOpen(false)}>Planeje sua visita</a>
+        {links.map(([href, label]) => <a key={href} href={href} aria-current={pathname.startsWith(href) || (href === "/estudos" && pathname === "/blog") ? "page" : undefined} onClick={() => setOpen(false)}>{label}</a>)}
+        <a className="visit-link" href="/agenda" aria-current={pathname === "/agenda" ? "page" : undefined} onClick={() => setOpen(false)}>Cultos e visita</a>
       </nav>
     </div>
   </header>;

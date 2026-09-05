@@ -45,6 +45,8 @@ jobs:
         run: npm run lint
       - name: Production build
         run: npm run build
+      - name: Public routes, metadata and local links
+        run: npm run test:build
       - name: Fail on vulnerable dependencies
         run: npm audit --audit-level=moderate
 

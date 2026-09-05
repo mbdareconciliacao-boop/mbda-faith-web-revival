@@ -1,0 +1,46 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-05T12:00:00-03:00",
+  "title": "Design System: MBdaR — navegação pública e acervo",
+  "extensions": {
+    "typographyMeta": {"headline": {"displayName": "Título de catálogo", "purpose": "Aberturas públicas; 36px em até 640px."}},
+    "shadows": [],
+    "motion": [{"name": "button-color", "value": "160ms ease-out", "purpose": "Transição de cor dos botões."}],
+    "breakpoints": [{"name": "navigation-compact", "value": "1100px"}, {"name": "reading-stack", "value": "900px"}, {"name": "mobile", "value": "640px"}]
+  },
+  "components": [
+    {
+      "name": "Ação azul", "kind": "button", "refersTo": "button-blue", "description": "Acesso à série ou destino externo identificado.",
+      "html": "<a class=\"ds-button\" href=\"/blog\">Conhecer a série</a>",
+      "css": ".ds-button{display:inline-flex;align-items:center;min-height:54px;padding:11px 28px;border:1px solid transparent;border-radius:4px;background:var(--blue,#0744b9);color:#fff;font:600 20px/1.2 var(--condensed,'Barlow Condensed',sans-serif);text-decoration:none;transition:background-color 160ms ease-out,color 160ms ease-out}.ds-button:hover{background:#06368e}.ds-button:focus-visible{outline:3px solid var(--cobalt,#075be8);outline-offset:5px}"
+    },
+    {
+      "name": "Busca do catálogo", "kind": "input", "refersTo": "catalog-search", "description": "Rótulo visível e foco no conjunto.",
+      "html": "<label class=\"ds-label\" for=\"ds-search\">Buscar livro, autor ou assunto</label><div class=\"ds-search\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><circle cx=\"11\" cy=\"11\" r=\"8\"/><path d=\"m21 21-4.3-4.3\"/></svg><input id=\"ds-search\" type=\"search\" maxlength=\"120\"/></div>",
+      "css": ".ds-label{display:block;margin-bottom:8px;font:600 14px/1.65 var(--body,sans-serif);color:var(--ink,#020817)}.ds-search{display:flex;align-items:center;gap:12px;padding:0 4px 0 16px;border:1px solid #8491a5;border-radius:4px;background:var(--white,#fffefa)}.ds-search svg{width:20px;color:var(--muted,#536078)}.ds-search input{min-width:0;width:100%;height:52px;border:0;background:transparent;color:var(--ink,#020817);font:16px var(--body,sans-serif)}.ds-search:focus-within{outline:3px solid var(--blue,#0744b9);outline-offset:3px}.ds-search input:focus-visible{outline:none}"
+    },
+    {
+      "name": "Navegação do acervo", "kind": "nav", "refersTo": "content-navigation", "description": "Destinos separados e ativo sublinhado.",
+      "html": "<nav class=\"ds-tabs\" aria-label=\"Biblioteca da Reconciliação\"><a href=\"/mensagens\">Mensagens</a><a href=\"/estudos\" aria-current=\"page\">Estudos</a><a href=\"/livros\">Livros recomendados</a></nav>",
+      "css": ".ds-tabs{display:flex;flex-wrap:wrap;gap:0 34px;border-top:1px solid #324867;background:var(--navy,#06132c);color:var(--paper,#f5f1e8)}.ds-tabs a{display:inline-flex;align-items:center;padding:17px 0;min-height:58px;font:600 23px/1.2 var(--condensed,'Barlow Condensed',sans-serif);text-decoration:none;color:inherit}.ds-tabs a:hover,.ds-tabs a[aria-current]{color:var(--gold,#f3b51b);box-shadow:inset 0 -3px var(--gold,#f3b51b)}.ds-tabs a:focus-visible{outline:3px solid var(--gold,#f3b51b);outline-offset:5px}"
+    },
+    {
+      "name": "Filtro por assunto", "kind": "chip", "refersTo": "topic-filter", "description": "Estado pressionado explícito.",
+      "html": "<button class=\"ds-topic\" type=\"button\" aria-pressed=\"true\">esperança</button>",
+      "css": ".ds-topic{border:1px solid #96a4ba;padding:9px 15px;min-height:44px;border-radius:4px;background:transparent;color:var(--blue,#0744b9);font:14px/1.65 var(--body,sans-serif);cursor:pointer}.ds-topic:hover,.ds-topic[aria-pressed=true]{background:var(--blue,#0744b9);border-color:var(--blue,#0744b9);color:var(--paper,#f5f1e8)}.ds-topic:focus-visible{outline:3px solid var(--cobalt,#075be8);outline-offset:5px}"
+    },
+    {
+      "name": "Linha de leitura", "kind": "custom", "refersTo": "study-row", "description": "Estrutura de resultado com controle de leitura de 44px; texto demonstrativo de navegação.",
+      "html": "<article class=\"ds-row\"><h2><a href=\"/estudos\">Estudos bíblicos</a></h2><a class=\"ds-arrow\" href=\"/estudos\" aria-label=\"Ver estudos bíblicos\"><svg aria-hidden=\"true\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a></article>",
+      "css": ".ds-row{display:grid;grid-template-columns:minmax(0,1fr) 44px;gap:12px;padding:24px 0;border-block:1px solid var(--line,#d9d8d0);color:var(--ink,#020817)}.ds-row h2{margin:0;font:600 29px/1.15 var(--condensed,'Barlow Condensed',sans-serif)}.ds-row a{color:inherit;text-decoration:none}.ds-row h2 a:hover{color:var(--blue,#0744b9);text-decoration:underline}.ds-row .ds-arrow{display:grid;place-items:center;min-height:44px;width:44px;color:var(--blue,#0744b9)}.ds-arrow svg{width:24px;height:24px}.ds-row a:focus-visible{outline:3px solid var(--cobalt,#075be8);outline-offset:5px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Luz que Reconcilia",
+    "overview": "Esta extensão herda a identidade azul e dourada de ../../DESIGN.md e os compromissos de ../../PRODUCT.md. Documenta somente home, navegação pública, catálogos e leitura; não redefine a identidade global nem o EditorialDesk de /gestao.",
+    "keyCharacteristics": ["Azul e dourado herdados, com superfícies claras de leitura.", "Busca visível, nomes diretos e links permanentes.", "Listas com divisores finos e mídia sem corte de conteúdo."],
+    "rules": [{"name": "The Gold Is a Signal Rule", "body": "Dourado marca ação, foco e destino ativo; a leitura permanece em superfícies claras.", "section": "colors"}],
+    "dos": ["Do preservar nomes diretos, busca visível e destinos permanentes.", "Do manter capas integrais e compras externas identificadas."],
+    "donts": ["Don't aplicar a escala monumental histórica da home aos títulos de catálogo.", "Don't estender estas regras públicas ao fluxo de gestão editorial."]
+  }
+}

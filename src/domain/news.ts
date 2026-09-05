@@ -74,7 +74,11 @@ export function normalizeFeed(value: unknown, now = Date.now()): NewsFeed {
     const titleKey = normalizeSearch(title);
     if (seen.has(url) || seen.has(titleKey)) { rejected++; continue; }
     seen.add(url); seen.add(titleKey);
-    articles.push({title, url, source, date, summary: plain(row.summary, 480),
+    const summary = plain(row.summary, 480);
+    // Older collectors removed angle brackets before parsing RSS HTML. The
+    // remaining attributes are not prose; omit them without inventing a summary.
+    const damagedMarkup = /(?:^|\s)(?:a\s+href|img\s+src|font\s+color)\s*[="']/i.test(summary);
+    articles.push({title, url, source, date, summary: damagedMarkup ? "" : summary,
       category: plain(row.category, 65) || "Notícias cristãs",
       image_url: safeHttpsUrl(row.image_url),
       dateVerified: value.schema_version === 2 && row.publication_date_verified === true });

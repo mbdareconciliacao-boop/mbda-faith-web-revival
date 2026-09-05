@@ -1,4 +1,5 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import {
   CalendarDays,
   ChevronLeft,
@@ -12,7 +13,10 @@ import {
   THESSALONIANS_SOURCES,
   thessaloniansStudy,
 } from "../data/tessalonians";
-import { recommendedBooks } from "../data/recommendedBooks";
+import { contentSEO, studies, studySlugs } from "../data/contentCatalog";
+import { Breadcrumbs } from "./content/ContentLayout";
+import ShareLink from "./content/ShareLink";
+import NotFound from "../pages/NotFound";
 import { useSEO } from "../hooks/useSEO";
 import SiteFooter from "./site/SiteFooter";
 import SiteHeader from "./site/SiteHeader";
@@ -29,10 +33,13 @@ const BLOG_SEO = {
 };
 
 export default function Blog() {
-  useSEO(BLOG_SEO);
-
-  const [selected, setSelected] = useState(0);
+  const { sectionSlug } = useParams();
+  const navigate = useNavigate();
+  const index = studySlugs.findIndex(slug => slug === sectionSlug);
+  const selected = Math.max(0, index);
   const section = thessaloniansStudy[selected];
+  const current = studies[selected];
+  useSEO(sectionSlug ? contentSEO(section.title, section.summary, current.href, "/images/site/blog/tessalonicenses-evento-900.webp") : { ...BLOG_SEO, path: "/blog", image: "/images/site/blog/tessalonicenses-evento-900.webp" });
   const article = useRef<HTMLElement>(null);
   const previous = useRef(selected);
 
@@ -44,27 +51,21 @@ export default function Blog() {
     previous.current = selected;
   }, [selected]);
 
-  useEffect(() => {
-    if (window.location.hash !== "#livros") return;
-    const frame = window.requestAnimationFrame(() => {
-      document.getElementById("livros")?.scrollIntoView({ block: "start" });
-    });
-    return () => window.cancelAnimationFrame(frame);
-  }, []);
-
   const chooseSection = (index: number) => {
-    if (index >= 0 && index < thessaloniansStudy.length) setSelected(index);
+    if (index >= 0 && index < studies.length) navigate(studies[index].href);
   };
+
+  if (sectionSlug && index < 0) return <NotFound />;
 
   return (
     <>
       <SiteHeader />
-      <main id="conteudo" className="blog-page">
-        <header className="blog-intro dark-section">
+      <main id="conteudo" className={sectionSlug ? "blog-page reading-page" : "blog-page"}>
+        {sectionSlug ? <div className="content-width reading-breadcrumb"><Breadcrumbs items={[{ label: "Estudos", href: "/estudos" }, { label: "Tessalonicenses", href: "/blog" }, { label: section.navLabel }]} /></div> : <header className="blog-intro dark-section">
           <div className="content-width blog-hero-grid">
             <div className="blog-hero-copy">
-              <a className="inline-link" href="/">
-                Voltar à igreja
+              <a className="inline-link" href="/estudos">
+                Todos os estudos
               </a>
               <h1>Tessalonicenses</h1>
               <p className="blog-subtitle">Visão de uma igreja local</p>
@@ -73,6 +74,7 @@ export default function Blog() {
                 amor e esperança formam uma igreja firme — enquanto ela vive o
                 presente à luz da volta de Cristo.
               </p>
+              <a className="button button-gold start-study" href={studies[0].href}>Começar a leitura <ChevronRight aria-hidden="true" /></a>
 
               <ul className="study-event-details" aria-label="Informações da Escola Bíblica">
                 <li>
@@ -112,9 +114,9 @@ export default function Blog() {
               <figcaption>Escola Bíblica · Ministério Bíblico da Reconciliação</figcaption>
             </figure>
           </div>
-        </header>
+        </header>}
 
-        <div className="content-width blog-layout section-space">
+        {sectionSlug ? <div className="content-width blog-layout section-space">
           <aside className="study-sidebar">
             <nav className="reflection-index" aria-label="Roteiro do estudo">
               <h2>Roteiro de estudo</h2>
@@ -153,7 +155,8 @@ export default function Blog() {
             <p className="sr-only" aria-live="polite">
               Agora lendo {section.title}
             </p>
-            <h2>{section.title}</h2>
+            <h1>{section.title}</h1>
+            <div className="reading-tools"><span>{current.readingMinutes} min de leitura estimada</span><ShareLink key={current.slug} path={current.href} /></div>
             <p className="reflection-verse">
               <span>{section.lessonRange}</span>
               {section.reading}
@@ -166,10 +169,10 @@ export default function Blog() {
               ))}
             </div>
 
-            <h3>Contexto</h3>
+            <h2>Contexto</h2>
             <p>{section.context}</p>
 
-            <h3>Ideias-chave</h3>
+            <h2>Ideias-chave</h2>
             <ul className="study-key-points">
               {section.keyPoints.map((point) => (
                 <li key={point}>{point}</li>
@@ -177,11 +180,11 @@ export default function Blog() {
             </ul>
 
             <section className="study-application" aria-labelledby="study-application-title">
-              <h3 id="study-application-title">Para viver a Palavra</h3>
+              <h2 id="study-application-title">Para viver a Palavra</h2>
               <p>{section.application}</p>
             </section>
 
-            <h3>Para conversar em classe</h3>
+            <h2>Para conversar em classe</h2>
             <ol className="study-questions">
               {section.questions.map((question) => (
                 <li key={question}>{question}</li>
@@ -212,48 +215,15 @@ export default function Blog() {
               </button>
             </nav>
           </article>
-        </div>
+        </div> : <section className="content-width series-contents section-space" aria-labelledby="series-contents-title"><h2 id="series-contents-title">Encontre seu ponto de leitura.</h2><p>Oito partes para acompanhar a série. Escolha uma delas para ler com calma.</p><ol>{studies.map(item => <li key={item.slug}><a href={item.href}><span>{item.lessonRange}</span><strong>{item.navLabel}</strong><ChevronRight aria-hidden="true" /></a></li>)}</ol><p className="fine-print">Esta síntese autoral foi construída a partir do sumário e da amostra oficial. Ela acompanha a leitura, mas não substitui a revista.</p><a className="inline-link" href={THESSALONIANS_SOURCES.publisher} target="_blank" rel="noopener noreferrer">Encontrar a revista na editora <ExternalLink aria-hidden="true" /></a></section>}
 
         <section id="livros" className="book-stand dark-section" aria-labelledby="book-stand-title">
           <div className="content-width">
             <div className="book-stand-heading">
               <h2 id="book-stand-title">Livros para ir mais fundo.</h2>
-              <p>
-                Leituras recomendadas para acompanhar estudos, seminários e a
-                caminhada da igreja. Novos títulos serão adicionados ao acervo
-                conforme forem indicados.
-              </p>
+              <div><p>Encontre as leituras recomendadas, os autores e onde comprar. O catálogo completo tem sua própria página.</p><a className="button button-gold" href="/livros">Ver livros recomendados <ChevronRight aria-hidden="true" /></a></div>
             </div>
 
-            <div className="book-shelf">
-              {recommendedBooks.map((book) => (
-                <article className="recommended-book" key={book.slug}>
-                  <div className="recommended-book-cover">
-                    <img
-                      src={book.image}
-                      srcSet={book.imageSrcSet}
-                      sizes="(max-width: 640px) 180px, 210px"
-                      width="480"
-                      height="854"
-                      loading="lazy"
-                      decoding="async"
-                      alt={`Capa ou arte de divulgação de ${book.title}`}
-                    />
-                  </div>
-                  <div className="recommended-book-copy">
-                    <h3>{book.title}</h3>
-                    <p className="recommended-book-author">{book.author}</p>
-                    <p>{book.description}</p>
-                    {book.href && (
-                      <a href={book.href} target="_blank" rel="noopener noreferrer" className="inline-link">
-                        {book.linkLabel ?? "Conhecer o livro"}
-                        <ExternalLink aria-hidden="true" />
-                      </a>
-                    )}
-                  </div>
-                </article>
-              ))}
-            </div>
           </div>
         </section>
       </main>

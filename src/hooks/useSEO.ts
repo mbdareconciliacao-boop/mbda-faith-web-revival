@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { SEOConfig } from '../types';
+import { SITE_ORIGIN } from '../data/contentCatalog';
 
 export const useSEO = (config: SEOConfig) => {
   useEffect(() => {
@@ -32,6 +33,13 @@ export const useSEO = (config: SEOConfig) => {
     updateOrCreateMeta('og:title', config.ogTitle, 'property');
     updateOrCreateMeta('og:description', config.ogDescription, 'property');
     updateOrCreateMeta('og:type', 'website', 'property');
+    const canonicalUrl = SITE_ORIGIN + (config.path ?? '/');
+    updateOrCreateMeta('og:url', canonicalUrl, 'property');
+    updateOrCreateMeta('og:image', new URL(config.image ?? '/images/site/logo-evergreen.webp', SITE_ORIGIN).href, 'property');
+    updateOrCreateMeta('twitter:card', 'summary_large_image');
+    let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
+    if (!canonical) { canonical = document.createElement('link'); canonical.rel = 'canonical'; document.head.appendChild(canonical); }
+    canonical.href = canonicalUrl;
     
   }, [config]);
 };

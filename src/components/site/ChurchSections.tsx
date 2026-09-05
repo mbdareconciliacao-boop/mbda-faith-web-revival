@@ -29,7 +29,7 @@ export function FullSchedule() {
   const wednesdaySchedule = WEEKLY_SCHEDULE.filter(item => item.short === "QUA");
   return <section id="agenda" className="section-space agenda-section" aria-labelledby="agenda-title">
     <div className="content-width">
-      <div className="section-heading"><div><h2 id="agenda-title">Há um encontro<br />esperando por você.</h2><span className="gold-rule" aria-hidden="true" /></div><p>Oração, ensino e comunhão ao longo da semana. Horários locais de Guarujá, São Paulo.</p></div>
+      <div className="section-heading"><div><h2 id="agenda-title">Agenda semanal</h2><span className="gold-rule" aria-hidden="true" /></div><p>Oração, ensino e comunhão ao longo da semana. Horários locais de Guarujá, São Paulo.</p></div>
       <div className="agenda-layout">
         <div className="full-schedule">{WEEKLY_SCHEDULE.map(item=><div className="full-schedule-row" key={item.day+item.time}>
           <span>{item.day}</span><time>{item.time}</time><div><strong>{item.title}</strong><small>{item.format}</small></div>

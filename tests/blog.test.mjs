@@ -44,18 +44,19 @@ test('study navigation remains keyboard and assistive-technology friendly', asyn
   assert.match(blog, /tabIndex=\{-1\}/);
 });
 
-test('the books stand is linked from the global navigation and accepts optional links', async () => {
-  const [blog, header, books] = await Promise.all([
+test('the books catalog is directly linked and legacy blog anchors remain supported', async () => {
+  const [blog, header, books, routes, catalog] = await Promise.all([
     readFile(blogPath, 'utf8'),
     readFile(new URL('../src/components/site/SiteHeader.tsx', import.meta.url), 'utf8'),
     readFile(new URL('../src/data/recommendedBooks.ts', import.meta.url), 'utf8'),
+    readFile(new URL('../src/SiteRoutes.tsx', import.meta.url), 'utf8'),
+    readFile(new URL('../src/pages/Books.tsx', import.meta.url), 'utf8'),
   ]);
 
-  assert.match(header, /\/blog#livros/);
+  assert.match(header, /\["\/livros", "Livros"\]/);
   assert.match(blog, /id="livros"/);
-  assert.match(blog, /window\.location\.hash !== "#livros"/);
-  assert.match(blog, /getElementById\("livros"\)\?\.scrollIntoView/);
-  assert.match(blog, /recommendedBooks\.map/);
+  assert.match(routes, /pathname === "\/blog" && hash === "#livros" \? "\/livros"/);
+  assert.match(catalog, /books\.map/);
   assert.match(books, /href\?: string/);
   assert.match(books, /Tessalonicenses — visão de uma igreja local/);
 });

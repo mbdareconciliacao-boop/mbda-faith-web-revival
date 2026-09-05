@@ -13,14 +13,14 @@ const blogRouting = (request: IncomingMessage, _response: ServerResponse, next: 
 };
 
 // https://vite.dev/config/
-export default defineConfig(({ command }) => ({
+export default defineConfig(({ command, isSsrBuild }) => ({
   publicDir: command === "build" ? false : "public",
   preview: { host: "127.0.0.1", port: 4173, headers: previewHeaders },
   server: {
     host: "127.0.0.1",
     port: 8080,
   },
-  plugins: [react(), { name: "blog-route", configureServer(server) { server.middlewares.use(blogRouting); }, configurePreviewServer(server) { server.middlewares.use(blogRouting); } }, { name: "approved-public-assets", apply: "build", async closeBundle() { await copyPublicAssets(process.cwd(), resolve("dist")); } }],
+  plugins: [react(), { name: "blog-route", configureServer(server) { server.middlewares.use(blogRouting); } }, { name: "approved-public-assets", apply: "build", async closeBundle() { if (!isSsrBuild) await copyPublicAssets(process.cwd(), resolve("dist")); } }],
   resolve: {
     alias: {
       "@": fileURLToPath(new URL("./src", import.meta.url)),

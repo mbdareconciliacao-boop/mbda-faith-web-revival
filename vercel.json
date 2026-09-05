@@ -59,8 +59,16 @@
   ],
   "rewrites": [
     {
-      "source": "/blog/:path*",
-      "destination": "/index.html"
+      "source": "/:page(mensagens|estudos|livros|igreja|agenda|noticias|blog)",
+      "destination": "/:page/index.html"
+    },
+    {
+      "source": "/mensagens/:slug",
+      "destination": "/mensagens/:slug/index.html"
+    },
+    {
+      "source": "/estudos/tessalonicenses/:slug",
+      "destination": "/estudos/tessalonicenses/:slug/index.html"
     },
     {
       "source": "/((?!assets/|images/|videos/|data/|.*\\.).*)",

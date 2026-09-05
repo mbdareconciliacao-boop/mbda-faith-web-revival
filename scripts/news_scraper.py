@@ -550,11 +550,12 @@ class ChristianNewsScraper:
         if not text:
             return ""
         
-        # Remove extra whitespace and normalize
-        text = re.sub(r'\s+', ' ', text.strip())
-        # Remove special characters that might cause issues
-        text = re.sub(r'[^\w\s\-.,!?;:()\[\]"\'áàâãéèêíìîóòôõúùûçÁÀÂÃÉÈÊÍÌÎÓÒÔÕÚÙÛÇ]', '', text)
-        return text
+        # Bounded HTML-to-text extraction. Removing punctuation first corrupts
+        # RSS anchors into visible `a href...` fragments. Never execute markup.
+        fragment = BeautifulSoup(str(text)[:16000], 'html.parser')
+        for element in fragment(['script', 'style', 'iframe', 'object', 'template']):
+            element.decompose()
+        return re.sub(r'\s+', ' ', fragment.get_text(' ', strip=True)).strip()
 
     def extract_image_from_content(self, url: str) -> Optional[str]:
         """Extract the main image from article content"""
