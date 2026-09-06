@@ -8,8 +8,8 @@ export const SITE_ORIGIN = "https://mbdareconciliacao.vercel.app";
 export interface Message {
   slug: string; title: string; description: string;
   date: string | undefined; dateTime: string | undefined;
-  image: string; imageAlt: string; youtubeId: string | undefined;
-  video: string | undefined; source: string | undefined;
+  image: string; imageAlt: string; youtubeId: string;
+  video?: undefined; source: string;
   topics: readonly string[]; relatedStudies: readonly string[];
 }
 const curatedMessages: Message[] = [
@@ -26,20 +26,6 @@ const curatedMessages: Message[] = [
     source: BAPTISM_EVENT.youtube,
     topics: ["Batismo", "Vida em comunidade"],
     relatedStudies: [] as string[],
-  },
-  {
-    slug: "a-obrigatoriedade-de-evangelizar",
-    title: "A Obrigatoriedade de Evangelizar",
-    description: "Um momento de reflexão bíblica para sua semana.",
-    date: undefined,
-    dateTime: undefined,
-    image: "/images/site/hero-scene.webp",
-    imageAlt: "",
-    youtubeId: undefined,
-    video: "/videos/devocional-evangelizar-540p.mp4",
-    source: undefined,
-    topics: ["Evangelização"],
-    relatedStudies: ["tessalonica-e-a-missao"],
   },
 ];
 export const messages: Message[] = [

@@ -1,49 +1,11 @@
-# Pasta de Vídeos
+# Política de vídeos
 
-Coloque seus vídeos locais aqui.
+O site publica somente players incorporados do canal oficial no YouTube. Não
+adicione MP4, WebM ou OGG ao catálogo nem à lista de arquivos públicos.
 
-Formatos suportados:
-- MP4 (recomendado)
-- WebM
-- OGG
+A rotina `scripts/sync-youtube.mjs` valida o canal, atualiza os metadados e
+mantém os arquivos de vídeo fora do deployment da Vercel.
 
-## Como usar vídeos locais:
-
-No arquivo `src/components/Devocional.tsx`, altere a configuração:
-
-```javascript
-const videoConfig = {
-  type: "local", // ou "auto" para detecção automática
-  src: "/videos/seu-video.mp4", // caminho do seu vídeo
-  title: "Título do seu vídeo"
-};
-```
-
-## Exemplos:
-
-### Vídeo do YouTube:
-```javascript
-const videoConfig = {
-  type: "youtube",
-  src: "https://www.youtube.com/embed/VIDEO_ID",
-  title: "Título do vídeo"
-};
-```
-
-### Vídeo local:
-```javascript
-const videoConfig = {
-  type: "local",
-  src: "/videos/devocional-janeiro.mp4",
-  title: "Devocional Janeiro 2025"
-};
-```
-
-### Auto-detecção:
-```javascript
-const videoConfig = {
-  type: "auto", // detecta automaticamente se é YouTube ou local
-  src: "/videos/devocional.mp4", // ou URL do YouTube
-  title: "Título do vídeo"
-};
-```
+Arquivos legados ainda preservados nesta pasta são material-fonte e estão
+explicitamente excluídos do deployment. Eles não devem voltar a ser ligados às
+páginas públicas.

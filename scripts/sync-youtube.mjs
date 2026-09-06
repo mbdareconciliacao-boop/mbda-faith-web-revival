@@ -61,7 +61,7 @@ async function main() {
   if (!videos.length) { console.log('Nenhum vídeo elegível; conteúdo preservado.'); return; }
   const source = '// Atualizado exclusivamente por scripts/sync-youtube.mjs.\n'
     + "import type { Message } from './contentCatalog.ts';\n"
-    + `export const youtubeMessages: Message[] = ${JSON.stringify(videos.map(v => ({ ...v, video: null })), null, 2).replace(/"video": null/g, '"video": undefined')};\n`;
+    + `export const youtubeMessages: Message[] = ${JSON.stringify(videos, null, 2)};\n`;
   if (await readFile(target, 'utf8') === source) { console.log('Sem alterações no canal.'); return; }
   await writeFile(target + '.tmp', source, 'utf8');
   await rename(target + '.tmp', target);

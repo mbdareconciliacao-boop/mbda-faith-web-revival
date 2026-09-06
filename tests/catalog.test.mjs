@@ -40,11 +40,12 @@ test('all supplied books have external destinations and local full-cover assets'
 });
 
 test('message catalog does not manufacture authors, durations or publication dates', async () => {
-  assert.ok(messages.length >= 2 && messages.length <= 22);
-  assert.equal(messages.find(item => item.slug === 'a-obrigatoriedade-de-evangelizar').date,undefined);
+  assert.ok(messages.length >= 1 && messages.length <= 21);
   for (const message of messages) {
     assert.equal('author' in message,false);
     assert.equal('duration' in message,false);
+    assert.match(message.youtubeId,/^[A-Za-z0-9_-]{11}$/);
+    assert.equal(message.video,undefined);
     for (const slug of message.relatedStudies) assert.ok(studySlugs.includes(slug));
     if (message.image.startsWith('/')) await access(new URL('../public'+message.image,import.meta.url));
     else assert.match(message.image, /^https:\/\/i\.ytimg\.com\/vi\/[A-Za-z0-9_-]{11}\/hqdefault\.jpg$/);
@@ -53,7 +54,7 @@ test('message catalog does not manufacture authors, durations or publication dat
   assert.match(player,/useState\(false\)/);
   assert.match(player,/!playing/);
   assert.match(player,/youtube-nocookie\.com/);
-  assert.match(player,/preload="none"/);
+  assert.doesNotMatch(player,/<video|preload="none"/);
 });
 
 test('legacy anchors preserve access to institutional sections and news', () => {
