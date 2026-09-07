@@ -7,11 +7,90 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
+      "id": "https://folhagospel.com/pai-agredido-filhos-conversao-cristianismo-uganda/",
+      "url": "https://folhagospel.com/pai-agredido-filhos-conversao-cristianismo-uganda/",
+      "title": "Homem é espancado pelos filhos em Uganda após se converter ao cristianismo",
+      "content_text": "Em Uganda, um pai de 52 anos foi gravemente agredido pelos próprios filhos após se converter ao cristianismo. Vítima buscou refúgio em aldeia vizinha. The post Homem é espancado pelos filhos em Uganda...",
+      "date_published": "2026-09-07T14:31:43.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2023/03/Bandeira-de-Uganda-tendo-ao-fundo-a-cidade-de-Kampala-Foto-Montagem-FolhaGospelCanva-Pro.jpg",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://folhagospel.com/luiza-possi-grava-primeiro-dvd-gospel-sala-sao-paulo/",
+      "url": "https://folhagospel.com/luiza-possi-grava-primeiro-dvd-gospel-sala-sao-paulo/",
+      "title": "Luiza Possi grava seu primeiro álbum gospel na Sala São Paulo com ingressos esgotados",
+      "content_text": "Luiza Possi grava seu primeiro DVD gospel na Sala São Paulo acompanhada de orquestra e coral, consolidando sua transição de carreira após superar desafios. The post Luiza Possi grava seu primeiro álbu...",
+      "date_published": "2026-09-07T13:45:53.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/09/image-4-e1788788714875.png",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://folhagospel.com/sociedade-biblica-espanhola-celebra-190-anos-de-historia-com-foco-na-distribuicao-da-biblia/",
+      "url": "https://folhagospel.com/sociedade-biblica-espanhola-celebra-190-anos-de-historia-com-foco-na-distribuicao-da-biblia/",
+      "title": "Sociedade Bíblica Espanhola celebra 190 anos de história com foco na distribuição da Bíblia",
+      "content_text": "A Sociedade Bíblica Espanhola marca quase dois séculos de atuação com foco na expansão e facilitação do acesso aos textos sagrados para o público Celebrando seu aniversário de 190 anos em 2026, a Soci...",
+      "date_published": "2026-09-07T13:25:20.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/09/sociedade-biblica-espanhola-190-anos-1024x5761-1.jpg",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://folhagospel.com/parlamento-europeu-vai-organizar-uma-conferencia-sobre-o-futuro-dos-cristaos-na-siria/",
+      "url": "https://folhagospel.com/parlamento-europeu-vai-organizar-uma-conferencia-sobre-o-futuro-dos-cristaos-na-siria/",
+      "title": "Parlamento Europeu vai organizar uma conferência sobre o futuro dos cristãos na Síria",
+      "content_text": "Conferência reúne líderes cristãos, representantes sírios e parlamentares europeus para debater segurança, direitos das minorias e participação política no país. O Parlamento Europeu realizará nesta t...",
+      "date_published": "2026-09-07T11:40:18.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/09/image-3.png",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1KZDNMTUdiSWJSUzE5bnl6QnQwWUtUZzU2TDEwenBHTnA5cVVSX3l4RGlvT1VmTFBVaE92Mzh0Sl91VndtVmNEOXlTbEgwUmRXMW5RLTB3ai1wX3g4Vm9JOF9TM0xtQXh6cWM4?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1KZDNMTUdiSWJSUzE5bnl6QnQwWUtUZzU2TDEwenBHTnA5cVVSX3l4RGlvT1VmTFBVaE92Mzh0Sl91VndtVmNEOXlTbEgwUmRXMW5RLTB3ai1wX3g4Vm9JOF9TM0xtQXh6cWM4?oc=5",
+      "title": "Robert Jermain Thomas, o homem que levou Bíblias à Coreia do Norte - Portas Abertas",
+      "content_text": "Robert Jermain Thomas, o homem que levou Bíblias à Coreia do Norte - Portas Abertas",
+      "date_published": "2026-09-07T11:00:00.000Z",
+      "tags": [
+        "Igreja Perseguida"
+      ],
+      "authors": [
+        {
+          "name": "Google News - Cristãos Perseguidos"
+        }
+      ]
+    },
+    {
       "id": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMWFZSWNNT3NZLVY1VnZYSnRXdk9XRHpDY0ZGak00RFlkWlRhN1FYWjg1VjJnT3NZSHJuQWhsVVNJNFIzUUVOTVYyZ1ZIUjZGUDA5c3BwQWM1VG5pZkV4d0cteWQySHVHcS02VlVhb2lfRXdiNHZFZ1htWFliMHROOGtBa0lIOVlLdk1Pc2ZlZWs4U2VnbHd1RG1IT3JTR01BcUQ2UVdLRU1TZw?oc=5",
       "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMWFZSWNNT3NZLVY1VnZYSnRXdk9XRHpDY0ZGak00RFlkWlRhN1FYWjg1VjJnT3NZSHJuQWhsVVNJNFIzUUVOTVYyZ1ZIUjZGUDA5c3BwQWM1VG5pZkV4d0cteWQySHVHcS02VlVhb2lfRXdiNHZFZ1htWFliMHROOGtBa0lIOVlLdk1Pc2ZlZWs4U2VnbHd1RG1IT3JTR01BcUQ2UVdLRU1TZw?oc=5",
       "title": "7 descobertas arqueológicas que ajudam a confirmar relatos bíblicos - Gazeta do Povo",
       "content_text": "7 descobertas arqueológicas que ajudam a confirmar relatos bíblicos - Gazeta do Povo",
-      "date_published": "2026-09-06T15:43:41.000Z",
+      "date_published": "2026-09-07T03:42:53.000Z",
       "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
       "tags": [
         "Arqueologia e História"
@@ -19,21 +98,6 @@
       "authors": [
         {
           "name": "Google News - Arqueologia Bíblica"
-        }
-      ]
-    },
-    {
-      "id": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNSnFlM1JwSG1hMDJDLUVYNkZHOHFQLU1LaVkwLVdwc3BWd1NBejQ5TkZrOFhLeW85TGQ2SDlpMTc4TFJLSnR3RDdQZXZuUXdpYUJTYlM2TThQdVhVaDBEN1FMcUdETVFIdm0zQWREMlJUaXFBUU9GT1BjdE1rN1lMV2laUDRZaTQ0NzhZYzBBMl9haGtkdFo4REpsRFBKZjR5SE8wT3ppMUhyazdqUGo2NU83X0RqejdEZFRwdFBPR1hzMDJET2dCUw?oc=5",
-      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxNSnFlM1JwSG1hMDJDLUVYNkZHOHFQLU1LaVkwLVdwc3BWd1NBejQ5TkZrOFhLeW85TGQ2SDlpMTc4TFJLSnR3RDdQZXZuUXdpYUJTYlM2TThQdVhVaDBEN1FMcUdETVFIdm0zQWREMlJUaXFBUU9GT1BjdE1rN1lMV2laUDRZaTQ0NzhZYzBBMl9haGtkdFo4REpsRFBKZjR5SE8wT3ppMUhyazdqUGo2NU83X0RqejdEZFRwdFBPR1hzMDJET2dCUw?oc=5",
-      "title": "“Reconheci meu pai pelo sapato”: a história de um pastor em Burkina Faso - Portas Abertas",
-      "content_text": "“Reconheci meu pai pelo sapato”: a história de um pastor em Burkina Faso - Portas Abertas",
-      "date_published": "2026-09-06T11:00:00.000Z",
-      "tags": [
-        "Igreja Perseguida"
-      ],
-      "authors": [
-        {
-          "name": "Google News - Cristãos Perseguidos"
         }
       ]
     }
