@@ -14,8 +14,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-587a694c5634472d47394d",
@@ -30,8 +29,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-43554c613644494e5f6351",
@@ -46,8 +44,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-656f64384a564c5f706159",
@@ -62,8 +59,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-356a4559536230546a444d",
@@ -78,8 +74,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-3359534b5f3978447a336b",
@@ -94,8 +89,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-385f7972727a5830446734",
@@ -110,8 +104,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-385961556a735554567a49",
@@ -126,8 +119,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-6a745837636d4d326f6c34",
@@ -142,8 +134,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-696b565570376551347a4d",
@@ -158,8 +149,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-645569444638454c397141",
@@ -174,8 +164,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-5733727030455075796c6b",
@@ -190,8 +179,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-63354b4369774d6e446f59",
@@ -206,8 +194,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-6831513653787757662d67",
@@ -222,8 +209,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-4c346864656755506a5077",
@@ -238,8 +224,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-48386b494a484b77706f67",
@@ -254,8 +239,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-5a5559436144686f575367",
@@ -270,8 +254,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-5851526f6654666a544c30",
@@ -286,8 +269,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-524469316b523454517273",
@@ -302,8 +284,7 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   },
   {
     "slug": "video-63717463776e4b71756e77",
@@ -318,7 +299,6 @@ export const youtubeMessages: Message[] = [
     "topics": [
       "Canal da igreja"
     ],
-    "relatedStudies": [],
-    "video": undefined
+    "relatedStudies": []
   }
 ];
