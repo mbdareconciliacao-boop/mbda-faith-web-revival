@@ -1,13 +1,34 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-09-07T15:45:10.297789+00:00",
-  "total_articles": 6,
+  "last_updated": "2026-09-08T00:11:03.369724+00:00",
+  "total_articles": 7,
   "sources": [
     "Folha Gospel",
     "Google News - Arqueologia Bíblica",
-    "Google News - Cristãos Perseguidos"
+    "Google News - Cristãos Perseguidos",
+    "Radio 93 - Giro Cristão"
   ],
   "articles": [
+    {
+      "title": "Bispo anglicano é libertado após cinco anos preso na Venezuela",
+      "summary": "Líder sofreu graves episódios de tortura. The post Bispo anglicano é libertado após cinco anos preso na Venezuela appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/bispo-anglicano-e-libertado-apos-cinco-anos-preso-na-venezuela/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-09-08T00:00:36+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "7 descobertas arqueológicas que ajudam a confirmar relatos bíblicos - Gazeta do Povo",
+      "summary": "7 descobertas arqueológicas que ajudam a confirmar relatos bíblicos - Gazeta do Povo",
+      "source": "Google News - Arqueologia Bíblica",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMWFZSWNNT3NZLVY1VnZYSnRXdk9XRHpDY0ZGak00RFlkWlRhN1FYWjg1VjJnT3NZSHJuQWhsVVNJNFIzUUVOTVYyZ1ZIUjZGUDA5c3BwQWM1VG5pZkV4d0cteWQySHVHcS02VlVhb2lfRXdiNHZFZ1htWFliMHROOGtBa0lIOVlLdk1Pc2ZlZWs4U2VnbHd1RG1IT3JTR01BcUQ2UVdLRU1TZw?oc=5",
+      "category": "Arqueologia e História",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "date": "2026-09-07T15:42:18+00:00",
+      "publication_date_verified": true
+    },
     {
       "title": "Homem é espancado pelos filhos em Uganda após se converter ao cristianismo",
       "summary": "Em Uganda, um pai de 52 anos foi gravemente agredido pelos próprios filhos após se converter ao cristianismo. Vítima buscou refúgio em aldeia vizinha. The post Homem é espancado pelos filhos em Uganda...",
@@ -49,23 +70,13 @@
       "publication_date_verified": true
     },
     {
-      "title": "Robert Jermain Thomas, o homem que levou Bíblias à Coreia do Norte - Portas Abertas",
-      "summary": "Robert Jermain Thomas, o homem que levou Bíblias à Coreia do Norte - Portas Abertas",
+      "title": "Robert J. Thomas, o homem que levou Bíblias à Coreia do Norte - Portas Abertas",
+      "summary": "Robert J. Thomas, o homem que levou Bíblias à Coreia do Norte - Portas Abertas",
       "source": "Google News - Cristãos Perseguidos",
       "url": "https://news.google.com/rss/articles/CBMia0FVX3lxTE1KZDNMTUdiSWJSUzE5bnl6QnQwWUtUZzU2TDEwenBHTnA5cVVSX3l4RGlvT1VmTFBVaE92Mzh0Sl91VndtVmNEOXlTbEgwUmRXMW5RLTB3ai1wX3g4Vm9JOF9TM0xtQXh6cWM4?oc=5",
       "category": "Igreja Perseguida",
-      "image_url": "",
-      "date": "2026-09-07T11:00:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "7 descobertas arqueológicas que ajudam a confirmar relatos bíblicos - Gazeta do Povo",
-      "summary": "7 descobertas arqueológicas que ajudam a confirmar relatos bíblicos - Gazeta do Povo",
-      "source": "Google News - Arqueologia Bíblica",
-      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQMWFZSWNNT3NZLVY1VnZYSnRXdk9XRHpDY0ZGak00RFlkWlRhN1FYWjg1VjJnT3NZSHJuQWhsVVNJNFIzUUVOTVYyZ1ZIUjZGUDA5c3BwQWM1VG5pZkV4d0cteWQySHVHcS02VlVhb2lfRXdiNHZFZ1htWFliMHROOGtBa0lIOVlLdk1Pc2ZlZWs4U2VnbHd1RG1IT3JTR01BcUQ2UVdLRU1TZw?oc=5",
-      "category": "Arqueologia e História",
       "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "date": "2026-09-07T03:42:53+00:00",
+      "date": "2026-09-07T11:00:00+00:00",
       "publication_date_verified": true
     }
   ]
