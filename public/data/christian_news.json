@@ -1,70 +1,71 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-09-09T00:02:12.317066+00:00",
+  "last_updated": "2026-09-09T14:24:45.975206+00:00",
   "total_articles": 6,
   "sources": [
     "Folha Gospel",
+    "Google News - Cristãos Perseguidos",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Maioria dos pastores temem que inteligência artificial interprete a Bíblia de forma incorreta",
-      "summary": "Estudo revela que 94% dos pastores protestantes nos EUA temem que a inteligência artificial cometa erros graves na interpretação de textos sagrados. The post Maioria dos pastores temem que inteligênci...",
+      "title": "Mais de 30 cristãos foram mortos no estado de Plateau, na Nigéria",
+      "summary": "Ataques armados atribuídos a extremistas Fulani na região de Mangu, na Nigéria, deixam dezenas de cristãos mortos e acendem alerta de perseguição religiosa. The post Mais de 30 cristãos foram mortos n...",
       "source": "Folha Gospel",
-      "url": "https://folhagospel.com/pastores-temem-inteligencia-artificial-interpretacao-biblia/",
+      "url": "https://folhagospel.com/ataques-armados-plateau-deixam-dezenas-mortos-nigeria/",
       "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/image-9.png",
-      "date": "2026-09-08T18:30:00+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/08/featured-image-1787221375596.webp",
+      "date": "2026-09-09T13:30:00+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Igreja fecha parceria com boate para realizar shows e enfrenta críticas de cristãos",
-      "summary": "Acordo de quatro anos entre o templo anglicano e a casa noturna Fabric prevê eventos de música contemporânea; críticos questionam o uso de um dos principais espaços cristãos históricos de Londres A Ca...",
+      "title": "Muçulmano mata mulher cristã a tiros no Paquistão",
+      "summary": "Uma jovem cristã de 21 anos foi assassinada por um vizinho muçulmano no Paquistão após rejeitar investidas. Caso expõe a grave perseguição religiosa no país. The post Muçulmano mata mulher cristã a ti...",
       "source": "Folha Gospel",
-      "url": "https://folhagospel.com/igreja-fecha-parceria-com-boate-para-realizar-shows-e-enfrenta-criticas-de-cristaos/",
+      "url": "https://folhagospel.com/violencia-contra-cristaos-paquistao-saba-mehboob/",
       "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/image-8.png",
-      "date": "2026-09-08T16:45:00+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/violencia-contra-cristaos-paquistao-saba-mehboob.webp",
+      "date": "2026-09-09T12:20:00+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Flávio Bolsonaro visita Igreja Mundial e recebe declaração de amor de Valdemiro Santiago",
-      "summary": "Flávio Bolsonaro busca apoio do eleitorado evangélico em São Paulo acompanhado de Tarcísio de Freitas durante cultos religiosos de grande mobilização. The post Flávio Bolsonaro visita Igreja Mundial e...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/flavio-bolsonaro-apoio-evangelico-templos-sao-paulo/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/flavio-bolsonaro-apoio-evangelico-templos-sao-paulo.webp",
-      "date": "2026-09-08T13:15:00+00:00",
+      "title": "Bíblia na Coreia do Norte resiste há 160 anos de perseguição - Portas Abertas",
+      "summary": "Bíblia na Coreia do Norte resiste há 160 anos de perseguição - Portas Abertas",
+      "source": "Google News - Cristãos Perseguidos",
+      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE41NnpxenRyNE9wVGd5YTZYVHJXZjI1Y05VX2xncVJWb1JSbzdzbVlhZWxIY3pEQk4yNElkTWVQanNOTG5oZlhwOGx0NmRSR2FNQzZTaW1TdmRDakMwNElfQnhiU2t1elpnOTFFcjNnVVI?oc=5",
+      "category": "Igreja Perseguida",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "date": "2026-09-09T11:00:00+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Ateia relata visão de Jesus após quatro meses pedindo um sinal divino",
-      "summary": "Jovem ateia nos EUA afirma ter tido visão de Jesus após intensa busca espiritual Uma jovem ateia nos Estados Unidos relatou ter tido uma experiência sobrenatural que a levou a se converter ao cristian...",
+      "title": "Relatório aponta aumento de 153% nos sequestros extremistas na Nigéria em meio à escalada da violência",
+      "summary": "O relatório também examina como o impacto da violência extremista está sendo sentido nas comunidades religiosas. Os sequestros ligados à violência extremista na Nigéria mais que dobraram nos últimos t...",
       "source": "Folha Gospel",
-      "url": "https://folhagospel.com/ateia-relata-visao-de-jesus-apos-quatro-meses-pedindo-um-sinal-divino/",
+      "url": "https://folhagospel.com/relatorio-aponta-aumento-de-153-nos-sequestros-extremistas-na-nigeria-em-meio-a-escalada-da-violencia/",
       "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/image-7.png",
-      "date": "2026-09-08T12:05:00+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2025/07/839651496-nigeria-perseguicao11.jpg",
+      "date": "2026-09-09T10:15:00+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Igreja transforma maratona no México em palco de evangelismo",
-      "summary": "Fiéis ocupam as ruas durante evento esportivo para levar mensagem de fé e oferecer apoio espiritual a atletas em percurso urbano no México Durante uma maratona realizada no México no último domingo (3...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/igreja-transforma-maratona-no-mexico-em-palco-de-evangelismo/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/image-6-e1788860398228.png",
-      "date": "2026-09-08T10:50:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Maioria dos adolescentes alemães é favorável que redes sociais sejam restringidas",
-      "summary": "Jovens apoiam aplicação de restrições de menores às redes. The post Maioria dos adolescentes alemães é favorável que redes sociais sejam restringidas appeared first on Rádio 93FM-RJ.",
+      "title": "Igreja histórica vai hospedar shows em Londres",
+      "summary": "Templo guarda uma das primeira cópias do Novo Testamento de William Tyndale The post Igreja histórica vai hospedar shows em Londres appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/maioria-dos-adolescentes-alemaes-e-favoravel-que-redes-sociais-sejam-restringidas/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/igreja-historica-vai-hospedar-shows-em-londres/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-09-08T03:05:15+00:00",
+      "date": "2026-09-09T09:00:05+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Tribunal do Paquistão determina que casamento com menores é abuso infantil",
+      "summary": "Decisão animou líderes cristãos e defensores de direitos humanos. The post Tribunal do Paquistão determina que casamento com menores é abuso infantil appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/tribunal-do-paquistao-determina-que-casamento-com-menores-e-abuso-infantil/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-09-09T03:05:11+00:00",
       "publication_date_verified": true
     }
   ]
