@@ -7,6 +7,70 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
+      "id": "https://folhagospel.com/pastores-temem-inteligencia-artificial-interpretacao-biblia/",
+      "url": "https://folhagospel.com/pastores-temem-inteligencia-artificial-interpretacao-biblia/",
+      "title": "Maioria dos pastores temem que inteligência artificial interprete a Bíblia de forma incorreta",
+      "content_text": "Estudo revela que 94% dos pastores protestantes nos EUA temem que a inteligência artificial cometa erros graves na interpretação de textos sagrados. The post Maioria dos pastores temem que inteligênci...",
+      "date_published": "2026-09-08T18:30:00.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/09/image-9.png",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://folhagospel.com/igreja-fecha-parceria-com-boate-para-realizar-shows-e-enfrenta-criticas-de-cristaos/",
+      "url": "https://folhagospel.com/igreja-fecha-parceria-com-boate-para-realizar-shows-e-enfrenta-criticas-de-cristaos/",
+      "title": "Igreja fecha parceria com boate para realizar shows e enfrenta críticas de cristãos",
+      "content_text": "Acordo de quatro anos entre o templo anglicano e a casa noturna Fabric prevê eventos de música contemporânea; críticos questionam o uso de um dos principais espaços cristãos históricos de Londres A Ca...",
+      "date_published": "2026-09-08T16:45:00.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/09/image-8.png",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://folhagospel.com/flavio-bolsonaro-apoio-evangelico-templos-sao-paulo/",
+      "url": "https://folhagospel.com/flavio-bolsonaro-apoio-evangelico-templos-sao-paulo/",
+      "title": "Flávio Bolsonaro visita Igreja Mundial e recebe declaração de amor de Valdemiro Santiago",
+      "content_text": "Flávio Bolsonaro busca apoio do eleitorado evangélico em São Paulo acompanhado de Tarcísio de Freitas durante cultos religiosos de grande mobilização. The post Flávio Bolsonaro visita Igreja Mundial e...",
+      "date_published": "2026-09-08T13:15:00.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/09/flavio-bolsonaro-apoio-evangelico-templos-sao-paulo.webp",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://folhagospel.com/ateia-relata-visao-de-jesus-apos-quatro-meses-pedindo-um-sinal-divino/",
+      "url": "https://folhagospel.com/ateia-relata-visao-de-jesus-apos-quatro-meses-pedindo-um-sinal-divino/",
+      "title": "Ateia relata visão de Jesus após quatro meses pedindo um sinal divino",
+      "content_text": "Jovem ateia nos EUA afirma ter tido visão de Jesus após intensa busca espiritual Uma jovem ateia nos Estados Unidos relatou ter tido uma experiência sobrenatural que a levou a se converter ao cristian...",
+      "date_published": "2026-09-08T12:05:00.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/09/image-7.png",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
       "id": "https://folhagospel.com/igreja-transforma-maratona-no-mexico-em-palco-de-evangelismo/",
       "url": "https://folhagospel.com/igreja-transforma-maratona-no-mexico-em-palco-de-evangelismo/",
       "title": "Igreja transforma maratona no México em palco de evangelismo",
