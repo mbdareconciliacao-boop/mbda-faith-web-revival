@@ -1,81 +1,60 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-09-10T00:04:06.528046+00:00",
-  "total_articles": 7,
+  "last_updated": "2026-09-10T14:16:20.811400+00:00",
+  "total_articles": 5,
   "sources": [
     "Folha Gospel",
-    "Google News - Cristãos Perseguidos",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Parlamentares americanos pressionam Paquistão por jovem cristã forçada a se converter",
-      "summary": "Neha Faqir quando estava indo para curso de costura. The post Parlamentares americanos pressionam Paquistão por jovem cristã forçada a se converter appeared first on Rádio 93FM-RJ.",
+      "title": "Igrejas prestam contribuição “significativa” a serviços essenciais à comunidade, mostra estudo",
+      "summary": "Estudo revela que igrejas na Inglaterra realizam cerca de 250 mil ações sociais essenciais, preenchendo lacunas do poder público em saúde mental e alimentação. The post Igrejas prestam contribuição “s...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/acoes-sociais-igrejas-inglaterra-estudo/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/acoes-sociais-igrejas-inglaterra-estudo.webp",
+      "date": "2026-09-10T11:20:00+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Partido de extrema-direita vence eleição e gera forte preocupação entre os cristãos na Alemanha",
+      "summary": "A histórica vitória eleitoral do partido AfD na Saxônia-Anhalt, Alemanha, gera profunda preocupação social e apelos por diálogo entre líderes religiosos. The post Partido de extrema-direita vence elei...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/extrema-direita-alema-vence-eleicao-historica-saxonia-anhalt/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/extrema-direita-alema-vence-eleicao-historica-saxonia-anhalt.webp",
+      "date": "2026-09-10T10:50:16+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Burkina Faso se torna um dos lugares mais perigosos para cristãos",
+      "summary": "A escalada da violência extremista em Burkina Faso provoca o deslocamento forçado de cristãos e eleva o país ao 16º lugar no ranking de perseguição religiosa. The post Burkina Faso se torna um dos lug...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/ataques-armados-deslocamento-cristaos-burkina-faso/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/ataques-armados-deslocamento-cristaos-burkina-faso.webp",
+      "date": "2026-09-10T09:48:09+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Pescadores adoram a Deus durante resgate no Ceará",
+      "summary": "Homens ficaram dias à deriva. The post Pescadores adoram a Deus durante resgate no Ceará appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/parlamentares-americanos-pressionam-paquistao-por-jovem-crista-forcada-a-se-converter/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/pescadores-adoram-a-deus-durante-resgate-no-ceara/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-09-10T00:00:22+00:00",
+      "date": "2026-09-10T09:00:11+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Mais de 30 cristãos foram mortos no estado de Plateau, na Nigéria",
-      "summary": "Ataques armados atribuídos a extremistas Fulani na região de Mangu, na Nigéria, deixam dezenas de cristãos mortos e acendem alerta de perseguição religiosa. The post Mais de 30 cristãos foram mortos n...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/ataques-armados-plateau-deixam-dezenas-mortos-nigeria/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/08/featured-image-1787221375596.webp",
-      "date": "2026-09-09T13:30:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Muçulmano mata mulher cristã a tiros no Paquistão",
-      "summary": "Uma jovem cristã de 21 anos foi assassinada por um vizinho muçulmano no Paquistão após rejeitar investidas. Caso expõe a grave perseguição religiosa no país. The post Muçulmano mata mulher cristã a ti...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/violencia-contra-cristaos-paquistao-saba-mehboob/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/violencia-contra-cristaos-paquistao-saba-mehboob.webp",
-      "date": "2026-09-09T12:20:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Bíblia na Coreia do Norte resiste há 160 anos de perseguição - Portas Abertas",
-      "summary": "Bíblia na Coreia do Norte resiste há 160 anos de perseguição - Portas Abertas",
-      "source": "Google News - Cristãos Perseguidos",
-      "url": "https://news.google.com/rss/articles/CBMicEFVX3lxTE41NnpxenRyNE9wVGd5YTZYVHJXZjI1Y05VX2xncVJWb1JSbzdzbVlhZWxIY3pEQk4yNElkTWVQanNOTG5oZlhwOGx0NmRSR2FNQzZTaW1TdmRDakMwNElfQnhiU2t1elpnOTFFcjNnVVI?oc=5",
-      "category": "Igreja Perseguida",
-      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "date": "2026-09-09T11:00:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Relatório aponta aumento de 153% nos sequestros extremistas na Nigéria em meio à escalada da violência",
-      "summary": "O relatório também examina como o impacto da violência extremista está sendo sentido nas comunidades religiosas. Os sequestros ligados à violência extremista na Nigéria mais que dobraram nos últimos t...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/relatorio-aponta-aumento-de-153-nos-sequestros-extremistas-na-nigeria-em-meio-a-escalada-da-violencia/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/07/839651496-nigeria-perseguicao11.jpg",
-      "date": "2026-09-09T10:15:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Igreja histórica vai hospedar shows em Londres",
-      "summary": "Templo guarda uma das primeira cópias do Novo Testamento de William Tyndale The post Igreja histórica vai hospedar shows em Londres appeared first on Rádio 93FM-RJ.",
+      "title": "Premiada boxeadora cristã encerra carreira exaltando Jesus",
+      "summary": "Katie Taylor falou de sua fé diante de mais de 80 mil pessoas. The post Premiada boxeadora cristã encerra carreira exaltando Jesus appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/igreja-historica-vai-hospedar-shows-em-londres/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/premiada-boxeadora-crista-encerra-carreira-exaltando-jesus/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-09-09T09:00:05+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Tribunal do Paquistão determina que casamento com menores é abuso infantil",
-      "summary": "Decisão animou líderes cristãos e defensores de direitos humanos. The post Tribunal do Paquistão determina que casamento com menores é abuso infantil appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/tribunal-do-paquistao-determina-que-casamento-com-menores-e-abuso-infantil/",
-      "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-09-09T03:05:11+00:00",
+      "date": "2026-09-10T03:05:28+00:00",
       "publication_date_verified": true
     }
   ]
