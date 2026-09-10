@@ -1,13 +1,23 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-09-09T14:24:45.975206+00:00",
-  "total_articles": 6,
+  "last_updated": "2026-09-10T00:04:06.528046+00:00",
+  "total_articles": 7,
   "sources": [
     "Folha Gospel",
     "Google News - Cristãos Perseguidos",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
+    {
+      "title": "Parlamentares americanos pressionam Paquistão por jovem cristã forçada a se converter",
+      "summary": "Neha Faqir quando estava indo para curso de costura. The post Parlamentares americanos pressionam Paquistão por jovem cristã forçada a se converter appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/parlamentares-americanos-pressionam-paquistao-por-jovem-crista-forcada-a-se-converter/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-09-10T00:00:22+00:00",
+      "publication_date_verified": true
+    },
     {
       "title": "Mais de 30 cristãos foram mortos no estado de Plateau, na Nigéria",
       "summary": "Ataques armados atribuídos a extremistas Fulani na região de Mangu, na Nigéria, deixam dezenas de cristãos mortos e acendem alerta de perseguição religiosa. The post Mais de 30 cristãos foram mortos n...",
