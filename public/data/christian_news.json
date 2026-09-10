@@ -1,12 +1,83 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-09-10T14:16:20.811400+00:00",
-  "total_articles": 5,
+  "last_updated": "2026-09-10T23:58:49.233549+00:00",
+  "total_articles": 11,
   "sources": [
     "Folha Gospel",
+    "Google News - Cristãos Perseguidos",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
+    {
+      "title": "Entidade ligada a igrejas movimentou R$ 7,7 milhões e entra no radar da investigação sobre o caso Dark Horse",
+      "summary": "Uma decisão do Supremo Tribunal Federal (STF) trouxe novos elementos para as investigações relacionadas ao caso Dark Horse, filme inspirado na trajetória política do ex-presidente Jair Bolsonaro. Segu...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/entidade-ligada-a-igrejas-movimentou-r-77-milhoes-e-entra-no-radar-da-investigacao-sobre-o-caso-dark/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/image-12.png",
+      "date": "2026-09-10T21:01:52+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Frente Evangélica cobra transparência total no Caso Master e pressiona André Mendonça",
+      "summary": "Carta enviada ao ministro André Mendonça pede a retirada do sigilo das investigações sobre o Banco Master e afirma que a fé cristã não deve ser usada como proteção para interesses políticos ou econômi...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/frente-evangelica-cobra-transparencia-total-no-caso-master-e-pressiona-andre-mendonca/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/image-11.png",
+      "date": "2026-09-10T20:50:09+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "MC Guimê encerra carreira no funk após 17 anos de trajetória musical",
+      "summary": "MC Guimê anuncia o fim de sua carreira no funk após 17 anos. Saiba mais sobre a decisão do cantor, sua agenda de shows e seus novos planos pessoais. The post MC Guimê encerra carreira no funk após 17 ...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/mc-guime-encerra-carreira-funk/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/mc-guime-encerra-carreira-funk.webp",
+      "date": "2026-09-10T20:27:53+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Pastor é liberto após sequestro na Nigéria - Portas Abertas",
+      "summary": "Pastor é liberto após sequestro na Nigéria - Portas Abertas",
+      "source": "Google News - Cristãos Perseguidos",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNY0xxc29KQXFINkdXX3M1d1RVS0FSNEJ3c3hybmFHbzFnSUJkWUkzT1VXWmJZUTVoMjlJazRFUXRiaTE0MkNNSUp3VFRKRHdxR3RQcDRJVVdwbXRDZ2dCQ2Q3bm9RdlhCdGNCTWZtLTRrY1JZbTZ1V1RrdEZLZFBkT3Y0NGRIYXhBOTRxNmZRNDdWdy1oNHhCUmJFYWlhWUlveXRpMA?oc=5",
+      "category": "Igreja Perseguida",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "date": "2026-09-10T18:00:00+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Pastor Nilson Gomes critica manifestações políticas em igrejas evangélicas",
+      "summary": "O pastor Nilson Gomes critica a polarização política em igrejas evangélicas e defende que o púlpito deve ser exclusivo para a pregação do evangelho. The post Pastor Nilson Gomes critica manifestações ...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/pastor-nilson-gomes-critica-politica-nas-igrejas/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/pastor-nilson-gomes-critica-politica-nas-igrejas.webp",
+      "date": "2026-09-10T17:47:00+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Igrejas evangélicas reorganizam estratégia eleitoral para ampliar bancadas no Legislativo",
+      "summary": "Igrejas evangélicas dividem bases eleitorais em São Paulo para ampliar suas bancadas na Câmara e na Alesp. Conheça os riscos e detalhes dessa estratégia. The post Igrejas evangélicas reorganizam estra...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/igrejas-evangelicas-reorganizam-estrategia-eleitoral-legislativo/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/igrejas-evangelicas-reorganizam-estrategia-eleitoral-legislativo.webp",
+      "date": "2026-09-10T16:03:13+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Justiça de São Paulo mantém ordem de despejo contra templo da Igreja Universal em Guarulhos",
+      "summary": "O Tribunal de Justiça de São Paulo manteve a ordem de despejo contra um templo da Igreja Universal em Guarulhos após 28 anos de ocupação. Saiba os detalhes. The post Justiça de São Paulo mantém ordem ...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/justica-mantem-ordem-despejo-igreja-universal-guarulhos/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2025/01/Martelo-da-Justica-Foto-Canva-Pro.jpg",
+      "date": "2026-09-10T12:03:00+00:00",
+      "publication_date_verified": true
+    },
     {
       "title": "Igrejas prestam contribuição “significativa” a serviços essenciais à comunidade, mostra estudo",
       "summary": "Estudo revela que igrejas na Inglaterra realizam cerca de 250 mil ações sociais essenciais, preenchendo lacunas do poder público em saúde mental e alimentação. The post Igrejas prestam contribuição “s...",
@@ -25,16 +96,6 @@
       "category": "Notícias Cristãs",
       "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/extrema-direita-alema-vence-eleicao-historica-saxonia-anhalt.webp",
       "date": "2026-09-10T10:50:16+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Burkina Faso se torna um dos lugares mais perigosos para cristãos",
-      "summary": "A escalada da violência extremista em Burkina Faso provoca o deslocamento forçado de cristãos e eleva o país ao 16º lugar no ranking de perseguição religiosa. The post Burkina Faso se torna um dos lug...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/ataques-armados-deslocamento-cristaos-burkina-faso/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/ataques-armados-deslocamento-cristaos-burkina-faso.webp",
-      "date": "2026-09-10T09:48:09+00:00",
       "publication_date_verified": true
     },
     {
