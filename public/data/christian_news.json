@@ -1,121 +1,40 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-09-10T23:58:49.233549+00:00",
-  "total_articles": 11,
+  "last_updated": "2026-09-11T14:16:18.336144+00:00",
+  "total_articles": 3,
   "sources": [
     "Folha Gospel",
-    "Google News - Cristãos Perseguidos",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Entidade ligada a igrejas movimentou R$ 7,7 milhões e entra no radar da investigação sobre o caso Dark Horse",
-      "summary": "Uma decisão do Supremo Tribunal Federal (STF) trouxe novos elementos para as investigações relacionadas ao caso Dark Horse, filme inspirado na trajetória política do ex-presidente Jair Bolsonaro. Segu...",
+      "title": "Pastor é libertado após sequestro no estado de Plateau na Nigéria",
+      "summary": "O pastor Gabriel Joseph Dipak é libertado após sequestro na Nigéria, enquanto o líder Hills Emmanuel é encontrado sem vida. Saiba mais sobre o caso. The post Pastor é libertado após sequestro no estad...",
       "source": "Folha Gospel",
-      "url": "https://folhagospel.com/entidade-ligada-a-igrejas-movimentou-r-77-milhoes-e-entra-no-radar-da-investigacao-sobre-o-caso-dark/",
+      "url": "https://folhagospel.com/pastor-sequestrado-nigeria-libertado-hills-emmanuel-morto/",
       "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/image-12.png",
-      "date": "2026-09-10T21:01:52+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2024/03/Bandeira-da-Nigeria-Foto-Canva.jpg",
+      "date": "2026-09-11T11:06:15+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Frente Evangélica cobra transparência total no Caso Master e pressiona André Mendonça",
-      "summary": "Carta enviada ao ministro André Mendonça pede a retirada do sigilo das investigações sobre o Banco Master e afirma que a fé cristã não deve ser usada como proteção para interesses políticos ou econômi...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/frente-evangelica-cobra-transparencia-total-no-caso-master-e-pressiona-andre-mendonca/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/image-11.png",
-      "date": "2026-09-10T20:50:09+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "MC Guimê encerra carreira no funk após 17 anos de trajetória musical",
-      "summary": "MC Guimê anuncia o fim de sua carreira no funk após 17 anos. Saiba mais sobre a decisão do cantor, sua agenda de shows e seus novos planos pessoais. The post MC Guimê encerra carreira no funk após 17 ...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/mc-guime-encerra-carreira-funk/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/mc-guime-encerra-carreira-funk.webp",
-      "date": "2026-09-10T20:27:53+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Pastor é liberto após sequestro na Nigéria - Portas Abertas",
-      "summary": "Pastor é liberto após sequestro na Nigéria - Portas Abertas",
-      "source": "Google News - Cristãos Perseguidos",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxNY0xxc29KQXFINkdXX3M1d1RVS0FSNEJ3c3hybmFHbzFnSUJkWUkzT1VXWmJZUTVoMjlJazRFUXRiaTE0MkNNSUp3VFRKRHdxR3RQcDRJVVdwbXRDZ2dCQ2Q3bm9RdlhCdGNCTWZtLTRrY1JZbTZ1V1RrdEZLZFBkT3Y0NGRIYXhBOTRxNmZRNDdWdy1oNHhCUmJFYWlhWUlveXRpMA?oc=5",
-      "category": "Igreja Perseguida",
-      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "date": "2026-09-10T18:00:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Pastor Nilson Gomes critica manifestações políticas em igrejas evangélicas",
-      "summary": "O pastor Nilson Gomes critica a polarização política em igrejas evangélicas e defende que o púlpito deve ser exclusivo para a pregação do evangelho. The post Pastor Nilson Gomes critica manifestações ...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/pastor-nilson-gomes-critica-politica-nas-igrejas/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/pastor-nilson-gomes-critica-politica-nas-igrejas.webp",
-      "date": "2026-09-10T17:47:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Igrejas evangélicas reorganizam estratégia eleitoral para ampliar bancadas no Legislativo",
-      "summary": "Igrejas evangélicas dividem bases eleitorais em São Paulo para ampliar suas bancadas na Câmara e na Alesp. Conheça os riscos e detalhes dessa estratégia. The post Igrejas evangélicas reorganizam estra...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/igrejas-evangelicas-reorganizam-estrategia-eleitoral-legislativo/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/igrejas-evangelicas-reorganizam-estrategia-eleitoral-legislativo.webp",
-      "date": "2026-09-10T16:03:13+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Justiça de São Paulo mantém ordem de despejo contra templo da Igreja Universal em Guarulhos",
-      "summary": "O Tribunal de Justiça de São Paulo manteve a ordem de despejo contra um templo da Igreja Universal em Guarulhos após 28 anos de ocupação. Saiba os detalhes. The post Justiça de São Paulo mantém ordem ...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/justica-mantem-ordem-despejo-igreja-universal-guarulhos/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/01/Martelo-da-Justica-Foto-Canva-Pro.jpg",
-      "date": "2026-09-10T12:03:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Igrejas prestam contribuição “significativa” a serviços essenciais à comunidade, mostra estudo",
-      "summary": "Estudo revela que igrejas na Inglaterra realizam cerca de 250 mil ações sociais essenciais, preenchendo lacunas do poder público em saúde mental e alimentação. The post Igrejas prestam contribuição “s...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/acoes-sociais-igrejas-inglaterra-estudo/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/acoes-sociais-igrejas-inglaterra-estudo.webp",
-      "date": "2026-09-10T11:20:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Partido de extrema-direita vence eleição e gera forte preocupação entre os cristãos na Alemanha",
-      "summary": "A histórica vitória eleitoral do partido AfD na Saxônia-Anhalt, Alemanha, gera profunda preocupação social e apelos por diálogo entre líderes religiosos. The post Partido de extrema-direita vence elei...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/extrema-direita-alema-vence-eleicao-historica-saxonia-anhalt/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/extrema-direita-alema-vence-eleicao-historica-saxonia-anhalt.webp",
-      "date": "2026-09-10T10:50:16+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Pescadores adoram a Deus durante resgate no Ceará",
-      "summary": "Homens ficaram dias à deriva. The post Pescadores adoram a Deus durante resgate no Ceará appeared first on Rádio 93FM-RJ.",
+      "title": "Abrigo para famílias cristãs perseguidas é inaugurado na Índia",
+      "summary": "Projeto atua como centro de estabilização de médio prazo. The post Abrigo para famílias cristãs perseguidas é inaugurado na Índia appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/pescadores-adoram-a-deus-durante-resgate-no-ceara/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/abrigo-para-familias-cristas-perseguidas-e-inaugurado-na-india/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-09-10T09:00:11+00:00",
+      "date": "2026-09-11T09:00:52+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Premiada boxeadora cristã encerra carreira exaltando Jesus",
-      "summary": "Katie Taylor falou de sua fé diante de mais de 80 mil pessoas. The post Premiada boxeadora cristã encerra carreira exaltando Jesus appeared first on Rádio 93FM-RJ.",
+      "title": "Fernanda Brum convida telespectadores a entregarem vidas a Cristo em programa nacional",
+      "summary": "Pastora e cantora participou do Programa Silvio Santos. The post Fernanda Brum convida telespectadores a entregarem vidas a Cristo em programa nacional appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/premiada-boxeadora-crista-encerra-carreira-exaltando-jesus/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/fernanda-brum-convida-telespectadores-a-entregarem-vidas-a-cristo-em-programa-nacional/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-09-10T03:05:28+00:00",
+      "date": "2026-09-11T03:05:09+00:00",
       "publication_date_verified": true
     }
   ]
