@@ -1,29 +1,40 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-09-12T00:06:29.070308+00:00",
-  "total_articles": 2,
+  "last_updated": "2026-09-12T13:32:31.275241+00:00",
+  "total_articles": 3,
   "sources": [
+    "Google News - Cristãos Perseguidos",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Abrigo para famílias cristãs perseguidas é inaugurado na Índia",
-      "summary": "Projeto atua como centro de estabilização de médio prazo. The post Abrigo para famílias cristãs perseguidas é inaugurado na Índia appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/abrigo-para-familias-cristas-perseguidas-e-inaugurado-na-india/",
-      "category": "Notícias Cristãs",
+      "title": "Líder cristão é morto e igrejas são saqueadas na África - Portas Abertas",
+      "summary": "Líder cristão é morto e igrejas são saqueadas na África - Portas Abertas",
+      "source": "Google News - Cristãos Perseguidos",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPTjJDTGZ3OTU1VFdtNkdoQXVRLUlQcjVXV0NxSmE2YWU1SzVpb0dJczI1OVNPUERqclBaekN0eXpiQmJXdzF1MlZXSlpFcUVWelNTYzd3NFVFWW1YZktlVnljVGtiMmotSTYzdkZZVF91OTJ2NU9ab05Ic3VvSG9wbzAwbmxPc2ltUXQyUGZwTzhhN054elp5NHc5Mk5oSG9FNk53ZlFPbGxnWVljZXlYdG8wV0htUQ?oc=5",
+      "category": "Igreja Perseguida",
       "image_url": "",
-      "date": "2026-09-11T09:00:52+00:00",
+      "date": "2026-09-12T11:00:00+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Fernanda Brum convida telespectadores a entregarem vidas a Cristo em programa nacional",
-      "summary": "Pastora e cantora participou do Programa Silvio Santos. The post Fernanda Brum convida telespectadores a entregarem vidas a Cristo em programa nacional appeared first on Rádio 93FM-RJ.",
+      "title": "Série bíblica Ben-Hur estreia em outubro",
+      "summary": "Produção da Record ficará disponível no Univer Vídeo. The post Série bíblica Ben-Hur estreia em outubro appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/fernanda-brum-convida-telespectadores-a-entregarem-vidas-a-cristo-em-programa-nacional/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/serie-biblica-ben-hur-estreia-em-outubro/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-09-11T03:05:09+00:00",
+      "date": "2026-09-12T09:00:38+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Portas Abertas convoca jovens para orar por Igreja Perseguida no Chifre da África",
+      "summary": "Shockwave 2026 acontece em setembro. The post Portas Abertas convoca jovens para orar por Igreja Perseguida no Chifre da África appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/portas-abertas-convoca-jovens-para-orar-por-igreja-perseguida-no-chifre-da-africa/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-09-12T03:05:07+00:00",
       "publication_date_verified": true
     }
   ]
