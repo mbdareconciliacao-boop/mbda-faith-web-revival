@@ -1,40 +1,19 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-09-12T23:56:53.103789+00:00",
-  "total_articles": 3,
+  "last_updated": "2026-09-13T14:15:42.365600+00:00",
+  "total_articles": 1,
   "sources": [
-    "Google News - Cristãos Perseguidos",
-    "Radio 93 - Giro Cristão"
+    "Folha Gospel"
   ],
   "articles": [
     {
-      "title": "Líder cristão é morto e igrejas são saqueadas na África - Portas Abertas",
-      "summary": "Líder cristão é morto e igrejas são saqueadas na África - Portas Abertas",
-      "source": "Google News - Cristãos Perseguidos",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPTjJDTGZ3OTU1VFdtNkdoQXVRLUlQcjVXV0NxSmE2YWU1SzVpb0dJczI1OVNPUERqclBaekN0eXpiQmJXdzF1MlZXSlpFcUVWelNTYzd3NFVFWW1YZktlVnljVGtiMmotSTYzdkZZVF91OTJ2NU9ab05Ic3VvSG9wbzAwbmxPc2ltUXQyUGZwTzhhN054elp5NHc5Mk5oSG9FNk53ZlFPbGxnWVljZXlYdG8wV0htUQ?oc=5",
-      "category": "Igreja Perseguida",
-      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "date": "2026-09-12T11:00:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Série bíblica Ben-Hur estreia em outubro",
-      "summary": "Produção da Record ficará disponível no Univer Vídeo. The post Série bíblica Ben-Hur estreia em outubro appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/serie-biblica-ben-hur-estreia-em-outubro/",
+      "title": "Unigrejas nega irregularidades em movimentações financeiras citadas no caso Dark Horse",
+      "summary": "A Unigrejas nega irregularidades após reportagens associarem a entidade a investigações da Polícia Federal. Confira o posicionamento oficial da instituição. The post Unigrejas nega irregularidades em ...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/unigrejas-nega-irregularidades-movimentacoes-financeiras/",
       "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-09-12T09:00:38+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Portas Abertas convoca jovens para orar por Igreja Perseguida no Chifre da África",
-      "summary": "Shockwave 2026 acontece em setembro. The post Portas Abertas convoca jovens para orar por Igreja Perseguida no Chifre da África appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/portas-abertas-convoca-jovens-para-orar-por-igreja-perseguida-no-chifre-da-africa/",
-      "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-09-12T03:05:07+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/image-12.png",
+      "date": "2026-09-13T13:34:13+00:00",
       "publication_date_verified": true
     }
   ]

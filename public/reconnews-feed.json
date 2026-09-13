@@ -7,48 +7,18 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
-      "id": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPTjJDTGZ3OTU1VFdtNkdoQXVRLUlQcjVXV0NxSmE2YWU1SzVpb0dJczI1OVNPUERqclBaekN0eXpiQmJXdzF1MlZXSlpFcUVWelNTYzd3NFVFWW1YZktlVnljVGtiMmotSTYzdkZZVF91OTJ2NU9ab05Ic3VvSG9wbzAwbmxPc2ltUXQyUGZwTzhhN054elp5NHc5Mk5oSG9FNk53ZlFPbGxnWVljZXlYdG8wV0htUQ?oc=5",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxPTjJDTGZ3OTU1VFdtNkdoQXVRLUlQcjVXV0NxSmE2YWU1SzVpb0dJczI1OVNPUERqclBaekN0eXpiQmJXdzF1MlZXSlpFcUVWelNTYzd3NFVFWW1YZktlVnljVGtiMmotSTYzdkZZVF91OTJ2NU9ab05Ic3VvSG9wbzAwbmxPc2ltUXQyUGZwTzhhN054elp5NHc5Mk5oSG9FNk53ZlFPbGxnWVljZXlYdG8wV0htUQ?oc=5",
-      "title": "Líder cristão é morto e igrejas são saqueadas na África - Portas Abertas",
-      "content_text": "Líder cristão é morto e igrejas são saqueadas na África - Portas Abertas",
-      "date_published": "2026-09-12T11:00:00.000Z",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "tags": [
-        "Igreja Perseguida"
-      ],
-      "authors": [
-        {
-          "name": "Google News - Cristãos Perseguidos"
-        }
-      ]
-    },
-    {
-      "id": "https://radio93.com.br/noticias/giro-cristao/serie-biblica-ben-hur-estreia-em-outubro/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/serie-biblica-ben-hur-estreia-em-outubro/",
-      "title": "Série bíblica Ben-Hur estreia em outubro",
-      "content_text": "Produção da Record ficará disponível no Univer Vídeo. The post Série bíblica Ben-Hur estreia em outubro appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-09-12T09:00:38.000Z",
+      "id": "https://folhagospel.com/unigrejas-nega-irregularidades-movimentacoes-financeiras/",
+      "url": "https://folhagospel.com/unigrejas-nega-irregularidades-movimentacoes-financeiras/",
+      "title": "Unigrejas nega irregularidades em movimentações financeiras citadas no caso Dark Horse",
+      "content_text": "A Unigrejas nega irregularidades após reportagens associarem a entidade a investigações da Polícia Federal. Confira o posicionamento oficial da instituição. The post Unigrejas nega irregularidades em ...",
+      "date_published": "2026-09-13T13:34:13.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/09/image-12.png",
       "tags": [
         "Notícias Cristãs"
       ],
       "authors": [
         {
-          "name": "Radio 93 - Giro Cristão"
-        }
-      ]
-    },
-    {
-      "id": "https://radio93.com.br/noticias/giro-cristao/portas-abertas-convoca-jovens-para-orar-por-igreja-perseguida-no-chifre-da-africa/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/portas-abertas-convoca-jovens-para-orar-por-igreja-perseguida-no-chifre-da-africa/",
-      "title": "Portas Abertas convoca jovens para orar por Igreja Perseguida no Chifre da África",
-      "content_text": "Shockwave 2026 acontece em setembro. The post Portas Abertas convoca jovens para orar por Igreja Perseguida no Chifre da África appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-09-12T03:05:07.000Z",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Radio 93 - Giro Cristão"
+          "name": "Folha Gospel"
         }
       ]
     }
