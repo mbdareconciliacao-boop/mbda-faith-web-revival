@@ -1,19 +1,40 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-09-13T14:15:42.365600+00:00",
-  "total_articles": 1,
+  "last_updated": "2026-09-14T16:19:20.890365+00:00",
+  "total_articles": 3,
   "sources": [
-    "Folha Gospel"
+    "Folha Gospel",
+    "Google News - Cristãos Perseguidos"
   ],
   "articles": [
     {
-      "title": "Unigrejas nega irregularidades em movimentações financeiras citadas no caso Dark Horse",
-      "summary": "A Unigrejas nega irregularidades após reportagens associarem a entidade a investigações da Polícia Federal. Confira o posicionamento oficial da instituição. The post Unigrejas nega irregularidades em ...",
+      "title": "Polícia Federal investiga pastor em operação sobre desvio de emendas",
+      "summary": "A Polícia Federal investiga o pastor Ademar de Sena Sampaio por desvio de emendas parlamentares ligadas ao filme Dark Horse e contratos em Camacan, Bahia. The post Polícia Federal investiga pastor em ...",
       "source": "Folha Gospel",
-      "url": "https://folhagospel.com/unigrejas-nega-irregularidades-movimentacoes-financeiras/",
+      "url": "https://folhagospel.com/pf-investiga-pastor-ademar-de-sena-sampaio-desvio-emendas/",
       "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/image-12.png",
-      "date": "2026-09-13T13:34:13+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/image-13.png",
+      "date": "2026-09-14T15:20:31+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Advogada chinesa de defensores da Igreja Zion deixa a China após pressão estatal",
+      "summary": "A advogada chinesa Ruth Wang buscou refúgio em Taiwan após sofrer severa pressão do regime de Pequim por defender membros da perseguida Igreja Zion. The post Advogada chinesa de defensores da Igreja Z...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/advogada-chinesa-igreja-zion-deixa-china/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/advogada-chinesa-igreja-zion-deixa-china.webp",
+      "date": "2026-09-14T12:59:08+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Jovem rejeitado pela família é batizado na Ásia Central - Portas Abertas",
+      "summary": "Jovem rejeitado pela família é batizado na Ásia Central - Portas Abertas",
+      "source": "Google News - Cristãos Perseguidos",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxOY1V6aWV2LV9FeWN2Nm5EODFybERWNXc3RnZBZmw0NldYNzdlYnJjLTBLNXhlcEppMGF5NWRuckhVUXZLaEhKY25JclpQQ3JmX0U5V1RfMGVHSC1RbTBXSk9hd3B1U2VzWHl4cjI5SVVuaENqbEl2eDA5QkppblBTWVhXVjQyaGs5ejNBT3k4cktDbkZqOHY0VzAtbTItZGpObE1QRWVfYUxBZl9xVS1JNHI5eF8zQQ?oc=5",
+      "category": "Igreja Perseguida",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "date": "2026-09-14T11:00:00+00:00",
       "publication_date_verified": true
     }
   ]
