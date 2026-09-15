@@ -1,12 +1,33 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-09-14T16:19:20.890365+00:00",
-  "total_articles": 3,
+  "last_updated": "2026-09-15T00:28:54.104265+00:00",
+  "total_articles": 5,
   "sources": [
     "Folha Gospel",
-    "Google News - Cristãos Perseguidos"
+    "Google News - Cristãos Perseguidos",
+    "Radio 93 - Giro Cristão"
   ],
   "articles": [
+    {
+      "title": "Convite nas redes sociais leva mais de 100 pessoas a se batizarem na Inglaterra",
+      "summary": "Novos convertidos viajaram de diversas regiões do país para descerem às águas. The post Convite nas redes sociais leva mais de 100 pessoas a se batizarem na Inglaterra appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/convite-nas-redes-sociais-leva-mais-de-100-pessoas-a-se-batizarem-na-inglaterra/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-09-15T00:00:46+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Igreja Lagoinha fez movimentação atípica de R$ 57 milhões aponta relatório do Coaf",
+      "summary": "Relatório do Coaf aponta movimentação atípica de R$ 57 milhões na Igreja Batista da Lagoinha, ligada a investigações envolvendo o Banco Master e Fabiano Zettel. The post Igreja Lagoinha fez movimentaç...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/movimentacao-atipica-igreja-lagoinha-coaf/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/image-14.png",
+      "date": "2026-09-14T16:27:53+00:00",
+      "publication_date_verified": true
+    },
     {
       "title": "Polícia Federal investiga pastor em operação sobre desvio de emendas",
       "summary": "A Polícia Federal investiga o pastor Ademar de Sena Sampaio por desvio de emendas parlamentares ligadas ao filme Dark Horse e contratos em Camacan, Bahia. The post Polícia Federal investiga pastor em ...",

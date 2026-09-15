@@ -7,6 +7,37 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
+      "id": "https://radio93.com.br/noticias/giro-cristao/convite-nas-redes-sociais-leva-mais-de-100-pessoas-a-se-batizarem-na-inglaterra/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/convite-nas-redes-sociais-leva-mais-de-100-pessoas-a-se-batizarem-na-inglaterra/",
+      "title": "Convite nas redes sociais leva mais de 100 pessoas a se batizarem na Inglaterra",
+      "content_text": "Novos convertidos viajaram de diversas regiões do país para descerem às águas. The post Convite nas redes sociais leva mais de 100 pessoas a se batizarem na Inglaterra appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-09-15T00:00:46.000Z",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Radio 93 - Giro Cristão"
+        }
+      ]
+    },
+    {
+      "id": "https://folhagospel.com/movimentacao-atipica-igreja-lagoinha-coaf/",
+      "url": "https://folhagospel.com/movimentacao-atipica-igreja-lagoinha-coaf/",
+      "title": "Igreja Lagoinha fez movimentação atípica de R$ 57 milhões aponta relatório do Coaf",
+      "content_text": "Relatório do Coaf aponta movimentação atípica de R$ 57 milhões na Igreja Batista da Lagoinha, ligada a investigações envolvendo o Banco Master e Fabiano Zettel. The post Igreja Lagoinha fez movimentaç...",
+      "date_published": "2026-09-14T16:27:53.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/09/image-14.png",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
       "id": "https://folhagospel.com/pf-investiga-pastor-ademar-de-sena-sampaio-desvio-emendas/",
       "url": "https://folhagospel.com/pf-investiga-pastor-ademar-de-sena-sampaio-desvio-emendas/",
       "title": "Polícia Federal investiga pastor em operação sobre desvio de emendas",
