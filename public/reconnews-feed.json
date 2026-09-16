@@ -7,6 +7,37 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
+      "id": "https://radio93.com.br/noticias/giro-cristao/presos-convertidos-cantam-em-coral-e-testemunham-poder-de-deus/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/presos-convertidos-cantam-em-coral-e-testemunham-poder-de-deus/",
+      "title": "Presos convertidos cantam em coral e testemunham poder de Deus",
+      "content_text": "\"Vidas transformadas pelo poder de Deus\". The post Presos convertidos cantam em coral e testemunham poder de Deus appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-09-16T00:00:05.000Z",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Radio 93 - Giro Cristão"
+        }
+      ]
+    },
+    {
+      "id": "https://folhagospel.com/policia-argelia-prende-12-cristaos-culto-oran/",
+      "url": "https://folhagospel.com/policia-argelia-prende-12-cristaos-culto-oran/",
+      "title": "Polícia da Argélia prende 12 cristãos durante culto",
+      "content_text": "Polícia da Argélia prende 12 cristãos durante culto em abrigo em Oran. Saiba mais sobre a perseguição religiosa e a aplicação da portaria 06-03 no país. The post Polícia da Argélia prende 12 cristãos ...",
+      "date_published": "2026-09-15T14:50:00.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/09/policia-argelia-prende-12-cristaos-culto-oran.webp",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
       "id": "https://folhagospel.com/casal-de-pastores-relata-ameacas-de-morte-em-residencia-em-sydney/",
       "url": "https://folhagospel.com/casal-de-pastores-relata-ameacas-de-morte-em-residencia-em-sydney/",
       "title": "Casal de pastores relata casa invadida e ameaças de morte na Austrália",
@@ -66,6 +97,36 @@
       "authors": [
         {
           "name": "Google News - Cristãos Perseguidos"
+        }
+      ]
+    },
+    {
+      "id": "https://radio93.com.br/noticias/giro-cristao/jovem-cristao-paquistanes-e-brutalmente-espancado-apos-proteger-menina-de-assedio/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/jovem-cristao-paquistanes-e-brutalmente-espancado-apos-proteger-menina-de-assedio/",
+      "title": "Jovem cristão paquistanês é brutalmente espancado após proteger menina de assédio",
+      "content_text": "Grupo costuma assediar meninas cristãs. The post Jovem cristão paquistanês é brutalmente espancado após proteger menina de assédio appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-09-15T09:00:53.000Z",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Radio 93 - Giro Cristão"
+        }
+      ]
+    },
+    {
+      "id": "https://radio93.com.br/noticias/giro-cristao/violencia-contra-cristaos-cresceu-400-em-uma-decada-na-india/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/violencia-contra-cristaos-cresceu-400-em-uma-decada-na-india/",
+      "title": "Violência contra cristãos cresceu 400% em uma década na Índia",
+      "content_text": "Dados alarmantes são da Christian Solidarity Worldwide. The post Violência contra cristãos cresceu 400% em uma década na Índia appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-09-15T03:05:05.000Z",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Radio 93 - Giro Cristão"
         }
       ]
     }
