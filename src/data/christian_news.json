@@ -1,13 +1,23 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-09-16T14:48:10.645301+00:00",
-  "total_articles": 6,
+  "last_updated": "2026-09-17T00:18:58.306726+00:00",
+  "total_articles": 7,
   "sources": [
     "Folha Gospel",
     "Google News - Cristãos Perseguidos",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
+    {
+      "title": "Tribunal de Londres absolve pregador após distribuição de folhetos bíblicos",
+      "summary": "Evangelista foi acusado de intolerância. The post Tribunal de Londres absolve pregador após distribuição de folhetos bíblicos appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/tribunal-de-londres-absolve-pregador-apos-distribuicao-de-folhetos-biblicos/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-09-17T00:00:30+00:00",
+      "publication_date_verified": true
+    },
     {
       "title": "Assembleia de Deus é investigada após faixas sobre família em desfile de SC",
       "summary": "Ministério Público de Santa Catarina quer esclarecer participação da Assembleia de Deus no evento e apura possível discriminação; igreja apresentou mensagens sobre casamento, aborto e ideologia de gên...",

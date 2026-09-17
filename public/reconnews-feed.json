@@ -7,6 +7,21 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
+      "id": "https://radio93.com.br/noticias/giro-cristao/tribunal-de-londres-absolve-pregador-apos-distribuicao-de-folhetos-biblicos/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/tribunal-de-londres-absolve-pregador-apos-distribuicao-de-folhetos-biblicos/",
+      "title": "Tribunal de Londres absolve pregador após distribuição de folhetos bíblicos",
+      "content_text": "Evangelista foi acusado de intolerância. The post Tribunal de Londres absolve pregador após distribuição de folhetos bíblicos appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-09-17T00:00:30.000Z",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Radio 93 - Giro Cristão"
+        }
+      ]
+    },
+    {
       "id": "https://folhagospel.com/assembleia-de-deus-e-investigada-apos-faixas-sobre-familia-em-desfile-de-sc/",
       "url": "https://folhagospel.com/assembleia-de-deus-e-investigada-apos-faixas-sobre-familia-em-desfile-de-sc/",
       "title": "Assembleia de Deus é investigada após faixas sobre família em desfile de SC",
