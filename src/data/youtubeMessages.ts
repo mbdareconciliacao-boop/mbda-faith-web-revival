@@ -2,6 +2,51 @@
 import type { Message } from './contentCatalog.ts';
 export const youtubeMessages: Message[] = [
   {
+    "slug": "video-62716773664b3073396630",
+    "title": "Culto | O Princípio Regulador do Culto: Adoração Bíblica, Liberdade e Serviço a Deus | João 4:23-24",
+    "description": "📅 16/09/2026 – Quarta-feira | 20h ⛪ Culto de Oração e Ministração da Palavra Nesta ministração, damos continuidade ao estudo sobre a essência, a ordem e a prática do culto cristão, refletindo sobre uma pergunta fundamental: como Deus deseja ser adorado? A partir de João 4:23-24, somos conduzidos a compreender que…",
+    "date": "18 de setembro de 2026",
+    "dateTime": "2026-09-18T05:31:54Z",
+    "image": "https://i.ytimg.com/vi/bqgsfK0s9f0/hqdefault.jpg",
+    "imageAlt": "Culto | O Princípio Regulador do Culto: Adoração Bíblica, Liberdade e Serviço a Deus | João 4:23-24",
+    "youtubeId": "bqgsfK0s9f0",
+    "source": "https://www.youtube.com/watch?v=bqgsfK0s9f0",
+    "topics": [
+      "Canal da igreja"
+    ],
+    "relatedStudies": []
+  },
+  {
+    "slug": "video-6c636d6e73687073523351",
+    "title": "Culto | Fé, Esperança e Santificação: Vivendo à Luz da Volta de Cristo | 1 Tessalonicenses",
+    "description": "📅 13/09/2026 – Domingo | 11h ⛪ Culto de Ministração da Palavra Nesta ministração, damos continuidade ao estudo das Cartas aos Tessalonicenses, olhando para o contexto histórico e cultural da cidade de Tessalônica e para as características de uma igreja que, mesmo inserida em um ambiente marcado pela diversidade…",
+    "date": "18 de setembro de 2026",
+    "dateTime": "2026-09-18T05:31:44Z",
+    "image": "https://i.ytimg.com/vi/lcmnshpsR3Q/hqdefault.jpg",
+    "imageAlt": "Culto | Fé, Esperança e Santificação: Vivendo à Luz da Volta de Cristo | 1 Tessalonicenses",
+    "youtubeId": "lcmnshpsR3Q",
+    "source": "https://www.youtube.com/watch?v=lcmnshpsR3Q",
+    "topics": [
+      "Canal da igreja"
+    ],
+    "relatedStudies": []
+  },
+  {
+    "slug": "video-763932755435794739586b",
+    "title": "Escola Bíblica Dominical | A Esperança Cristã Diante da Morte | 1 Tessalonicenses 4:13-18",
+    "description": "📅 13/09/2026 – Domingo | 09h Nesta Escola Bíblica Dominical, iniciamos um novo estudo sobre as Cartas de Paulo à Igreja de Tessalônica, começando pela compreensão do contexto histórico, literário e teológico que nos ajuda a interpretar corretamente as Escrituras. Nesta aula introdutória, somos conduzidos a uma…",
+    "date": "17 de setembro de 2026",
+    "dateTime": "2026-09-18T02:00:05Z",
+    "image": "https://i.ytimg.com/vi/v92uT5yG9Xk/hqdefault.jpg",
+    "imageAlt": "Escola Bíblica Dominical | A Esperança Cristã Diante da Morte | 1 Tessalonicenses 4:13-18",
+    "youtubeId": "v92uT5yG9Xk",
+    "source": "https://www.youtube.com/watch?v=v92uT5yG9Xk",
+    "topics": [
+      "Canal da igreja"
+    ],
+    "relatedStudies": []
+  },
+  {
     "slug": "video-6c796c6135476c326f4249",
     "title": "Culto Especial de Batismo | Fé, Confissão Pública e o Compromisso com Cristo | 26/08/2026",
     "description": "📅 26/08/2026 – Quarta-feira | 20h 🌊 UMA NOITE DE BATISMO, FÉ E NOVOS COMEÇOS Nesta celebração especial, a Igreja da Reconciliação se reuniu com alegria para testemunhar o batismo nas águas de novos irmãos que, após um período de discipulado, ensino bíblico, avaliação e acompanhamento pastoral, assumiram…",
@@ -251,51 +296,6 @@ export const youtubeMessages: Message[] = [
     "imageAlt": "unknown",
     "youtubeId": "ZUYCaDhoWSg",
     "source": "https://www.youtube.com/watch?v=ZUYCaDhoWSg",
-    "topics": [
-      "Canal da igreja"
-    ],
-    "relatedStudies": []
-  },
-  {
-    "slug": "video-5851526f6654666a544c30",
-    "title": "unknown",
-    "description": "#CapCut Fiz este vídeo incrível com o CapCut. Abra o link para experimentar: capcut.com/tools/desktop-video-editor",
-    "date": "24 de junho de 2026",
-    "dateTime": "2026-06-24T18:51:58Z",
-    "image": "https://i.ytimg.com/vi/XQRofTfjTL0/hqdefault.jpg",
-    "imageAlt": "unknown",
-    "youtubeId": "XQRofTfjTL0",
-    "source": "https://www.youtube.com/watch?v=XQRofTfjTL0",
-    "topics": [
-      "Canal da igreja"
-    ],
-    "relatedStudies": []
-  },
-  {
-    "slug": "video-524469316b523454517273",
-    "title": "#shorts #pregacaobiblica #ministeriobiblicodareconiliacao",
-    "description": "Assista à mensagem no canal da igreja. Descrição não informada no YouTube.",
-    "date": "20 de junho de 2026",
-    "dateTime": "2026-06-20T20:00:07Z",
-    "image": "https://i.ytimg.com/vi/RDi1kR4TQrs/hqdefault.jpg",
-    "imageAlt": "#shorts #pregacaobiblica #ministeriobiblicodareconiliacao",
-    "youtubeId": "RDi1kR4TQrs",
-    "source": "https://www.youtube.com/watch?v=RDi1kR4TQrs",
-    "topics": [
-      "Canal da igreja"
-    ],
-    "relatedStudies": []
-  },
-  {
-    "slug": "video-63717463776e4b71756e77",
-    "title": "#shorts #pregacaobiblica #fe #ministeriobiblicodareconiliacao",
-    "description": "Assista à mensagem no canal da igreja. Descrição não informada no YouTube.",
-    "date": "20 de junho de 2026",
-    "dateTime": "2026-06-20T14:24:35Z",
-    "image": "https://i.ytimg.com/vi/cqtcwnKqunw/hqdefault.jpg",
-    "imageAlt": "#shorts #pregacaobiblica #fe #ministeriobiblicodareconiliacao",
-    "youtubeId": "cqtcwnKqunw",
-    "source": "https://www.youtube.com/watch?v=cqtcwnKqunw",
     "topics": [
       "Canal da igreja"
     ],
