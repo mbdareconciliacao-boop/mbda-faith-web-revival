@@ -39,7 +39,7 @@ test('panel exposes agenda, church and books editors with draft/publish', async 
   assert.match(source, /AgendaEditor/);
   assert.match(source, /ChurchEditor/);
   assert.match(source, /BooksEditor/);
-  assert.match(source, /publishSettings/);
+  assert.match(source, /publish_entity/);
   const [agenda, books] = await Promise.all([
     readFile(new URL('../src/components/panel/AgendaEditor.tsx', import.meta.url), 'utf8'),
     readFile(new URL('../src/components/panel/BooksEditor.tsx', import.meta.url), 'utf8'),

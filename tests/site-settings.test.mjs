@@ -27,7 +27,7 @@ test('site theme applies published settings and degrades to defaults', async () 
     'utf8',
   );
   assert.match(provider, /if \(!client\) return/);
-  assert.match(provider, /from\("site_settings"\)/);
+  assert.match(provider, /from\("site_entities"\)/);
   assert.match(provider, /applyTheme/);
   assert.match(provider, /DEFAULT_SITE_SETTINGS/);
   const hook = await readFile(hookPath, 'utf8');
@@ -39,8 +39,8 @@ test('panel edits appearance with live theme application', async () => {
   assert.match(panel, /applyTheme\(/);
   assert.match(panel, /THEME_COLOR_FIELDS/);
   assert.match(panel, /FONT_OPTIONS/);
-  assert.match(panel, /publish_site_settings/);
-  assert.match(panel, /rollback_site_settings/);
+  assert.match(panel, /publish_entity/);
+  assert.match(panel, /rollback/);
   assert.match(panel, /content_revisions/);
   assert.match(panel, /type="color"/);
 });

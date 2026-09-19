@@ -337,3 +337,52 @@ export function applyTheme(theme: SiteTheme, root: HTMLElement = document.docume
   root.style.setProperty("--condensed", FONT_STACKS.condensed[theme.condensedFont] ?? FONT_STACKS.condensed["Barlow Condensed"]);
   root.style.setProperty("--body", FONT_STACKS.body[theme.bodyFont] ?? FONT_STACKS.body.system);
 }
+
+
+export type SiteEntity = "tema" | "textos" | "agenda" | "igreja" | "livros";
+export const SITE_ENTITIES: SiteEntity[] = ["tema", "textos", "agenda", "igreja", "livros"];
+
+/** Extrai a fatia de conteúdo de uma entidade para salvar/publicar. */
+export function entityContent(entity: SiteEntity, settings: SiteSettings): Record<string, unknown> {
+  switch (entity) {
+    case "tema":
+      return { ...settings.theme };
+    case "textos":
+      return {
+        brand: settings.content.brand,
+        home: settings.content.home,
+        contact: settings.content.contact,
+        footer: settings.content.footer,
+        featuredVideo: settings.content.featuredVideo,
+      };
+    case "agenda":
+      return { agenda: settings.content.agenda };
+    case "igreja":
+      return { church: settings.content.church };
+    case "livros":
+      return { books: settings.content.books };
+  }
+}
+
+/** Junta as linhas de entidades (rascunho ou publicado) em um SiteSettings. */
+export function mergeEntityRows(rows: Array<{ entity: string; content: unknown }>): SiteSettings {
+  const byEntity = new Map<string, unknown>();
+  for (const row of rows) byEntity.set(row.entity, row.content);
+  const textos = record(byEntity.get("textos"));
+  const agenda = record(byEntity.get("agenda"));
+  const igreja = record(byEntity.get("igreja"));
+  const livros = record(byEntity.get("livros"));
+  return normalizeSiteSettings({
+    theme: byEntity.get("tema"),
+    content: {
+      brand: textos.brand,
+      home: textos.home,
+      contact: textos.contact,
+      footer: textos.footer,
+      featuredVideo: textos.featuredVideo ?? null,
+      agenda: agenda.agenda,
+      church: igreja.church,
+      books: livros.books,
+    },
+  });
+}

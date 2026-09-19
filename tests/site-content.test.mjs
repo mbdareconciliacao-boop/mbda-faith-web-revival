@@ -36,7 +36,7 @@ test('public components read text and images from the published content', async 
     new URL('../src/components/site/SiteSettingsProvider.tsx', import.meta.url),
     'utf8',
   );
-  assert.match(provider, /select\("published"\)/);
+  assert.match(provider, /from\("site_entities"\)/);
   assert.match(provider, /SiteSettingsContext\.Provider/);
 });
 
