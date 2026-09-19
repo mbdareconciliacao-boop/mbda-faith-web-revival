@@ -11,6 +11,7 @@ import Church from "./pages/Church";
 import Agenda from "./pages/Agenda";
 import News from "./pages/News";
 import { legacyDestinations } from "./data/contentCatalog";
+import SiteTheme from "./components/site/SiteTheme";
 
 const EditorialDesk = import.meta.env.DEV ? lazy(() => import("./pages/EditorialDesk")) : null;
 const Panel = lazy(() => import("./pages/Panel"));
@@ -29,7 +30,7 @@ function RoutePosition() {
 }
 
 export default function SiteRoutes() {
-  return <><RoutePosition /><Routes>
+  return <><SiteTheme /><RoutePosition /><Routes>
     <Route path="/" element={<Index />} />
     <Route path="/blog" element={<Blog />} />
     <Route path="/estudos" element={<Studies />} />
