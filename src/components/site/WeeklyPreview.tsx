@@ -1,7 +1,9 @@
 import { BookOpenText, CalendarDays, ChevronRight } from "lucide-react";
 import { WEEKLY_SCHEDULE } from "../../data/church";
+import { useFeaturedStudy } from "../../hooks/useFeaturedStudy";
 
 export default function WeeklyPreview() {
+  const { study } = useFeaturedStudy();
   return <section className="weekly-preview" aria-labelledby="weekly-preview-title">
     <div className="content-width weekly-grid">
       <div>
@@ -15,8 +17,8 @@ export default function WeeklyPreview() {
         <a className="inline-link" href="/agenda">Agenda completa e como chegar <ChevronRight aria-hidden="true" /></a>
       </div>
       <a className="literature-feature literature-panel" href="/blog">
-        <img src="/images/site/blog/tessalonicenses-evento-480.webp" alt="Arte da Escola Bíblica de Tessalonicenses" width="480" height="854" loading="lazy" decoding="async" />
-        <span><BookOpenText aria-hidden="true" /><strong>Literatura em destaque aplicada</strong><small>Leitura bíblica, contexto e aplicação para a vida da igreja.</small><span className="literature-action">Acompanhar o estudo <ChevronRight aria-hidden="true" /></span></span>
+        <img src={study.art480} srcSet={`${study.art480} 480w, ${study.art900} 900w`} sizes="(max-width: 960px) 90vw, 480px" alt={study.artAlt} width="480" height="854" loading="lazy" decoding="async" />
+        <span><BookOpenText aria-hidden="true" /><strong>{study.title}</strong><small>{study.subtitle || "Leitura bíblica, contexto e aplicação para a vida da igreja."}</small><span className="literature-action">Acompanhar o estudo <ChevronRight aria-hidden="true" /></span></span>
       </a>
     </div>
   </section>;

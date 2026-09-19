@@ -24,11 +24,16 @@ test('blog replaces the old series with a sourced Thessalonians study', async ()
 });
 
 test('blog event art has responsive, repository-local derivatives', async () => {
-  const blog = await readFile(blogPath, 'utf8');
+  const [blog, featured] = await Promise.all([
+    readFile(blogPath, 'utf8'),
+    readFile(new URL('../src/data/featuredStudy.ts', import.meta.url), 'utf8'),
+  ]);
 
-  assert.match(blog, /tessalonicenses-evento-480\.webp/);
-  assert.match(blog, /tessalonicenses-evento-900\.webp/);
   assert.match(blog, /srcSet=/);
+  assert.match(blog, /study\.art480/);
+  assert.match(blog, /study\.art900/);
+  assert.match(featured, /tessalonicenses-evento-480\.webp/);
+  assert.match(featured, /tessalonicenses-evento-900\.webp/);
   await Promise.all([
     access(new URL('../public/images/site/blog/tessalonicenses-evento-480.webp', import.meta.url)),
     access(new URL('../public/images/site/blog/tessalonicenses-evento-900.webp', import.meta.url)),
@@ -87,7 +92,8 @@ test('the homepage promotes the current literature feature without fixing a book
     readFile(new URL('../src/components/site/ChurchSections.tsx', import.meta.url), 'utf8'),
   ]);
   assert.match(preview,/href="\/blog"/);
-  assert.match(preview,/Literatura em destaque aplicada/i);
+  assert.match(preview,/useFeaturedStudy/);
+  assert.doesNotMatch(preview,/Tessalonicenses/);
   assert.doesNotMatch(preview,/Estude Tessalonicenses/);
   assert.doesNotMatch(sections,/Estude Tessalonicenses/);
 });

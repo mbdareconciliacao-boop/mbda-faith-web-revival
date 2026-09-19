@@ -2,15 +2,29 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import ContentLayout, { Breadcrumbs, ContentTabs } from "../components/content/ContentLayout";
 import CatalogSearch from "../components/content/CatalogSearch";
-import { recommendedBooks } from "../data/recommendedBooks";
+import { recommendedBooks, type RecommendedBook } from "../data/recommendedBooks";
+import { useFeaturedStudy } from "../hooks/useFeaturedStudy";
 import { contentSEO, matchesSearch } from "../data/contentCatalog";
 import { useSEO } from "../hooks/useSEO";
 
 export default function Books() {
+  const { study } = useFeaturedStudy();
   useSEO(contentSEO("Livros recomendados", "As leituras recomendadas pela igreja, com capas, autores e links para encontrar livros em editoras e livrarias.", "/livros"));
   const [params, setParams] = useSearchParams();
   const query = (params.get("busca") ?? "").slice(0, 120);
-  const books = recommendedBooks.filter(book => matchesSearch(query, book.title, book.author, book.description));
+  const featuredSlug = `${study.slug}-estudo`;
+  const featured: RecommendedBook[] = study.book.title ? [{
+    slug: featuredSlug,
+    title: study.book.title,
+    author: study.book.author,
+    description: study.intro,
+    image: study.art480,
+    imageSrcSet: `${study.art480} 480w, ${study.art900} 900w`,
+    href: study.book.href,
+    linkLabel: study.book.linkLabel,
+  }] : [];
+  const catalog = [...featured.filter(book => !recommendedBooks.some(item => item.href && item.href === book.href)), ...recommendedBooks];
+  const books = catalog.filter(book => matchesSearch(query, book.title, book.author, book.description));
   return <ContentLayout>
     <header className="catalog-header dark-section"><div className="content-width"><Breadcrumbs items={[{ label: "Livros recomendados" }]} /><h1>Livros recomendados</h1><p>Encontre os títulos indicados pela igreja e onde comprá-los.</p><ContentTabs /></div></header>
     <div className="content-width catalog-body">
@@ -22,7 +36,7 @@ export default function Books() {
           {book.href ? <a className="button button-blue book-purchase" href={book.href} target="_blank" rel="noopener noreferrer">{book.linkLabel ?? "Onde encontrar"}<ArrowUpRight aria-hidden="true" /></a> : <p className="purchase-note">Link de compra ainda não confirmado.</p>}
           {book.purchaseNote && <p className="purchase-note">{book.purchaseNote}</p>}
           <p>{book.description}</p>
-          {book.slug === "tessalonicenses-visao-de-uma-igreja-local" && <a className="inline-link book-study-link" href="/blog">Estudo disponível no site <ArrowRight aria-hidden="true" /></a>}
+          {book.slug === featuredSlug && <a className="inline-link book-study-link" href="/blog">Estudo disponível no site <ArrowRight aria-hidden="true" /></a>}
         </div>
       </article>)}</div>
       {!books.length && <div className="empty-state"><h2>Nenhum livro encontrado.</h2><p>Tente o sobrenome do autor ou uma palavra do título.</p><button type="button" className="button button-blue" onClick={() => setParams({})}>Ver todos os livros</button></div>}

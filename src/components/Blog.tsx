@@ -14,6 +14,7 @@ import {
   thessaloniansStudy,
 } from "../data/tessalonians";
 import { contentSEO, studies, studySlugs } from "../data/contentCatalog";
+import { useFeaturedStudy } from "../hooks/useFeaturedStudy";
 import { Breadcrumbs } from "./content/ContentLayout";
 import ShareLink from "./content/ShareLink";
 import NotFound from "../pages/NotFound";
@@ -33,13 +34,14 @@ const BLOG_SEO = {
 };
 
 export default function Blog() {
+  const { study } = useFeaturedStudy();
   const { sectionSlug } = useParams();
   const navigate = useNavigate();
   const index = studySlugs.findIndex(slug => slug === sectionSlug);
   const selected = Math.max(0, index);
   const section = thessaloniansStudy[selected];
   const current = studies[selected];
-  useSEO(sectionSlug ? contentSEO(section.title, section.summary, current.href, "/images/site/blog/tessalonicenses-evento-900.webp") : { ...BLOG_SEO, path: "/blog", image: "/images/site/blog/tessalonicenses-evento-900.webp" });
+  useSEO(sectionSlug ? contentSEO(section.title, section.summary, current.href, study.art900) : { ...BLOG_SEO, title: `${study.title} · Escola Bíblica da Reconciliação`, description: study.intro || BLOG_SEO.description, path: "/blog", image: study.art900 });
   const article = useRef<HTMLElement>(null);
   const previous = useRef(selected);
 
@@ -67,13 +69,9 @@ export default function Blog() {
               <a className="inline-link" href="/estudos">
                 Todos os estudos
               </a>
-              <h1>Tessalonicenses</h1>
-              <p className="blog-subtitle">Visão de uma igreja local</p>
-              <p className="blog-introduction">
-                Uma jornada pelas duas cartas de Paulo para descobrir como fé,
-                amor e esperança formam uma igreja firme — enquanto ela vive o
-                presente à luz da volta de Cristo.
-              </p>
+              <h1>{study.title}</h1>
+              <p className="blog-subtitle">{study.subtitle}</p>
+              <p className="blog-introduction">{study.intro}</p>
               <a className="button button-gold start-study" href={studies[0].href}>Começar a leitura <ChevronRight aria-hidden="true" /></a>
 
               <ul className="study-event-details" aria-label="Informações da Escola Bíblica">
@@ -103,12 +101,12 @@ export default function Blog() {
 
             <figure className="blog-event-art">
               <img
-                src="/images/site/blog/tessalonicenses-evento-480.webp"
-                srcSet="/images/site/blog/tessalonicenses-evento-480.webp 480w, /images/site/blog/tessalonicenses-evento-900.webp 900w"
+                src={study.art480}
+                srcSet={`${study.art480} 480w, ${study.art900} 900w`}
                 sizes="(max-width: 640px) calc(100vw - 40px), 340px"
                 width="900"
                 height="1600"
-                alt="Arte da Escola Bíblica sobre a primeira e a segunda cartas de Paulo aos Tessalonicenses"
+                alt={study.artAlt}
                 decoding="async"
               />
               <figcaption>Escola Bíblica · Ministério Bíblico da Reconciliação</figcaption>
