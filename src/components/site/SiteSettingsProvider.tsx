@@ -7,6 +7,7 @@ import {
   type SiteSettings,
   applyTheme,
   mergeEntityRows,
+  normalizeSiteSettings,
 } from "../../data/siteSettings";
 
 /** Carrega as entidades publicadas e distribui tema + conteúdo. */
@@ -32,6 +33,21 @@ export default function SiteSettingsProvider({ children }: { children: ReactNode
     return () => {
       active = false;
     };
+  }, []);
+
+  // Dentro de um iframe do painel, aceita a previa em tempo real.
+  useEffect(() => {
+    if (typeof window === "undefined" || window.self === window.top) return;
+    const onMessage = (event: MessageEvent) => {
+      if (event.origin !== window.location.origin) return;
+      const data = event.data as { source?: string; settings?: unknown } | null;
+      if (!data || data.source !== "mbdar-panel") return;
+      const normalized = normalizeSiteSettings(data.settings);
+      setSettings(normalized);
+      applyTheme(normalized.theme);
+    };
+    window.addEventListener("message", onMessage);
+    return () => window.removeEventListener("message", onMessage);
   }, []);
 
   return <SiteSettingsContext.Provider value={settings}>

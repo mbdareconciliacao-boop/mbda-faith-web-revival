@@ -183,3 +183,8 @@
 .panel-remove { color: #ff9d9d; }
 @media (max-width: 640px) { .panel-item-grid { grid-template-columns: 1fr; } }
 .panel-qr { background: #fff; padding: 10px; border-radius: 10px; }
+.panel-live { display: flex; flex-direction: column; gap: 8px; border: 1px solid rgba(255,255,255,.16); border-radius: 12px; overflow: hidden; }
+.panel-live-bar { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: rgba(4,18,43,.55); }
+.panel-live-bar strong { font-size: .9rem; }
+.panel-live-bar .panel-hint { margin-right: auto; }
+.panel-live-frame { width: 100%; height: 520px; border: 0; background: #fff; }
