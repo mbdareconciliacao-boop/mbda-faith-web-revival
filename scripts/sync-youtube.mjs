@@ -3,6 +3,16 @@ import { resolve } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
 const target = resolve('src/data/youtubeMessages.ts');
+const resultTarget = resolve(process.env.YOUTUBE_SYNC_RESULT ?? '.youtube-sync-result.json');
+
+export function existingVideoIds(source) {
+  return new Set([...String(source).matchAll(/"youtubeId":\s*"([A-Za-z0-9_-]{11})"/g)].map(match => match[1]));
+}
+
+async function writeResult(result) {
+  await writeFile(`${resultTarget}.tmp`, `${JSON.stringify(result, null, 2)}\n`, 'utf8');
+  await rename(`${resultTarget}.tmp`, resultTarget);
+}
 export function normalizeVideos(items, channelId, now = Date.now()) {
   return [...new Map(items.filter(v => /^[A-Za-z0-9_-]{11}$/.test(v.id)
     && v.snippet?.channelId === channelId && v.status?.privacyStatus === 'public'
@@ -56,13 +66,30 @@ async function main() {
   if (!channel?.id || !playlist) throw new Error('Canal oficial não encontrado.');
   const uploads = await requestYouTube('playlistItems', { part: 'contentDetails', playlistId: playlist, maxResults: '50' }, key);
   const ids = uploads.map(item => item.contentDetails?.videoId).filter(id => /^[A-Za-z0-9_-]{11}$/.test(id));
-  if (!ids.length) return;
+  if (!ids.length) {
+    await writeResult({ changed: false, newVideos: [], totalVideos: 0 });
+    return;
+  }
   const videos = normalizeVideos(await requestYouTube('videos', { part: 'snippet,status', id: ids.join(',') }, key), channel.id);
-  if (!videos.length) { console.log('Nenhum vídeo elegível; conteúdo preservado.'); return; }
+  if (!videos.length) {
+    await writeResult({ changed: false, newVideos: [], totalVideos: 0 });
+    console.log('Nenhum vídeo elegível; conteúdo preservado.');
+    return;
+  }
+  const previous = await readFile(target, 'utf8');
+  const previousIds = existingVideoIds(previous);
+  const newVideos = videos.filter(video => !previousIds.has(video.youtubeId)).map(video => ({
+    youtubeId: video.youtubeId,
+    title: video.title,
+    source: video.source,
+    dateTime: video.dateTime,
+  }));
   const source = '// Atualizado exclusivamente por scripts/sync-youtube.mjs.\n'
     + "import type { Message } from './contentCatalog.ts';\n"
     + `export const youtubeMessages: Message[] = ${JSON.stringify(videos, null, 2)};\n`;
-  if (await readFile(target, 'utf8') === source) { console.log('Sem alterações no canal.'); return; }
+  const changed = previous !== source;
+  await writeResult({ changed, newVideos, totalVideos: videos.length });
+  if (!changed) { console.log('Sem alterações no canal.'); return; }
   await writeFile(target + '.tmp', source, 'utf8');
   await rename(target + '.tmp', target);
   console.log(`Catálogo atualizado: ${videos.length} vídeos. Nenhuma IA utilizada.`);

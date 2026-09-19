@@ -1,8 +1,8 @@
 name: Atualizar mensagens do YouTube
 on:
   schedule:
-    # Terça-feira, 10h de Brasília (UTC-3). O GitHub pode atrasar execuções.
-    - cron: '0 13 * * 2'
+    # Diariamente, 10h de Brasília (UTC-3). O GitHub pode atrasar execuções.
+    - cron: '0 13 * * *'
   workflow_dispatch:
 permissions:
   contents: write
@@ -22,16 +22,39 @@ jobs:
           node-version: 24
           cache: npm
       - run: npm ci --ignore-scripts
-      - run: node scripts/sync-youtube.mjs
+      - id: sync
+        name: Consultar o canal oficial
+        run: |
+          node scripts/sync-youtube.mjs
+          node -e "const r=require('./.youtube-sync-result.json'); process.stdout.write('changed='+r.changed+'\nnew_count='+r.newVideos.length+'\n')" >> "$GITHUB_OUTPUT"
         env:
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
-      - run: npm test && npm run typecheck && npm run build && npm run test:build
-      - name: Publicar somente o catálogo validado
+      - name: Validar somente quando houver mudança
+        if: steps.sync.outputs.changed == 'true'
+        run: npm test && npm run typecheck && npm run build && npm run test:build
+      - id: publish
+        name: Publicar somente o catálogo validado
+        if: steps.sync.outputs.changed == 'true'
         run: |
+          echo "pushed=false" >> "$GITHUB_OUTPUT"
           git add src/data/youtubeMessages.ts
           if ! git diff --cached --quiet; then
             git config user.name 'github-actions[bot]'
             git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
             git commit -m 'chore: atualizar mensagens do canal da igreja'
             git push origin HEAD:main
+            echo "pushed=true" >> "$GITHUB_OUTPUT"
           fi
+      - name: Avisar novos vídeos no Discord
+        if: steps.publish.outputs.pushed == 'true' && steps.sync.outputs.new_count != '0'
+        run: node scripts/notify-youtube-sync.mjs success
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+      - name: Avisar falha no Discord
+        if: failure()
+        continue-on-error: true
+        run: node scripts/notify-youtube-sync.mjs failure
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+          GITHUB_RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}

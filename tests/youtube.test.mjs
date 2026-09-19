@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizeVideos } from '../scripts/sync-youtube.mjs';
+import { existingVideoIds, normalizeVideos } from '../scripts/sync-youtube.mjs';
 
 const video = (id = 'abcdefghijk') => ({ id,
   snippet: { channelId: 'church', title: 'Mensagem da igreja', description: 'Fé e esperança. https://example.com Mais informações.', publishedAt: '2026-09-01T12:00:00Z', liveBroadcastContent: 'none' },
@@ -26,4 +26,9 @@ test('YouTube: limita texto e mantém fallback sem descrição', () => {
   assert.ok(normalizeVideos([v], 'church')[0].description.length <= 320);
   v.snippet.description = '';
   assert.match(normalizeVideos([v], 'church')[0].description, /não informada/);
+});
+
+test('YouTube: identifica IDs já publicados sem executar TypeScript', () => {
+  const ids = existingVideoIds('youtubeId: "abcdefghijk"\n"youtubeId": "lmnopqrstuv"');
+  assert.deepEqual([...ids], ['lmnopqrstuv']);
 });
