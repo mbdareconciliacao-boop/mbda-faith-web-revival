@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { Session } from "@supabase/supabase-js";
 
 import { supabase } from "../config/supabase";
@@ -113,6 +113,7 @@ export default function Panel() {
   const [revisions, setRevisions] = useState<Revision[]>([]);
   const [publishNote, setPublishNote] = useState("");
   const [scheduleAt, setScheduleAt] = useState("");
+  const [previewOpen, setPreviewOpen] = useState(true);
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
@@ -127,6 +128,16 @@ export default function Panel() {
 
   const client = supabase;
   const activeEntity = TAB_ENTITY[tab] ?? null;
+
+  const previewRef = useRef<HTMLIFrameElement>(null);
+  const PREVIEW_PATHS: Record<string, string> = { destaque: "/", aparencia: "/", conteudo: "/", agenda: "/agenda", igreja: "/igreja", livros: "/livros" };
+  const previewPath = PREVIEW_PATHS[tab] ?? "/";
+  const sendPreview = useCallback(() => {
+    const frame = previewRef.current;
+    if (!frame?.contentWindow) return;
+    frame.contentWindow.postMessage({ source: "mbdar-panel", settings: { theme, content } }, window.location.origin);
+  }, [theme, content]);
+  useEffect(() => { sendPreview(); }, [sendPreview, previewPath]);
 
   const refreshAal = useCallback(async () => {
     if (!client) return;
@@ -453,6 +464,15 @@ export default function Panel() {
           </button>
         ))}
       </nav>
+
+      <section className="panel-live" aria-label="Prévia ao vivo">
+        <div className="panel-live-bar">
+          <strong>Prévia ao vivo</strong>
+          <span className="panel-hint">Mostrando {previewPath}</span>
+          <button className="panel-link" type="button" onClick={() => setPreviewOpen((open) => !open)}>{previewOpen ? "Ocultar" : "Mostrar"}</button>
+        </div>
+        {previewOpen && <iframe ref={previewRef} className="panel-live-frame" title="Prévia do site" src={previewPath} onLoad={sendPreview} />}
+      </section>
 
       {status && <p className="panel-status" role="status">{status}</p>}
       {error && <p className="panel-error" role="alert">{error}</p>}
