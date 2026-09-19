@@ -48,3 +48,19 @@ test('site media bucket is public for reading and admin-only for writing', async
   assert.match(migration, /site_media_admin_insert/);
   assert.match(migration, /public\.is_admin\(\)/);
 });
+
+test('theme supports a background image and the church creed is editable', async () => {
+  const data = await readFile(settings, 'utf8');
+  assert.match(data, /backgroundImage: string/);
+  assert.match(data, /declarations: Array<\{ id: string; title: string; content: string \}>/);
+  assert.match(data, /asDeclarations/);
+  const provider = await readFile(
+    new URL('../src/components/site/SiteSettingsProvider.tsx', import.meta.url), 'utf8');
+  assert.match(provider, /site-background/);
+  const church = await readFile(
+    new URL('../src/components/site/ChurchSections.tsx', import.meta.url), 'utf8');
+  assert.match(church, /content\.church\.declarations/);
+  const editor = await readFile(
+    new URL('../src/components/panel/ChurchEditor.tsx', import.meta.url), 'utf8');
+  assert.match(editor, /declarations/);
+});
