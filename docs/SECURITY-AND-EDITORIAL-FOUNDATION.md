@@ -61,3 +61,13 @@ Antes de ativar o painel, ainda será necessária revisão humana de um pacote i
 - O gate Python da publicação `2f76e38` concluiu com sucesso no GitHub Actions.
 - Alertas CodeQL só podem ser considerados corrigidos depois de um novo resultado no GitHub, não apenas pelo patch local.
 - O painel visual ainda depende da escolha da organização da interface; nenhuma autenticação simulada será exposta em produção.
+
+---
+
+## Atualização 2026-09-19 — painel editorial em produção
+
+O que este documento descrevia como pendência foi implementado: painel `/painel` com login,
+**MFA TOTP**, RLS restrita a `public.app_admins` (função `is_admin()`), rascunho/publicação/
+agendamento por entidade, histórico com rollback, upload de imagens e prévia ao vivo.
+Referência atual: **`docs/PAINEL-EDITORIAL.md`** (mestre), `docs/EDITOR-*.md`, `docs/ADMIN-MFA.md`
+e o guia geral **`AGENTS.md`**.

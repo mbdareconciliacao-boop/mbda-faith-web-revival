@@ -86,3 +86,12 @@ O ReconNews mantém o cliente com limite de resposta, cache e cooldown. A limpez
 de RSS foi corrigida para extrair texto antes de remover marcação; resumos legados
 corrompidos são omitidos, sem inventar texto substituto. Não foi executada coleta
 com escrita no banco como parte desta alteração.
+
+---
+
+## Atualização 2026-09-19 — inclusão agora é pelo painel
+
+Parte do conteúdo deixou de ser "manual e versionada no código": textos, aparência, agenda,
+igreja (inclui doutrina), livros, estudo da vez e vídeo em destaque são editáveis em `/painel`
+(entidades `tema, textos, agenda, igreja, livros`), com rascunho/publicação/agendamento e rollback.
+Ver **`docs/PAINEL-EDITORIAL.md`** e **`docs/OPERACAO.md`**.
