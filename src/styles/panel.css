@@ -182,3 +182,4 @@
 .panel-item-actions { display: flex; gap: 14px; }
 .panel-remove { color: #ff9d9d; }
 @media (max-width: 640px) { .panel-item-grid { grid-template-columns: 1fr; } }
+.panel-qr { background: #fff; padding: 10px; border-radius: 10px; }
