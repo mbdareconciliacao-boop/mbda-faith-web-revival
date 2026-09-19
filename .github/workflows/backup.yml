@@ -167,6 +167,16 @@ jobs:
           
           console.log(`✅ Limpeza concluída. Mantidos ${Math.min(backupArtifacts.length, 10)} backups.`);
 
+    - name: Avisar falha no Discord
+      if: failure()
+      continue-on-error: true
+      env:
+        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+      run: |
+        if [ -z "$DISCORD_WEBHOOK_URL" ]; then exit 0; fi
+        curl -s -X POST "$DISCORD_WEBHOOK_URL" -H 'Content-Type: application/json' \
+          -d '{"username":"Central MBdaR","allowed_mentions":{"parse":[]},"embeds":[{"title":"Falha em backup semanal","description":"A rotina falhou. Abra a execucao para conferir.","url":"${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}","color":14170682}]}' || true
+
   security-audit:
     name: Security Audit
     runs-on: ubuntu-latest
