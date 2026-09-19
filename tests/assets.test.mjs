@@ -65,7 +65,9 @@ test('monthly gatherings and the official YouTube channel are exposed from share
   assert.match(churchData,/Ceia do Senhor/);
   assert.match(churchData,/Último domingo de cada mês/);
   assert.match(churchData,/Culto da Família/);
-  assert.match(scheduleView,/MONTHLY_GATHERINGS/);
+  assert.match(scheduleView,/content\.agenda\.monthly/);
+  const settingsSource=await readFile(new URL('../src/data/siteSettings.ts',import.meta.url),'utf8');
+  assert.match(settingsSource,/MONTHLY_GATHERINGS/);
   assert.match(churchData,/https:\/\/www\.youtube\.com\/@mbdareconciliacao/);
   assert.match(studyView,/CHURCH\.youtube/);
   assert.doesNotMatch(churchData,/@ministeriobiblicodareconcilia/);

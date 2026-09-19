@@ -2,12 +2,14 @@ import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { useSearchParams } from "react-router-dom";
 import ContentLayout, { Breadcrumbs, ContentTabs } from "../components/content/ContentLayout";
 import CatalogSearch from "../components/content/CatalogSearch";
-import { recommendedBooks, type RecommendedBook } from "../data/recommendedBooks";
+import { type RecommendedBook } from "../data/recommendedBooks";
 import { useFeaturedStudy } from "../hooks/useFeaturedStudy";
+import { useSiteSettings } from "../hooks/useSiteSettings";
 import { contentSEO, matchesSearch } from "../data/contentCatalog";
 import { useSEO } from "../hooks/useSEO";
 
 export default function Books() {
+  const { content } = useSiteSettings();
   const { study } = useFeaturedStudy();
   useSEO(contentSEO("Livros recomendados", "As leituras recomendadas pela igreja, com capas, autores e links para encontrar livros em editoras e livrarias.", "/livros"));
   const [params, setParams] = useSearchParams();
@@ -23,7 +25,7 @@ export default function Books() {
     href: study.book.href,
     linkLabel: study.book.linkLabel,
   }] : [];
-  const catalog = [...featured.filter(book => !recommendedBooks.some(item => item.href && item.href === book.href)), ...recommendedBooks];
+  const catalog = [...featured.filter(book => !content.books.some(item => item.href && item.href === book.href)), ...content.books];
   const books = catalog.filter(book => matchesSearch(query, book.title, book.author, book.description));
   return <ContentLayout>
     <header className="catalog-header dark-section"><div className="content-width"><Breadcrumbs items={[{ label: "Livros recomendados" }]} /><h1>Livros recomendados</h1><p>Encontre os títulos indicados pela igreja e onde comprá-los.</p><ContentTabs /></div></header>

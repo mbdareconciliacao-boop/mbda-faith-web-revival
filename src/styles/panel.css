@@ -175,3 +175,10 @@
 .panel-section-title { margin-top: 12px; font-size: 1rem; color: rgba(238,244,255,.92); border-bottom: 1px solid rgba(255,255,255,.12); padding-bottom: 6px; }
 .panel-path-row { display: grid; grid-template-columns: 1fr 1fr 1.4fr; gap: 8px; }
 @media (max-width: 640px) { .panel-path-row { grid-template-columns: 1fr; } }
+
+.panel-list { display: flex; flex-direction: column; gap: 12px; }
+.panel-item { border: 1px solid rgba(255,255,255,.14); border-radius: 10px; padding: 12px; display: flex; flex-direction: column; gap: 8px; }
+.panel-item-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.panel-item-actions { display: flex; gap: 14px; }
+.panel-remove { color: #ff9d9d; }
+@media (max-width: 640px) { .panel-item-grid { grid-template-columns: 1fr; } }

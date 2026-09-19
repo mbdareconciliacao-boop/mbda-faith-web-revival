@@ -1,105 +1,64 @@
+import { MONTHLY_GATHERINGS, WEEKLY_SCHEDULE } from "./church";
+import { recommendedBooks } from "./recommendedBooks";
+
 export interface SiteTheme {
-  ink: string;
-  navy: string;
-  cobalt: string;
-  blue: string;
-  gold: string;
-  paper: string;
-  paperDeep: string;
-  paperDeepHover: string;
-  white: string;
-  muted: string;
-  line: string;
-  navyLine: string;
-  navyControl: string;
-  navyMenuLine: string;
-  catalogLine: string;
-  sourceSurface: string;
-  sourceLine: string;
-  displayFont: string;
-  condensedFont: string;
-  bodyFont: string;
+  ink: string; navy: string; cobalt: string; blue: string; gold: string;
+  paper: string; paperDeep: string; paperDeepHover: string; white: string;
+  muted: string; line: string; navyLine: string; navyControl: string;
+  navyMenuLine: string; catalogLine: string; sourceSurface: string; sourceLine: string;
+  displayFont: string; condensedFont: string; bodyFont: string;
 }
 
-export interface SitePath {
-  kicker: string;
-  label: string;
-  href: string;
+export interface SitePath { kicker: string; label: string; href: string; }
+export interface ScheduleItem { day: string; short: string; time: string; title: string; format: string; }
+export interface MonthlyItem { cadence: string; shortCadence: string; title: string; }
+export interface SiteBook {
+  slug: string; title: string; author: string; description: string;
+  image: string; imageSrcSet?: string; href?: string; linkLabel?: string; purchaseNote?: string;
 }
+export interface FeaturedVideo { youtubeId: string; title: string; description: string; date: string; }
 
 export interface SiteContent {
   brand: { name: string; logo: string };
   home: {
-    heroLines: string[];
-    heroSubtitle: string;
-    heroButton: string;
-    signatureTitle: string;
-    signatureNote: string;
-    paths: SitePath[];
-    weeklyTitle: string;
-    literatureNote: string;
-    literatureAction: string;
-    communityTitleLines: string[];
-    communityLead: string;
-    eventsTitle: string;
-    eventsLead: string;
+    heroLines: string[]; heroSubtitle: string; heroButton: string;
+    signatureTitle: string; signatureNote: string; paths: SitePath[];
+    weeklyTitle: string; literatureNote: string; literatureAction: string;
+    communityTitleLines: string[]; communityLead: string; eventsTitle: string; eventsLead: string;
   };
+  agenda: { weekly: ScheduleItem[]; monthly: MonthlyItem[]; heading: string; lead: string; posterQuote: string; posterCite: string };
+  church: {
+    aboutTitleLines: string[]; aboutParagraphs: string[]; historyNote: string;
+    faithTitleLines: string[]; faithLead: string;
+    familyTitleLines: string[]; familyParagraphs: string[];
+  };
+  books: SiteBook[];
+  featuredVideo: FeaturedVideo | null;
   contact: {
-    address: string;
-    neighborhood: string;
-    city: string;
-    phone: string;
-    whatsapp: string;
-    instagram: string;
-    facebook: string;
-    youtube: string;
+    address: string; neighborhood: string; city: string; phone: string;
+    whatsapp: string; instagram: string; facebook: string; youtube: string;
   };
-  footer: {
-    aboutLines: string[];
-    copyright: string;
-    privacy: string;
-  };
+  footer: { aboutLines: string[]; copyright: string; privacy: string };
 }
 
-export interface SiteSettings {
-  theme: SiteTheme;
-  content: SiteContent;
-}
-
-export interface ThemeColorField {
-  key: keyof SiteTheme;
-  label: string;
-}
+export interface SiteSettings { theme: SiteTheme; content: SiteContent; }
+export interface ThemeColorField { key: keyof SiteTheme; label: string; }
 
 export const DEFAULT_SITE_SETTINGS: SiteSettings = {
   theme: {
-    ink: "#020817",
-    navy: "#06132c",
-    cobalt: "#075be8",
-    blue: "#0744b9",
-    gold: "#f3b51b",
-    paper: "#f5f1e8",
-    paperDeep: "#e9e3d8",
-    paperDeepHover: "#e2dbcf",
-    white: "#fffefa",
-    muted: "#536078",
-    line: "#d9d8d0",
-    navyLine: "#324867",
-    navyControl: "#485672",
-    navyMenuLine: "#35425e",
-    catalogLine: "#243b61",
-    sourceSurface: "#e8edf5",
-    sourceLine: "#9daec7",
-    displayFont: "Anton",
-    condensedFont: "Barlow Condensed",
-    bodyFont: "system",
+    ink: "#020817", navy: "#06132c", cobalt: "#075be8", blue: "#0744b9",
+    gold: "#f3b51b", paper: "#f5f1e8", paperDeep: "#e9e3d8",
+    paperDeepHover: "#e2dbcf", white: "#fffefa", muted: "#536078",
+    line: "#d9d8d0", navyLine: "#324867", navyControl: "#485672",
+    navyMenuLine: "#35425e", catalogLine: "#243b61",
+    sourceSurface: "#e8edf5", sourceLine: "#9daec7",
+    displayFont: "Anton", condensedFont: "Barlow Condensed", bodyFont: "system",
   },
   content: {
     brand: { name: "Reconciliação", logo: "/images/site/logo-evergreen.webp" },
     home: {
       heroLines: ["A fé nos reúne.", "A Palavra", "nos acompanha."],
-      heroSubtitle:
-        "Mensagens para ouvir, estudos para aprofundar e uma comunidade para caminhar junto.",
+      heroSubtitle: "Mensagens para ouvir, estudos para aprofundar e uma comunidade para caminhar junto.",
       heroButton: "Explore as mensagens",
       signatureTitle: "Ministério Bíblico da Reconciliação",
       signatureNote: "Há mais de 23 anos, em Guarujá.",
@@ -112,12 +71,39 @@ export const DEFAULT_SITE_SETTINGS: SiteSettings = {
       literatureNote: "Leitura bíblica, contexto e aplicação para a vida da igreja.",
       literatureAction: "Acompanhar o estudo",
       communityTitleLines: ["A vida acontece", "em comunidade."],
-      communityLead:
-        "Encontros que fortalecem os vínculos, renovam a fé e fazem parte da nossa história.",
+      communityLead: "Encontros que fortalecem os vínculos, renovam a fé e fazem parte da nossa história.",
       eventsTitle: "Eventos da Reconciliação",
-      eventsLead:
-        "Uma seleção de registros reais dos encontros da nossa igreja. Celebrações, comunhão e momentos que fazem parte da nossa história.",
+      eventsLead: "Uma seleção de registros reais dos encontros da nossa igreja. Celebrações, comunhão e momentos que fazem parte da nossa história.",
     },
+    agenda: {
+      weekly: WEEKLY_SCHEDULE.map((item) => ({ ...item })),
+      monthly: MONTHLY_GATHERINGS.map((item) => ({ ...item })),
+      heading: "Agenda semanal",
+      lead: "Oração, ensino e comunhão ao longo da semana. Horários locais de Guarujá, São Paulo.",
+      posterQuote: "“Porque pela graça sois salvos, por meio da fé.”",
+      posterCite: "Efésios 2:8",
+    },
+    church: {
+      aboutTitleLines: ["Uma igreja.", "Uma família.", "Uma só fé."],
+      aboutParagraphs: [
+        "Somos o Ministério Bíblico da Reconciliação, uma comunidade cristã dedicada ao amor, à fé e à transformação espiritual. Nosso ministério é um espaço de encontro, reflexão e crescimento para famílias e para todos que desejam se aproximar de Deus.",
+        "Nossa missão é proclamar a mensagem de Cristo, promovendo reconciliação com Deus e com o próximo. Buscamos viver princípios bíblicos de forma prática, com ensino fiel da Palavra e serviço à comunidade.",
+      ],
+      historyNote: "23+ anos de ministério. Uma história compartilhada com mais de 500 famílias, em Guarujá.",
+      faithTitleLines: ["A Palavra é", "nosso fundamento."],
+      faithLead: "Nossa declaração de fé reúne os princípios doutrinários que orientam o ministério. Leia cada ponto na íntegra.",
+      familyTitleLines: ["Crescer na fé.", "Caminhar juntos."],
+      familyParagraphs: [
+        "Valorizamos as famílias e celebramos cada momento de cuidado, discipulado e convivência cristã.",
+        "O Espaço Família é parte da nossa vida em comunidade. Conheça os encontros e converse conosco para participar.",
+      ],
+    },
+    books: recommendedBooks.map((book) => ({
+      slug: book.slug, title: book.title, author: book.author, description: book.description,
+      image: book.image, imageSrcSet: book.imageSrcSet, href: book.href, linkLabel: book.linkLabel,
+      purchaseNote: book.purchaseNote,
+    })),
+    featuredVideo: null,
     contact: {
       address: "Av. Osvaldo Aranha, 790",
       neighborhood: "Jardim Maravilha (Vicente de Carvalho)",
@@ -131,8 +117,7 @@ export const DEFAULT_SITE_SETTINGS: SiteSettings = {
     footer: {
       aboutLines: ["Ensino da Palavra, comunhão familiar", "e edificação espiritual."],
       copyright: "Ministério Bíblico da Reconciliação",
-      privacy:
-        "Este site não carrega ferramentas de publicidade ou análise de visitas. As fotos da igreja são servidas pelo próprio site. Miniaturas de estudos vêm do YouTube; o player só abre ao solicitar a reprodução. O envio do formulário utiliza o EmailJS. WhatsApp, mapas e redes sociais abrem serviços externos sujeitos às suas próprias políticas. Não inclua informações sensíveis no formulário.",
+      privacy: "Este site não carrega ferramentas de publicidade ou análise de visitas. As fotos da igreja são servidas pelo próprio site. Miniaturas de estudos vêm do YouTube; o player só abre ao solicitar a reprodução. O envio do formulário utiliza o EmailJS. WhatsApp, mapas e redes sociais abrem serviços externos sujeitos às suas próprias políticas. Não inclua informações sensíveis no formulário.",
     },
   },
 };
@@ -164,44 +149,24 @@ export const FONT_OPTIONS: Record<"display" | "condensed" | "body", string[]> = 
 };
 
 const FONT_STACKS: Record<"display" | "condensed" | "body", Record<string, string>> = {
-  display: {
-    Anton: '"Anton", sans-serif',
-    Oswald: '"Oswald", sans-serif',
-    "Bebas Neue": '"Bebas Neue", sans-serif',
-  },
-  condensed: {
-    "Barlow Condensed": '"Barlow Condensed", sans-serif',
-    Oswald: '"Oswald", sans-serif',
-  },
+  display: { Anton: '"Anton", sans-serif', Oswald: '"Oswald", sans-serif', "Bebas Neue": '"Bebas Neue", sans-serif' },
+  condensed: { "Barlow Condensed": '"Barlow Condensed", sans-serif', Oswald: '"Oswald", sans-serif' },
   body: {
     system: '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
-    Inter: '"Inter", sans-serif',
-    Roboto: '"Roboto", sans-serif',
-    Lora: '"Lora", serif',
+    Inter: '"Inter", sans-serif', Roboto: '"Roboto", sans-serif', Lora: '"Lora", serif',
   },
 };
 
 const COLOR_VARS: Partial<Record<keyof SiteTheme, string>> = {
-  ink: "--ink",
-  navy: "--navy",
-  cobalt: "--cobalt",
-  blue: "--blue",
-  gold: "--gold",
-  paper: "--paper",
-  paperDeep: "--paper-deep",
-  paperDeepHover: "--paper-deep-hover",
-  white: "--white",
-  muted: "--muted",
-  line: "--line",
-  navyLine: "--navy-line",
-  navyControl: "--navy-control",
-  navyMenuLine: "--navy-menu-line",
-  catalogLine: "--catalog-line",
-  sourceSurface: "--source-surface",
-  sourceLine: "--source-line",
+  ink: "--ink", navy: "--navy", cobalt: "--cobalt", blue: "--blue", gold: "--gold",
+  paper: "--paper", paperDeep: "--paper-deep", paperDeepHover: "--paper-deep-hover",
+  white: "--white", muted: "--muted", line: "--line", navyLine: "--navy-line",
+  navyControl: "--navy-control", navyMenuLine: "--navy-menu-line",
+  catalogLine: "--catalog-line", sourceSurface: "--source-surface", sourceLine: "--source-line",
 };
 
 const HEX = /^#[0-9a-fA-F]{6}$/;
+const YOUTUBE_ID = /^[A-Za-z0-9_-]{11}$/;
 const asHex = (value: unknown, fallback: string): string =>
   typeof value === "string" && HEX.test(value.trim()) ? value.trim().toLowerCase() : fallback;
 const asFont = (value: unknown, category: "display" | "condensed" | "body", fallback: string): string => {
@@ -215,13 +180,74 @@ const asStringList = (value: unknown, fallback: string[]): string[] => {
   const list = value.map((item) => (typeof item === "string" ? item : "")).filter(Boolean);
   return list.length ? list : fallback;
 };
+const record = (value: unknown): Record<string, unknown> =>
+  value && typeof value === "object" ? (value as Record<string, unknown>) : {};
+
+const asSchedule = (value: unknown, fallback: ScheduleItem[]): ScheduleItem[] => {
+  if (!Array.isArray(value)) return fallback;
+  const list = value.filter((item) => !!item && typeof item === "object").map((item) => {
+    const entry = item as Record<string, unknown>;
+    return {
+      day: asString(entry.day, ""), short: asString(entry.short, ""),
+      time: asString(entry.time, ""), title: asString(entry.title, ""),
+      format: asString(entry.format, "Presencial"),
+    };
+  }).filter((item) => item.time && item.title);
+  return list.length ? list : fallback;
+};
+
+const asMonthly = (value: unknown, fallback: MonthlyItem[]): MonthlyItem[] => {
+  if (!Array.isArray(value)) return fallback;
+  const list = value.filter((item) => !!item && typeof item === "object").map((item) => {
+    const entry = item as Record<string, unknown>;
+    return {
+      cadence: asString(entry.cadence, ""), shortCadence: asString(entry.shortCadence, ""),
+      title: asString(entry.title, ""),
+    };
+  }).filter((item) => item.title);
+  return list.length ? list : fallback;
+};
+
+const asBooks = (value: unknown, fallback: SiteBook[]): SiteBook[] => {
+  if (!Array.isArray(value)) return fallback;
+  const list = value.filter((item) => !!item && typeof item === "object").map((item) => {
+    const entry = item as Record<string, unknown>;
+    return {
+      slug: asString(entry.slug, ""),
+      title: asString(entry.title, ""),
+      author: asString(entry.author, ""),
+      description: asString(entry.description, ""),
+      image: asString(entry.image, "/images/site/logo-evergreen.webp"),
+      imageSrcSet: typeof entry.imageSrcSet === "string" ? entry.imageSrcSet : undefined,
+      href: typeof entry.href === "string" && entry.href ? entry.href : undefined,
+      linkLabel: typeof entry.linkLabel === "string" && entry.linkLabel ? entry.linkLabel : undefined,
+      purchaseNote: typeof entry.purchaseNote === "string" && entry.purchaseNote ? entry.purchaseNote : undefined,
+    };
+  }).filter((item) => item.title && item.slug);
+  return list.length ? list : fallback;
+};
+
+const asFeaturedVideo = (value: unknown): FeaturedVideo | null => {
+  const entry = record(value);
+  const youtubeId = asString(entry.youtubeId, "");
+  if (!YOUTUBE_ID.test(youtubeId)) return null;
+  return {
+    youtubeId,
+    title: asString(entry.title, "Mensagem em destaque"),
+    description: asString(entry.description, ""),
+    date: asString(entry.date, ""),
+  };
+};
+
 const asContent = (value: unknown): SiteContent => {
-  const record = value && typeof value === "object" ? (value as Record<string, unknown>) : {};
-  const home = record.home && typeof record.home === "object" ? (record.home as Record<string, unknown>) : {};
-  const contact = record.contact && typeof record.contact === "object" ? (record.contact as Record<string, unknown>) : {};
-  const footer = record.footer && typeof record.footer === "object" ? (record.footer as Record<string, unknown>) : {};
-  const brand = record.brand && typeof record.brand === "object" ? (record.brand as Record<string, unknown>) : {};
+  const root = record(value);
   const base = DEFAULT_SITE_SETTINGS.content;
+  const home = record(root.home);
+  const agenda = record(root.agenda);
+  const church = record(root.church);
+  const contact = record(root.contact);
+  const footer = record(root.footer);
+  const brand = record(root.brand);
   const paths = Array.isArray(home.paths)
     ? home.paths.filter((item): item is Record<string, unknown> => !!item && typeof item === "object")
       .map((item, index) => ({
@@ -231,10 +257,7 @@ const asContent = (value: unknown): SiteContent => {
       }))
     : base.home.paths;
   return {
-    brand: {
-      name: asString(brand.name, base.brand.name),
-      logo: asString(brand.logo, base.brand.logo),
-    },
+    brand: { name: asString(brand.name, base.brand.name), logo: asString(brand.logo, base.brand.logo) },
     home: {
       heroLines: asStringList(home.heroLines, base.home.heroLines),
       heroSubtitle: asString(home.heroSubtitle, base.home.heroSubtitle),
@@ -250,6 +273,25 @@ const asContent = (value: unknown): SiteContent => {
       eventsTitle: asString(home.eventsTitle, base.home.eventsTitle),
       eventsLead: asString(home.eventsLead, base.home.eventsLead),
     },
+    agenda: {
+      weekly: asSchedule(agenda.weekly, base.agenda.weekly),
+      monthly: asMonthly(agenda.monthly, base.agenda.monthly),
+      heading: asString(agenda.heading, base.agenda.heading),
+      lead: asString(agenda.lead, base.agenda.lead),
+      posterQuote: asString(agenda.posterQuote, base.agenda.posterQuote),
+      posterCite: asString(agenda.posterCite, base.agenda.posterCite),
+    },
+    church: {
+      aboutTitleLines: asStringList(church.aboutTitleLines, base.church.aboutTitleLines),
+      aboutParagraphs: asStringList(church.aboutParagraphs, base.church.aboutParagraphs),
+      historyNote: asString(church.historyNote, base.church.historyNote),
+      faithTitleLines: asStringList(church.faithTitleLines, base.church.faithTitleLines),
+      faithLead: asString(church.faithLead, base.church.faithLead),
+      familyTitleLines: asStringList(church.familyTitleLines, base.church.familyTitleLines),
+      familyParagraphs: asStringList(church.familyParagraphs, base.church.familyParagraphs),
+    },
+    books: asBooks(root.books, base.books),
+    featuredVideo: asFeaturedVideo(root.featuredVideo),
     contact: {
       address: asString(contact.address, base.contact.address),
       neighborhood: asString(contact.neighborhood, base.contact.neighborhood),
@@ -269,24 +311,20 @@ const asContent = (value: unknown): SiteContent => {
 };
 
 export function normalizeSiteSettings(row: unknown): SiteSettings {
-  const record = row && typeof row === "object" ? (row as Record<string, unknown>) : {};
-  const theme = record.theme && typeof record.theme === "object" ? (record.theme as Record<string, unknown>) : {};
+  const root = record(row);
+  const theme = record(root.theme);
   const base = DEFAULT_SITE_SETTINGS.theme;
   const colors = Object.fromEntries(
-    (Object.keys(COLOR_VARS) as Array<keyof SiteTheme>).map((key) => [
-      key,
-      asHex(theme[key], base[key] as string),
-    ]),
+    (Object.keys(COLOR_VARS) as Array<keyof SiteTheme>).map((key) => [key, asHex(theme[key], base[key] as string)]),
   );
   return {
     theme: {
-      ...base,
-      ...colors,
+      ...base, ...colors,
       displayFont: asFont(theme.displayFont, "display", base.displayFont),
       condensedFont: asFont(theme.condensedFont, "condensed", base.condensedFont),
       bodyFont: asFont(theme.bodyFont, "body", base.bodyFont),
     } as SiteTheme,
-    content: asContent(record.content),
+    content: asContent(root.content),
   };
 }
 
