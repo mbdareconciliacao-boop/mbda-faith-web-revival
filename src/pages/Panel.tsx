@@ -7,6 +7,7 @@ import {
   DEFAULT_SITE_SETTINGS,
   FONT_OPTIONS,
   THEME_COLOR_FIELDS,
+  type SiteContent,
   type SiteTheme,
   applyTheme,
   normalizeSiteSettings,
@@ -14,29 +15,17 @@ import {
 import "../styles/panel.css";
 
 interface FormState {
-  slug: string;
-  title: string;
-  subtitle: string;
-  intro: string;
-  art480: string;
-  art900: string;
-  artAlt: string;
-  bookTitle: string;
-  bookAuthor: string;
-  bookHref: string;
-  bookLinkLabel: string;
+  slug: string; title: string; subtitle: string; intro: string;
+  art480: string; art900: string; artAlt: string;
+  bookTitle: string; bookAuthor: string; bookHref: string; bookLinkLabel: string;
   sourcesText: string;
 }
 
 interface Revision {
-  id: number;
-  action: string;
-  note: string;
-  created_at: string;
-  created_by: string;
+  id: number; action: string; note: string; created_at: string; created_by: string;
 }
 
-type Tab = "destaque" | "aparencia" | "historico";
+type Tab = "destaque" | "aparencia" | "conteudo" | "historico";
 
 const EMPTY: FormState = {
   slug: "", title: "", subtitle: "", intro: "", art480: "", art900: "", artAlt: "",
@@ -97,6 +86,7 @@ export default function Panel() {
   const [tab, setTab] = useState<Tab>("destaque");
   const [form, setForm] = useState<FormState>(EMPTY);
   const [theme, setTheme] = useState<SiteTheme>(DEFAULT_SITE_SETTINGS.theme);
+  const [content, setContent] = useState<SiteContent>(DEFAULT_SITE_SETTINGS.content);
   const [revisions, setRevisions] = useState<Revision[]>([]);
   const [publishNote, setPublishNote] = useState("");
   const [status, setStatus] = useState("");
@@ -109,8 +99,7 @@ export default function Panel() {
 
   useEffect(() => {
     const meta = document.createElement("meta");
-    meta.name = "robots";
-    meta.content = "noindex, nofollow";
+    meta.name = "robots"; meta.content = "noindex, nofollow";
     document.head.appendChild(meta);
     return () => meta.remove();
   }, []);
@@ -118,8 +107,7 @@ export default function Panel() {
   useEffect(() => {
     if (!client) { setChecking(false); return; }
     void client.auth.getSession().then(({ data }) => {
-      setSession(data.session ?? null);
-      setChecking(false);
+      setSession(data.session ?? null); setChecking(false);
     });
     const { data } = client.auth.onAuthStateChange((_event, next) => setSession(next));
     return () => data.subscription.unsubscribe();
@@ -137,41 +125,47 @@ export default function Panel() {
     if (!client) return;
     const { data, error: loadError } = await client
       .from("site_settings").select("draft,published").eq("id", true).maybeSingle();
-    if (loadError) { setError(`Não foi possível ler a aparência: ${loadError.message}`); return; }
+    if (loadError) { setError(`Não foi possível ler o conteúdo: ${loadError.message}`); return; }
     const row = data as { draft?: unknown; published?: unknown } | null;
     const normalized = normalizeSiteSettings(row?.draft ?? row?.published);
-    setTheme(normalized.theme);
+    setTheme(normalized.theme); setContent(normalized.content);
     applyTheme(normalized.theme);
   }, [client]);
 
   const loadHistory = useCallback(async () => {
     if (!client) return;
     const { data, error: loadError } = await client
-      .from("content_revisions")
-      .select("id,action,note,created_at,created_by")
-      .eq("entity", "site_settings")
-      .order("created_at", { ascending: false })
-      .limit(25);
+      .from("content_revisions").select("id,action,note,created_at,created_by")
+      .eq("entity", "site_settings").order("created_at", { ascending: false }).limit(25);
     if (loadError) { setError(`Não foi possível ler o histórico: ${loadError.message}`); return; }
     setRevisions((data ?? []) as Revision[]);
   }, [client]);
 
   useEffect(() => {
     if (!session) return;
-    void loadActive();
-    void loadSettings();
-    void loadHistory();
+    void loadActive(); void loadSettings(); void loadHistory();
   }, [session, loadActive, loadSettings, loadHistory]);
 
   const set = (key: keyof FormState, value: string) =>
     setForm((current) => ({ ...current, [key]: value }));
-
   const setThemeField = (key: keyof SiteTheme, value: string) =>
-    setTheme((current) => {
-      const next = { ...current, [key]: value };
-      applyTheme(next);
-      return next;
-    });
+    setTheme((current) => { const next = { ...current, [key]: value }; applyTheme(next); return next; });
+
+  const patchContent = (updater: (current: SiteContent) => SiteContent) => setContent(updater);
+  const setHome = (key: keyof SiteContent["home"], value: string) =>
+    patchContent((c) => ({ ...c, home: { ...c.home, [key]: value } }));
+  const setContact = (key: keyof SiteContent["contact"], value: string) =>
+    patchContent((c) => ({ ...c, contact: { ...c.contact, [key]: value } }));
+  const setFooterField = (key: "copyright" | "privacy", value: string) =>
+    patchContent((c) => ({ ...c, footer: { ...c.footer, [key]: value } }));
+  const setBrand = (key: keyof SiteContent["brand"], value: string) =>
+    patchContent((c) => ({ ...c, brand: { ...c.brand, [key]: value } }));
+  const setList = (group: "heroLines" | "communityTitleLines", index: number, value: string) =>
+    patchContent((c) => ({ ...c, home: { ...c.home, [group]: c.home[group].map((item, i) => i === index ? value : item) } }));
+  const setAboutLine = (index: number, value: string) =>
+    patchContent((c) => ({ ...c, footer: { ...c.footer, aboutLines: c.footer.aboutLines.map((item, i) => i === index ? value : item) } }));
+  const setPath = (index: number, key: "kicker" | "label" | "href", value: string) =>
+    patchContent((c) => ({ ...c, home: { ...c.home, paths: c.home.paths.map((item, i) => i === index ? { ...item, [key]: value } : item) } }));
 
   const uploadArt = async (file: File, variant: "480" | "900") => {
     if (!client) return;
@@ -180,14 +174,31 @@ export default function Panel() {
     const path = `${slug}-${variant}-${Date.now()}.${extension}`;
     setBusy(true); setError("");
     try {
-      const { error: uploadError } = await client.storage
-        .from("estudos-artes").upload(path, file, { upsert: true, contentType: file.type || undefined });
+      const { error: uploadError } = await client.storage.from("estudos-artes")
+        .upload(path, file, { upsert: true, contentType: file.type || undefined });
       if (uploadError) throw new Error(uploadError.message);
       const { data } = client.storage.from("estudos-artes").getPublicUrl(path);
       set(variant === "480" ? "art480" : "art900", data.publicUrl);
       setStatus(`Arte ${variant} enviada.`);
     } catch (uploadError) {
       setError(uploadError instanceof Error ? uploadError.message : "Falha no envio da arte.");
+    } finally { setBusy(false); }
+  };
+
+  const uploadLogo = async (file: File) => {
+    if (!client) return;
+    const extension = (file.name.split(".").pop() ?? "webp").toLowerCase();
+    const path = `logo-${Date.now()}.${extension}`;
+    setBusy(true); setError("");
+    try {
+      const { error: uploadError } = await client.storage.from("site-media")
+        .upload(path, file, { upsert: true, contentType: file.type || undefined });
+      if (uploadError) throw new Error(uploadError.message);
+      const { data } = client.storage.from("site-media").getPublicUrl(path);
+      setBrand("logo", data.publicUrl);
+      setStatus("Logo enviado. Salve o rascunho e publique para aplicar.");
+    } catch (uploadError) {
+      setError(uploadError instanceof Error ? uploadError.message : "Falha no envio do logo.");
     } finally { setBusy(false); }
   };
 
@@ -202,8 +213,7 @@ export default function Panel() {
       const { error: upsertError } = await client.from("featured_studies")
         .upsert({ ...payload, updated_by: session.user.email ?? "" }, { onConflict: "slug" });
       if (upsertError) throw new Error(upsertError.message);
-      setStatus("Destaque publicado.");
-      await loadActive();
+      setStatus("Destaque publicado."); await loadActive();
     } catch (saveError) {
       setError(saveError instanceof Error ? saveError.message : "Falha ao publicar.");
     } finally { setBusy(false); }
@@ -214,7 +224,7 @@ export default function Panel() {
     setBusy(true); setError(""); setStatus("");
     try {
       const { error: draftError } = await client.from("site_settings")
-        .update({ draft: { theme }, updated_by: session.user.email ?? "" }).eq("id", true);
+        .update({ draft: { theme, content }, updated_by: session.user.email ?? "" }).eq("id", true);
       if (draftError) throw new Error(draftError.message);
       setStatus("Rascunho salvo. Nada foi publicado ainda.");
     } catch (draftError) {
@@ -222,16 +232,17 @@ export default function Panel() {
     } finally { setBusy(false); }
   };
 
-  const publishTheme = async () => {
-    if (!client) return;
+  const publishSettings = async () => {
+    if (!client || !session) return;
     setBusy(true); setError(""); setStatus("");
     try {
-      await saveDraft();
+      const { error: draftError } = await client.from("site_settings")
+        .update({ draft: { theme, content }, updated_by: session.user.email ?? "" }).eq("id", true);
+      if (draftError) throw new Error(draftError.message);
       const { error: publishError } = await client.rpc("publish_site_settings", { p_note: publishNote });
       if (publishError) throw new Error(publishError.message);
-      setStatus("Aparência publicada no site.");
-      setPublishNote("");
-      await loadHistory();
+      setStatus("Conteúdo e aparência publicados no site.");
+      setPublishNote(""); await loadHistory();
     } catch (publishErr) {
       setError(publishErr instanceof Error ? publishErr.message : "Falha ao publicar.");
     } finally { setBusy(false); }
@@ -243,9 +254,7 @@ export default function Panel() {
     try {
       const { error: rollbackError } = await client.rpc("rollback_site_settings", { p_revision: id });
       if (rollbackError) throw new Error(rollbackError.message);
-      setStatus(`Revisão ${id} restaurada.`);
-      await loadSettings();
-      await loadHistory();
+      setStatus(`Revisão ${id} restaurada.`); await loadSettings(); await loadHistory();
     } catch (rollbackErr) {
       setError(rollbackErr instanceof Error ? rollbackErr.message : "Falha ao restaurar.");
     } finally { setBusy(false); }
@@ -254,37 +263,26 @@ export default function Panel() {
   const signIn = async () => {
     if (!client) return;
     setBusy(true); setError("");
-    const { error: authError } = await client.auth.signInWithPassword({
-      email: loginEmail.trim(), password: loginPassword,
-    });
+    const { error: authError } = await client.auth.signInWithPassword({ email: loginEmail.trim(), password: loginPassword });
     if (authError) setError(authError.message);
     setBusy(false);
   };
-
-  const signOut = async () => {
-    if (!client) return;
-    await client.auth.signOut();
-    setStatus("Sessão encerrada.");
-  };
+  const signOut = async () => { if (client) { await client.auth.signOut(); setStatus("Sessão encerrada."); } };
 
   const preview = useMemo(() => form.art480 || form.art900, [form.art480, form.art900]);
 
   if (!client) {
-    return <main className="panel-page"><div className="panel-card">
-      <h1>Painel indisponível</h1>
-      <p>Configure <code>VITE_SUPABASE_URL</code> e <code>VITE_SUPABASE_ANON_KEY</code> no ambiente.</p>
-    </div></main>;
+    return <main className="panel-page"><div className="panel-card"><h1>Painel indisponível</h1>
+      <p>Configure <code>VITE_SUPABASE_URL</code> e <code>VITE_SUPABASE_ANON_KEY</code>.</p></div></main>;
   }
-
   if (checking) {
     return <main className="panel-page"><div className="panel-card" role="status">Verificando a sessão…</div></main>;
   }
-
   if (!session) {
     return <main className="panel-page">
       <form className="panel-card" onSubmit={(event) => { event.preventDefault(); void signIn(); }}>
         <h1>Painel da Reconciliação</h1>
-        <p className="panel-hint">Entre com a conta da igreja para editar o site.</p>
+        <p className="panel-hint">Entre com a conta da igreja.</p>
         <label>E-mail<input type="email" autoComplete="username" value={loginEmail} onChange={(e) => setLoginEmail(e.target.value)} required /></label>
         <label>Senha<input type="password" autoComplete="current-password" value={loginPassword} onChange={(e) => setLoginPassword(e.target.value)} required /></label>
         {error && <p className="panel-error" role="alert">{error}</p>}
@@ -296,18 +294,15 @@ export default function Panel() {
   return <main className="panel-page">
     <div className="panel-card panel-wide">
       <header className="panel-head">
-        <div>
-          <h1>Painel</h1>
-          <p className="panel-hint">{session.user.email}</p>
-        </div>
+        <div><h1>Painel</h1><p className="panel-hint">{session.user.email}</p></div>
         <button className="panel-link" type="button" onClick={() => void signOut()}>Sair</button>
       </header>
 
       <nav className="panel-tabs" aria-label="Seções do painel">
-        {(["destaque", "aparencia", "historico"] as Tab[]).map((item) => (
+        {(["destaque", "aparencia", "conteudo", "historico"] as Tab[]).map((item) => (
           <button key={item} type="button" className="panel-tab" data-active={tab === item}
             onClick={() => { setTab(item); if (item === "historico") void loadHistory(); }}>
-            {item === "destaque" ? "Estudo da vez" : item === "aparencia" ? "Aparência" : "Histórico"}
+            {item === "destaque" ? "Estudo da vez" : item === "aparencia" ? "Aparência" : item === "conteudo" ? "Textos" : "Histórico"}
           </button>
         ))}
       </nav>
@@ -327,7 +322,7 @@ export default function Panel() {
             <div className="panel-art-fields">
               <label>Arte 480 (menor)<input type="file" accept="image/*" onChange={(e) => { const f = e.target.files?.[0]; if (f) void uploadArt(f, "480"); }} /></label>
               <label>Arte 900 (maior)<input type="file" accept="image/*" onChange={(e) => { const f = e.target.files?.[0]; if (f) void uploadArt(f, "900"); }} /></label>
-              <p className="panel-hint">WebP, JPG ou PNG, até 5 MB. O envio é imediato.</p>
+              <p className="panel-hint">WebP, JPG ou PNG, até 5 MB.</p>
             </div>
           </div>
           <label>Livro — título<input value={form.bookTitle} onChange={(e) => set("bookTitle", e.target.value)} /></label>
@@ -344,10 +339,10 @@ export default function Panel() {
 
       {tab === "aparencia" && <>
         <div className="panel-preview" aria-label="Prévia da aparência">
-          <span style={{ color: "var(--gold)", fontFamily: "var(--condensed)" }}>Escola Bíblica · Prévia</span>
-          <h2 style={{ color: "var(--paper)", fontFamily: "var(--display)" }}>{form.title || "Tessalonicenses"}</h2>
-          <p style={{ color: "var(--muted)", fontFamily: "var(--body)" }}>{form.subtitle || "Visão de uma igreja local"}</p>
-          <span className="panel-preview-button" style={{ background: "var(--gold)", color: "var(--ink)", fontFamily: "var(--condensed)" }}>Botão de exemplo</span>
+          <span style={{ color: "var(--gold)", fontFamily: "var(--condensed)" }}>{content.brand.name} · Prévia</span>
+          <h2 style={{ color: "var(--paper)", fontFamily: "var(--display)" }}>{content.home.heroLines[0] || "Tessalonicenses"}</h2>
+          <p style={{ color: "var(--muted)", fontFamily: "var(--body)" }}>{content.home.heroSubtitle}</p>
+          <span className="panel-preview-button" style={{ background: "var(--gold)", color: "var(--ink)", fontFamily: "var(--condensed)" }}>{content.home.heroButton}</span>
         </div>
         <div className="panel-grid">
           <label>Fonte de título<select value={theme.displayFont} onChange={(e) => setThemeField("displayFont", e.target.value)}>{FONT_OPTIONS.display.map((f) => <option key={f}>{f}</option>)}</select></label>
@@ -365,7 +360,74 @@ export default function Panel() {
         </div>
         <div className="panel-actions">
           <button className="panel-button" type="button" onClick={() => void saveDraft()} disabled={busy}>Salvar rascunho</button>
-          <button className="panel-button panel-button-alt" type="button" onClick={() => void publishTheme()} disabled={busy}>Publicar no site</button>
+          <button className="panel-button panel-button-alt" type="button" onClick={() => void publishSettings()} disabled={busy}>Publicar no site</button>
+        </div>
+        <label className="panel-full">Nota da publicação (opcional)<input value={publishNote} onChange={(e) => setPublishNote(e.target.value)} /></label>
+      </>}
+
+      {tab === "conteudo" && <>
+        <div className="panel-preview" aria-label="Prévia do conteúdo">
+          <span style={{ color: "var(--gold)", fontFamily: "var(--condensed)" }}>{content.brand.name}</span>
+          <h2 style={{ color: "var(--paper)", fontFamily: "var(--display)" }}>{content.home.heroLines.join(" ")}</h2>
+          <p style={{ color: "var(--muted)", fontFamily: "var(--body)" }}>{content.home.heroSubtitle}</p>
+        </div>
+        <h2 className="panel-section-title">Marca</h2>
+        <div className="panel-grid">
+          <label>Nome da igreja<input value={content.brand.name} onChange={(e) => setBrand("name", e.target.value)} /></label>
+          <label>Logo (imagem)<input type="file" accept="image/*" onChange={(e) => { const f = e.target.files?.[0]; if (f) void uploadLogo(f); }} /></label>
+        </div>
+        <h2 className="panel-section-title">Home — abertura</h2>
+        <div className="panel-grid">
+          {content.home.heroLines.map((line, index) => (
+            <label key={`hero-${index}`}>Linha {index + 1} do título<input value={line} onChange={(e) => setList("heroLines", index, e.target.value)} /></label>
+          ))}
+          <label className="panel-full">Subtítulo<textarea rows={2} value={content.home.heroSubtitle} onChange={(e) => setHome("heroSubtitle", e.target.value)} /></label>
+          <label>Texto do botão<input value={content.home.heroButton} onChange={(e) => setHome("heroButton", e.target.value)} /></label>
+          <label>Assinatura<input value={content.home.signatureTitle} onChange={(e) => setHome("signatureTitle", e.target.value)} /></label>
+          <label className="panel-full">Assinatura (linha de apoio)<input value={content.home.signatureNote} onChange={(e) => setHome("signatureNote", e.target.value)} /></label>
+        </div>
+        <h2 className="panel-section-title">Atalhos da home</h2>
+        <div className="panel-grid">
+          {content.home.paths.map((path, index) => <div key={`path-${index}`} className="panel-full panel-path-row">
+            <input value={path.kicker} onChange={(e) => setPath(index, "kicker", e.target.value)} aria-label={`Chamada ${index + 1}`} />
+            <input value={path.label} onChange={(e) => setPath(index, "label", e.target.value)} aria-label={`Rótulo ${index + 1}`} />
+            <input value={path.href} onChange={(e) => setPath(index, "href", e.target.value)} aria-label={`Link ${index + 1}`} />
+          </div>)}
+        </div>
+        <h2 className="panel-section-title">Home — seções</h2>
+        <div className="panel-grid">
+          <label>Título da semana<input value={content.home.weeklyTitle} onChange={(e) => setHome("weeklyTitle", e.target.value)} /></label>
+          <label>Nota da literatura<input value={content.home.literatureNote} onChange={(e) => setHome("literatureNote", e.target.value)} /></label>
+          <label>Ação da literatura<input value={content.home.literatureAction} onChange={(e) => setHome("literatureAction", e.target.value)} /></label>
+          {content.home.communityTitleLines.map((line, index) => (
+            <label key={`community-${index}`}>Comunidade — linha {index + 1}<input value={line} onChange={(e) => setList("communityTitleLines", index, e.target.value)} /></label>
+          ))}
+          <label className="panel-full">Comunidade (texto)<textarea rows={2} value={content.home.communityLead} onChange={(e) => setHome("communityLead", e.target.value)} /></label>
+          <label>Título dos eventos<input value={content.home.eventsTitle} onChange={(e) => setHome("eventsTitle", e.target.value)} /></label>
+          <label className="panel-full">Texto dos eventos<textarea rows={2} value={content.home.eventsLead} onChange={(e) => setHome("eventsLead", e.target.value)} /></label>
+        </div>
+        <h2 className="panel-section-title">Contato</h2>
+        <div className="panel-grid">
+          <label>Endereço<input value={content.contact.address} onChange={(e) => setContact("address", e.target.value)} /></label>
+          <label>Bairro<input value={content.contact.neighborhood} onChange={(e) => setContact("neighborhood", e.target.value)} /></label>
+          <label>Cidade/CEP<input value={content.contact.city} onChange={(e) => setContact("city", e.target.value)} /></label>
+          <label>Telefone<input value={content.contact.phone} onChange={(e) => setContact("phone", e.target.value)} /></label>
+          <label>WhatsApp (link)<input value={content.contact.whatsapp} onChange={(e) => setContact("whatsapp", e.target.value)} /></label>
+          <label>YouTube<input value={content.contact.youtube} onChange={(e) => setContact("youtube", e.target.value)} /></label>
+          <label>Instagram<input value={content.contact.instagram} onChange={(e) => setContact("instagram", e.target.value)} /></label>
+          <label>Facebook<input value={content.contact.facebook} onChange={(e) => setContact("facebook", e.target.value)} /></label>
+        </div>
+        <h2 className="panel-section-title">Rodapé</h2>
+        <div className="panel-grid">
+          {content.footer.aboutLines.map((line, index) => (
+            <label key={`about-${index}`}>Sobre — linha {index + 1}<input value={line} onChange={(e) => setAboutLine(index, e.target.value)} /></label>
+          ))}
+          <label>Copyright<input value={content.footer.copyright} onChange={(e) => setFooterField("copyright", e.target.value)} /></label>
+          <label className="panel-full">Aviso de privacidade<textarea rows={4} value={content.footer.privacy} onChange={(e) => setFooterField("privacy", e.target.value)} /></label>
+        </div>
+        <div className="panel-actions">
+          <button className="panel-button" type="button" onClick={() => void saveDraft()} disabled={busy}>Salvar rascunho</button>
+          <button className="panel-button panel-button-alt" type="button" onClick={() => void publishSettings()} disabled={busy}>Publicar no site</button>
         </div>
         <label className="panel-full">Nota da publicação (opcional)<input value={publishNote} onChange={(e) => setPublishNote(e.target.value)} /></label>
       </>}
@@ -376,17 +438,13 @@ export default function Panel() {
           {revisions.length === 0 && <p className="panel-hint">Nenhuma revisão registrada ainda.</p>}
           {revisions.map((revision) => (
             <div key={revision.id} className="panel-history-row">
-              <span>
-                <strong>#{revision.id} · {revision.action}</strong>
-                <small>{new Date(revision.created_at).toLocaleString("pt-BR")} · {revision.created_by || "—"} {revision.note ? `· ${revision.note}` : ""}</small>
-              </span>
+              <span><strong>#{revision.id} · {revision.action}</strong>
+                <small>{new Date(revision.created_at).toLocaleString("pt-BR")} · {revision.created_by || "—"} {revision.note ? `· ${revision.note}` : ""}</small></span>
               <button className="panel-link" type="button" onClick={() => void rollback(revision.id)} disabled={busy}>Restaurar</button>
             </div>
           ))}
         </div>
-        <div className="panel-actions">
-          <button className="panel-link" type="button" onClick={() => void loadHistory()} disabled={busy}>Atualizar histórico</button>
-        </div>
+        <div className="panel-actions"><button className="panel-link" type="button" onClick={() => void loadHistory()} disabled={busy}>Atualizar histórico</button></div>
       </>}
     </div>
   </main>;

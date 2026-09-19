@@ -22,11 +22,16 @@ test('site settings expose theme defaults, colors and font options', async () =>
 });
 
 test('site theme applies published settings and degrades to defaults', async () => {
+  const provider = await readFile(
+    new URL('../src/components/site/SiteSettingsProvider.tsx', import.meta.url),
+    'utf8',
+  );
+  assert.match(provider, /if \(!client\) return/);
+  assert.match(provider, /from\("site_settings"\)/);
+  assert.match(provider, /applyTheme/);
+  assert.match(provider, /DEFAULT_SITE_SETTINGS/);
   const hook = await readFile(hookPath, 'utf8');
-  assert.match(hook, /if \(!client\) return/);
-  assert.match(hook, /from\("site_settings"\)/);
-  assert.match(hook, /applyTheme/);
-  assert.match(hook, /DEFAULT_SITE_SETTINGS/);
+  assert.match(hook, /useContext/);
 });
 
 test('panel edits appearance with live theme application', async () => {
