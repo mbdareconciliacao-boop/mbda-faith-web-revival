@@ -6,10 +6,10 @@ import {
   DEFAULT_SITE_SETTINGS,
   type SiteSettings,
   applyTheme,
-  normalizeSiteSettings,
+  mergeEntityRows,
 } from "../../data/siteSettings";
 
-/** Carrega o tema e o conteúdo publicados uma única vez e os distribui. */
+/** Carrega as entidades publicadas e distribui tema + conteúdo. */
 export default function SiteSettingsProvider({ children }: { children: ReactNode }) {
   const [settings, setSettings] = useState<SiteSettings>(DEFAULT_SITE_SETTINGS);
 
@@ -20,12 +20,11 @@ export default function SiteSettingsProvider({ children }: { children: ReactNode
     let active = true;
     const load = async () => {
       const { data, error } = await client
-        .from("site_settings")
-        .select("published")
-        .eq("id", true)
-        .maybeSingle();
+        .from("site_entities")
+        .select("entity,content")
+        .eq("state", "published");
       if (!active || error || !data) return;
-      const normalized = normalizeSiteSettings((data as { published?: unknown }).published);
+      const normalized = mergeEntityRows(data as Array<{ entity: string; content: unknown }>);
       setSettings(normalized);
       applyTheme(normalized.theme);
     };

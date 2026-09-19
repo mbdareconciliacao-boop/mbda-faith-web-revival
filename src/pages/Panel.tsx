@@ -8,9 +8,12 @@ import {
   FONT_OPTIONS,
   THEME_COLOR_FIELDS,
   type SiteContent,
+  type SiteEntity,
   type SiteTheme,
   applyTheme,
-  normalizeSiteSettings,
+  SITE_ENTITIES,
+  entityContent,
+  mergeEntityRows,
 } from "../data/siteSettings";
 import AgendaEditor from "../components/panel/AgendaEditor";
 import BooksEditor from "../components/panel/BooksEditor";
@@ -25,7 +28,7 @@ interface FormState {
 }
 
 interface Revision {
-  id: number; action: string; note: string; created_at: string; created_by: string;
+  id: number; entity: string; action: string; note: string; created_at: string; created_by: string;
 }
 
 type Tab = "destaque" | "aparencia" | "conteudo" | "agenda" | "igreja" | "livros" | "historico";
@@ -39,6 +42,13 @@ const TABS: Array<{ id: Tab; label: string }> = [
   { id: "livros", label: "Livros" },
   { id: "historico", label: "Histórico" },
 ];
+
+const TAB_ENTITY: Partial<Record<Tab, SiteEntity>> = {
+  aparencia: "tema", conteudo: "textos", agenda: "agenda", igreja: "igreja", livros: "livros",
+};
+const ENTITY_LABELS: Record<SiteEntity, string> = {
+  tema: "Aparência", textos: "Textos", agenda: "Agenda", igreja: "Igreja", livros: "Livros",
+};
 
 const EMPTY: FormState = {
   slug: "", title: "", subtitle: "", intro: "", art480: "", art900: "", artAlt: "",
@@ -102,6 +112,7 @@ export default function Panel() {
   const [content, setContent] = useState<SiteContent>(DEFAULT_SITE_SETTINGS.content);
   const [revisions, setRevisions] = useState<Revision[]>([]);
   const [publishNote, setPublishNote] = useState("");
+  const [scheduleAt, setScheduleAt] = useState("");
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
@@ -109,6 +120,7 @@ export default function Panel() {
   const [loginPassword, setLoginPassword] = useState("");
 
   const client = supabase;
+  const activeEntity = TAB_ENTITY[tab] ?? null;
 
   useEffect(() => {
     const meta = document.createElement("meta");
@@ -137,10 +149,13 @@ export default function Panel() {
   const loadSettings = useCallback(async () => {
     if (!client) return;
     const { data, error: loadError } = await client
-      .from("site_settings").select("draft,published").eq("id", true).maybeSingle();
+      .from("site_entities").select("entity,state,content");
     if (loadError) { setError(`Não foi possível ler o conteúdo: ${loadError.message}`); return; }
-    const row = data as { draft?: unknown; published?: unknown } | null;
-    const normalized = normalizeSiteSettings(row?.draft ?? row?.published);
+    const rows = (data ?? []) as Array<{ entity: string; state: string; content: unknown }>;
+    const chosen = new Map<string, unknown>();
+    for (const row of rows) if (row.state === "published") chosen.set(row.entity, row.content);
+    for (const row of rows) if (row.state === "draft") chosen.set(row.entity, row.content);
+    const normalized = mergeEntityRows([...chosen].map(([entity, content]) => ({ entity, content })));
     setTheme(normalized.theme); setContent(normalized.content);
     applyTheme(normalized.theme);
   }, [client]);
@@ -148,8 +163,8 @@ export default function Panel() {
   const loadHistory = useCallback(async () => {
     if (!client) return;
     const { data, error: loadError } = await client
-      .from("content_revisions").select("id,action,note,created_at,created_by")
-      .eq("entity", "site_settings").order("created_at", { ascending: false }).limit(25);
+      .from("content_revisions").select("id,entity,action,note,created_at,created_by")
+      .order("created_at", { ascending: false }).limit(30);
     if (loadError) { setError(`Não foi possível ler o histórico: ${loadError.message}`); return; }
     setRevisions((data ?? []) as Revision[]);
   }, [client]);
@@ -213,7 +228,7 @@ export default function Panel() {
       if (uploadError) throw new Error(uploadError.message);
       const { data } = client.storage.from("site-media").getPublicUrl(path);
       setBrand("logo", data.publicUrl);
-      setStatus("Logo enviado. Salve o rascunho e publique para aplicar.");
+      setStatus("Logo enviado. Salve o rascunho e publique a aba Textos para aplicar.");
     } catch (uploadError) {
       setError(uploadError instanceof Error ? uploadError.message : "Falha no envio do logo.");
     } finally { setBusy(false); }
@@ -236,41 +251,63 @@ export default function Panel() {
     } finally { setBusy(false); }
   };
 
+  const saveEntityDraft = async (): Promise<boolean> => {
+    if (!client || !session || !activeEntity) return false;
+    const { error: draftError } = await client.from("site_entities").upsert(
+      { entity: activeEntity, state: "draft", content: entityContent(activeEntity, { theme, content }), updated_by: session.user.email ?? "" },
+      { onConflict: "entity,state" },
+    );
+    if (draftError) { setError(draftError.message); return false; }
+    return true;
+  };
+
   const saveDraft = async () => {
-    if (!client || !session) return;
     setBusy(true); setError(""); setStatus("");
     try {
-      const { error: draftError } = await client.from("site_settings")
-        .update({ draft: { theme, content }, updated_by: session.user.email ?? "" }).eq("id", true);
-      if (draftError) throw new Error(draftError.message);
-      setStatus("Rascunho salvo. Nada foi publicado ainda.");
-    } catch (draftError) {
-      setError(draftError instanceof Error ? draftError.message : "Falha ao salvar o rascunho.");
+      if (await saveEntityDraft()) setStatus(`Rascunho de ${activeEntity ? ENTITY_LABELS[activeEntity] : ""} salvo. Nada foi publicado ainda.`);
     } finally { setBusy(false); }
   };
 
-  const publishSettings = async () => {
-    if (!client || !session) return;
+  const publish = async (when: string | null) => {
+    if (!client || !activeEntity) return;
     setBusy(true); setError(""); setStatus("");
     try {
-      const { error: draftError } = await client.from("site_settings")
-        .update({ draft: { theme, content }, updated_by: session.user.email ?? "" }).eq("id", true);
-      if (draftError) throw new Error(draftError.message);
-      const { error: publishError } = await client.rpc("publish_site_settings", { p_note: publishNote });
+      if (!(await saveEntityDraft())) return;
+      const { error: publishError } = await client.rpc("publish_entity", {
+        p_entity: activeEntity,
+        p_note: publishNote,
+        p_publish_at: when,
+      });
       if (publishError) throw new Error(publishError.message);
-      setStatus("Conteúdo e aparência publicados no site.");
-      setPublishNote(""); await loadHistory();
+      setStatus(when ? `${ENTITY_LABELS[activeEntity]} agendado.` : `${ENTITY_LABELS[activeEntity]} publicado no site.`);
+      setPublishNote(""); setScheduleAt("");
+      await loadSettings(); await loadHistory();
     } catch (publishErr) {
       setError(publishErr instanceof Error ? publishErr.message : "Falha ao publicar.");
     } finally { setBusy(false); }
   };
 
   const rollback = async (id: number) => {
-    if (!client) return;
+    if (!client || !session) return;
     setBusy(true); setError(""); setStatus("");
     try {
-      const { error: rollbackError } = await client.rpc("rollback_site_settings", { p_revision: id });
-      if (rollbackError) throw new Error(rollbackError.message);
+      const { data, error: readError } = await client
+        .from("content_revisions").select("entity,snapshot").eq("id", id).maybeSingle();
+      if (readError) throw new Error(readError.message);
+      const row = data as { entity: string; snapshot: unknown } | null;
+      if (!row) throw new Error("Revisão não encontrada.");
+      if (!SITE_ENTITIES.includes(row.entity as SiteEntity)) {
+        throw new Error("Revisão antiga (versão anterior do painel) não pode ser restaurada por aqui.");
+      }
+      for (const state of ["published", "draft"]) {
+        const { error: restoreError } = await client.from("site_entities")
+          .upsert({ entity: row.entity, state, content: row.snapshot }, { onConflict: "entity,state" });
+        if (restoreError) throw new Error(restoreError.message);
+      }
+      await client.from("content_revisions").insert({
+        entity: row.entity, action: "rollback", snapshot: row.snapshot,
+        note: `rollback ${id}`, created_by: session.user.email ?? "",
+      });
       setStatus(`Revisão ${id} restaurada.`); await loadSettings(); await loadHistory();
     } catch (rollbackErr) {
       setError(rollbackErr instanceof Error ? rollbackErr.message : "Falha ao restaurar.");
@@ -375,11 +412,6 @@ export default function Panel() {
             </label>
           ))}
         </div>
-        <div className="panel-actions">
-          <button className="panel-button" type="button" onClick={() => void saveDraft()} disabled={busy}>Salvar rascunho</button>
-          <button className="panel-button panel-button-alt" type="button" onClick={() => void publishSettings()} disabled={busy}>Publicar no site</button>
-        </div>
-        <label className="panel-full">Nota da publicação (opcional)<input value={publishNote} onChange={(e) => setPublishNote(e.target.value)} /></label>
       </>}
 
       {tab === "conteudo" && <>
@@ -450,28 +482,32 @@ export default function Panel() {
           <label>Copyright<input value={content.footer.copyright} onChange={(e) => setFooterField("copyright", e.target.value)} /></label>
           <label className="panel-full">Aviso de privacidade<textarea rows={4} value={content.footer.privacy} onChange={(e) => setFooterField("privacy", e.target.value)} /></label>
         </div>
-        <div className="panel-actions">
-          <button className="panel-button" type="button" onClick={() => void saveDraft()} disabled={busy}>Salvar rascunho</button>
-          <button className="panel-button panel-button-alt" type="button" onClick={() => void publishSettings()} disabled={busy}>Publicar no site</button>
-        </div>
-        <label className="panel-full">Nota da publicação (opcional)<input value={publishNote} onChange={(e) => setPublishNote(e.target.value)} /></label>
       </>}
 
       {tab === "agenda" && <AgendaEditor content={content} onChange={setContent} />}
       {tab === "igreja" && <ChurchEditor content={content} onChange={setContent} />}
       {tab === "livros" && <BooksEditor content={content} onChange={setContent} />}
-      {(tab === "agenda" || tab === "igreja" || tab === "livros") && <div className="panel-actions">
-        <button className="panel-button" type="button" onClick={() => void saveDraft()} disabled={busy}>Salvar rascunho</button>
-        <button className="panel-button panel-button-alt" type="button" onClick={() => void publishSettings()} disabled={busy}>Publicar no site</button>
-      </div>}
+
+      {activeEntity && <section className="panel-publish">
+        <h2 className="panel-section-title">Publicação · {ENTITY_LABELS[activeEntity]}</h2>
+        <label className="panel-full">Nota (opcional)<input value={publishNote} onChange={(e) => setPublishNote(e.target.value)} /></label>
+        <div className="panel-actions">
+          <button className="panel-button" type="button" onClick={() => void saveDraft()} disabled={busy}>Salvar rascunho</button>
+          <button className="panel-button panel-button-alt" type="button" onClick={() => void publish(null)} disabled={busy}>Publicar agora</button>
+        </div>
+        <div className="panel-actions">
+          <label>Agendar para<input type="datetime-local" value={scheduleAt} onChange={(e) => setScheduleAt(e.target.value)} /></label>
+          <button className="panel-link" type="button" disabled={busy || !scheduleAt} onClick={() => void publish(new Date(scheduleAt).toISOString())}>Agendar publicação</button>
+        </div>
+      </section>}
 
       {tab === "historico" && <>
-        <p className="panel-hint">Cada publicação guarda uma revisão. Restaurar volta o site para aquele estado.</p>
+        <p className="panel-hint">Cada publicação guarda uma revisão por entidade. Restaurar volta a entidade para aquele estado.</p>
         <div className="panel-history">
           {revisions.length === 0 && <p className="panel-hint">Nenhuma revisão registrada ainda.</p>}
           {revisions.map((revision) => (
             <div key={revision.id} className="panel-history-row">
-              <span><strong>#{revision.id} · {revision.action}</strong>
+              <span><strong>#{revision.id} · {revision.entity} · {revision.action}</strong>
                 <small>{new Date(revision.created_at).toLocaleString("pt-BR")} · {revision.created_by || "—"} {revision.note ? `· ${revision.note}` : ""}</small></span>
               <button className="panel-link" type="button" onClick={() => void rollback(revision.id)} disabled={busy}>Restaurar</button>
             </div>
