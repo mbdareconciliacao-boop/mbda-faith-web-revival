@@ -188,3 +188,26 @@
 .panel-live-bar strong { font-size: .9rem; }
 .panel-live-bar .panel-hint { margin-right: auto; }
 .panel-live-frame { width: 100%; height: 520px; border: 0; background: #fff; }
+/* Layout de trabalho: controles a esquerda, previa fixa a direita */
+.panel-page { align-items: stretch; padding: 24px 20px; }
+.panel-shell { width: min(1500px, 100%); display: flex; flex-direction: column; gap: 16px; }
+.panel-head { padding: 16px 20px; border: 1px solid rgba(255,255,255,.16); border-radius: 14px; background: rgba(9,55,119,.72); box-shadow: 0 24px 60px rgba(2,22,64,.45); }
+.panel-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(340px, 520px); gap: 18px; align-items: start; }
+.panel-controls { display: flex; flex-direction: column; gap: 14px; min-width: 0; padding: 20px; border: 1px solid rgba(255,255,255,.16); border-radius: 14px; background: rgba(9,55,119,.72); box-shadow: 0 24px 60px rgba(2,22,64,.45); }
+.panel-preview-col { position: sticky; top: 20px; align-self: start; }
+.panel-live { display: flex; flex-direction: column; border: 1px solid rgba(255,255,255,.16); border-radius: 14px; overflow: hidden; background: rgba(9,55,119,.72); box-shadow: 0 24px 60px rgba(2,22,64,.45); }
+.panel-live-bar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding: 10px 14px; background: rgba(4,18,43,.6); border-bottom: 1px solid rgba(255,255,255,.1); }
+.panel-live-bar strong { font-size: .85rem; letter-spacing: .02em; }
+.panel-live-bar .panel-hint { margin-right: auto; }
+.panel-live-devices { display: flex; gap: 4px; }
+.panel-device { border: 1px solid rgba(255,255,255,.2); background: none; color: rgba(238,244,255,.75); font: 600 .72rem/1 inherit; padding: 6px 8px; border-radius: 6px; cursor: pointer; }
+.panel-device[data-active="true"] { background: rgba(255,255,255,.16); color: #fff; }
+.panel-live-stage { display: flex; justify-content: center; background: #06132c; }
+.panel-live-frame { width: 100%; height: calc(100vh - 150px); min-height: 420px; border: 0; background: #fff; }
+.panel-live-stage[data-width="tablet"] .panel-live-frame { width: 768px; }
+.panel-live-stage[data-width="phone"] .panel-live-frame { width: 390px; }
+@media (max-width: 1100px) {
+  .panel-body { grid-template-columns: 1fr; }
+  .panel-preview-col { position: static; }
+  .panel-live-frame { height: 60vh; }
+}

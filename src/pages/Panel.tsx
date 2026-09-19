@@ -113,7 +113,7 @@ export default function Panel() {
   const [revisions, setRevisions] = useState<Revision[]>([]);
   const [publishNote, setPublishNote] = useState("");
   const [scheduleAt, setScheduleAt] = useState("");
-  const [previewOpen, setPreviewOpen] = useState(true);
+  const [previewWidth, setPreviewWidth] = useState<"full" | "tablet" | "phone">("full");
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
@@ -456,6 +456,8 @@ export default function Panel() {
         <button className="panel-link" type="button" onClick={() => void signOut()}>Sair</button>
       </header>
 
+      <div className="panel-body">
+        <div className="panel-controls">
       <nav className="panel-tabs" aria-label="Seções do painel">
         {TABS.map((item) => (
           <button key={item.id} type="button" className="panel-tab" data-active={tab === item.id}
@@ -464,15 +466,6 @@ export default function Panel() {
           </button>
         ))}
       </nav>
-
-      <section className="panel-live" aria-label="Prévia ao vivo">
-        <div className="panel-live-bar">
-          <strong>Prévia ao vivo</strong>
-          <span className="panel-hint">Mostrando {previewPath}</span>
-          <button className="panel-link" type="button" onClick={() => setPreviewOpen((open) => !open)}>{previewOpen ? "Ocultar" : "Mostrar"}</button>
-        </div>
-        {previewOpen && <iframe ref={previewRef} className="panel-live-frame" title="Prévia do site" src={previewPath} onLoad={sendPreview} />}
-      </section>
 
       {status && <p className="panel-status" role="status">{status}</p>}
       {error && <p className="panel-error" role="alert">{error}</p>}
@@ -634,6 +627,25 @@ export default function Panel() {
         </div>
         <div className="panel-actions"><button className="panel-link" type="button" onClick={() => void loadHistory()} disabled={busy}>Atualizar histórico</button></div>
       </>}
+        </div>
+        <aside className="panel-preview-col">
+          <section className="panel-live" aria-label="Prévia ao vivo">
+            <div className="panel-live-bar">
+              <strong>Prévia ao vivo</strong>
+              <span className="panel-hint">{previewPath}</span>
+              <div className="panel-live-devices" role="group" aria-label="Largura da prévia">
+                <button type="button" className="panel-device" data-active={previewWidth === "full"} onClick={() => setPreviewWidth("full")}>100%</button>
+                <button type="button" className="panel-device" data-active={previewWidth === "tablet"} onClick={() => setPreviewWidth("tablet")}>Tablet</button>
+                <button type="button" className="panel-device" data-active={previewWidth === "phone"} onClick={() => setPreviewWidth("phone")}>Celular</button>
+              </div>
+              <a className="panel-link" href={previewPath} target="_blank" rel="noopener noreferrer">Abrir</a>
+            </div>
+            <div className="panel-live-stage" data-width={previewWidth}>
+              <iframe ref={previewRef} className="panel-live-frame" title="Prévia do site" src={previewPath} onLoad={sendPreview} />
+            </div>
+          </section>
+        </aside>
+      </div>
     </div>
   </main>;
 }
