@@ -56,11 +56,12 @@ jobs:
         
         # Criar arquivo tar com todo o repositório
         tar -czf "${BACKUP_NAME}.tar.gz" \
+          --warning=no-file-changed \
           --exclude='.git' \
           --exclude='node_modules' \
           --exclude='dist' \
           --exclude='*.log' \
-          .
+          . || [ $? -eq 1 ]
           
         # Criar backup do .git separadamente (mais compacto)
         git bundle create "${BACKUP_NAME}-git.bundle" --all
