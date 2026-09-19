@@ -7,6 +7,7 @@ interface EditorProps {
 
 type ParagraphKey = "aboutParagraphs" | "familyParagraphs";
 type TitleKey = "aboutTitleLines" | "faithTitleLines" | "familyTitleLines";
+type Declaration = { id: string; title: string; content: string };
 
 export default function ChurchEditor({ content, onChange }: EditorProps) {
   const church = content.church;
@@ -16,6 +17,15 @@ export default function ChurchEditor({ content, onChange }: EditorProps) {
     patch({ [key]: church[key].map((item, i) => (i === index ? value : item)) } as Partial<SiteContent["church"]>);
   const setParagraph = (key: ParagraphKey, index: number, value: string) =>
     patch({ [key]: church[key].map((item, i) => (i === index ? value : item)) } as Partial<SiteContent["church"]>);
+  const setDeclaration = (index: number, key: keyof Declaration, value: string) =>
+    patch({ declarations: church.declarations.map((item, i) => (i === index ? { ...item, [key]: value } : item)) });
+  const moveDeclaration = (index: number, step: number) => {
+    const next = [...church.declarations];
+    const target = index + step;
+    if (target < 0 || target >= next.length) return;
+    [next[index], next[target]] = [next[target], next[index]];
+    patch({ declarations: next });
+  };
 
   const titleBlock = (label: string, key: TitleKey) => <>
     <h2 className="panel-section-title">{label}</h2>
@@ -48,8 +58,26 @@ export default function ChurchEditor({ content, onChange }: EditorProps) {
     <label className="panel-full">Nota de história<input value={church.historyNote} onChange={(e) => patch({ historyNote: e.target.value })} /></label>
     {titleBlock("Declaração de fé — título", "faithTitleLines")}
     <label className="panel-full">Declaração de fé — introdução<textarea rows={2} value={church.faithLead} onChange={(e) => patch({ faithLead: e.target.value })} /></label>
+
+    <h2 className="panel-section-title">Declaração de fé — pontos</h2>
+    <div className="panel-list">
+      {church.declarations.map((item, index) => (
+        <div className="panel-item" key={`decl-${index}`}>
+          <div className="panel-item-grid">
+            <label>Título<input value={item.title} onChange={(e) => setDeclaration(index, "title", e.target.value)} /></label>
+            <label className="panel-full">Conteúdo<textarea rows={3} value={item.content} onChange={(e) => setDeclaration(index, "content", e.target.value)} /></label>
+          </div>
+          <div className="panel-item-actions">
+            <button className="panel-link" type="button" disabled={index === 0} onClick={() => moveDeclaration(index, -1)}>Subir</button>
+            <button className="panel-link" type="button" disabled={index === church.declarations.length - 1} onClick={() => moveDeclaration(index, 1)}>Descer</button>
+            <button className="panel-link panel-remove" type="button" onClick={() => patch({ declarations: church.declarations.filter((_, i) => i !== index) })}>Remover</button>
+          </div>
+        </div>
+      ))}
+    </div>
+    <button className="panel-link" type="button" onClick={() => patch({ declarations: [...church.declarations, { id: `ponto-${Date.now()}`, title: "", content: "" }] })}>+ Adicionar ponto</button>
+
     {titleBlock("Espaço Família — título", "familyTitleLines")}
     {paragraphBlock("Espaço Família — parágrafos", "familyParagraphs")}
-    <p className="panel-hint">A lista de pontos da declaração de fé (doutrina) continua fixa nesta versão.</p>
   </>;
 }

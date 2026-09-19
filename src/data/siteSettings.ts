@@ -1,4 +1,5 @@
 import { MONTHLY_GATHERINGS, WEEKLY_SCHEDULE } from "./church";
+import { declarations } from "./doctrine";
 import { recommendedBooks } from "./recommendedBooks";
 
 export interface SiteTheme {
@@ -7,6 +8,7 @@ export interface SiteTheme {
   muted: string; line: string; navyLine: string; navyControl: string;
   navyMenuLine: string; catalogLine: string; sourceSurface: string; sourceLine: string;
   displayFont: string; condensedFont: string; bodyFont: string;
+  backgroundImage: string;
 }
 
 export interface SitePath { kicker: string; label: string; href: string; }
@@ -31,6 +33,7 @@ export interface SiteContent {
     aboutTitleLines: string[]; aboutParagraphs: string[]; historyNote: string;
     faithTitleLines: string[]; faithLead: string;
     familyTitleLines: string[]; familyParagraphs: string[];
+    declarations: Array<{ id: string; title: string; content: string }>;
   };
   books: SiteBook[];
   featuredVideo: FeaturedVideo | null;
@@ -53,6 +56,7 @@ export const DEFAULT_SITE_SETTINGS: SiteSettings = {
     navyMenuLine: "#35425e", catalogLine: "#243b61",
     sourceSurface: "#e8edf5", sourceLine: "#9daec7",
     displayFont: "Anton", condensedFont: "Barlow Condensed", bodyFont: "system",
+    backgroundImage: "",
   },
   content: {
     brand: { name: "Reconciliação", logo: "/images/site/logo-evergreen.webp" },
@@ -92,6 +96,7 @@ export const DEFAULT_SITE_SETTINGS: SiteSettings = {
       historyNote: "23+ anos de ministério. Uma história compartilhada com mais de 500 famílias, em Guarujá.",
       faithTitleLines: ["A Palavra é", "nosso fundamento."],
       faithLead: "Nossa declaração de fé reúne os princípios doutrinários que orientam o ministério. Leia cada ponto na íntegra.",
+      declarations: declarations.map((item) => ({ id: String(item.id), title: item.title, content: item.content })),
       familyTitleLines: ["Crescer na fé.", "Caminhar juntos."],
       familyParagraphs: [
         "Valorizamos as famílias e celebramos cada momento de cuidado, discipulado e convivência cristã.",
@@ -227,6 +232,16 @@ const asBooks = (value: unknown, fallback: SiteBook[]): SiteBook[] => {
   return list.length ? list : fallback;
 };
 
+const asDeclarations = (value: unknown): Array<{ id: string; title: string; content: string }> => {
+  const fallback = DEFAULT_SITE_SETTINGS.content.church.declarations;
+  if (!Array.isArray(value)) return fallback;
+  const list = value.filter((item) => !!item && typeof item === "object").map((item) => {
+    const entry = item as Record<string, unknown>;
+    return { id: asString(entry.id, ""), title: asString(entry.title, ""), content: asString(entry.content, "") };
+  }).filter((item) => item.title && item.content);
+  return list.length ? list : fallback;
+};
+
 const asFeaturedVideo = (value: unknown): FeaturedVideo | null => {
   const entry = record(value);
   const youtubeId = asString(entry.youtubeId, "");
@@ -285,6 +300,7 @@ const asContent = (value: unknown): SiteContent => {
       aboutTitleLines: asStringList(church.aboutTitleLines, base.church.aboutTitleLines),
       aboutParagraphs: asStringList(church.aboutParagraphs, base.church.aboutParagraphs),
       historyNote: asString(church.historyNote, base.church.historyNote),
+      declarations: asDeclarations(church.declarations),
       faithTitleLines: asStringList(church.faithTitleLines, base.church.faithTitleLines),
       faithLead: asString(church.faithLead, base.church.faithLead),
       familyTitleLines: asStringList(church.familyTitleLines, base.church.familyTitleLines),
@@ -323,6 +339,7 @@ export function normalizeSiteSettings(row: unknown): SiteSettings {
       displayFont: asFont(theme.displayFont, "display", base.displayFont),
       condensedFont: asFont(theme.condensedFont, "condensed", base.condensedFont),
       bodyFont: asFont(theme.bodyFont, "body", base.bodyFont),
+      backgroundImage: typeof theme.backgroundImage === "string" ? theme.backgroundImage.trim() : "",
     } as SiteTheme,
     content: asContent(root.content),
   };
@@ -336,6 +353,8 @@ export function applyTheme(theme: SiteTheme, root: HTMLElement = document.docume
   root.style.setProperty("--display", FONT_STACKS.display[theme.displayFont] ?? FONT_STACKS.display.Anton);
   root.style.setProperty("--condensed", FONT_STACKS.condensed[theme.condensedFont] ?? FONT_STACKS.condensed["Barlow Condensed"]);
   root.style.setProperty("--body", FONT_STACKS.body[theme.bodyFont] ?? FONT_STACKS.body.system);
+  const background = typeof theme.backgroundImage === "string" ? theme.backgroundImage.trim() : "";
+  root.style.setProperty("--site-background-image", background ? `url("${background}")` : "none");
 }
 
 

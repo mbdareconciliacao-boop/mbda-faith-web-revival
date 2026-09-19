@@ -34,5 +34,8 @@ export default function SiteSettingsProvider({ children }: { children: ReactNode
     };
   }, []);
 
-  return <SiteSettingsContext.Provider value={settings}>{children}</SiteSettingsContext.Provider>;
+  return <SiteSettingsContext.Provider value={settings}>
+    <div className="site-background" aria-hidden="true" />
+    {children}
+  </SiteSettingsContext.Provider>;
 }

@@ -1,6 +1,5 @@
 import { ArrowUpRight, ChevronRight, MapPin } from "lucide-react";
 import { CHURCH } from "../../data/church";
-import { declarations } from "../../data/doctrine";
 import { useSiteSettings } from "../../hooks/useSiteSettings";
 
 export function AboutChurch() {
@@ -22,7 +21,7 @@ export function FaithDeclaration() {
   return <section id="declaracao-de-fe" className="section-space faith-section" aria-labelledby="faith-title">
     <div className="content-width faith-layout">
       <div><h2 id="faith-title">{content.church.faithTitleLines.map((line, index) => <span key={line + index}>{index > 0 ? <br /> : null}{line}</span>)}</h2><span className="gold-rule" aria-hidden="true" /><p>{content.church.faithLead}</p></div>
-      <div className="doctrine-list">{declarations.map(item => <details key={item.id}><summary>{item.title}<ChevronRight aria-hidden="true" /></summary><p>{item.content}</p></details>)}</div>
+      <div className="doctrine-list">{content.church.declarations.map(item => <details key={item.id}><summary>{item.title}<ChevronRight aria-hidden="true" /></summary><p>{item.content}</p></details>)}</div>
     </div>
   </section>;
 }

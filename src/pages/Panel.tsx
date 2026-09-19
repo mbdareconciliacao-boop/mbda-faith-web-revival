@@ -234,6 +234,23 @@ export default function Panel() {
     } finally { setBusy(false); }
   };
 
+  const uploadBackground = async (file: File) => {
+    if (!client) return;
+    const extension = (file.name.split(".").pop() ?? "webp").toLowerCase();
+    const path = `fundo-${Date.now()}.${extension}`;
+    setBusy(true); setError("");
+    try {
+      const { error: uploadError } = await client.storage.from("site-media")
+        .upload(path, file, { upsert: true, contentType: file.type || undefined });
+      if (uploadError) throw new Error(uploadError.message);
+      const { data } = client.storage.from("site-media").getPublicUrl(path);
+      setThemeField("backgroundImage", data.publicUrl);
+      setStatus("Imagem de fundo enviada. Salve e publique a aba Aparência para aplicar.");
+    } catch (uploadError) {
+      setError(uploadError instanceof Error ? uploadError.message : "Falha no envio da imagem.");
+    } finally { setBusy(false); }
+  };
+
   const saveStudy = async () => {
     if (!client || !session) return;
     const payload = payloadFromForm(form);
@@ -412,6 +429,12 @@ export default function Panel() {
             </label>
           ))}
         </div>
+        <h2 className="panel-section-title">Imagem de fundo</h2>
+        <div className="panel-grid">
+          <label>Enviar imagem<input type="file" accept="image/*" onChange={(e) => { const f = e.target.files?.[0]; if (f) void uploadBackground(f); }} /></label>
+          <label>URL da imagem<input value={theme.backgroundImage} onChange={(e) => setThemeField("backgroundImage", e.target.value)} placeholder="https://... ou /images/..." /></label>
+        </div>
+        <button className="panel-link" type="button" onClick={() => setThemeField("backgroundImage", "")}>Remover imagem de fundo</button>
       </>}
 
       {tab === "conteudo" && <>
