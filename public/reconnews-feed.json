@@ -7,6 +7,37 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
+      "id": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOaEdYMW91QTI4Y2l1MV9Md2RZVmx2b1BzcHFaY09sWTFOeDk4UFVlNDB3Ym5WbXk4elJTdjNSVDVqSnRHNVc0Z1hzRERueFpoT0FuVlZ5WGtXcG5WMkh1Q3pVNEYwbFVFQVdqNnFkNW05dldsVnAta0NkTVZiRC1RTkg1QlJEWGNWd21DX08zaWNqZ014eklESDB4c1F0c0FNZTdVUzhYVGY5LWFBOHlvV1FvalViSVZOZVBRa0Z4UQ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOaEdYMW91QTI4Y2l1MV9Md2RZVmx2b1BzcHFaY09sWTFOeDk4UFVlNDB3Ym5WbXk4elJTdjNSVDVqSnRHNVc0Z1hzRERueFpoT0FuVlZ5WGtXcG5WMkh1Q3pVNEYwbFVFQVdqNnFkNW05dldsVnAta0NkTVZiRC1RTkg1QlJEWGNWd21DX08zaWNqZ014eklESDB4c1F0c0FNZTdVUzhYVGY5LWFBOHlvV1FvalViSVZOZVBRa0Z4UQ?oc=5",
+      "title": "Jovens resistem a açoites por amor a Jesus no Chifre da África - Portas Abertas",
+      "content_text": "Jovens resistem a açoites por amor a Jesus no Chifre da África - Portas Abertas",
+      "date_published": "2026-09-18T17:55:21.000Z",
+      "tags": [
+        "Igreja Perseguida"
+      ],
+      "authors": [
+        {
+          "name": "Google News - Cristãos Perseguidos"
+        }
+      ]
+    },
+    {
+      "id": "https://folhagospel.com/levantamento-nacional-mapeia-habitos-de-fe-e-rotina-dos-evangelicos-no-brasil/",
+      "url": "https://folhagospel.com/levantamento-nacional-mapeia-habitos-de-fe-e-rotina-dos-evangelicos-no-brasil/",
+      "title": "Metade dos evangélicos lê a Bíblia diariamente, revela pesquisa nacional",
+      "content_text": "Pesquisa inédita do Instituto Valentes Intel revela que metade dos evangélicos brasileiros lê a Bíblia diariamente e mantém rotina de oração e cultos ativos. The post Metade dos evangélicos lê a Bíbli...",
+      "date_published": "2026-09-18T15:20:44.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2024/01/Jovens-estudando-a-Biblia-Foto-canva.jpg",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
       "id": "https://folhagospel.com/evangelicos-maioria-cristaos-praticantes-reino-unido/",
       "url": "https://folhagospel.com/evangelicos-maioria-cristaos-praticantes-reino-unido/",
       "title": "Evangélicos representam dois terços dos cristãos praticantes no Reino Unido",

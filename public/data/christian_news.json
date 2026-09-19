@@ -1,12 +1,33 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-09-18T14:21:26.537102+00:00",
-  "total_articles": 3,
+  "last_updated": "2026-09-19T00:08:20.545125+00:00",
+  "total_articles": 5,
   "sources": [
     "Folha Gospel",
+    "Google News - Cristãos Perseguidos",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
+    {
+      "title": "Jovens resistem a açoites por amor a Jesus no Chifre da África - Portas Abertas",
+      "summary": "Jovens resistem a açoites por amor a Jesus no Chifre da África - Portas Abertas",
+      "source": "Google News - Cristãos Perseguidos",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOaEdYMW91QTI4Y2l1MV9Md2RZVmx2b1BzcHFaY09sWTFOeDk4UFVlNDB3Ym5WbXk4elJTdjNSVDVqSnRHNVc0Z1hzRERueFpoT0FuVlZ5WGtXcG5WMkh1Q3pVNEYwbFVFQVdqNnFkNW05dldsVnAta0NkTVZiRC1RTkg1QlJEWGNWd21DX08zaWNqZ014eklESDB4c1F0c0FNZTdVUzhYVGY5LWFBOHlvV1FvalViSVZOZVBRa0Z4UQ?oc=5",
+      "category": "Igreja Perseguida",
+      "image_url": "",
+      "date": "2026-09-18T17:55:21+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Metade dos evangélicos lê a Bíblia diariamente, revela pesquisa nacional",
+      "summary": "Pesquisa inédita do Instituto Valentes Intel revela que metade dos evangélicos brasileiros lê a Bíblia diariamente e mantém rotina de oração e cultos ativos. The post Metade dos evangélicos lê a Bíbli...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/levantamento-nacional-mapeia-habitos-de-fe-e-rotina-dos-evangelicos-no-brasil/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2024/01/Jovens-estudando-a-Biblia-Foto-canva.jpg",
+      "date": "2026-09-18T15:20:44+00:00",
+      "publication_date_verified": true
+    },
     {
       "title": "Evangélicos representam dois terços dos cristãos praticantes no Reino Unido",
       "summary": "Estudo aponta que evangélicos formam a maioria dos cristãos praticantes no Reino Unido. Movimento cresce entre jovens e minorias étnicas com forte engajamento. The post Evangélicos representam dois te...",
