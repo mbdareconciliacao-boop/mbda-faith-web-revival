@@ -1,8 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { ChevronLeft, ChevronRight, ExternalLink, Pause, Play } from "lucide-react";
 import { BAPTISM_EVENT, EVENT_PHOTOS, eventPhoto, type EventPhoto } from "../../data/church";
+import { useSiteSettings } from "../../hooks/useSiteSettings";
 
 export default function EventGallery() {
+  const { content } = useSiteSettings();
   const section = useRef<HTMLElement>(null);
   const [index, setIndex] = useState(0);
   const [visible, setVisible] = useState(false);
@@ -45,11 +47,11 @@ export default function EventGallery() {
   return <section id="comunidade" ref={section} className="section-space community-section" aria-labelledby="community-title">
     <div className="content-width community-layout">
       <div className="community-copy">
-        <h2 id="community-title">A vida acontece<br />em comunidade.</h2>
+        <h2 id="community-title">{content.home.communityTitleLines.map((line, index) => <span key={line + index}>{index > 0 ? <br /> : null}{line}</span>)}</h2>
         <span className="gold-rule" aria-hidden="true" />
-        <p>Encontros que fortalecem os vínculos, renovam a fé e fazem parte da nossa história.</p>
-        <h3>Eventos da Reconciliação</h3>
-        <p>Uma seleção de registros reais dos encontros da nossa igreja. Celebrações, comunhão e momentos que fazem parte da nossa história.</p>
+        <p>{content.home.communityLead}</p>
+        <h3>{content.home.eventsTitle}</h3>
+        <p>{content.home.eventsLead}</p>
         <div className="event-feature-note">
           <time dateTime={BAPTISM_EVENT.dateTime}>{BAPTISM_EVENT.date}</time>
           <strong>{BAPTISM_EVENT.title}</strong>

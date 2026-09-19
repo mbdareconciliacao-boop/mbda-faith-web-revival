@@ -1,12 +1,14 @@
 import { useEffect, useRef, useState } from "react";
 import { Menu, X } from "lucide-react";
 import { useLocation } from "react-router-dom";
+import { useSiteSettings } from "../../hooks/useSiteSettings";
 
 const links = [["/mensagens", "Mensagens"], ["/estudos", "Estudos"], ["/livros", "Livros"], ["/noticias", "Notícias"], ["/igreja", "A igreja"]] as const;
 
 export default function SiteHeader() {
   const [open, setOpen] = useState(false);
   const { pathname } = useLocation();
+  const { content } = useSiteSettings();
   const trigger = useRef<HTMLButtonElement>(null);
   useEffect(() => {
     const escape = (event: KeyboardEvent) => {
@@ -19,8 +21,8 @@ export default function SiteHeader() {
     <a className="skip-link" href="#conteudo">Ir para o conteúdo</a>
     <div className="site-nav">
       <a href="/" className="brand" aria-label="Reconciliação — início">
-        <img src="/images/site/logo-evergreen.webp" alt="" width="64" height="64" />
-        <span>Reconciliação</span>
+        <img src={content.brand.logo} alt="" width="64" height="64" />
+        <span>{content.brand.name}</span>
       </a>
       <button ref={trigger} type="button" className="menu-toggle" aria-label={open ? "Fechar menu" : "Abrir menu"} aria-expanded={open} aria-controls="main-navigation" onClick={() => setOpen(!open)}>
         {open ? <X /> : <Menu />}

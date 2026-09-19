@@ -11,7 +11,7 @@ import Church from "./pages/Church";
 import Agenda from "./pages/Agenda";
 import News from "./pages/News";
 import { legacyDestinations } from "./data/contentCatalog";
-import SiteTheme from "./components/site/SiteTheme";
+import SiteSettingsProvider from "./components/site/SiteSettingsProvider";
 
 const EditorialDesk = import.meta.env.DEV ? lazy(() => import("./pages/EditorialDesk")) : null;
 const Panel = lazy(() => import("./pages/Panel"));
@@ -30,7 +30,7 @@ function RoutePosition() {
 }
 
 export default function SiteRoutes() {
-  return <><SiteTheme /><RoutePosition /><Routes>
+  return <SiteSettingsProvider><RoutePosition /><Routes>
     <Route path="/" element={<Index />} />
     <Route path="/blog" element={<Blog />} />
     <Route path="/estudos" element={<Studies />} />
@@ -44,5 +44,5 @@ export default function SiteRoutes() {
     {EditorialDesk && <Route path="/gestao" element={<Suspense fallback={<div role="status">Abrindo painel editorial…</div>}><EditorialDesk /></Suspense>} />}
     <Route path="/painel" element={<Suspense fallback={<div role="status">Abrindo painel…</div>}><Panel /></Suspense>} />
     <Route path="*" element={<NotFound />} />
-  </Routes></>;
+  </Routes></SiteSettingsProvider>;
 }
