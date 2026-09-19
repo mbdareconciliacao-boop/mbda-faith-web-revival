@@ -13,6 +13,7 @@ import News from "./pages/News";
 import { legacyDestinations } from "./data/contentCatalog";
 
 const EditorialDesk = import.meta.env.DEV ? lazy(() => import("./pages/EditorialDesk")) : null;
+const Panel = lazy(() => import("./pages/Panel"));
 
 function RoutePosition() {
   const { pathname, hash } = useLocation();
@@ -40,6 +41,7 @@ export default function SiteRoutes() {
     <Route path="/agenda" element={<Agenda />} />
     <Route path="/noticias" element={<News />} />
     {EditorialDesk && <Route path="/gestao" element={<Suspense fallback={<div role="status">Abrindo painel editorial…</div>}><EditorialDesk /></Suspense>} />}
+    <Route path="/painel" element={<Suspense fallback={<div role="status">Abrindo painel…</div>}><Panel /></Suspense>} />
     <Route path="*" element={<NotFound />} />
   </Routes></>;
 }
