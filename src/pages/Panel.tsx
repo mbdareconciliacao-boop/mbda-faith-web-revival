@@ -118,9 +118,56 @@ export default function Panel() {
   const [busy, setBusy] = useState(false);
   const [loginEmail, setLoginEmail] = useState("");
   const [loginPassword, setLoginPassword] = useState("");
+  const [aal, setAal] = useState<{ current: string | null; next: string | null }>({ current: null, next: null });
+  const [mfaCode, setMfaCode] = useState("");
+  const [mfaFactorId, setMfaFactorId] = useState<string | null>(null);
+  const [mfaQr, setMfaQr] = useState("");
+  const [mfaSecret, setMfaSecret] = useState("");
+  const [mfaLoading, setMfaLoading] = useState(false);
 
   const client = supabase;
   const activeEntity = TAB_ENTITY[tab] ?? null;
+
+  const refreshAal = useCallback(async () => {
+    if (!client) return;
+    const { data } = await client.auth.mfa.getAuthenticatorAssuranceLevel();
+    if (!data) return;
+    setAal({ current: data.currentLevel ?? null, next: data.nextLevel ?? null });
+    if (data.currentLevel !== "aal2" && data.nextLevel === "aal2") {
+      const { data: factors } = await client.auth.mfa.listFactors();
+      const verified = factors?.totp?.find((factor) => factor.status === "verified");
+      if (verified) setMfaFactorId(verified.id);
+    }
+  }, [client]);
+
+  const startEnroll = async () => {
+    if (!client) return;
+    setMfaLoading(true); setError("");
+    try {
+      const { data, error: enrollError } = await client.auth.mfa.enroll({ factorType: "totp", friendlyName: "Painel MBdaR" });
+      if (enrollError) throw new Error(enrollError.message);
+      setMfaFactorId(data.id);
+      setMfaQr(data.totp.qr_code);
+      setMfaSecret(data.totp.secret);
+    } catch (enrollErr) {
+      setError(enrollErr instanceof Error ? enrollErr.message : "Falha ao ativar o MFA.");
+    } finally { setMfaLoading(false); }
+  };
+
+  const verifyMfa = async () => {
+    if (!client || !mfaFactorId) return;
+    setMfaLoading(true); setError("");
+    try {
+      const { data: challenge, error: challengeError } = await client.auth.mfa.challenge({ factorId: mfaFactorId });
+      if (challengeError) throw new Error(challengeError.message);
+      const { error: verifyError } = await client.auth.mfa.verify({ factorId: mfaFactorId, challengeId: challenge.id, code: mfaCode });
+      if (verifyError) throw new Error(verifyError.message);
+      setMfaCode("");
+      await refreshAal();
+    } catch (verifyErr) {
+      setError(verifyErr instanceof Error ? verifyErr.message : "Código inválido.");
+    } finally { setMfaLoading(false); }
+  };
 
   useEffect(() => {
     const meta = document.createElement("meta");
@@ -133,10 +180,11 @@ export default function Panel() {
     if (!client) { setChecking(false); return; }
     void client.auth.getSession().then(({ data }) => {
       setSession(data.session ?? null); setChecking(false);
+      void refreshAal();
     });
-    const { data } = client.auth.onAuthStateChange((_event, next) => setSession(next));
+    const { data } = client.auth.onAuthStateChange((_event, next) => { setSession(next); void refreshAal(); });
     return () => data.subscription.unsubscribe();
-  }, [client]);
+  }, [client, refreshAal]);
 
   const loadActive = useCallback(async () => {
     if (!client) return;
@@ -359,6 +407,34 @@ export default function Panel() {
         {error && <p className="panel-error" role="alert">{error}</p>}
         <button className="panel-button" type="submit" disabled={busy}>{busy ? "Entrando…" : "Entrar"}</button>
       </form>
+    </main>;
+  }
+
+  if (session && aal.current !== "aal2") {
+    const qrSource = mfaQr
+      ? (mfaQr.startsWith("data:") ? mfaQr : `data:image/svg+xml;utf8,${encodeURIComponent(mfaQr)}`)
+      : "";
+    return <main className="panel-page">
+      <div className="panel-card">
+        <h1>Segurança da conta</h1>
+        <p className="panel-hint">Confirme a verificação em duas etapas para editar o site.</p>
+        {error && <p className="panel-error" role="alert">{error}</p>}
+        {aal.next === "aal2" ? <>
+          <label>Código do autenticador<input inputMode="numeric" autoComplete="one-time-code" value={mfaCode} onChange={(e) => setMfaCode(e.target.value)} /></label>
+          <button className="panel-button" type="button" disabled={mfaLoading || mfaCode.length < 6} onClick={() => void verifyMfa()}>{mfaLoading ? "Confirmando…" : "Confirmar código"}</button>
+        </> : qrSource ? <>
+          <p className="panel-hint">Escaneie o código no autenticador (Google Authenticator, Authy) e confirme os 6 dígitos.</p>
+          <img className="panel-qr" src={qrSource} alt="Código QR para o autenticador" width="200" height="200" />
+          <p className="panel-hint">Ou use a chave: <code>{mfaSecret}</code></p>
+          <label>Código do autenticador<input inputMode="numeric" autoComplete="one-time-code" value={mfaCode} onChange={(e) => setMfaCode(e.target.value)} /></label>
+          <button className="panel-button" type="button" disabled={mfaLoading || mfaCode.length < 6} onClick={() => void verifyMfa()}>{mfaLoading ? "Confirmando…" : "Confirmar código"}</button>
+        </> : <>
+          <p className="panel-hint">Ative o autenticador para liberar a edição.</p>
+          <button className="panel-button" type="button" disabled={mfaLoading} onClick={() => void startEnroll()}>{mfaLoading ? "Preparando…" : "Ativar verificação em duas etapas"}</button>
+        </>}
+        <button className="panel-link" type="button" onClick={() => void refreshAal()}>Já confirmei</button>
+        <button className="panel-link" type="button" onClick={() => void signOut()}>Sair</button>
+      </div>
     </main>;
   }
 
