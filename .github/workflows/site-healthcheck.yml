@@ -1,0 +1,31 @@
+name: Verificar o site
+
+# Monitor simples de disponibilidade: a cada 30 min confere a home e avisa no Discord.
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: site-healthcheck
+  cancel-in-progress: false
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Conferir a home
+        env:
+          SITE_URL: https://mbdareconciliacao.vercel.app
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          status=$(curl -s -o /dev/null -w '%{http_code}' --max-time 30 "$SITE_URL/")
+          echo "Home: HTTP $status"
+          if [ "$status" != "200" ]; then
+            if [ -n "$DISCORD_WEBHOOK_URL" ]; then
+              curl -s -X POST "$DISCORD_WEBHOOK_URL" -H 'Content-Type: application/json' \
+                -d "{\"username\":\"Central MBdaR\",\"allowed_mentions\":{\"parse\":[]},\"embeds\":[{\"title\":\"Site fora do ar\",\"description\":\"A home respondeu HTTP $status.\",\"color\":14170682}]}" || true
+            fi
+            exit 1
+          fi
