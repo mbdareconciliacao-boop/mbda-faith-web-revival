@@ -12,6 +12,9 @@ import {
   applyTheme,
   normalizeSiteSettings,
 } from "../data/siteSettings";
+import AgendaEditor from "../components/panel/AgendaEditor";
+import BooksEditor from "../components/panel/BooksEditor";
+import ChurchEditor from "../components/panel/ChurchEditor";
 import "../styles/panel.css";
 
 interface FormState {
@@ -25,7 +28,17 @@ interface Revision {
   id: number; action: string; note: string; created_at: string; created_by: string;
 }
 
-type Tab = "destaque" | "aparencia" | "conteudo" | "historico";
+type Tab = "destaque" | "aparencia" | "conteudo" | "agenda" | "igreja" | "livros" | "historico";
+
+const TABS: Array<{ id: Tab; label: string }> = [
+  { id: "destaque", label: "Estudo da vez" },
+  { id: "aparencia", label: "Aparência" },
+  { id: "conteudo", label: "Textos" },
+  { id: "agenda", label: "Agenda" },
+  { id: "igreja", label: "Igreja" },
+  { id: "livros", label: "Livros" },
+  { id: "historico", label: "Histórico" },
+];
 
 const EMPTY: FormState = {
   slug: "", title: "", subtitle: "", intro: "", art480: "", art900: "", artAlt: "",
@@ -166,6 +179,10 @@ export default function Panel() {
     patchContent((c) => ({ ...c, footer: { ...c.footer, aboutLines: c.footer.aboutLines.map((item, i) => i === index ? value : item) } }));
   const setPath = (index: number, key: "kicker" | "label" | "href", value: string) =>
     patchContent((c) => ({ ...c, home: { ...c.home, paths: c.home.paths.map((item, i) => i === index ? { ...item, [key]: value } : item) } }));
+  const setFeaturedVideoId = (youtubeId: string) =>
+    patchContent((c) => ({ ...c, featuredVideo: /^[A-Za-z0-9_-]{11}$/.test(youtubeId) ? { youtubeId, title: c.featuredVideo?.title ?? "", description: c.featuredVideo?.description ?? "", date: c.featuredVideo?.date ?? "" } : null }));
+  const setFeaturedVideoField = (key: "title" | "description" | "date", value: string) =>
+    patchContent((c) => (c.featuredVideo ? { ...c, featuredVideo: { ...c.featuredVideo, [key]: value } } : c));
 
   const uploadArt = async (file: File, variant: "480" | "900") => {
     if (!client) return;
@@ -299,10 +316,10 @@ export default function Panel() {
       </header>
 
       <nav className="panel-tabs" aria-label="Seções do painel">
-        {(["destaque", "aparencia", "conteudo", "historico"] as Tab[]).map((item) => (
-          <button key={item} type="button" className="panel-tab" data-active={tab === item}
-            onClick={() => { setTab(item); if (item === "historico") void loadHistory(); }}>
-            {item === "destaque" ? "Estudo da vez" : item === "aparencia" ? "Aparência" : item === "conteudo" ? "Textos" : "Histórico"}
+        {TABS.map((item) => (
+          <button key={item.id} type="button" className="panel-tab" data-active={tab === item.id}
+            onClick={() => { setTab(item.id); if (item.id === "historico") void loadHistory(); }}>
+            {item.label}
           </button>
         ))}
       </nav>
@@ -386,6 +403,14 @@ export default function Panel() {
           <label>Assinatura<input value={content.home.signatureTitle} onChange={(e) => setHome("signatureTitle", e.target.value)} /></label>
           <label className="panel-full">Assinatura (linha de apoio)<input value={content.home.signatureNote} onChange={(e) => setHome("signatureNote", e.target.value)} /></label>
         </div>
+        <h2 className="panel-section-title">Vídeo em destaque (opcional)</h2>
+        <div className="panel-grid">
+          <label>YouTube ID<input value={content.featuredVideo?.youtubeId ?? ""} onChange={(e) => setFeaturedVideoId(e.target.value)} placeholder="ex.: lcmnshpsR3Q" /></label>
+          <label>Título<input value={content.featuredVideo?.title ?? ""} onChange={(e) => setFeaturedVideoField("title", e.target.value)} /></label>
+          <label>Data<input value={content.featuredVideo?.date ?? ""} onChange={(e) => setFeaturedVideoField("date", e.target.value)} /></label>
+          <label className="panel-full">Descrição<textarea rows={2} value={content.featuredVideo?.description ?? ""} onChange={(e) => setFeaturedVideoField("description", e.target.value)} /></label>
+        </div>
+        <p className="panel-hint">Se preenchido, este vídeo substitui a mensagem mais recente no destaque da home.</p>
         <h2 className="panel-section-title">Atalhos da home</h2>
         <div className="panel-grid">
           {content.home.paths.map((path, index) => <div key={`path-${index}`} className="panel-full panel-path-row">
@@ -431,6 +456,14 @@ export default function Panel() {
         </div>
         <label className="panel-full">Nota da publicação (opcional)<input value={publishNote} onChange={(e) => setPublishNote(e.target.value)} /></label>
       </>}
+
+      {tab === "agenda" && <AgendaEditor content={content} onChange={setContent} />}
+      {tab === "igreja" && <ChurchEditor content={content} onChange={setContent} />}
+      {tab === "livros" && <BooksEditor content={content} onChange={setContent} />}
+      {(tab === "agenda" || tab === "igreja" || tab === "livros") && <div className="panel-actions">
+        <button className="panel-button" type="button" onClick={() => void saveDraft()} disabled={busy}>Salvar rascunho</button>
+        <button className="panel-button panel-button-alt" type="button" onClick={() => void publishSettings()} disabled={busy}>Publicar no site</button>
+      </div>}
 
       {tab === "historico" && <>
         <p className="panel-hint">Cada publicação guarda uma revisão. Restaurar volta o site para aquele estado.</p>

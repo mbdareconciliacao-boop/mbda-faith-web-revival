@@ -1,5 +1,4 @@
 import { BookOpenText, CalendarDays, ChevronRight } from "lucide-react";
-import { WEEKLY_SCHEDULE } from "../../data/church";
 import { useFeaturedStudy } from "../../hooks/useFeaturedStudy";
 import { useSiteSettings } from "../../hooks/useSiteSettings";
 
@@ -12,7 +11,7 @@ export default function WeeklyPreview() {
         <h2 id="weekly-preview-title">{content.home.weeklyTitle}</h2>
         <span className="gold-rule" aria-hidden="true" />
         <div className="schedule-preview">
-          {WEEKLY_SCHEDULE.map(item => <a href="/agenda" className="schedule-row" key={item.time} aria-label={`${item.day}, ${item.time}, ${item.title}. Ver agenda completa`}>
+          {content.agenda.weekly.map(item => <a href="/agenda" className="schedule-row" key={item.time} aria-label={`${item.day}, ${item.time}, ${item.title}. Ver agenda completa`}>
             <CalendarDays aria-hidden="true" /><span>{item.short}</span><time>{item.time}</time><span>{item.title}</span><ChevronRight aria-hidden="true" />
           </a>)}
         </div>
