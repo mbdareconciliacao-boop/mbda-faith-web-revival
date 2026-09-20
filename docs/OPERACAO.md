@@ -2,14 +2,14 @@
 
 Guia para a pessoa (ou IA) que cuida do site no dia a dia.
 
-> Antes de novas publicações, consulte [a revisão de 19/09/2026](REVISAO-PAINEL-2026-09-19.md).
-> O agendamento está impedido por uma constraint do banco e requer migração revisada.
-> Não considerar o painel plenamente validado apenas porque os workflows estão verdes.
+> Estado em 20/09/2026: as correções de MFA, permissões e agendamento da
+> [revisão de 19/09/2026](REVISAO-PAINEL-2026-09-19.md) foram aplicadas. O painel
+> agora usa uma fila de aprovação; não publique contornando esse fluxo.
 
 ## Acesso ao painel
 
 1. Abra `https://www.igrejadarecon.com.br/painel` (ou o endereço da Vercel).
-2. E-mail: `mbdareconciliacao@gmail.com` (precisa estar na lista `app_admins`).
+2. Use seu próprio e-mail, previamente cadastrado na equipe editorial (`app_admins`).
 3. Confirme o código do autenticador (MFA). Na primeira vez, cadastre o QR no
    Google Authenticator/Authy.
 
@@ -21,13 +21,24 @@ Guia para a pessoa (ou IA) que cuida do site no dia a dia.
 1. Escolha a aba (Aparência, Textos, Agenda, Igreja, Livros, Estudo da vez).
 2. Edite olhando a **prévia ao vivo**. Em telas largas ela fica ao lado; nas menores,
    depois dos campos. Use **Ocultar prévia** para concentrar-se na edição.
-3. **Salvar rascunho** (não publica).
-4. **Publicar agora** altera somente a entidade da aba. O agendamento aguarda a
-   correção de banco documentada na auditoria; não conte com ele para um evento.
-5. Em **Histórico**, use **Recuperar rascunho**. Isso substitui o rascunho da entidade
+3. **Salvar rascunho** (não publica) e **Enviar para aprovação** quando terminar.
+4. Um **revisor diferente de quem enviou** escolhe entre **Aprovar revisão** ou
+   **Solicitar ajustes**. Uma nota é obrigatória ao devolver o conteúdo.
+5. Somente o **administrador**, depois da aprovação, vê **Publicar agora** ou **Agendar**.
+6. Em **Histórico**, use **Recuperar rascunho**. Isso substitui o rascunho da entidade
    e cancela seu agendamento, mas não muda o site publicado. Abra a aba, revise e publique.
 
-Entidades: `tema`, `textos`, `agenda`, `igreja`, `livros`. O "Estudo da vez" publica direto.
+Entidades: `destaque`, `tema`, `textos`, `agenda`, `igreja`, `livros`.
+
+### Papéis da equipe
+
+- **Colaborador:** edita apenas as seções atribuídas e envia para aprovação.
+- **Editor:** mesmo fluxo, com responsabilidade editorial ampliada nas seções atribuídas.
+- **Revisor:** lê todas as seções e aprova ou devolve; não edita nem publica.
+- **Administrador:** edita, revisa e publica; mesmo assim não pode aprovar o próprio envio.
+
+Para cadastrar uma pessoa nesta versão, o responsável técnico cria/confirma sua conta no
+Supabase Auth e registra e-mail, papel e seções em `app_admins`. Não compartilhe a senha da igreja.
 
 ## Rotina diária
 
@@ -61,8 +72,7 @@ Em falha, cada workflow tenta avisar no **Discord**.
 
 - Vercel/.env.local: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_EMAILJS_*`.
 - GitHub Secrets: `YOUTUBE_API_KEY`, `DISCORD_WEBHOOK_URL`, `VITE_SUPABASE_URL`,
-  `VITE_SUPABASE_ANON_KEY`, `SNYK_TOKEN`. Antes de aplicar a migração corretiva,
-  adicionar `SUPABASE_SERVICE_ROLE_KEY` somente ao GitHub Actions.
+  `VITE_SUPABASE_ANON_KEY`, `SNYK_TOKEN`, `SUPABASE_SERVICE_ROLE_KEY`.
 - Local (admin): `DATABASE_URL` (Session pooler).
 
 Nunca usar `service_role` em `VITE_*`, no navegador ou em arquivo versionado.

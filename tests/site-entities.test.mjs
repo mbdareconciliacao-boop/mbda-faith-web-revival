@@ -25,7 +25,9 @@ test('provider loads published entities', async () => {
 
 test('panel publishes and schedules per entity', async () => {
   const panel = await readFile(new URL('../src/pages/Panel.tsx', import.meta.url), 'utf8');
-  assert.match(panel, /TAB_ENTITY/);
+  assert.match(panel, /TAB_WORKFLOW/);
+  assert.match(panel, /save_editorial_draft/);
+  assert.match(panel, /approve_editorial/);
   assert.match(panel, /publish_entity/);
   assert.match(panel, /p_publish_at/);
   assert.match(panel, /site_entities/);

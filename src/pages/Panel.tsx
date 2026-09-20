@@ -4,6 +4,11 @@ import type { Session } from "@supabase/supabase-js";
 import { supabase } from "../config/supabase";
 import { DEFAULT_FEATURED_STUDY } from "../data/featuredStudy";
 import { imageUploadError } from "../domain/editorialSafety";
+import type {
+  EditorialEntity,
+  EditorialProfile,
+  EditorialWorkflow,
+} from "../domain/editorial";
 import {
   DEFAULT_SITE_SETTINGS,
   FONT_OPTIONS,
@@ -44,12 +49,24 @@ const TABS: Array<{ id: Tab; label: string }> = [
   { id: "historico", label: "Histórico" },
 ];
 
-const TAB_ENTITY: Partial<Record<Tab, SiteEntity>> = {
-  aparencia: "tema", conteudo: "textos", agenda: "agenda", igreja: "igreja", livros: "livros",
+const WORKFLOW_LABELS: Record<EditorialWorkflow["status"], string> = {
+  draft: "Rascunho",
+  in_review: "Em revisão",
+  changes_requested: "Ajustes solicitados",
+  approved: "Aprovado",
+  published: "Publicado",
 };
-const ENTITY_LABELS: Record<SiteEntity, string> = {
-  tema: "Aparência", textos: "Textos", agenda: "Agenda", igreja: "Igreja", livros: "Livros",
+const ROLE_LABELS: Record<EditorialProfile["role"], string> = {
+  contributor: "Colaborador",
+  editor: "Editor",
+  reviewer: "Revisor",
+  admin: "Administrador",
 };
+const TAB_WORKFLOW: Partial<Record<Tab, EditorialEntity>> = {
+  destaque: "destaque", aparencia: "tema", conteudo: "textos",
+  agenda: "agenda", igreja: "igreja", livros: "livros",
+};
+const EDITORIAL_ENTITIES = Object.values(TAB_WORKFLOW) as EditorialEntity[];
 
 const EMPTY: FormState = {
   slug: "", title: "", subtitle: "", intro: "", art480: "", art900: "", artAlt: "",
@@ -93,14 +110,14 @@ function formFromRow(row: Record<string, unknown> | null): FormState {
   };
 }
 
-function payloadFromForm(form: FormState) {
+function payloadFromForm(form: FormState, sections: unknown[]) {
   return {
     slug: form.slug.trim(), title: form.title.trim(), subtitle: form.subtitle.trim(),
     intro: form.intro.trim(), art_480_url: form.art480.trim(), art_900_url: form.art900.trim(),
     art_alt: form.artAlt.trim(), book_title: form.bookTitle.trim(),
     book_author: form.bookAuthor.trim(), book_href: form.bookHref.trim(),
     book_link_label: form.bookLinkLabel.trim(), sources: textToSources(form.sourcesText),
-    is_active: true,
+    sections, is_active: true,
   };
 }
 
@@ -109,6 +126,9 @@ export default function Panel() {
   const [checking, setChecking] = useState(true);
   const [authorization, setAuthorization] = useState<"checking" | "allowed" | "denied">("checking");
   const [contentReady, setContentReady] = useState<"loading" | "ready" | "error">("loading");
+  const [profile, setProfile] = useState<EditorialProfile | null>(null);
+  const [workflows, setWorkflows] = useState<Partial<Record<EditorialEntity, EditorialWorkflow>>>({});
+  const [studySections, setStudySections] = useState<unknown[]>(DEFAULT_FEATURED_STUDY.sections);
   const [tab, setTab] = useState<Tab>("destaque");
   const [form, setForm] = useState<FormState>(EMPTY);
   const [theme, setTheme] = useState<SiteTheme>(DEFAULT_SITE_SETTINGS.theme);
@@ -132,7 +152,26 @@ export default function Panel() {
   const [mfaLoading, setMfaLoading] = useState(false);
 
   const client = supabase;
-  const activeEntity = TAB_ENTITY[tab] ?? null;
+  const workflowEntity = TAB_WORKFLOW[tab] ?? null;
+  const workflow = workflowEntity ? workflows[workflowEntity] : undefined;
+  const mayEditEntity = (entity: EditorialEntity) => !!profile
+    && ["contributor", "editor", "admin"].includes(profile.role)
+    && (profile.role === "admin" || profile.entities.includes(entity));
+  const canEditCurrent = !!workflowEntity && !!profile
+    && mayEditEntity(workflowEntity)
+    && workflow?.status !== "in_review";
+  const canReviewCurrent = !!workflowEntity && !!profile
+    && ["reviewer", "admin"].includes(profile.role)
+    && workflow?.status === "in_review";
+  const canPublishCurrent = !!workflowEntity && profile?.role === "admin"
+    && workflow?.status === "approved" && workflow.approved_revision === workflow.revision;
+  const visibleTabs = useMemo(() => TABS.filter((item) => {
+    const entity = TAB_WORKFLOW[item.id];
+    return !entity || profile?.role === "admin" || profile?.role === "reviewer" || !!profile?.entities.includes(entity);
+  }), [profile]);
+  useEffect(() => {
+    if (profile && !visibleTabs.some((item) => item.id === tab)) setTab(visibleTabs[0]?.id ?? "historico");
+  }, [profile, tab, visibleTabs]);
 
   const previewRef = useRef<HTMLIFrameElement>(null);
   const controlsRef = useRef<HTMLDivElement>(null);
@@ -227,10 +266,17 @@ export default function Panel() {
   useEffect(() => {
     setAuthorization("checking");
     setContentReady("loading");
+    setProfile(null);
     if (!client || !sessionUserId || currentAal !== "aal2") return;
     let active = true;
-    void client.rpc("is_admin").then(({ data, error: accessError }) => {
-      if (active) setAuthorization(!accessError && data === true ? "allowed" : "denied");
+    void client.rpc("get_editorial_profile").then(({ data, error: accessError }) => {
+      const candidate = data as EditorialProfile | null;
+      const allowed = !accessError && !!candidate
+        && ["contributor", "editor", "reviewer", "admin"].includes(candidate.role)
+        && Array.isArray(candidate.entities);
+      if (!active) return;
+      setProfile(allowed ? candidate : null);
+      setAuthorization(allowed ? "allowed" : "denied");
     });
     return () => { active = false; };
   }, [client, sessionUserId, currentAal]);
@@ -241,6 +287,8 @@ export default function Panel() {
       .from("featured_studies").select("*").eq("is_active", true).maybeSingle();
     if (loadError) { setError(`Não foi possível ler o destaque: ${loadError.message}`); return false; }
     setForm(formFromRow(data as Record<string, unknown> | null));
+    const sections = (data as Record<string, unknown> | null)?.sections;
+    setStudySections(Array.isArray(sections) ? sections : DEFAULT_FEATURED_STUDY.sections);
     return true;
   }, [client]);
 
@@ -268,15 +316,39 @@ export default function Panel() {
     setRevisions((data ?? []) as Revision[]);
   }, [client]);
 
+  const loadWorkflows = useCallback(async () => {
+    if (!client) return false;
+    const { data, error: loadError } = await client.from("editorial_workflow").select("*");
+    if (loadError) { setError(`Não foi possível ler a fila editorial: ${loadError.message}`); return false; }
+    const rows = (data ?? []) as EditorialWorkflow[];
+    const next: Partial<Record<EditorialEntity, EditorialWorkflow>> = {};
+    for (const row of rows) next[row.entity] = row;
+    setWorkflows(next);
+
+    const siteRows = rows.filter((row) => SITE_ENTITIES.includes(row.entity as SiteEntity));
+    if (siteRows.length) {
+      const normalized = mergeEntityRows(siteRows.map((row) => ({ entity: row.entity, content: row.payload })));
+      setTheme(normalized.theme); setContent(normalized.content);
+      setVideoIdInput(normalized.content.featuredVideo?.youtubeId ?? "");
+    }
+    const featured = next.destaque?.payload;
+    if (featured) {
+      setForm(formFromRow(featured));
+      setStudySections(Array.isArray(featured.sections) ? featured.sections : DEFAULT_FEATURED_STUDY.sections);
+    }
+    return true;
+  }, [client]);
+
   useEffect(() => {
     if (!sessionUserId || currentAal !== "aal2" || authorization !== "allowed") return;
     let active = true;
-    void Promise.all([loadActive(), loadSettings()]).then((results) => {
-      if (active) setContentReady(results.every(Boolean) ? "ready" : "error");
+    void Promise.all([loadActive(), loadSettings()]).then(async (results) => {
+      const workflowReady = await loadWorkflows();
+      if (active) setContentReady(results.every(Boolean) && workflowReady ? "ready" : "error");
     }).catch(() => { if (active) setContentReady("error"); });
     void loadHistory();
     return () => { active = false; };
-  }, [sessionUserId, currentAal, authorization, loadActive, loadSettings, loadHistory]);
+  }, [sessionUserId, currentAal, authorization, loadActive, loadSettings, loadWorkflows, loadHistory]);
 
   const set = (key: keyof FormState, value: string) =>
     setForm((current) => ({ ...current, [key]: value }));
@@ -316,7 +388,7 @@ export default function Panel() {
     setBusy(true); setError("");
     try {
       const { error: uploadError } = await client.storage.from("estudos-artes")
-        .upload(path, file, { upsert: true, contentType: file.type || undefined });
+        .upload(path, file, { upsert: false, contentType: file.type || undefined });
       if (uploadError) throw new Error(uploadError.message);
       const { data } = client.storage.from("estudos-artes").getPublicUrl(path);
       set(variant === "480" ? "art480" : "art900", data.publicUrl);
@@ -335,7 +407,7 @@ export default function Panel() {
     setBusy(true); setError("");
     try {
       const { error: uploadError } = await client.storage.from("site-media")
-        .upload(path, file, { upsert: true, contentType: file.type || undefined });
+        .upload(path, file, { upsert: false, contentType: file.type || undefined });
       if (uploadError) throw new Error(uploadError.message);
       const { data } = client.storage.from("site-media").getPublicUrl(path);
       setBrand("logo", data.publicUrl);
@@ -354,7 +426,7 @@ export default function Panel() {
     setBusy(true); setError("");
     try {
       const { error: uploadError } = await client.storage.from("site-media")
-        .upload(path, file, { upsert: true, contentType: file.type || undefined });
+        .upload(path, file, { upsert: false, contentType: file.type || undefined });
       if (uploadError) throw new Error(uploadError.message);
       const { data } = client.storage.from("site-media").getPublicUrl(path);
       setThemeField("backgroundImage", data.publicUrl);
@@ -364,55 +436,97 @@ export default function Panel() {
     } finally { setBusy(false); }
   };
 
-  const saveStudy = async () => {
-    if (!client || !session) return;
-    const payload = payloadFromForm(form);
-    if (payload.slug.length < 3 || !payload.title) { setError("Preencha ao menos o slug e o título."); return; }
-    setBusy(true); setError(""); setStatus("");
-    try {
-      const { error: publishError } = await client.rpc("publish_featured_study", { p_payload: payload });
-      if (publishError) throw new Error(publishError.message);
-      setStatus("Destaque publicado."); await loadActive();
-    } catch (saveError) {
-      setError(saveError instanceof Error ? saveError.message : "Falha ao publicar.");
-    } finally { setBusy(false); }
+  const updateWorkflow = (row: EditorialWorkflow) => {
+    setWorkflows((current) => ({ ...current, [row.entity]: row }));
   };
 
-  const saveEntityDraft = async (): Promise<boolean> => {
-    if (!client || !session || !activeEntity) return false;
-    if (activeEntity === "textos" && videoIdInput && !/^[A-Za-z0-9_-]{11}$/.test(videoIdInput)) {
+  const saveEditorialDraft = async (): Promise<EditorialWorkflow | null> => {
+    if (!client || !session || !workflowEntity) return null;
+    if (!canEditCurrent) { setError("Seu papel não permite editar esta seção agora."); return null; }
+    if (workflowEntity === "textos" && videoIdInput && !/^[A-Za-z0-9_-]{11}$/.test(videoIdInput)) {
       setError("O identificador do YouTube deve ter 11 caracteres. Deixe vazio para usar o vídeo mais recente do canal.");
-      return false;
+      return null;
     }
-    const { error: draftError } = await client.from("site_entities").upsert(
-      { entity: activeEntity, state: "draft", content: entityContent(activeEntity, { theme, content }), updated_by: session.user.email ?? "" },
-      { onConflict: "entity,state" },
-    );
-    if (draftError) { setError(draftError.message); return false; }
-    return true;
+    const payload = workflowEntity === "destaque"
+      ? payloadFromForm(form, studySections)
+      : entityContent(workflowEntity as SiteEntity, { theme, content });
+    if (workflowEntity === "destaque" && (String(payload.slug).length < 3 || !payload.title)) {
+      setError("Preencha ao menos o slug e o título."); return null;
+    }
+    const { data, error: draftError } = await client.rpc("save_editorial_draft", {
+      p_entity: workflowEntity, p_payload: payload,
+    });
+    if (draftError) { setError(draftError.message); return null; }
+    const row = data as EditorialWorkflow;
+    updateWorkflow(row);
+    return row;
   };
 
   const saveDraft = async () => {
     setBusy(true); setError(""); setStatus("");
     try {
-      if (await saveEntityDraft()) setStatus(`Rascunho de ${activeEntity ? ENTITY_LABELS[activeEntity] : ""} salvo. Nada foi publicado ainda.`);
+      if (await saveEditorialDraft()) setStatus("Rascunho salvo. Nada foi publicado no site.");
+    } finally { setBusy(false); }
+  };
+
+  const submitReview = async () => {
+    if (!client || !workflowEntity) return;
+    setBusy(true); setError(""); setStatus("");
+    try {
+      if (!(await saveEditorialDraft())) return;
+      const { data, error: actionError } = await client.rpc("submit_editorial", { p_entity: workflowEntity });
+      if (actionError) throw new Error(actionError.message);
+      updateWorkflow(data as EditorialWorkflow);
+      setStatus("Conteúdo enviado para revisão. A edição fica bloqueada até a decisão.");
+      await loadHistory();
+    } catch (actionError) {
+      setError(actionError instanceof Error ? actionError.message : "Falha ao enviar para revisão.");
+    } finally { setBusy(false); }
+  };
+
+  const requestChanges = async () => {
+    if (!client || !workflowEntity) return;
+    if (publishNote.trim().length < 3) { setError("Explique o ajuste necessário antes de devolver à equipe."); return; }
+    setBusy(true); setError(""); setStatus("");
+    try {
+      const { data, error: actionError } = await client.rpc("request_editorial_changes", {
+        p_entity: workflowEntity, p_note: publishNote,
+      });
+      if (actionError) throw new Error(actionError.message);
+      updateWorkflow(data as EditorialWorkflow); setPublishNote("");
+      setStatus("Ajustes solicitados. O conteúdo voltou para a equipe responsável.");
+      await loadHistory();
+    } catch (actionError) {
+      setError(actionError instanceof Error ? actionError.message : "Falha ao solicitar ajustes.");
+    } finally { setBusy(false); }
+  };
+
+  const approve = async () => {
+    if (!client || !workflowEntity) return;
+    setBusy(true); setError(""); setStatus("");
+    try {
+      const { data, error: actionError } = await client.rpc("approve_editorial", { p_entity: workflowEntity });
+      if (actionError) throw new Error(actionError.message);
+      updateWorkflow(data as EditorialWorkflow);
+      setStatus("Revisão aprovada. Um administrador já pode publicar.");
+      await loadHistory();
+    } catch (actionError) {
+      setError(actionError instanceof Error ? actionError.message : "Falha ao aprovar.");
     } finally { setBusy(false); }
   };
 
   const publish = async (when: string | null) => {
-    if (!client || !activeEntity) return;
+    if (!client || !workflowEntity) return;
     setBusy(true); setError(""); setStatus("");
     try {
-      if (!(await saveEntityDraft())) return;
-      const { error: publishError } = await client.rpc("publish_entity", {
-        p_entity: activeEntity,
-        p_note: publishNote,
-        p_publish_at: when,
-      });
+      const result = workflowEntity === "destaque"
+        ? await client.rpc("publish_featured_study")
+        : await client.rpc("publish_entity", { p_entity: workflowEntity, p_note: publishNote, p_publish_at: when });
+      const publishError = result.error;
       if (publishError) throw new Error(publishError.message);
-      setStatus(when ? `${ENTITY_LABELS[activeEntity]} agendado.` : `${ENTITY_LABELS[activeEntity]} publicado no site.`);
+      setStatus(when ? "Publicação agendada." : "Conteúdo aprovado e publicado no site.");
       setPublishNote(""); setScheduleAt("");
-      await loadHistory();
+      await Promise.all([loadActive(), loadSettings(), loadWorkflows(), loadHistory()]);
     } catch (publishErr) {
       setError(publishErr instanceof Error ? publishErr.message : "Falha ao publicar.");
     } finally { setBusy(false); }
@@ -422,29 +536,11 @@ export default function Panel() {
     if (!client || !session) return;
     setBusy(true); setError(""); setStatus("");
     try {
-      const { data, error: readError } = await client
-        .from("content_revisions").select("entity,snapshot").eq("id", id).maybeSingle();
-      if (readError) throw new Error(readError.message);
-      const row = data as { entity: string; snapshot: unknown } | null;
-      if (!row) throw new Error("Revisão não encontrada.");
-      if (!SITE_ENTITIES.includes(row.entity as SiteEntity)) {
-        throw new Error("Revisão antiga (versão anterior do painel) não pode ser restaurada por aqui.");
-      }
-      const { error: restoreError } = await client.from("site_entities")
-        .upsert({ entity: row.entity, state: "draft", content: row.snapshot, publish_at: null, updated_by: session.user.email ?? "" }, { onConflict: "entity,state" });
+      const { data, error: restoreError } = await client.rpc("restore_editorial_revision", { p_revision: id });
       if (restoreError) throw new Error(restoreError.message);
-      const restored = mergeEntityRows(SITE_ENTITIES.map((entity) => ({
-        entity, content: entity === row.entity ? row.snapshot : entityContent(entity, { theme, content }),
-      })));
-      setTheme(restored.theme); setContent(restored.content);
-      if (row.entity === "textos") setVideoIdInput(restored.content.featuredVideo?.youtubeId ?? "");
-      const { error: historyError } = await client.from("content_revisions").insert({
-        entity: row.entity, action: "rollback", snapshot: row.snapshot,
-        note: `Revisão ${id} recuperada como rascunho, sem publicação`, created_by: session.user.email ?? "",
-      });
-      setStatus(`Revisão ${id} recuperada como rascunho. O site publicado não mudou. Confira a aba ${ENTITY_LABELS[row.entity as SiteEntity]} antes de publicar.`);
-      if (historyError) setError("O rascunho foi recuperado, mas não foi possível registrar o histórico. Confira antes de publicar.");
-      await loadHistory();
+      updateWorkflow(data as EditorialWorkflow);
+      setStatus(`Revisão ${id} recuperada como novo rascunho. O site publicado não mudou.`);
+      await Promise.all([loadActive(), loadSettings(), loadWorkflows(), loadHistory()]);
     } catch (rollbackErr) {
       setError(rollbackErr instanceof Error ? rollbackErr.message : "Falha ao restaurar.");
     } finally { setBusy(false); }
@@ -533,7 +629,7 @@ export default function Panel() {
   return <main className="panel-page">
     <div className="panel-shell">
       <header className="panel-head">
-        <div><h1>Painel editorial</h1><p className="panel-hint">{session.user.email}</p></div>
+        <div><h1>Painel editorial</h1><p className="panel-hint">{profile?.display_name || session.user.email} · {profile ? ROLE_LABELS[profile.role] : ""}</p></div>
         <div className="panel-actions">
           <button className="panel-link" type="button" aria-expanded={showPreview} aria-controls="panel-live-preview" onClick={() => setShowPreview(!showPreview)}>{showPreview ? "Ocultar prévia" : "Mostrar prévia"}</button>
           <a className="panel-link" href="/" target="_blank" rel="noopener noreferrer">Ver site publicado</a>
@@ -542,7 +638,7 @@ export default function Panel() {
       </header>
 
       <nav className="panel-tabs" aria-label="Seções do painel">
-        {TABS.map((item) => (
+        {visibleTabs.map((item) => (
           <button key={item.id} type="button" className="panel-tab" data-active={tab === item.id} aria-pressed={tab === item.id}
             onClick={() => { setTab(item.id); if (item.id === "historico") void loadHistory(); }}>
             {item.label}
@@ -552,11 +648,13 @@ export default function Panel() {
 
       <div className="panel-body" data-preview={showPreview}>
         <div ref={controlsRef} className="panel-controls">
-      <p className="panel-hint">{tab === "destaque" ? "Estudo da vez: a publicação altera o destaque imediatamente. A prévia ao lado mostra o estudo já publicado." : tab === "historico" ? "Consulte as versões publicadas antes de restaurar um conteúdo." : "Edite e confira a prévia. Salvar rascunho não altera o site público."}</p>
+      <p className="panel-hint">{tab === "historico" ? "Consulte as versões antes de recuperar um conteúdo como novo rascunho." : "Edite, salve e envie para revisão. Somente uma revisão aprovada pode ser publicada."}</p>
 
       {status && <p className="panel-status" role="status">{status}</p>}
       {error && <p className="panel-error" role="alert">{error}</p>}
 
+      {tab !== "historico" && <fieldset className="panel-editor-fields" disabled={!canEditCurrent}>
+        <legend className="sr-only">Campos de edição</legend>
       {tab === "destaque" && <>
         <div className="panel-grid">
           <label>Identificador (slug)<input value={form.slug} onChange={(e) => set("slug", slugify(e.target.value))} /></label>
@@ -577,10 +675,6 @@ export default function Panel() {
           <label>Livro — link (https)<input value={form.bookHref} onChange={(e) => set("bookHref", e.target.value)} /></label>
           <label>Livro — texto do botão<input value={form.bookLinkLabel} onChange={(e) => set("bookLinkLabel", e.target.value)} /></label>
           <label className="panel-full">Links de apoio (um por linha, <code>Rótulo | https://…</code>)<textarea rows={3} value={form.sourcesText} onChange={(e) => set("sourcesText", e.target.value)} /></label>
-        </div>
-        <div className="panel-actions">
-          <button className="panel-button" type="button" onClick={() => void saveStudy()} disabled={busy}>{busy ? "Salvando…" : "Publicar destaque"}</button>
-          <button className="panel-link" type="button" onClick={() => void loadActive()} disabled={busy}>Descartar</button>
         </div>
       </>}
 
@@ -681,18 +775,29 @@ export default function Panel() {
       {tab === "agenda" && <AgendaEditor content={content} onChange={setContent} />}
       {tab === "igreja" && <ChurchEditor content={content} onChange={setContent} />}
       {tab === "livros" && <BooksEditor content={content} onChange={setContent} />}
+      </fieldset>}
 
-      {activeEntity && <section className="panel-publish">
-        <h2 className="panel-section-title">Publicação · {ENTITY_LABELS[activeEntity]}</h2>
-        <label className="panel-full">Nota (opcional)<input value={publishNote} onChange={(e) => setPublishNote(e.target.value)} /></label>
-        <div className="panel-actions">
-          <button className="panel-button" type="button" onClick={() => void saveDraft()} disabled={busy}>Salvar rascunho</button>
-          <button className="panel-button panel-button-alt" type="button" onClick={() => void publish(null)} disabled={busy}>Publicar agora</button>
+      {workflowEntity && <section className="panel-publish" aria-labelledby="workflow-title">
+        <div className="panel-workflow-head">
+          <div><h2 className="panel-section-title" id="workflow-title">Fluxo editorial</h2>
+            <p className="panel-hint">Revisão {workflow?.revision ?? 1}{workflow?.live_revision ? ` · publicada ${workflow.live_revision}` : ""}</p></div>
+          <strong className="panel-workflow-status" data-status={workflow?.status ?? "draft"}>{WORKFLOW_LABELS[workflow?.status ?? "draft"]}</strong>
         </div>
+        {workflow?.review_note && <p className="panel-review-note"><strong>Ajuste solicitado:</strong> {workflow.review_note}</p>}
+        {(canReviewCurrent || canPublishCurrent) && <label className="panel-full">Nota da decisão<input maxLength={500} value={publishNote} onChange={(e) => setPublishNote(e.target.value)} placeholder={canReviewCurrent ? "Obrigatória ao solicitar ajustes" : "Opcional na publicação"} /></label>}
         <div className="panel-actions">
+          {canEditCurrent && <button className="panel-button" type="button" onClick={() => void saveDraft()} disabled={busy}>{busy ? "Salvando…" : "Salvar rascunho"}</button>}
+          {canEditCurrent && <button className="panel-button panel-button-alt" type="button" onClick={() => void submitReview()} disabled={busy}>Enviar para aprovação</button>}
+          {canReviewCurrent && <button className="panel-button panel-button-danger" type="button" onClick={() => void requestChanges()} disabled={busy}>Solicitar ajustes</button>}
+          {canReviewCurrent && <button className="panel-button panel-button-alt" type="button" onClick={() => void approve()} disabled={busy || workflow?.submitted_by === profile?.email}>Aprovar revisão</button>}
+          {canPublishCurrent && <button className="panel-button panel-button-alt" type="button" onClick={() => void publish(null)} disabled={busy}>Publicar agora</button>}
+        </div>
+        {workflow?.status === "in_review" && !canReviewCurrent && <p className="panel-hint">Aguardando a decisão de outro revisor.</p>}
+        {canReviewCurrent && workflow?.submitted_by === profile?.email && <p className="panel-hint">Quem enviou esta revisão não pode aprovar a própria alteração.</p>}
+        {canPublishCurrent && workflowEntity !== "destaque" && <div className="panel-actions">
           <label>Agendar para<input type="datetime-local" value={scheduleAt} onChange={(e) => setScheduleAt(e.target.value)} /></label>
           <button className="panel-link" type="button" disabled={busy || !scheduleAt} onClick={() => void publish(new Date(scheduleAt).toISOString())}>Agendar publicação</button>
-        </div>
+        </div>}
       </section>}
 
       {tab === "historico" && <>
@@ -703,7 +808,7 @@ export default function Panel() {
             <div key={revision.id} className="panel-history-row">
               <span><strong>#{revision.id} · {revision.entity} · {revision.action}</strong>
                 <small>{new Date(revision.created_at).toLocaleString("pt-BR")} · {revision.created_by || "—"} {revision.note ? `· ${revision.note}` : ""}</small></span>
-              <button className="panel-link" type="button" onClick={() => void rollback(revision.id)} disabled={busy || !SITE_ENTITIES.includes(revision.entity as SiteEntity)}>Recuperar rascunho</button>
+              <button className="panel-link" type="button" onClick={() => void rollback(revision.id)} disabled={busy || !EDITORIAL_ENTITIES.includes(revision.entity as EditorialEntity) || !mayEditEntity(revision.entity as EditorialEntity)}>Recuperar rascunho</button>
             </div>
           ))}
         </div>

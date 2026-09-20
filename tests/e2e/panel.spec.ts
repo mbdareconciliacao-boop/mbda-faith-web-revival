@@ -1,5 +1,14 @@
 import { expect, test } from '@playwright/test';
 
+const profile = {
+  email: 'editor@example.test', display_name: 'Editora local', role: 'admin', active: true,
+  entities: ['destaque', 'tema', 'textos', 'agenda', 'igreja', 'livros'],
+};
+const workflowRows = profile.entities.map(entity => ({
+  entity, status: 'draft', revision: 2, approved_revision: null, live_revision: 1,
+  payload: {}, submitted_by: null, approved_by: null, review_note: null,
+}));
+
 // No production login or database access: all Supabase traffic is intercepted.
 test.beforeEach(async ({ page }) => {
   const user = { id: 'local-editor', email: 'editor@example.test', factors: [{ id: 'totp-test', factor_type: 'totp', status: 'verified' }] };
@@ -9,7 +18,11 @@ test.beforeEach(async ({ page }) => {
   }, { user, token });
   await page.route('https://panel-test.supabase.co/**', async (route) => {
     const url = route.request().url();
-    const body = url.includes('/auth/v1/user') ? user : url.includes('/rpc/is_admin') ? true : [];
+    const body = url.includes('/auth/v1/user') ? user
+      : url.includes('/rpc/get_editorial_profile') ? profile
+      : url.includes('/rest/v1/editorial_workflow') ? workflowRows
+      : url.includes('/rpc/') && route.request().method() === 'POST' ? workflowRows[0]
+      : [];
     await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(body) });
   });
 });
@@ -43,7 +56,7 @@ test('draft video ID can be typed character by character', async ({ page }) => {
 });
 
 test('a non-admin with MFA cannot open the editor', async ({ page }) => {
-  await page.route('**/rest/v1/rpc/is_admin', route => route.fulfill({ status: 200, contentType: 'application/json', body: 'false' }));
+  await page.route('**/rest/v1/rpc/get_editorial_profile', route => route.fulfill({ status: 200, contentType: 'application/json', body: 'null' }));
   await page.goto('/painel');
   await expect(page.getByRole('heading', { name: 'Acesso não liberado' })).toBeVisible();
   await expect(page.locator('.panel-controls')).toHaveCount(0);
@@ -58,12 +71,12 @@ test('an aal1 session stays at MFA and does not load editorial drafts', async ({
     session.access_token = parts.join('.');
     localStorage.setItem(key, JSON.stringify(session));
   });
-  const adminChecks: string[] = [];
-  page.on('request', request => { if (request.url().includes('/rpc/is_admin')) adminChecks.push(request.url()); });
+  const profileChecks: string[] = [];
+  page.on('request', request => { if (request.url().includes('/rpc/get_editorial_profile')) profileChecks.push(request.url()); });
   await page.goto('/painel');
   await expect(page.getByRole('heading', { name: 'Segurança da conta' })).toBeVisible();
   await expect(page.locator('.panel-controls')).toHaveCount(0);
-  expect(adminChecks).toHaveLength(0);
+  expect(profileChecks).toHaveLength(0);
 });
 
 test('failed content reads block editing instead of saving defaults', async ({ page }) => {
@@ -73,20 +86,20 @@ test('failed content reads block editing instead of saving defaults', async ({ p
   await expect(page.locator('.panel-controls')).toHaveCount(0);
 });
 
-test('publishing one entity preserves unsaved edits in another tab', async ({ page }) => {
+test('saving one entity preserves unsaved edits in another tab', async ({ page }) => {
   const writes: Record<string, unknown>[] = [];
-  await page.route('**/rest/v1/site_entities?**', async route => {
-    if (route.request().method() === 'POST') writes.push(route.request().postDataJSON());
-    await route.fulfill({ status: 200, contentType: 'application/json', body: '[]' });
+  await page.route('**/rest/v1/rpc/save_editorial_draft', async route => {
+    writes.push(route.request().postDataJSON());
+    await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(workflowRows[1]) });
   });
   await page.goto('/painel');
   await page.getByRole('button', { name: 'Textos', exact: true }).click();
   await page.getByLabel('Nome da igreja').fill('Rascunho ainda não publicado');
   await page.getByRole('button', { name: 'Aparência', exact: true }).click();
-  await page.getByRole('button', { name: 'Publicar agora', exact: true }).click();
-  await expect(page.getByRole('status')).toContainText('publicado no site');
+  await page.getByRole('button', { name: 'Salvar rascunho', exact: true }).click();
+  await expect(page.getByRole('status')).toContainText('Rascunho salvo');
   expect(writes).toHaveLength(1);
-  expect(writes[0].entity).toBe('tema');
+  expect(writes[0].p_entity).toBe('tema');
   await page.getByRole('button', { name: 'Textos', exact: true }).click();
   await expect(page.getByLabel('Nome da igreja')).toHaveValue('Rascunho ainda não publicado');
 });
@@ -94,22 +107,30 @@ test('publishing one entity preserves unsaved edits in another tab', async ({ pa
 test('history recovery never writes a published row', async ({ page }) => {
   const writes: Record<string, unknown>[] = [];
   await page.route('**/rest/v1/content_revisions?**', async route => {
-    const isSnapshot = route.request().url().includes('snapshot');
-    await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(isSnapshot
-      ? [{ entity: 'textos', snapshot: { brand: { name: 'Nome recuperado' } } }]
-      : [{ id: 1, entity: 'textos', action: 'publish', note: '', created_at: '2026-09-19', created_by: 'editor@example.test' }]) });
+    await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(
+      [{ id: 1, entity: 'textos', action: 'publish', note: '', created_at: '2026-09-19', created_by: 'editor@example.test' }]) });
   });
-  await page.route('**/rest/v1/site_entities?**', async route => {
-    if (route.request().method() === 'POST') writes.push(route.request().postDataJSON());
-    await route.fulfill({ status: 200, contentType: 'application/json', body: '[]' });
+  await page.route('**/rest/v1/rpc/restore_editorial_revision', async route => {
+    writes.push(route.request().postDataJSON());
+    await route.fulfill({ status: 200, contentType: 'application/json', body: JSON.stringify(workflowRows[2]) });
   });
   await page.goto('/painel');
   await page.getByRole('button', { name: 'Histórico', exact: true }).click();
   await page.getByRole('button', { name: 'Recuperar rascunho' }).click();
   await expect(page.getByRole('status')).toContainText('O site publicado não mudou');
   expect(writes).toHaveLength(1);
-  expect(writes[0].state).toBe('draft');
-  expect(writes[0].publish_at).toBeNull();
+  expect(writes[0].p_revision).toBe(1);
+});
+
+test('a contributor only sees assigned sections and cannot publish', async ({ page }) => {
+  await page.route('**/rest/v1/rpc/get_editorial_profile', route => route.fulfill({
+    status: 200, contentType: 'application/json',
+    body: JSON.stringify({ ...profile, role: 'contributor', entities: ['textos'] }),
+  }));
+  await page.goto('/painel');
+  await expect(page.getByRole('button', { name: 'Textos', exact: true })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Aparência', exact: true })).toHaveCount(0);
+  await expect(page.getByRole('button', { name: 'Publicar agora', exact: true })).toHaveCount(0);
 });
 
 test('live preview receives edits without a database write', async ({ page }) => {
