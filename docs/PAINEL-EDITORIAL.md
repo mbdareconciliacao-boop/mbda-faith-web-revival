@@ -1,19 +1,18 @@
 # Painel editorial — documento mestre
 
-> Revisão de 19/09/2026: consulte [a auditoria e suas pendências](REVISAO-PAINEL-2026-09-19.md).
-> Foram confirmadas falhas de permissões legadas, MFA e agendamento no banco.
-> A presença de RLS e testes estáticos não significa que todos os fluxos estão seguros.
-> As alterações desta branch ainda precisam de revisão e publicação por PR.
->
-> A migração corretiva `20260920000000_editorial_security_repairs.sql` e seu
-> rollback foram preparados, mas **não aplicados**. Exigem backup, ensaio e aprovação.
+> Estado em 20/09/2026: a correção `20260920000000_editorial_security_repairs.sql`
+> foi aplicada após backup e ensaio transacional. O fluxo de equipe descrito abaixo
+> é entregue por `20260920010000_editorial_roles_and_approval.sql` e deve seguir o
+> mesmo rito antes da produção. Consulte também [a auditoria anterior](REVISAO-PAINEL-2026-09-19.md).
 
 ## Revisão de usabilidade e proteção de edição
 
 - Abas fora dos formulários; prévia em coluna própria apenas a partir de 1200 px,
   no fluxo em telas menores, com opção de ocultar. Paleta de trabalho clara,
   controles de 44 px e identidade navy preservada (Impeccable, modo operacional).
-- Autorização consultada após MFA; falha ao carregar dados bloqueia o editor.
+- Autorização e função da pessoa consultadas após MFA; falha ao carregar dados bloqueia o editor.
+- Colaborador/editor prepara o rascunho; revisor ou administrador decide; somente
+  administrador publica. Quem envia uma revisão não pode aprová-la.
 - Rascunhos de outras abas sobrevivem à publicação de uma entidade.
 - Histórico recupera **somente rascunho**, cancela seu agendamento e exige
   publicação explícita posterior. Não restaura automaticamente o site público.
@@ -26,8 +25,8 @@ como** e **até onde avançou**. Detalhes por fase estão em `docs/EDITOR-*.md`.
 ## 1. Objetivo
 
 Permitir que a igreja edite o site **sem programar**, com segurança: textos, identidade visual,
-agenda, igreja, livros, estudo da vez e vídeo em destaque. A administração é restrita a um
-e-mail autorizado, com verificação em duas etapas (MFA).
+agenda, igreja, livros, estudo da vez e vídeo em destaque. Cada integrante possui função,
+seções autorizadas e verificação em duas etapas (MFA). Toda publicação passa por aprovação.
 
 ## 2. Como foi construído (linha do tempo)
 
@@ -42,6 +41,7 @@ e-mail autorizado, com verificação em duas etapas (MFA).
 | Extras | Imagem de fundo + doutrina editável | `docs/EDITOR-EXTRA.md` |
 | MFA | TOTP do administrador (sem lockout) | `docs/ADMIN-MFA.md` |
 | Prévia | Site real em iframe, lado a lado e em tempo real | `docs/PREVIEW-AO-VIVO.md` |
+| Equipe | Papéis, seções permitidas e aprovação obrigatória por revisão | esta revisão |
 
 ## 3. Arquitetura
 
@@ -55,7 +55,8 @@ supabase/migrations/*            # schema, RLS, funções, buckets
 ```
 
 - O **site público** nunca fala com a área de escrita: lê apenas o estado **published**.
-- O **painel** lê rascunhos e publica; a prévia recebe o rascunho por `postMessage`.
+- O **painel** lê a fila editorial e chama somente funções protegidas; a prévia recebe
+  o rascunho por `postMessage`.
 
 ## 4. Modelo de dados
 
@@ -65,18 +66,24 @@ supabase/migrations/*            # schema, RLS, funções, buckets
   - `content` (jsonb), `publish_at`, `published_at`, `updated_at`, `updated_by`.
 - `public.featured_studies` — o "estudo da vez" (metadados, arte, livro, `sections`).
 - `public.content_revisions` — histórico (entidade, ação, snapshot, autor, data).
-- `public.app_admins` — lista de administradores (privada, sem acesso via API).
+- `public.app_admins` — equipe privada: `role`, `entities`, `display_name`, `active`.
+- `public.editorial_workflow` — payload em trabalho, revisão, responsáveis, decisão,
+  revisão aprovada/publicada e eventual agendamento por entidade.
 - Buckets `estudos-artes` e `site-media` (leitura pública; escrita admin).
 
 ## 5. Funções e RLS
 
-- `public.is_admin()` (SECURITY DEFINER, `search_path=''`): e-mail em `app_admins` **e**
-  `aal2` quando existir fator TOTP verificado. É a base de toda a escrita.
+- `public.get_editorial_profile()` devolve ao usuário autenticado apenas seu próprio papel e escopo.
+- `public.can_edit_editorial(entity)` e `public.can_review_editorial()` aplicam papel,
+  entidade autorizada e MFA `aal2` no banco.
+- `save_editorial_draft`, `submit_editorial`, `request_editorial_changes`,
+  `approve_editorial` e `restore_editorial_revision` são as únicas portas de edição.
 - `public.publish_entity(entity, note, publish_at)` — publica agora ou agenda.
-- `public.publish_due_entities()` — publica o que venceu. Após a migração corretiva,
-  somente `service_role` executa e o workflow exige `SUPABASE_SERVICE_ROLE_KEY`.
+- `public.publish_featured_study()` — publica o estudo aprovado, sem payload livre do navegador.
+- `public.publish_due_entities()` — publica o que venceu; somente `service_role` executa.
 - `public.publish_site_settings(...)` / `public.rollback_site_settings(...)` — legado (fase anterior).
-- RLS: leitura pública **apenas** `state='published'`; rascunhos e histórico só para admin.
+- RLS: leitura pública **apenas** `state='published'`; equipe lê a fila e o histórico;
+  escritas diretas do navegador são revogadas e passam pelas funções acima.
 
 ## 6. Segurança (resumo)
 
@@ -89,11 +96,12 @@ supabase/migrations/*            # schema, RLS, funções, buckets
 
 ## 7. Como operar (resumo)
 
-1. Entrar em `/painel` (e-mail `mbdareconciliacao@gmail.com`).
+1. Entrar em `/painel` com uma conta cadastrada pela igreja.
 2. Confirmar o código do autenticador (MFA).
 3. Escolher a aba, editar vendo a **prévia ao vivo** ao lado.
-4. **Salvar rascunho** → **Publicar agora** ou **Agendar**.
-5. **Histórico** → **Restaurar** para voltar atrás.
+4. **Salvar rascunho** → **Enviar para aprovação**.
+5. Outro revisor aprova ou solicita ajustes; o administrador publica ou agenda.
+6. **Histórico** → **Recuperar rascunho** para voltar atrás sem alterar o site imediatamente.
 
 Passo a passo completo: `docs/OPERACAO.md`.
 
@@ -103,6 +111,8 @@ Passo a passo completo: `docs/OPERACAO.md`.
   (o campo `featured_studies.sections` já existe, pronto para a próxima fase).
 - Revisões antigas gravadas como `site_settings` não são restauráveis pelo botão do painel.
 - A prévia precisa que o navegador permita o iframe do próprio site (CSP `'self'`).
+- A inclusão de uma pessoa na equipe ainda é técnica: criar/confirmar a conta no Supabase Auth
+  e cadastrar seu e-mail, papel e seções em `app_admins`. A gestão visual da equipe é a próxima fase.
 
 ## 9. Como outro agente deve continuar
 

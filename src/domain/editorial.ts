@@ -1,4 +1,5 @@
 export type EditorialRole = "contributor" | "editor" | "reviewer" | "admin";
+export type EditorialEntity = "destaque" | "tema" | "textos" | "agenda" | "igreja" | "livros";
 export type ContentKind = "news" | "schedule" | "event" | "book";
 export type EditorialStatus = "draft" | "in_review" | "changes_requested" | "approved" | "published" | "archived";
 export type EditorialAction = "create" | "edit" | "submit" | "request_changes" | "approve" | "publish" | "archive";
@@ -6,6 +7,29 @@ export type EditorialAction = "create" | "edit" | "submit" | "request_changes" |
 export interface EditorialActor {
   id: string;
   role: EditorialRole;
+}
+
+export interface EditorialProfile {
+  email: string;
+  display_name: string;
+  role: EditorialRole;
+  entities: EditorialEntity[];
+}
+
+export interface EditorialWorkflow {
+  entity: EditorialEntity;
+  status: Exclude<EditorialStatus, "archived">;
+  revision: number;
+  approved_revision: number | null;
+  live_revision: number | null;
+  payload: Record<string, unknown>;
+  owner_email: string;
+  submitted_by: string;
+  approved_by: string;
+  review_note: string;
+  scheduled_at: string | null;
+  updated_at: string;
+  updated_by: string;
 }
 
 export interface EditorialRecord {
