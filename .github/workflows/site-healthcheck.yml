@@ -1,9 +1,9 @@
 name: Verificar o site
 
-# Monitor simples de disponibilidade: a cada 30 min confere a home e avisa no Discord.
+# Monitor simples de disponibilidade: a cada 3 horas confere a home e avisa no Discord.
 on:
   schedule:
-    - cron: '*/30 * * * *'
+    - cron: '15 */3 * * *'
   workflow_dispatch:
 permissions:
   contents: read

@@ -8,7 +8,8 @@ Guia para a pessoa (ou IA) que cuida do site no dia a dia.
 
 ## Acesso ao painel
 
-1. Abra `https://www.igrejadarecon.com.br/painel` (ou o endereço da Vercel).
+1. Abra `https://mbdareconciliacao.vercel.app/painel`. Use o domínio próprio somente
+   depois que seu DNS estiver configurado e testado.
 2. Use seu próprio e-mail, previamente cadastrado na equipe editorial (`app_admins`).
 3. Confirme o código do autenticador (MFA). Na primeira vez, cadastre o QR no
    Google Authenticator/Authy.
@@ -49,8 +50,9 @@ Supabase Auth e registra e-mail, papel e seções em `app_admins`. Não comparti
 
 ## Rotina semanal
 
-- Conferir se o **backup do repositório** rodou (Actions → Automated Backup).
-  Ele não contém o banco nem os arquivos do Supabase Storage.
+- Conferir se o **snapshot do código** rodou (Actions → Source recovery snapshot).
+  Ele guarda somente o estado atual versionado, por 14 dias, e não contém o banco,
+  o histórico Git nem os arquivos do Supabase Storage.
 - Revisar o que foi publicado/agendado na semana.
 - Conferir o **Supabase** ativo (o workflow `supabase-keepalive` mantém de hora em hora).
 - Olhar o **Google Search Console** (após configurado) para erros e buscas.
@@ -60,10 +62,10 @@ Supabase Auth e registra e-mail, papel e seções em `app_admins`. Não comparti
 | Workflow | Quando | O que faz |
 |---|---|---|
 | `youtube-sync.yml` | diário (10h BRT) | Atualiza o catálogo do canal; a home usa o mais recente |
-| `news-scraper.yml` | 2x/dia | Coleta notícias para JSON estático |
+| `news-scraper.yml` | diário (cerca de 7h BRT) | Coleta notícias para JSON estático |
 | `supabase-keepalive.yml` | de hora em hora | Mantém o Supabase ativo e publica agendamentos |
-| `site-healthcheck.yml` | a cada 30 min | Confere a home e avisa se cair |
-| `backup.yml` | semanal | Backup do repositório |
+| `site-healthcheck.yml` | a cada 3 horas | Confere a home e avisa se cair |
+| `backup.yml` | semanal | Snapshot pequeno do código atual |
 | `security.yml` | push/agenda | Testes, build, auditoria |
 
 Em falha, cada workflow tenta avisar no **Discord**.
@@ -77,6 +79,18 @@ Em falha, cada workflow tenta avisar no **Discord**.
 
 Nunca usar `service_role` em `VITE_*`, no navegador ou em arquivo versionado.
 `.env.local` não é versionado.
+
+## GitHub e recuperação
+
+- O repositório é público para que as automações padrão continuem sem consumir a
+  franquia de minutos de repositório privado. Segredos permanecem exclusivamente
+  em GitHub Secrets, Vercel e `.env.local`.
+- A `main` deve bloquear exclusão e `force push`. Antes de exigir pull request para
+  toda alteração, adapte as rotinas de notícias e YouTube, que hoje publicam arquivos
+  gerados diretamente na branch.
+- O snapshot semanal é uma cópia de recuperação do código atual, não um backup do
+  Supabase. Antes de qualquer migração do banco, continue usando `pg_dump`, ensaio de
+  restauração e validação conforme `docs/SUPABASE-HARDENING-2026-09-05.md`.
 
 ## Problemas comuns
 
