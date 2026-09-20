@@ -26,6 +26,7 @@ test('panel embeds the real site and posts the draft settings', async () => {
 
 test('site can be framed only by itself', async () => {
   const vercel = await readFile(new URL('../vercel.json', import.meta.url), 'utf8');
+  assert.match(vercel, /frame-src 'self' https:\/\/www\.youtube-nocookie\.com/);
   assert.match(vercel, /frame-ancestors 'self'/);
   assert.match(vercel, /"X-Frame-Options",\s*"value": "SAMEORIGIN"/);
 });
