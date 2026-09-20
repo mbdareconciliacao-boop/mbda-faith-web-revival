@@ -1,9 +1,11 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-09-19T13:52:16.889098+00:00",
-  "total_articles": 1,
+  "last_updated": "2026-09-20T14:06:30.287043+00:00",
+  "total_articles": 9,
   "sources": [
-    "Google News - Cristãos Perseguidos"
+    "Folha Gospel",
+    "Google News - Cristãos Perseguidos",
+    "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
@@ -14,6 +16,86 @@
       "category": "Igreja Perseguida",
       "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
       "date": "2026-09-19T11:00:00+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Jovens resistem a açoites por amor a Jesus no Chifre da África - Portas Abertas",
+      "summary": "Jovens resistem a açoites por amor a Jesus no Chifre da África - Portas Abertas",
+      "source": "Google News - Cristãos Perseguidos",
+      "url": "https://news.google.com/rss/articles/CBMivwFBVV95cUxOaEdYMW91QTI4Y2l1MV9Md2RZVmx2b1BzcHFaY09sWTFOeDk4UFVlNDB3Ym5WbXk4elJTdjNSVDVqSnRHNVc0Z1hzRERueFpoT0FuVlZ5WGtXcG5WMkh1Q3pVNEYwbFVFQVdqNnFkNW05dldsVnAta0NkTVZiRC1RTkg1QlJEWGNWd21DX08zaWNqZ014eklESDB4c1F0c0FNZTdVUzhYVGY5LWFBOHlvV1FvalViSVZOZVBRa0Z4UQ?oc=5",
+      "category": "Igreja Perseguida",
+      "image_url": "",
+      "date": "2026-09-18T23:55:22+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "‘Vida a Cores’ promove acolhimento e valorização da vida em Botafogo",
+      "summary": "Evento acontece domingo, a partir de 09h30. The post ‘Vida a Cores’ promove acolhimento e valorização da vida em Botafogo appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/vida-a-cores-promove-acolhimento-e-valorizacao-da-vida-em-botafogo/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-09-18T22:44:17+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Metade dos evangélicos lê a Bíblia diariamente, revela pesquisa nacional",
+      "summary": "Pesquisa inédita do Instituto Valentes Intel revela que metade dos evangélicos brasileiros lê a Bíblia diariamente e mantém rotina de oração e cultos ativos. The post Metade dos evangélicos lê a Bíbli...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/levantamento-nacional-mapeia-habitos-de-fe-e-rotina-dos-evangelicos-no-brasil/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2024/01/Jovens-estudando-a-Biblia-Foto-canva.jpg",
+      "date": "2026-09-18T15:20:44+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Evangélicos representam dois terços dos cristãos praticantes no Reino Unido",
+      "summary": "Estudo aponta que evangélicos formam a maioria dos cristãos praticantes no Reino Unido. Movimento cresce entre jovens e minorias étnicas com forte engajamento. The post Evangélicos representam dois te...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/evangelicos-maioria-cristaos-praticantes-reino-unido/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/evangelicos-maioria-cristaos-praticantes-reino-unido.webp",
+      "date": "2026-09-18T13:06:20+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Polícia especial interrompe culto e prende cristãos na Argélia",
+      "summary": "País está na 20º posição da Lista Mundial da Portas Abertas de países que perseguem cristãos. The post Polícia especial interrompe culto e prende cristãos na Argélia appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/policia-especial-interrompe-culto-e-prende-cristaos-na-argelia/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-09-18T09:00:57+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Rússia inclui organização religiosa em registro de entidades consideradas “indesejáveis”",
+      "summary": "Mission Eurasia treina lideranças e distribui Bíblias há 30 anos. The post Rússia inclui organização religiosa em registro de entidades consideradas “indesejáveis” appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/russia-inclui-organizacao-religiosa-em-registro-de-entidades-consideradas-indesejaveis/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-09-18T03:05:14+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Igreja é investigada por Ministério Público de Santa Catarina por defender família tradicional em desfile cívico",
+      "summary": "Igreja também se posicionou contra ideologia de gênero e aborto. The post Igreja é investigada por Ministério Público de Santa Catarina por defender família tradicional em desfile cívico appeared firs...",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/igreja-e-investigada-por-ministerio-publico-de-santa-catarina-por-defender-familia-tradicional-em-desfile-civico/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-09-18T00:00:27+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Crise no STF mobiliza pastores que apoiam e questionam atuação de André Mendonça",
+      "summary": "Em meio à tensão entre ministros do Supremo, grupo de reverendos questiona compatibilidade entre magistratura e ministério pastoral de Mendonça; outros líderes evangélicos convocam a igreja à oração p...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/crise-no-stf-mobiliza-pastores-apoiam-e-questionam-atuacao-de-andre-mendonca/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/image-11.png",
+      "date": "2026-09-17T16:40:00+00:00",
       "publication_date_verified": true
     }
   ]
