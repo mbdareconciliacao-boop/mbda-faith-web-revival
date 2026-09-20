@@ -1,208 +1,77 @@
-name: Automated Backup
+name: Source recovery snapshot
 
 on:
   schedule:
-    # Todo domingo às 2h UTC (23h no horário de Brasília)
+    # Domingo, 02:00 UTC (sábado, 23:00 em Brasília).
     - cron: '0 2 * * 0'
-  workflow_dispatch: # Permite execução manual
-    inputs:
-      backup_type:
-        description: 'Tipo de backup'
-        required: true
-        default: 'scheduled'
-        type: choice
-        options:
-        - scheduled
-        - manual
-        - emergency
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  actions: write
+
+concurrency:
+  group: source-recovery-snapshot
+  cancel-in-progress: false
 
 jobs:
-  backup:
-    name: Create Repository Backup
+  snapshot:
+    name: Create a small source snapshot
     runs-on: ubuntu-latest
-    
+    timeout-minutes: 5
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      with:
-        fetch-depth: 0 # Fetch completo para backup
-        
-    - name: Setup backup environment
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y git-lfs
-        
-    - name: Create backup metadata
-      run: |
-        mkdir -p backup-metadata
-        echo "# Backup Metadata" > backup-metadata/info.md
-        echo "Date: $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> backup-metadata/info.md
-        echo "Trigger: ${{ github.event_name }}" >> backup-metadata/info.md
-        echo "Backup Type: ${{ github.event.inputs.backup_type || 'scheduled' }}" >> backup-metadata/info.md
-        echo "Repository: ${{ github.repository }}" >> backup-metadata/info.md
-        echo "Branch: ${{ github.ref_name }}" >> backup-metadata/info.md
-        echo "Commit: ${{ github.sha }}" >> backup-metadata/info.md
-        echo "Actor: ${{ github.actor }}" >> backup-metadata/info.md
-        echo "" >> backup-metadata/info.md
-        echo "## Repository Statistics" >> backup-metadata/info.md
-        echo "Total commits: $(git rev-list --count HEAD)" >> backup-metadata/info.md
-        echo "Total branches: $(git branch -r | wc -l)" >> backup-metadata/info.md
-        echo "Repository size: $(du -sh . | cut -f1)" >> backup-metadata/info.md
-        echo "Last commit: $(git log -1 --format='%h - %s (%cr by %an)')" >> backup-metadata/info.md
-        
-    - name: Create backup archive
-      run: |
-        BACKUP_NAME="mb-dareconciliacao-backup-$(date +%Y%m%d_%H%M%S)"
-        
-        # Criar arquivo tar com todo o repositório
-        tar -czf "${BACKUP_NAME}.tar.gz" \
-          --warning=no-file-changed \
-          --exclude='.git' \
-          --exclude='node_modules' \
-          --exclude='dist' \
-          --exclude='*.log' \
-          . || [ $? -eq 1 ]
-          
-        # Criar backup do .git separadamente (mais compacto)
-        git bundle create "${BACKUP_NAME}-git.bundle" --all
-        
-        # Informações do backup
-        echo "BACKUP_NAME=${BACKUP_NAME}" >> $GITHUB_ENV
-        echo "BACKUP_SIZE=$(du -sh ${BACKUP_NAME}.tar.gz | cut -f1)" >> $GITHUB_ENV
-        echo "GIT_BUNDLE_SIZE=$(du -sh ${BACKUP_NAME}-git.bundle | cut -f1)" >> $GITHUB_ENV
-        
-    - name: Upload backup artifacts
-      uses: actions/upload-artifact@v4
-      with:
-        name: ${{ env.BACKUP_NAME }}
-        path: |
-          ${{ env.BACKUP_NAME }}.tar.gz
-          ${{ env.BACKUP_NAME }}-git.bundle
-          backup-metadata/
-        retention-days: 90 # Manter por 90 dias
-        
-    - name: Create backup release (for important backups)
-      if: github.event.inputs.backup_type == 'emergency' || github.event_name == 'workflow_dispatch'
-      uses: actions/create-release@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tag_name: backup-${{ env.BACKUP_NAME }}
-        release_name: 🛡️ Emergency Backup - ${{ env.BACKUP_NAME }}
-        body: |
-          # 🛡️ Backup Emergencial - MBdaReconciliação
-          
-          **Data:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')
-          **Tipo:** ${{ github.event.inputs.backup_type || 'manual' }}
-          **Tamanho do arquivo:** ${{ env.BACKUP_SIZE }}
-          **Bundle Git:** ${{ env.GIT_BUNDLE_SIZE }}
-          
-          ## Como restaurar:
-          
-          1. **Baixar os arquivos:**
-             - `${{ env.BACKUP_NAME }}.tar.gz` (código fonte)
-             - `${{ env.BACKUP_NAME }}-git.bundle` (histórico Git)
-          
-          2. **Restaurar código:**
-             ```bash
-             tar -xzf ${{ env.BACKUP_NAME }}.tar.gz
-             cd mb-dareconciliacao
-             ```
-          
-          3. **Restaurar histórico Git:**
-             ```bash
-             git clone ${{ env.BACKUP_NAME }}-git.bundle mb-dareconciliacao-restored
-             cd mb-dareconciliacao-restored
-             npm install
-             ```
-          
-          ## Verificação de integridade:
-          - ✅ Backup criado automaticamente
-          - ✅ Metadados incluídos
-          - ✅ Histórico Git preservado
-          
-          ---
-          *Backup criado automaticamente pelo GitHub Actions*
-        draft: false
-        prerelease: false
-        
-    - name: Notify backup completion
-      if: always()
-      run: |
-        if [ "${{ job.status }}" == "success" ]; then
-          echo "✅ Backup criado com sucesso!"
-          echo "📦 Nome: ${{ env.BACKUP_NAME }}"
-          echo "📊 Tamanho: ${{ env.BACKUP_SIZE }}"
-          echo "🔗 Bundle Git: ${{ env.GIT_BUNDLE_SIZE }}"
-        else
-          echo "❌ Falha na criação do backup!"
-        fi
-        
-    - name: Cleanup old artifacts (keep last 10)
-      if: success()
-      uses: actions/github-script@v7
-      with:
-        script: |
-          const artifacts = await github.rest.actions.listArtifactsForRepo({
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            per_page: 100
-          });
-          
-          const backupArtifacts = artifacts.data.artifacts
-            .filter(artifact => artifact.name.startsWith('mb-dareconciliacao-backup-'))
-            .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
-          
-          // Manter apenas os 10 backups mais recentes
-          const toDelete = backupArtifacts.slice(10);
-          
-          for (const artifact of toDelete) {
-            console.log(`Removendo backup antigo: ${artifact.name}`);
-            await github.rest.actions.deleteArtifact({
+      - uses: actions/checkout@v4
+
+      - id: archive
+        name: Archive the current source
+        shell: bash
+        run: |
+          set -euo pipefail
+          name="source-snapshot-${GITHUB_SHA::7}"
+          mkdir -p snapshot
+          git archive --format=tar.gz --output="snapshot/${name}.tar.gz" HEAD
+          sha256sum "snapshot/${name}.tar.gz" > "snapshot/${name}.sha256"
+          {
+            echo "commit=${GITHUB_SHA}"
+            echo "created_at=$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+            echo "repository=${GITHUB_REPOSITORY}"
+          } > snapshot/metadata.txt
+          echo "name=${name}" >> "$GITHUB_OUTPUT"
+
+      - name: Upload the recovery snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.archive.outputs.name }}
+          path: snapshot/
+          retention-days: 14
+          compression-level: 0
+
+      - name: Keep only the two newest source snapshots
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const { data } = await github.rest.actions.listArtifactsForRepo({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              artifact_id: artifact.id
+              per_page: 100,
             });
-          }
-          
-          console.log(`✅ Limpeza concluída. Mantidos ${Math.min(backupArtifacts.length, 10)} backups.`);
+            const snapshots = data.artifacts
+              .filter(({ expired, name }) => !expired && name.startsWith('source-snapshot-'))
+              .sort((a, b) => new Date(b.created_at) - new Date(a.created_at));
+            for (const artifact of snapshots.slice(2)) {
+              await github.rest.actions.deleteArtifact({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                artifact_id: artifact.id,
+              });
+            }
 
-    - name: Avisar falha no Discord
-      if: failure()
-      continue-on-error: true
-      env:
-        DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
-      run: |
-        if [ -z "$DISCORD_WEBHOOK_URL" ]; then exit 0; fi
-        curl -s -X POST "$DISCORD_WEBHOOK_URL" -H 'Content-Type: application/json' \
-          -d '{"username":"Central MBdaR","allowed_mentions":{"parse":[]},"embeds":[{"title":"Falha em backup semanal","description":"A rotina falhou. Abra a execucao para conferir.","url":"${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}","color":14170682}]}' || true
-
-  security-audit:
-    name: Security Audit
-    runs-on: ubuntu-latest
-    needs: backup
-    
-    steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-      
-    - name: Setup Node.js
-      uses: actions/setup-node@v4
-      with:
-        node-version: '24'
-        cache: 'npm'
-        
-    - name: Install dependencies
-      run: npm ci
-      
-    - name: Run security audit
-      run: |
-        chmod +x scripts/security-audit.sh
-        ./scripts/security-audit.sh
-        
-    - name: Upload security report
-      uses: actions/upload-artifact@v4
-      with:
-        name: security-report-$(date +%Y%m%d_%H%M%S)
-        path: security-reports/
-        retention-days: 30
+      - name: Alert Discord on failure
+        if: failure()
+        continue-on-error: true
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DISCORD_WEBHOOK_URL }}
+        run: |
+          if [ -z "$DISCORD_WEBHOOK_URL" ]; then exit 0; fi
+          curl -s -X POST "$DISCORD_WEBHOOK_URL" -H 'Content-Type: application/json' \
+            -d '{"username":"Central MBdaR","allowed_mentions":{"parse":[]},"embeds":[{"title":"Falha no snapshot semanal","description":"A rotina falhou. Abra a execução para conferir.","url":"${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}","color":14170682}]}' || true

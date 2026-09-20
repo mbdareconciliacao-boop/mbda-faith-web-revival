@@ -1,8 +1,8 @@
 name: News Scraper
 on:
   schedule:
-    # Existing cadence preserved: 07:00 and 19:00 BRT.
-    - cron: '0 10,22 * * *'
+    # Uma edição diária, por volta de 07:00 BRT. O GitHub pode atrasar a execução.
+    - cron: '0 10 * * *'
   workflow_dispatch:
 permissions:
   contents: write

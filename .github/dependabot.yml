@@ -9,10 +9,6 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 5
-    reviewers:
-      - "carlitosdj"
-    assignees:
-      - "carlitosdj"
     commit-message:
       prefix: "deps"
       include: "scope"
@@ -28,8 +24,6 @@ updates:
       day: "monday"
       time: "09:00"
     open-pull-requests-limit: 3
-    reviewers:
-      - "carlitosdj"
     commit-message:
       prefix: "ci"
       include: "scope"

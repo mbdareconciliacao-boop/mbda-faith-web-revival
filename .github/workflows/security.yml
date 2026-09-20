@@ -3,6 +3,12 @@ name: Security Scan
 on:
   push:
     branches: [main, develop]
+    paths-ignore:
+      - 'src/data/christian_news.json'
+      - 'public/data/christian_news.json'
+      - 'public/reconnews-feed.json'
+      - 'public/reconnews-rss.xml'
+      - 'src/data/youtubeMessages.ts'
   pull_request:
     branches: [main]
   schedule:
