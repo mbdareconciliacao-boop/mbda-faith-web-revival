@@ -1,9 +1,9 @@
 # Painel editorial — documento mestre
 
-> Estado em 20/09/2026: a correção `20260920000000_editorial_security_repairs.sql`
-> foi aplicada após backup e ensaio transacional. O fluxo de equipe descrito abaixo
-> é entregue por `20260920010000_editorial_roles_and_approval.sql` e deve seguir o
-> mesmo rito antes da produção. Consulte também [a auditoria anterior](REVISAO-PAINEL-2026-09-19.md).
+> Estado em 20/09/2026: as migrações `20260920000000_editorial_security_repairs.sql`
+> e `20260920010000_editorial_roles_and_approval.sql` foram aplicadas após backup,
+> ensaio transacional, validação do rollback e testes do fluxo completo. Consulte
+> também [a auditoria anterior](REVISAO-PAINEL-2026-09-19.md).
 
 ## Revisão de usabilidade e proteção de edição
 
