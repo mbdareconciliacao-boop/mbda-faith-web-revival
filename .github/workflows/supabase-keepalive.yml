@@ -41,12 +41,16 @@ jobs:
       - name: Publicar agendamentos vencidos
         env:
           SUPABASE_URL: ${{ secrets.VITE_SUPABASE_URL }}
-          SUPABASE_ANON_KEY: ${{ secrets.VITE_SUPABASE_ANON_KEY }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
         run: |
-          body=$(curl --silent --max-time 30 \
+          if [ -z "$SUPABASE_SERVICE_ROLE_KEY" ]; then
+            echo "Falta o secret SUPABASE_SERVICE_ROLE_KEY para executar o agendador."
+            exit 1
+          fi
+          body=$(curl --silent --show-error --fail-with-body --max-time 30 \
             -X POST "$SUPABASE_URL/rest/v1/rpc/publish_due_entities" \
-            -H "apikey: $SUPABASE_ANON_KEY" \
-            -H "Authorization: Bearer $SUPABASE_ANON_KEY" \
+            -H "apikey: $SUPABASE_SERVICE_ROLE_KEY" \
+            -H "Authorization: Bearer $SUPABASE_SERVICE_ROLE_KEY" \
             -H "Content-Type: application/json" \
             -d '{}')
           echo "Agendamentos publicados: $body"

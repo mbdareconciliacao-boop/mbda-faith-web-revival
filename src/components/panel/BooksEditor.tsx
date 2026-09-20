@@ -2,6 +2,7 @@ import { useState } from "react";
 
 import { supabase } from "../../config/supabase";
 import type { SiteBook, SiteContent } from "../../data/siteSettings";
+import { imageUploadError } from "../../domain/editorialSafety";
 
 interface EditorProps {
   content: SiteContent;
@@ -20,6 +21,8 @@ export default function BooksEditor({ content, onChange }: EditorProps) {
 
   const upload = async (index: number, file: File) => {
     if (!supabase) return;
+    const validationError = imageUploadError(file);
+    if (validationError) { setError(validationError); return; }
     const extension = (file.name.split(".").pop() ?? "webp").toLowerCase();
     const path = `livro-${Date.now()}.${extension}`;
     setBusy(true); setError("");

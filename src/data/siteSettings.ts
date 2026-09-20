@@ -1,6 +1,7 @@
 import { MONTHLY_GATHERINGS, WEEKLY_SCHEDULE } from "./church";
 import { declarations } from "./doctrine";
 import { recommendedBooks } from "./recommendedBooks";
+import { editorialUrl, editorialSrcSet } from "../domain/editorialSafety";
 
 export interface SiteTheme {
   ink: string; navy: string; cobalt: string; blue: string; gold: string;
@@ -222,9 +223,9 @@ const asBooks = (value: unknown, fallback: SiteBook[]): SiteBook[] => {
       title: asString(entry.title, ""),
       author: asString(entry.author, ""),
       description: asString(entry.description, ""),
-      image: asString(entry.image, "/images/site/logo-evergreen.webp"),
-      imageSrcSet: typeof entry.imageSrcSet === "string" ? entry.imageSrcSet : undefined,
-      href: typeof entry.href === "string" && entry.href ? entry.href : undefined,
+      image: editorialUrl(entry.image, true) ?? "/images/site/logo-evergreen.webp",
+      imageSrcSet: editorialSrcSet(entry.imageSrcSet),
+      href: editorialUrl(entry.href),
       linkLabel: typeof entry.linkLabel === "string" && entry.linkLabel ? entry.linkLabel : undefined,
       purchaseNote: typeof entry.purchaseNote === "string" && entry.purchaseNote ? entry.purchaseNote : undefined,
     };
@@ -268,11 +269,11 @@ const asContent = (value: unknown): SiteContent => {
       .map((item, index) => ({
         kicker: asString(item.kicker, base.home.paths[index]?.kicker ?? ""),
         label: asString(item.label, base.home.paths[index]?.label ?? ""),
-        href: asString(item.href, base.home.paths[index]?.href ?? "/"),
+        href: editorialUrl(item.href, true) ?? base.home.paths[index]?.href ?? "/",
       }))
     : base.home.paths;
   return {
-    brand: { name: asString(brand.name, base.brand.name), logo: asString(brand.logo, base.brand.logo) },
+    brand: { name: asString(brand.name, base.brand.name), logo: editorialUrl(brand.logo, true) ?? base.brand.logo },
     home: {
       heroLines: asStringList(home.heroLines, base.home.heroLines),
       heroSubtitle: asString(home.heroSubtitle, base.home.heroSubtitle),
@@ -313,10 +314,10 @@ const asContent = (value: unknown): SiteContent => {
       neighborhood: asString(contact.neighborhood, base.contact.neighborhood),
       city: asString(contact.city, base.contact.city),
       phone: asString(contact.phone, base.contact.phone),
-      whatsapp: asString(contact.whatsapp, base.contact.whatsapp),
-      instagram: asString(contact.instagram, base.contact.instagram),
-      facebook: asString(contact.facebook, base.contact.facebook),
-      youtube: asString(contact.youtube, base.contact.youtube),
+      whatsapp: editorialUrl(contact.whatsapp) ?? base.contact.whatsapp,
+      instagram: editorialUrl(contact.instagram) ?? base.contact.instagram,
+      facebook: editorialUrl(contact.facebook) ?? base.contact.facebook,
+      youtube: editorialUrl(contact.youtube) ?? base.contact.youtube,
     },
     footer: {
       aboutLines: asStringList(footer.aboutLines, base.footer.aboutLines),
@@ -339,7 +340,7 @@ export function normalizeSiteSettings(row: unknown): SiteSettings {
       displayFont: asFont(theme.displayFont, "display", base.displayFont),
       condensedFont: asFont(theme.condensedFont, "condensed", base.condensedFont),
       bodyFont: asFont(theme.bodyFont, "body", base.bodyFont),
-      backgroundImage: typeof theme.backgroundImage === "string" ? theme.backgroundImage.trim() : "",
+      backgroundImage: editorialUrl(theme.backgroundImage, true) ?? "",
     } as SiteTheme,
     content: asContent(root.content),
   };
@@ -353,7 +354,7 @@ export function applyTheme(theme: SiteTheme, root: HTMLElement = document.docume
   root.style.setProperty("--display", FONT_STACKS.display[theme.displayFont] ?? FONT_STACKS.display.Anton);
   root.style.setProperty("--condensed", FONT_STACKS.condensed[theme.condensedFont] ?? FONT_STACKS.condensed["Barlow Condensed"]);
   root.style.setProperty("--body", FONT_STACKS.body[theme.bodyFont] ?? FONT_STACKS.body.system);
-  const background = typeof theme.backgroundImage === "string" ? theme.backgroundImage.trim() : "";
+  const background = editorialUrl(theme.backgroundImage, true) ?? "";
   root.style.setProperty("--site-background-image", background ? `url("${background}")` : "none");
 }
 

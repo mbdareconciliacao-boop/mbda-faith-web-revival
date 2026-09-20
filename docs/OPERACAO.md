@@ -2,6 +2,10 @@
 
 Guia para a pessoa (ou IA) que cuida do site no dia a dia.
 
+> Antes de novas publicações, consulte [a revisão de 19/09/2026](REVISAO-PAINEL-2026-09-19.md).
+> O agendamento está impedido por uma constraint do banco e requer migração revisada.
+> Não considerar o painel plenamente validado apenas porque os workflows estão verdes.
+
 ## Acesso ao painel
 
 1. Abra `https://www.igrejadarecon.com.br/painel` (ou o endereço da Vercel).
@@ -9,16 +13,19 @@ Guia para a pessoa (ou IA) que cuida do site no dia a dia.
 3. Confirme o código do autenticador (MFA). Na primeira vez, cadastre o QR no
    Google Authenticator/Authy.
 
-> Se perder o autenticador: o responsável técnico pode aplicar o rollback da migração
-> `20260919060000_admin_mfa` para voltar ao modelo só por e-mail.
+> Se perder o autenticador, acione o responsável técnico para recuperação controlada
+> de identidade e fator. Não desative globalmente a exigência de MFA como rotina.
 
 ## Editar conteúdo (fluxo)
 
 1. Escolha a aba (Aparência, Textos, Agenda, Igreja, Livros, Estudo da vez).
-2. Edite olhando a **prévia ao vivo** ao lado (ela acompanha o scroll e a aba).
+2. Edite olhando a **prévia ao vivo**. Em telas largas ela fica ao lado; nas menores,
+   depois dos campos. Use **Ocultar prévia** para concentrar-se na edição.
 3. **Salvar rascunho** (não publica).
-4. **Publicar agora** ou escolher data/hora e **Agendar publicação**.
-5. Em **Histórico**, restaure qualquer estado anterior se necessário.
+4. **Publicar agora** altera somente a entidade da aba. O agendamento aguarda a
+   correção de banco documentada na auditoria; não conte com ele para um evento.
+5. Em **Histórico**, use **Recuperar rascunho**. Isso substitui o rascunho da entidade
+   e cancela seu agendamento, mas não muda o site publicado. Abra a aba, revise e publique.
 
 Entidades: `tema`, `textos`, `agenda`, `igreja`, `livros`. O "Estudo da vez" publica direto.
 
@@ -31,7 +38,8 @@ Entidades: `tema`, `textos`, `agenda`, `igreja`, `livros`. O "Estudo da vez" pub
 
 ## Rotina semanal
 
-- Conferir se o **backup** rodou (Actions → Automated Backup).
+- Conferir se o **backup do repositório** rodou (Actions → Automated Backup).
+  Ele não contém o banco nem os arquivos do Supabase Storage.
 - Revisar o que foi publicado/agendado na semana.
 - Conferir o **Supabase** ativo (o workflow `supabase-keepalive` mantém de hora em hora).
 - Olhar o **Google Search Console** (após configurado) para erros e buscas.
@@ -53,10 +61,12 @@ Em falha, cada workflow tenta avisar no **Discord**.
 
 - Vercel/.env.local: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY`, `VITE_EMAILJS_*`.
 - GitHub Secrets: `YOUTUBE_API_KEY`, `DISCORD_WEBHOOK_URL`, `VITE_SUPABASE_URL`,
-  `VITE_SUPABASE_ANON_KEY`, `SNYK_TOKEN`.
+  `VITE_SUPABASE_ANON_KEY`, `SNYK_TOKEN`. Antes de aplicar a migração corretiva,
+  adicionar `SUPABASE_SERVICE_ROLE_KEY` somente ao GitHub Actions.
 - Local (admin): `DATABASE_URL` (Session pooler).
 
-Nunca publicar `service_role` no navegador. `.env.local` não é versionado.
+Nunca usar `service_role` em `VITE_*`, no navegador ou em arquivo versionado.
+`.env.local` não é versionado.
 
 ## Problemas comuns
 
