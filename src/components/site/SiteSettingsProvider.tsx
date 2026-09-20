@@ -1,4 +1,4 @@
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 import { supabase } from "../../config/supabase";
 import { SiteSettingsContext } from "../../context/siteSettingsContext";
@@ -13,6 +13,7 @@ import {
 /** Carrega as entidades publicadas e distribui tema + conteúdo. */
 export default function SiteSettingsProvider({ children }: { children: ReactNode }) {
   const [settings, setSettings] = useState<SiteSettings>(DEFAULT_SITE_SETTINGS);
+  const previewReceived = useRef(false);
 
   useEffect(() => {
     applyTheme(DEFAULT_SITE_SETTINGS.theme);
@@ -24,7 +25,7 @@ export default function SiteSettingsProvider({ children }: { children: ReactNode
         .from("site_entities")
         .select("entity,content")
         .eq("state", "published");
-      if (!active || error || !data) return;
+      if (!active || previewReceived.current || error || !data) return;
       const normalized = mergeEntityRows(data as Array<{ entity: string; content: unknown }>);
       setSettings(normalized);
       applyTheme(normalized.theme);
@@ -39,14 +40,16 @@ export default function SiteSettingsProvider({ children }: { children: ReactNode
   useEffect(() => {
     if (typeof window === "undefined" || window.self === window.top) return;
     const onMessage = (event: MessageEvent) => {
-      if (event.origin !== window.location.origin) return;
+      if (event.origin !== window.location.origin || event.source !== window.parent) return;
       const data = event.data as { source?: string; settings?: unknown } | null;
       if (!data || data.source !== "mbdar-panel") return;
+      previewReceived.current = true;
       const normalized = normalizeSiteSettings(data.settings);
       setSettings(normalized);
       applyTheme(normalized.theme);
     };
     window.addEventListener("message", onMessage);
+    window.parent.postMessage({ source: "mbdar-preview-ready" }, window.location.origin);
     return () => window.removeEventListener("message", onMessage);
   }, []);
 

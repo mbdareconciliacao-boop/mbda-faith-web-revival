@@ -87,6 +87,21 @@ jobs:
         with:
           fail-on-severity: high
 
+  panel-e2e:
+    name: Panel browser tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    if: github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+          cache: "npm"
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: npm run test:e2e
+
   codeql-analysis:
     name: CodeQL Analysis
     runs-on: ubuntu-latest

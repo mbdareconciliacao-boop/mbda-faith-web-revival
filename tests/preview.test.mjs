@@ -10,6 +10,8 @@ test('provider accepts live preview messages only when embedded', async () => {
   assert.match(provider, /window\.self === window\.top/);
   assert.match(provider, /event\.origin !== window\.location\.origin/);
   assert.match(provider, /mbdar-panel/);
+  assert.match(provider, /mbdar-preview-ready/);
+  assert.match(provider, /event\.source !== window\.parent/);
   assert.match(provider, /normalizeSiteSettings/);
 });
 
@@ -19,6 +21,7 @@ test('panel embeds the real site and posts the draft settings', async () => {
   assert.match(panel, /contentWindow\.postMessage/);
   assert.match(panel, /source: "mbdar-panel"/);
   assert.match(panel, /panel-live-frame/);
+  assert.match(panel, /event\.source !== previewRef\.current\?\.contentWindow/);
 });
 
 test('site can be framed only by itself', async () => {

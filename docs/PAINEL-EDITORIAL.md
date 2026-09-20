@@ -1,5 +1,25 @@
 # Painel editorial — documento mestre
 
+> Revisão de 19/09/2026: consulte [a auditoria e suas pendências](REVISAO-PAINEL-2026-09-19.md).
+> Foram confirmadas falhas de permissões legadas, MFA e agendamento no banco.
+> A presença de RLS e testes estáticos não significa que todos os fluxos estão seguros.
+> As alterações desta branch ainda precisam de revisão e publicação por PR.
+>
+> A migração corretiva `20260920000000_editorial_security_repairs.sql` e seu
+> rollback foram preparados, mas **não aplicados**. Exigem backup, ensaio e aprovação.
+
+## Revisão de usabilidade e proteção de edição
+
+- Abas fora dos formulários; prévia em coluna própria apenas a partir de 1200 px,
+  no fluxo em telas menores, com opção de ocultar. Paleta de trabalho clara,
+  controles de 44 px e identidade navy preservada (Impeccable, modo operacional).
+- Autorização consultada após MFA; falha ao carregar dados bloqueia o editor.
+- Rascunhos de outras abas sobrevivem à publicação de uma entidade.
+- Histórico recupera **somente rascunho**, cancela seu agendamento e exige
+  publicação explícita posterior. Não restaura automaticamente o site público.
+- Prévia de estudo ainda mostra o destaque publicado; isso é indicado na interface.
+- `npm run test:e2e` executa os testes locais com Supabase simulado, sem gravar em produção.
+
 Este é o documento de referência do painel `/painel`. Ele reúne **o que foi construído, por quê,
 como** e **até onde avançou**. Detalhes por fase estão em `docs/EDITOR-*.md`.
 
@@ -53,7 +73,8 @@ supabase/migrations/*            # schema, RLS, funções, buckets
 - `public.is_admin()` (SECURITY DEFINER, `search_path=''`): e-mail em `app_admins` **e**
   `aal2` quando existir fator TOTP verificado. É a base de toda a escrita.
 - `public.publish_entity(entity, note, publish_at)` — publica agora ou agenda.
-- `public.publish_due_entities()` — publica o que venceu (chamada pelo workflow horário).
+- `public.publish_due_entities()` — publica o que venceu. Após a migração corretiva,
+  somente `service_role` executa e o workflow exige `SUPABASE_SERVICE_ROLE_KEY`.
 - `public.publish_site_settings(...)` / `public.rollback_site_settings(...)` — legado (fase anterior).
 - RLS: leitura pública **apenas** `state='published'`; rascunhos e histórico só para admin.
 

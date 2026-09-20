@@ -1,4 +1,5 @@
 import { thessaloniansStudy } from "./tessalonians";
+import { editorialUrl } from "../domain/editorialSafety";
 
 export interface FeaturedStudySource {
   label: string;
@@ -77,7 +78,7 @@ const asText = (value: unknown): string =>
 const isSource = (value: unknown): value is FeaturedStudySource => {
   if (!value || typeof value !== "object") return false;
   const source = value as Record<string, unknown>;
-  return asText(source.label).length > 0 && /^https:\/\//.test(asText(source.href));
+  return asText(source.label).length > 0 && !!editorialUrl(source.href);
 };
 
 const asTextArray = (value: unknown): string[] =>
@@ -117,8 +118,8 @@ export function normalizeFeaturedStudy(row: unknown): FeaturedStudy | null {
   const title = asText(record.title);
   if (!slug || !title) return null;
 
-  const art480 = asText(record.art_480_url);
-  const art900 = asText(record.art_900_url);
+  const art480 = editorialUrl(record.art_480_url, true);
+  const art900 = editorialUrl(record.art_900_url, true);
   let sections = (Array.isArray(record.sections) ? record.sections : [])
     .map(asSection)
     .filter((section): section is FeaturedStudySection => section !== null);
@@ -137,7 +138,7 @@ export function normalizeFeaturedStudy(row: unknown): FeaturedStudy | null {
     book: {
       title: asText(record.book_title),
       author: asText(record.book_author),
-      href: asText(record.book_href) || undefined,
+      href: editorialUrl(record.book_href),
       linkLabel: asText(record.book_link_label) || undefined,
     },
     sources: (Array.isArray(record.sources) ? record.sources : []).filter(isSource),

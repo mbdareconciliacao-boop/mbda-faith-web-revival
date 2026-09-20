@@ -3,6 +3,7 @@ import type { Session } from "@supabase/supabase-js";
 
 import { supabase } from "../config/supabase";
 import { DEFAULT_FEATURED_STUDY } from "../data/featuredStudy";
+import { imageUploadError } from "../domain/editorialSafety";
 import {
   DEFAULT_SITE_SETTINGS,
   FONT_OPTIONS,
@@ -106,6 +107,8 @@ function payloadFromForm(form: FormState) {
 export default function Panel() {
   const [session, setSession] = useState<Session | null>(null);
   const [checking, setChecking] = useState(true);
+  const [authorization, setAuthorization] = useState<"checking" | "allowed" | "denied">("checking");
+  const [contentReady, setContentReady] = useState<"loading" | "ready" | "error">("loading");
   const [tab, setTab] = useState<Tab>("destaque");
   const [form, setForm] = useState<FormState>(EMPTY);
   const [theme, setTheme] = useState<SiteTheme>(DEFAULT_SITE_SETTINGS.theme);
@@ -114,6 +117,8 @@ export default function Panel() {
   const [publishNote, setPublishNote] = useState("");
   const [scheduleAt, setScheduleAt] = useState("");
   const [previewWidth, setPreviewWidth] = useState<"full" | "tablet" | "phone">("full");
+  const [showPreview, setShowPreview] = useState(true);
+  const [videoIdInput, setVideoIdInput] = useState("");
   const [status, setStatus] = useState("");
   const [error, setError] = useState("");
   const [busy, setBusy] = useState(false);
@@ -130,6 +135,12 @@ export default function Panel() {
   const activeEntity = TAB_ENTITY[tab] ?? null;
 
   const previewRef = useRef<HTMLIFrameElement>(null);
+  const controlsRef = useRef<HTMLDivElement>(null);
+  const sessionUserId = session?.user.id;
+  const currentAal = aal.current;
+  useEffect(() => {
+    if (controlsRef.current) applyTheme(theme, controlsRef.current);
+  }, [theme, currentAal, contentReady]);
   const PREVIEW_PATHS: Record<string, string> = { destaque: "/", aparencia: "/", conteudo: "/", agenda: "/agenda", igreja: "/igreja", livros: "/livros" };
   const previewPath = PREVIEW_PATHS[tab] ?? "/";
   const sendPreview = useCallback(() => {
@@ -138,6 +149,15 @@ export default function Panel() {
     frame.contentWindow.postMessage({ source: "mbdar-panel", settings: { theme, content } }, window.location.origin);
   }, [theme, content]);
   useEffect(() => { sendPreview(); }, [sendPreview, previewPath]);
+  useEffect(() => {
+    const onPreviewReady = (event: MessageEvent) => {
+      if (event.origin !== window.location.origin || event.source !== previewRef.current?.contentWindow) return;
+      const data = event.data as { source?: string } | null;
+      if (data?.source === "mbdar-preview-ready") sendPreview();
+    };
+    window.addEventListener("message", onPreviewReady);
+    return () => window.removeEventListener("message", onPreviewReady);
+  }, [sendPreview]);
 
   const refreshAal = useCallback(async () => {
     if (!client) return;
@@ -174,6 +194,7 @@ export default function Panel() {
       const { error: verifyError } = await client.auth.mfa.verify({ factorId: mfaFactorId, challengeId: challenge.id, code: mfaCode });
       if (verifyError) throw new Error(verifyError.message);
       setMfaCode("");
+      setMfaQr(""); setMfaSecret("");
       await refreshAal();
     } catch (verifyErr) {
       setError(verifyErr instanceof Error ? verifyErr.message : "Código inválido.");
@@ -193,30 +214,49 @@ export default function Panel() {
       setSession(data.session ?? null); setChecking(false);
       void refreshAal();
     });
-    const { data } = client.auth.onAuthStateChange((_event, next) => { setSession(next); void refreshAal(); });
+    // Do not await Supabase auth calls inside its auth-state lock.
+    const { data } = client.auth.onAuthStateChange((_event, next) => { setSession(next); });
     return () => data.subscription.unsubscribe();
   }, [client, refreshAal]);
+
+  useEffect(() => {
+    if (session) void refreshAal();
+    else setAal({ current: null, next: null });
+  }, [session, refreshAal]);
+
+  useEffect(() => {
+    setAuthorization("checking");
+    setContentReady("loading");
+    if (!client || !sessionUserId || currentAal !== "aal2") return;
+    let active = true;
+    void client.rpc("is_admin").then(({ data, error: accessError }) => {
+      if (active) setAuthorization(!accessError && data === true ? "allowed" : "denied");
+    });
+    return () => { active = false; };
+  }, [client, sessionUserId, currentAal]);
 
   const loadActive = useCallback(async () => {
     if (!client) return;
     const { data, error: loadError } = await client
       .from("featured_studies").select("*").eq("is_active", true).maybeSingle();
-    if (loadError) { setError(`Não foi possível ler o destaque: ${loadError.message}`); return; }
+    if (loadError) { setError(`Não foi possível ler o destaque: ${loadError.message}`); return false; }
     setForm(formFromRow(data as Record<string, unknown> | null));
+    return true;
   }, [client]);
 
   const loadSettings = useCallback(async () => {
     if (!client) return;
     const { data, error: loadError } = await client
       .from("site_entities").select("entity,state,content");
-    if (loadError) { setError(`Não foi possível ler o conteúdo: ${loadError.message}`); return; }
+    if (loadError) { setError(`Não foi possível ler o conteúdo: ${loadError.message}`); return false; }
     const rows = (data ?? []) as Array<{ entity: string; state: string; content: unknown }>;
     const chosen = new Map<string, unknown>();
     for (const row of rows) if (row.state === "published") chosen.set(row.entity, row.content);
     for (const row of rows) if (row.state === "draft") chosen.set(row.entity, row.content);
     const normalized = mergeEntityRows([...chosen].map(([entity, content]) => ({ entity, content })));
     setTheme(normalized.theme); setContent(normalized.content);
-    applyTheme(normalized.theme);
+    setVideoIdInput(normalized.content.featuredVideo?.youtubeId ?? "");
+    return true;
   }, [client]);
 
   const loadHistory = useCallback(async () => {
@@ -229,14 +269,19 @@ export default function Panel() {
   }, [client]);
 
   useEffect(() => {
-    if (!session) return;
-    void loadActive(); void loadSettings(); void loadHistory();
-  }, [session, loadActive, loadSettings, loadHistory]);
+    if (!sessionUserId || currentAal !== "aal2" || authorization !== "allowed") return;
+    let active = true;
+    void Promise.all([loadActive(), loadSettings()]).then((results) => {
+      if (active) setContentReady(results.every(Boolean) ? "ready" : "error");
+    }).catch(() => { if (active) setContentReady("error"); });
+    void loadHistory();
+    return () => { active = false; };
+  }, [sessionUserId, currentAal, authorization, loadActive, loadSettings, loadHistory]);
 
   const set = (key: keyof FormState, value: string) =>
     setForm((current) => ({ ...current, [key]: value }));
   const setThemeField = (key: keyof SiteTheme, value: string) =>
-    setTheme((current) => { const next = { ...current, [key]: value }; applyTheme(next); return next; });
+    setTheme((current) => ({ ...current, [key]: value }));
 
   const patchContent = (updater: (current: SiteContent) => SiteContent) => setContent(updater);
   const setHome = (key: keyof SiteContent["home"], value: string) =>
@@ -253,13 +298,18 @@ export default function Panel() {
     patchContent((c) => ({ ...c, footer: { ...c.footer, aboutLines: c.footer.aboutLines.map((item, i) => i === index ? value : item) } }));
   const setPath = (index: number, key: "kicker" | "label" | "href", value: string) =>
     patchContent((c) => ({ ...c, home: { ...c.home, paths: c.home.paths.map((item, i) => i === index ? { ...item, [key]: value } : item) } }));
-  const setFeaturedVideoId = (youtubeId: string) =>
-    patchContent((c) => ({ ...c, featuredVideo: /^[A-Za-z0-9_-]{11}$/.test(youtubeId) ? { youtubeId, title: c.featuredVideo?.title ?? "", description: c.featuredVideo?.description ?? "", date: c.featuredVideo?.date ?? "" } : null }));
+  const setFeaturedVideoId = (youtubeId: string) => {
+    setVideoIdInput(youtubeId);
+    if (youtubeId && !/^[A-Za-z0-9_-]{11}$/.test(youtubeId)) return;
+    patchContent((c) => ({ ...c, featuredVideo: youtubeId ? { youtubeId, title: c.featuredVideo?.title ?? "", description: c.featuredVideo?.description ?? "", date: c.featuredVideo?.date ?? "" } : null }));
+  };
   const setFeaturedVideoField = (key: "title" | "description" | "date", value: string) =>
     patchContent((c) => (c.featuredVideo ? { ...c, featuredVideo: { ...c.featuredVideo, [key]: value } } : c));
 
   const uploadArt = async (file: File, variant: "480" | "900") => {
     if (!client) return;
+    const validationError = imageUploadError(file);
+    if (validationError) { setError(validationError); return; }
     const slug = form.slug.trim() || "estudo";
     const extension = (file.name.split(".").pop() ?? "webp").toLowerCase();
     const path = `${slug}-${variant}-${Date.now()}.${extension}`;
@@ -278,6 +328,8 @@ export default function Panel() {
 
   const uploadLogo = async (file: File) => {
     if (!client) return;
+    const validationError = imageUploadError(file);
+    if (validationError) { setError(validationError); return; }
     const extension = (file.name.split(".").pop() ?? "webp").toLowerCase();
     const path = `logo-${Date.now()}.${extension}`;
     setBusy(true); setError("");
@@ -295,6 +347,8 @@ export default function Panel() {
 
   const uploadBackground = async (file: File) => {
     if (!client) return;
+    const validationError = imageUploadError(file);
+    if (validationError) { setError(validationError); return; }
     const extension = (file.name.split(".").pop() ?? "webp").toLowerCase();
     const path = `fundo-${Date.now()}.${extension}`;
     setBusy(true); setError("");
@@ -316,11 +370,8 @@ export default function Panel() {
     if (payload.slug.length < 3 || !payload.title) { setError("Preencha ao menos o slug e o título."); return; }
     setBusy(true); setError(""); setStatus("");
     try {
-      const { error: clearError } = await client.from("featured_studies").update({ is_active: false }).eq("is_active", true);
-      if (clearError) throw new Error(clearError.message);
-      const { error: upsertError } = await client.from("featured_studies")
-        .upsert({ ...payload, updated_by: session.user.email ?? "" }, { onConflict: "slug" });
-      if (upsertError) throw new Error(upsertError.message);
+      const { error: publishError } = await client.rpc("publish_featured_study", { p_payload: payload });
+      if (publishError) throw new Error(publishError.message);
       setStatus("Destaque publicado."); await loadActive();
     } catch (saveError) {
       setError(saveError instanceof Error ? saveError.message : "Falha ao publicar.");
@@ -329,6 +380,10 @@ export default function Panel() {
 
   const saveEntityDraft = async (): Promise<boolean> => {
     if (!client || !session || !activeEntity) return false;
+    if (activeEntity === "textos" && videoIdInput && !/^[A-Za-z0-9_-]{11}$/.test(videoIdInput)) {
+      setError("O identificador do YouTube deve ter 11 caracteres. Deixe vazio para usar o vídeo mais recente do canal.");
+      return false;
+    }
     const { error: draftError } = await client.from("site_entities").upsert(
       { entity: activeEntity, state: "draft", content: entityContent(activeEntity, { theme, content }), updated_by: session.user.email ?? "" },
       { onConflict: "entity,state" },
@@ -357,7 +412,7 @@ export default function Panel() {
       if (publishError) throw new Error(publishError.message);
       setStatus(when ? `${ENTITY_LABELS[activeEntity]} agendado.` : `${ENTITY_LABELS[activeEntity]} publicado no site.`);
       setPublishNote(""); setScheduleAt("");
-      await loadSettings(); await loadHistory();
+      await loadHistory();
     } catch (publishErr) {
       setError(publishErr instanceof Error ? publishErr.message : "Falha ao publicar.");
     } finally { setBusy(false); }
@@ -375,16 +430,21 @@ export default function Panel() {
       if (!SITE_ENTITIES.includes(row.entity as SiteEntity)) {
         throw new Error("Revisão antiga (versão anterior do painel) não pode ser restaurada por aqui.");
       }
-      for (const state of ["published", "draft"]) {
-        const { error: restoreError } = await client.from("site_entities")
-          .upsert({ entity: row.entity, state, content: row.snapshot }, { onConflict: "entity,state" });
-        if (restoreError) throw new Error(restoreError.message);
-      }
-      await client.from("content_revisions").insert({
+      const { error: restoreError } = await client.from("site_entities")
+        .upsert({ entity: row.entity, state: "draft", content: row.snapshot, publish_at: null, updated_by: session.user.email ?? "" }, { onConflict: "entity,state" });
+      if (restoreError) throw new Error(restoreError.message);
+      const restored = mergeEntityRows(SITE_ENTITIES.map((entity) => ({
+        entity, content: entity === row.entity ? row.snapshot : entityContent(entity, { theme, content }),
+      })));
+      setTheme(restored.theme); setContent(restored.content);
+      if (row.entity === "textos") setVideoIdInput(restored.content.featuredVideo?.youtubeId ?? "");
+      const { error: historyError } = await client.from("content_revisions").insert({
         entity: row.entity, action: "rollback", snapshot: row.snapshot,
-        note: `rollback ${id}`, created_by: session.user.email ?? "",
+        note: `Revisão ${id} recuperada como rascunho, sem publicação`, created_by: session.user.email ?? "",
       });
-      setStatus(`Revisão ${id} restaurada.`); await loadSettings(); await loadHistory();
+      setStatus(`Revisão ${id} recuperada como rascunho. O site publicado não mudou. Confira a aba ${ENTITY_LABELS[row.entity as SiteEntity]} antes de publicar.`);
+      if (historyError) setError("O rascunho foi recuperado, mas não foi possível registrar o histórico. Confira antes de publicar.");
+      await loadHistory();
     } catch (rollbackErr) {
       setError(rollbackErr instanceof Error ? rollbackErr.message : "Falha ao restaurar.");
     } finally { setBusy(false); }
@@ -395,9 +455,16 @@ export default function Panel() {
     setBusy(true); setError("");
     const { error: authError } = await client.auth.signInWithPassword({ email: loginEmail.trim(), password: loginPassword });
     if (authError) setError(authError.message);
+    else setLoginPassword("");
     setBusy(false);
   };
-  const signOut = async () => { if (client) { await client.auth.signOut(); setStatus("Sessão encerrada."); } };
+  const signOut = async () => {
+    if (!client) return;
+    const { error: signOutError } = await client.auth.signOut();
+    if (signOutError) { setError("Não foi possível encerrar a sessão. Tente novamente."); return; }
+    setMfaQr(""); setMfaSecret(""); setMfaFactorId(null); setMfaCode("");
+    setLoginPassword(""); setStatus(""); setError("");
+  };
 
   const preview = useMemo(() => form.art480 || form.art900, [form.art480, form.art900]);
 
@@ -449,23 +516,43 @@ export default function Panel() {
     </main>;
   }
 
+  if (authorization !== "allowed" || contentReady !== "ready") {
+    const failed = authorization === "denied" || contentReady === "error";
+    return <main className="panel-page"><div className="panel-card">
+      <h1>{authorization === "denied" ? "Acesso não liberado" : "Preparando o painel"}</h1>
+      <p role={failed ? "alert" : "status"}>{authorization === "denied"
+        ? "Sua conta não foi autorizada ou a verificação falhou. Entre com a conta cadastrada pela igreja."
+        : contentReady === "error" ? "Não foi possível carregar o conteúdo. A edição foi bloqueada para proteger os dados existentes."
+        : "Verificando a autorização e carregando o conteúdo…"}</p>
+      {error && <p className="panel-error">{error}</p>}
+      {failed && <button className="panel-button" type="button" onClick={() => window.location.reload()}>Tentar novamente</button>}
+      <button className="panel-link" type="button" onClick={() => void signOut()}>Sair</button>
+    </div></main>;
+  }
+
   return <main className="panel-page">
-    <div className="panel-card panel-wide">
+    <div className="panel-shell">
       <header className="panel-head">
-        <div><h1>Painel</h1><p className="panel-hint">{session.user.email}</p></div>
-        <button className="panel-link" type="button" onClick={() => void signOut()}>Sair</button>
+        <div><h1>Painel editorial</h1><p className="panel-hint">{session.user.email}</p></div>
+        <div className="panel-actions">
+          <button className="panel-link" type="button" aria-expanded={showPreview} aria-controls="panel-live-preview" onClick={() => setShowPreview(!showPreview)}>{showPreview ? "Ocultar prévia" : "Mostrar prévia"}</button>
+          <a className="panel-link" href="/" target="_blank" rel="noopener noreferrer">Ver site publicado</a>
+          <button className="panel-link" type="button" onClick={() => void signOut()}>Sair</button>
+        </div>
       </header>
 
-      <div className="panel-body">
-        <div className="panel-controls">
       <nav className="panel-tabs" aria-label="Seções do painel">
         {TABS.map((item) => (
-          <button key={item.id} type="button" className="panel-tab" data-active={tab === item.id}
+          <button key={item.id} type="button" className="panel-tab" data-active={tab === item.id} aria-pressed={tab === item.id}
             onClick={() => { setTab(item.id); if (item.id === "historico") void loadHistory(); }}>
             {item.label}
           </button>
         ))}
       </nav>
+
+      <div className="panel-body" data-preview={showPreview}>
+        <div ref={controlsRef} className="panel-controls">
+      <p className="panel-hint">{tab === "destaque" ? "Estudo da vez: a publicação altera o destaque imediatamente. A prévia ao lado mostra o estudo já publicado." : tab === "historico" ? "Consulte as versões publicadas antes de restaurar um conteúdo." : "Edite e confira a prévia. Salvar rascunho não altera o site público."}</p>
 
       {status && <p className="panel-status" role="status">{status}</p>}
       {error && <p className="panel-error" role="alert">{error}</p>}
@@ -501,7 +588,7 @@ export default function Panel() {
         <div className="panel-preview" aria-label="Prévia da aparência">
           <span style={{ color: "var(--gold)", fontFamily: "var(--condensed)" }}>{content.brand.name} · Prévia</span>
           <h2 style={{ color: "var(--paper)", fontFamily: "var(--display)" }}>{content.home.heroLines[0] || "Tessalonicenses"}</h2>
-          <p style={{ color: "var(--muted)", fontFamily: "var(--body)" }}>{content.home.heroSubtitle}</p>
+          <p style={{ color: "#c7d1e5", fontFamily: "var(--body)" }}>{content.home.heroSubtitle}</p>
           <span className="panel-preview-button" style={{ background: "var(--gold)", color: "var(--ink)", fontFamily: "var(--condensed)" }}>{content.home.heroButton}</span>
         </div>
         <div className="panel-grid">
@@ -527,11 +614,6 @@ export default function Panel() {
       </>}
 
       {tab === "conteudo" && <>
-        <div className="panel-preview" aria-label="Prévia do conteúdo">
-          <span style={{ color: "var(--gold)", fontFamily: "var(--condensed)" }}>{content.brand.name}</span>
-          <h2 style={{ color: "var(--paper)", fontFamily: "var(--display)" }}>{content.home.heroLines.join(" ")}</h2>
-          <p style={{ color: "var(--muted)", fontFamily: "var(--body)" }}>{content.home.heroSubtitle}</p>
-        </div>
         <h2 className="panel-section-title">Marca</h2>
         <div className="panel-grid">
           <label>Nome da igreja<input value={content.brand.name} onChange={(e) => setBrand("name", e.target.value)} /></label>
@@ -549,7 +631,7 @@ export default function Panel() {
         </div>
         <h2 className="panel-section-title">Vídeo em destaque (opcional)</h2>
         <div className="panel-grid">
-          <label>YouTube ID<input value={content.featuredVideo?.youtubeId ?? ""} onChange={(e) => setFeaturedVideoId(e.target.value)} placeholder="ex.: lcmnshpsR3Q" /></label>
+          <label>YouTube ID<input value={videoIdInput} onChange={(e) => setFeaturedVideoId(e.target.value)} placeholder="ex.: lcmnshpsR3Q" /></label>
           <label>Título<input value={content.featuredVideo?.title ?? ""} onChange={(e) => setFeaturedVideoField("title", e.target.value)} /></label>
           <label>Data<input value={content.featuredVideo?.date ?? ""} onChange={(e) => setFeaturedVideoField("date", e.target.value)} /></label>
           <label className="panel-full">Descrição<textarea rows={2} value={content.featuredVideo?.description ?? ""} onChange={(e) => setFeaturedVideoField("description", e.target.value)} /></label>
@@ -614,29 +696,29 @@ export default function Panel() {
       </section>}
 
       {tab === "historico" && <>
-        <p className="panel-hint">Cada publicação guarda uma revisão por entidade. Restaurar volta a entidade para aquele estado.</p>
+        <p className="panel-hint">Recuperar uma versão altera apenas o rascunho da entidade e cancela seu agendamento. Revise na aba correspondente antes de publicar.</p>
         <div className="panel-history">
           {revisions.length === 0 && <p className="panel-hint">Nenhuma revisão registrada ainda.</p>}
           {revisions.map((revision) => (
             <div key={revision.id} className="panel-history-row">
               <span><strong>#{revision.id} · {revision.entity} · {revision.action}</strong>
                 <small>{new Date(revision.created_at).toLocaleString("pt-BR")} · {revision.created_by || "—"} {revision.note ? `· ${revision.note}` : ""}</small></span>
-              <button className="panel-link" type="button" onClick={() => void rollback(revision.id)} disabled={busy}>Restaurar</button>
+              <button className="panel-link" type="button" onClick={() => void rollback(revision.id)} disabled={busy || !SITE_ENTITIES.includes(revision.entity as SiteEntity)}>Recuperar rascunho</button>
             </div>
           ))}
         </div>
         <div className="panel-actions"><button className="panel-link" type="button" onClick={() => void loadHistory()} disabled={busy}>Atualizar histórico</button></div>
       </>}
         </div>
-        <aside className="panel-preview-col">
+        {showPreview && <aside id="panel-live-preview" className="panel-preview-col">
           <section className="panel-live" aria-label="Prévia ao vivo">
             <div className="panel-live-bar">
               <strong>Prévia ao vivo</strong>
               <span className="panel-hint">{previewPath}</span>
               <div className="panel-live-devices" role="group" aria-label="Largura da prévia">
-                <button type="button" className="panel-device" data-active={previewWidth === "full"} onClick={() => setPreviewWidth("full")}>100%</button>
-                <button type="button" className="panel-device" data-active={previewWidth === "tablet"} onClick={() => setPreviewWidth("tablet")}>Tablet</button>
-                <button type="button" className="panel-device" data-active={previewWidth === "phone"} onClick={() => setPreviewWidth("phone")}>Celular</button>
+                <button type="button" className="panel-device" aria-pressed={previewWidth === "full"} data-active={previewWidth === "full"} onClick={() => setPreviewWidth("full")}>Disponível</button>
+                <button type="button" className="panel-device" aria-pressed={previewWidth === "tablet"} data-active={previewWidth === "tablet"} onClick={() => setPreviewWidth("tablet")}>Até 768 px</button>
+                <button type="button" className="panel-device" aria-pressed={previewWidth === "phone"} data-active={previewWidth === "phone"} onClick={() => setPreviewWidth("phone")}>Celular</button>
               </div>
               <a className="panel-link" href={previewPath} target="_blank" rel="noopener noreferrer">Abrir</a>
             </div>
@@ -644,7 +726,7 @@ export default function Panel() {
               <iframe ref={previewRef} className="panel-live-frame" title="Prévia do site" src={previewPath} onLoad={sendPreview} />
             </div>
           </section>
-        </aside>
+        </aside>}
       </div>
     </div>
   </main>;
