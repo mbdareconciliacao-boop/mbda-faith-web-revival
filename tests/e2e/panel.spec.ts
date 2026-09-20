@@ -133,6 +133,14 @@ test('a contributor only sees assigned sections and cannot publish', async ({ pa
   await expect(page.getByRole('button', { name: 'Publicar agora', exact: true })).toHaveCount(0);
 });
 
+test('local sign-out returns to login without a false failure', async ({ page }) => {
+  await page.goto('/painel');
+  await expect(page.getByRole('heading', { name: 'Painel editorial' })).toBeVisible();
+  await page.getByRole('button', { name: 'Sair', exact: true }).click();
+  await expect(page.getByRole('heading', { name: 'Painel da Reconciliação' })).toBeVisible();
+  await expect(page.getByText('Não foi possível encerrar a sessão', { exact: false })).toHaveCount(0);
+});
+
 test('live preview receives edits without a database write', async ({ page }) => {
   await page.goto('/painel');
   await page.getByRole('button', { name: 'Textos', exact: true }).click();

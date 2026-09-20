@@ -556,8 +556,15 @@ export default function Panel() {
   };
   const signOut = async () => {
     if (!client) return;
-    const { error: signOutError } = await client.auth.signOut();
-    if (signOutError) { setError("Não foi possível encerrar a sessão. Tente novamente."); return; }
+    setBusy(true);
+    const { error: signOutError } = await client.auth.signOut({ scope: "local" });
+    const { data: sessionCheck } = await client.auth.getSession();
+    setBusy(false);
+    if (sessionCheck.session) {
+      setError(signOutError ? "Não foi possível encerrar a sessão neste navegador. Tente novamente." : "A sessão ainda está ativa. Tente novamente.");
+      return;
+    }
+    setSession(null);
     setMfaQr(""); setMfaSecret(""); setMfaFactorId(null); setMfaCode("");
     setLoginPassword(""); setStatus(""); setError("");
   };
