@@ -7,12 +7,12 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
-      "id": "https://folhagospel.com/pressao-por-renuncia-da-lider-da-igreja-da-inglaterra/",
-      "url": "https://folhagospel.com/pressao-por-renuncia-da-lider-da-igreja-da-inglaterra/",
-      "title": "Petição pede renúncia da arcebispa de Canterbury após premiação de clérigo muçulmano",
-      "content_text": "Petição online com mais de 3.700 assinaturas pede a renúncia da arcebispa de Canterbury após polêmica na entrega de prêmio a clérigo com histórico controverso. The post Petição pede renúncia da arcebi...",
-      "date_published": "2026-09-22T12:15:00.000Z",
-      "image": "https://folhagospel.com/wp-content/uploads/2026/09/image-21-e1790075074535.png",
+      "id": "https://folhagospel.com/ascensao-movimento-evangelico-venezuela-mapa-religioso/",
+      "url": "https://folhagospel.com/ascensao-movimento-evangelico-venezuela-mapa-religioso/",
+      "title": "Cerca de 25% da população da Venezuela segue a fé evangélica, mostra pesquisa",
+      "content_text": "Pesquisa aponta que um a cada quatro venezuelanos se identifica como evangélico ou protestante, consolidando a segunda maior força religiosa na Venezuela. The post Cerca de 25% da população da Venezue...",
+      "date_published": "2026-09-23T13:15:35.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2025/02/Cristaos-orando-com-a-bandeira-da-Venezuela-Foto-ReproducaoRedes-Sociais.jpg",
       "tags": [
         "Notícias Cristãs"
       ],
@@ -23,63 +23,50 @@
       ]
     },
     {
-      "id": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQU2djM2RiaXQ1aFFDelBmMHpyZk1IRERJenhCZU5iYjdhRXJ2ZEt3RTZoRnVTV3Jhd2dmQ2dWR00xdHJEUlFGa2lWMmczSF9qbFd4QVdqTmxrc1kwTG1wcncyckdNSlpCc0ZSNEE1UUVUWHduQ0hLRWJyYkZuTjdZZ0p0NnRnU09fRmZOQkZ0aGlQUXRBdERjY09hcDZzVTRMcHNjVl9CUEFJZG9HUklrcklB?oc=5",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQU2djM2RiaXQ1aFFDelBmMHpyZk1IRERJenhCZU5iYjdhRXJ2ZEt3RTZoRnVTV3Jhd2dmQ2dWR00xdHJEUlFGa2lWMmczSF9qbFd4QVdqTmxrc1kwTG1wcncyckdNSlpCc0ZSNEE1UUVUWHduQ0hLRWJyYkZuTjdZZ0p0NnRnU09fRmZOQkZ0aGlQUXRBdERjY09hcDZzVTRMcHNjVl9CUEFJZG9HUklrcklB?oc=5",
-      "title": "Jovem cristã enfrenta rejeição na escola na Ásia Central - Portas Abertas",
-      "content_text": "Jovem cristã enfrenta rejeição na escola na Ásia Central - Portas Abertas",
-      "date_published": "2026-09-22T11:00:00.000Z",
+      "id": "https://folhagospel.com/igreja-universal-constroi-novo-templo-de-salomao-em-gramado/",
+      "url": "https://folhagospel.com/igreja-universal-constroi-novo-templo-de-salomao-em-gramado/",
+      "title": "Igreja Universal inicia construção de segundo Templo de Salomão em Gramado",
+      "content_text": "A Igreja Universal inicia construção de um novo Templo de Salomão em Gramado. Saiba como a instituição planeja atrair turistas na serra gaúcha com megaprojeto. The post Igreja Universal inicia constru...",
+      "date_published": "2026-09-23T13:09:30.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/09/image-23-e1790168945428.png",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://folhagospel.com/pai-recorre-ao-tribunal-europeu-apos-ser-proibido-de-ensinar-fe-crista-ao-filho/",
+      "url": "https://folhagospel.com/pai-recorre-ao-tribunal-europeu-apos-ser-proibido-de-ensinar-fe-crista-ao-filho/",
+      "title": "Pai recorre ao tribunal europeu após ser proibido de ensinar fé cristã ao filho",
+      "content_text": "Caso de pai impedido de compartilhar crenças religiosas com o filho chega à corte de Estrasburgo para análise definitiva O Tribunal Europeu dos Direitos Humanos (ECHR) examina uma disputa jurídica que...",
+      "date_published": "2026-09-23T11:12:08.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/09/image-22.png",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNWU0tbUhGaTBVZlViRlEyWkRFbjhEcTlHYjREdVBUaTNoMGlGNU5GNk0zSWg2RUVKSXlmMDBBeEVGLVdYUmdBSWNIUGpVZjR5OWc1LU83R3N2cjM1MFRkblNKZmEydkZpVkpUSWo2ODIyVDFFVlJmRC1vU1VXZ1ZQM0g0NUstUEpwSDZwbm9xaW5TWjN0UWlkeUpfUmRtQ3RYMzFhT0t6Nmh0M3JOTXRjVkFMUTFOdw?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNWU0tbUhGaTBVZlViRlEyWkRFbjhEcTlHYjREdVBUaTNoMGlGNU5GNk0zSWg2RUVKSXlmMDBBeEVGLVdYUmdBSWNIUGpVZjR5OWc1LU83R3N2cjM1MFRkblNKZmEydkZpVkpUSWo2ODIyVDFFVlJmRC1vU1VXZ1ZQM0g0NUstUEpwSDZwbm9xaW5TWjN0UWlkeUpfUmRtQ3RYMzFhT0t6Nmh0M3JOTXRjVkFMUTFOdw?oc=5",
+      "title": "Cristãos na Colômbia pedem oração após novos terremotos - Portas Abertas",
+      "content_text": "Cristãos na Colômbia pedem oração após novos terremotos - Portas Abertas",
+      "date_published": "2026-09-23T11:00:00.000Z",
+      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
       "tags": [
         "Igreja Perseguida"
       ],
       "authors": [
         {
           "name": "Google News - Cristãos Perseguidos"
-        }
-      ]
-    },
-    {
-      "id": "https://folhagospel.com/ataques-deixam-nove-mortos-comunidades-rurais-nigeria/",
-      "url": "https://folhagospel.com/ataques-deixam-nove-mortos-comunidades-rurais-nigeria/",
-      "title": "Série de ataques deixa ao menos nove mortos em comunidades rurais na Nigéria",
-      "content_text": "Uma série de ataques brutais no estado de Plateau, na Nigéria, deixa nove mortos, incluindo um pastor. A violência reacende debates sobre falhas de segurança. The post Série de ataques deixa ao menos ...",
-      "date_published": "2026-09-22T10:53:35.000Z",
-      "image": "https://folhagospel.com/wp-content/uploads/2023/05/cristaos-culto-nigeria.webp",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Folha Gospel"
-        }
-      ]
-    },
-    {
-      "id": "https://radio93.com.br/noticias/giro-cristao/time-de-futebol-americano-evangeliza-adversarios-pos-jogo/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/time-de-futebol-americano-evangeliza-adversarios-pos-jogo/",
-      "title": "Time de futebol americano evangeliza adversários pós jogo",
-      "content_text": "Atletas deixam Bíblias em armários de oponentes. The post Time de futebol americano evangeliza adversários pós jogo appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-09-22T09:00:48.000Z",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Radio 93 - Giro Cristão"
-        }
-      ]
-    },
-    {
-      "id": "https://radio93.com.br/noticias/giro-cristao/metade-dos-evangelicos-brasileiros-afirma-ler-biblia-todos-os-dias/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/metade-dos-evangelicos-brasileiros-afirma-ler-biblia-todos-os-dias/",
-      "title": "Metade dos evangélicos brasileiros afirma ler Bíblia todos os dias",
-      "content_text": "Pesquisa também revelou hábitos de oração e frequência nos cultos. The post Metade dos evangélicos brasileiros afirma ler Bíblia todos os dias appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-09-22T03:05:54.000Z",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Radio 93 - Giro Cristão"
         }
       ]
     }
