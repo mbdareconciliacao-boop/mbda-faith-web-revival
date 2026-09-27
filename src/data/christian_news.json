@@ -1,41 +1,30 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-09-26T14:03:42.108722+00:00",
-  "total_articles": 3,
+  "last_updated": "2026-09-27T15:00:49.657881+00:00",
+  "total_articles": 2,
   "sources": [
-    "Google News - Arqueologia Bíblica",
-    "Google News - Cristãos Perseguidos",
-    "Radio 93 - Giro Cristão"
+    "Folha Gospel",
+    "Google News - Cristãos Perseguidos"
   ],
   "articles": [
     {
-      "title": "Como Israel transformou a arqueologia em arma - Valor Econômico",
-      "summary": "Como Israel transformou a arqueologia em arma - Valor Econômico",
-      "source": "Google News - Arqueologia Bíblica",
-      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxNeG1fcU5FeTJUWERkQ28yQ1NSVzlBRDFsWVNMbWQzY0FUemV3dEw2eDRHUWxUckpEX0dDNktLX29nUkpyMDZnUHFXaDU5UHJuOHFLYnBkQWh3OWtCOXA4WXJVeHNTWDJwU0F0Q1dlYmNtYnZOZFBYOHN1aWlYMVBPcmNZM2Z6Q21BTEZwd3hMWElkNnNWU1RvSWNNa01yT1R1U0HSAbABQVVfeXFMTXBCdnI4RlMwMldEbENoeWpuTXpiOXo1b1VWajJCSFc1dEFaY2VhVHpFRHJVbFJtWVZrZmJUUndkSllCc2dUY1UtakpfNWprRTBtSkl1MVlURUFnTVBjWmwxc2xxRWZ1ck9JOXdJUEJGdHozTzJ6SmZrY3g1N29uS0o5aTBCUzZjUW9PVkpnUG9kN2hqY0tvX1RrMTVSOEEya0R4Rl9kdzM2TTJ0UmFyeHI?oc=5",
-      "category": "Arqueologia e História",
-      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "date": "2026-09-26T11:30:00+00:00",
+      "title": "Geração Z é a que mais se identifica como ‘religiosa’ e se envolve em atividades espirituais",
+      "summary": "De acordo com uma nova pesquisa, os adultos da Geração Z são mais propensos do que os americanos mais velhos a se descreverem como “religiosos”, embora muitos também se envolvam em práticas que contra...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/geracao-z-e-a-que-mais-se-identifica-como-religiosa-e-se-envolve-em-atividades-espirituais/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/09/image-26-e1790516421172.png",
+      "date": "2026-09-27T13:40:42+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Pastor perde acesso a água e luz por realizar cultos no Butão - Portas Abertas",
-      "summary": "Pastor perde acesso a água e luz por realizar cultos no Butão - Portas Abertas",
+      "title": "A única chance de ouvir sobre Jesus na Coreia do Norte - Portas Abertas",
+      "summary": "A única chance de ouvir sobre Jesus na Coreia do Norte - Portas Abertas",
       "source": "Google News - Cristãos Perseguidos",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQaG9VSkdCTU0tdHBCcnEzU1dRWnlSeFRHYW1VUlhvc3lFUlNWSzRmVW04U1VOTlpMZnE1eUpFckcwMjVSYlZGbmxpd0FnOVNiY1drd0E3Yi1NTFd0U1lrQWVkcjROS091bDVvT2NsUjRDNVdCYmZhcDFkdXV2Xzc4NGxLcmJyZ2RGYUZ4cGVERlZWZlRjdjFWYXY3QlZhLUF4cnBJTU11NXVOWGRHRHdsZjA0WVBxQy1kT3Y2X0FB?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxOWFp2eVhDdmsxZWNDalI2NDQyT0Vpd0lEbmRjX2EwMGRhT2dOT1dsNkxTYVlKc2JtMHlwTGRqa3lNUzYtUUp0TFFWaTY2aEpNRW51aUJrZl9rNGNkSW9FcERwenJSNjdkRDB0ckZnbTE4a2prVEQ3YnkzSDBuaUd5UkNmMXhRUmJqNmRXRkNWU1k2VHhELVJOeTNjSW9FTUJHZ2YwNkNYUnlHMEhnM0EwWkpNRmc?oc=5",
       "category": "Igreja Perseguida",
       "image_url": "",
-      "date": "2026-09-26T11:00:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Cresce número de evangélicos na Venezuela",
-      "summary": "Cenário religioso do país está mudando. The post Cresce número de evangélicos na Venezuela appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/cresce-numero-de-evangelicos-na-venezuela/",
-      "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-09-26T09:00:16+00:00",
+      "date": "2026-09-27T11:00:00+00:00",
       "publication_date_verified": true
     }
   ]
