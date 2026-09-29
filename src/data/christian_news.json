@@ -1,30 +1,40 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-09-28T17:58:32.411142+00:00",
-  "total_articles": 2,
+  "last_updated": "2026-09-29T16:21:00.494893+00:00",
+  "total_articles": 3,
   "sources": [
-    "Folha Gospel",
-    "Google News - Cristãos Perseguidos"
+    "Google News - Cristãos Perseguidos",
+    "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Pelo menos um cristão é assassinado a cada 86 minutos na Nigéria, segundo estudo",
-      "summary": "Um novo relatório de uma agência de ajuda humanitária sediada nos EUA mostra que cristãos na Nigéria foram mortos a uma taxa de um a cada 86 minutos entre 1º de janeiro e 8 de setembro, a maioria dele...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/pelo-menos-um-cristao-e-assassinado-a-cada-86-minutos-na-nigeria-segundo-estudo/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2023/01/Cristaos-durante-culto-em-igreja-na-Nigeria-Foto-Gracious-AdebayoUnsplash.com-.jpg",
-      "date": "2026-09-28T11:26:03+00:00",
+      "title": "Igreja cristã histórica é confiscada no Irã - Portas Abertas",
+      "summary": "Igreja cristã histórica é confiscada no Irã - Portas Abertas",
+      "source": "Google News - Cristãos Perseguidos",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQQ0ZtNnlFNTJKQ21WMUxMYUhEMGZfT0NwRDYzV21NNk9CQ1dYbVZ4SjBfQkJJRmFTWUJWeFh6Umh3bklYM3labGhMUnJlNk9ZNlN1SEd0Z2lFSlYybzl4cEdrcjcyR2hlMnU2OEtSeHZRd25WWGh2UWxVZFB5TnZvWVBJa3JEbGJnNU55UFZBN0gwemlSdW11a04wUk5qWWhXQUljTnhR?oc=5",
+      "category": "Igreja Perseguida",
+      "image_url": "",
+      "date": "2026-09-29T11:00:00+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Enchentes no Nepal: 300 famílias recebem ajuda emergencial - Portas Abertas",
-      "summary": "Enchentes no Nepal: 300 famílias recebem ajuda emergencial - Portas Abertas",
-      "source": "Google News - Cristãos Perseguidos",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNTUFfTDBLMms1cXhJME85VUtjQlNlLXdTNFRITVV3YTUzam0xX1N0WHpURF9mVUFWbTJER205WUpPOWloaVhMYVJvbzJPaVpQS0pnbmFkMkFYOFNEMTdqU1FZaWxLN3lQd1c4eHRCOFlyNkw5NE4zUjIxZVZHemtkRjRjd0pTSXgyU19palM5Q3dQSkZYSlFUSDVWbl8xOHFLSzVxYktVTUpwNTR5OWJkOGV3?oc=5",
-      "category": "Igreja Perseguida",
+      "title": "Começa campanha internacional de oração pelo fim do aborto",
+      "summary": "“40 Dias pela Vida” também vai acontecer no Brasil. The post Começa campanha internacional de oração pelo fim do aborto appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/comeca-campanha-internacional-de-oracao-pelo-fim-do-aborto/",
+      "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-09-28T11:00:00+00:00",
+      "date": "2026-09-29T09:00:32+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "China proíbe cristãos de mencionar “Jesus” e “Senhor” em canções",
+      "summary": "Autoridades governamentais invadiram igreja doméstica. The post China proíbe cristãos de mencionar “Jesus” e “Senhor” em canções appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/china-proibe-cristaos-de-mencionar-jesus-e-senhor-em-cancoes/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-09-29T03:05:13+00:00",
       "publication_date_verified": true
     }
   ]

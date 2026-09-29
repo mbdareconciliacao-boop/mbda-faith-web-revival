@@ -7,33 +7,47 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
-      "id": "https://folhagospel.com/pelo-menos-um-cristao-e-assassinado-a-cada-86-minutos-na-nigeria-segundo-estudo/",
-      "url": "https://folhagospel.com/pelo-menos-um-cristao-e-assassinado-a-cada-86-minutos-na-nigeria-segundo-estudo/",
-      "title": "Pelo menos um cristão é assassinado a cada 86 minutos na Nigéria, segundo estudo",
-      "content_text": "Um novo relatório de uma agência de ajuda humanitária sediada nos EUA mostra que cristãos na Nigéria foram mortos a uma taxa de um a cada 86 minutos entre 1º de janeiro e 8 de setembro, a maioria dele...",
-      "date_published": "2026-09-28T11:26:03.000Z",
-      "image": "https://folhagospel.com/wp-content/uploads/2023/01/Cristaos-durante-culto-em-igreja-na-Nigeria-Foto-Gracious-AdebayoUnsplash.com-.jpg",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Folha Gospel"
-        }
-      ]
-    },
-    {
-      "id": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNTUFfTDBLMms1cXhJME85VUtjQlNlLXdTNFRITVV3YTUzam0xX1N0WHpURF9mVUFWbTJER205WUpPOWloaVhMYVJvbzJPaVpQS0pnbmFkMkFYOFNEMTdqU1FZaWxLN3lQd1c4eHRCOFlyNkw5NE4zUjIxZVZHemtkRjRjd0pTSXgyU19palM5Q3dQSkZYSlFUSDVWbl8xOHFLSzVxYktVTUpwNTR5OWJkOGV3?oc=5",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNTUFfTDBLMms1cXhJME85VUtjQlNlLXdTNFRITVV3YTUzam0xX1N0WHpURF9mVUFWbTJER205WUpPOWloaVhMYVJvbzJPaVpQS0pnbmFkMkFYOFNEMTdqU1FZaWxLN3lQd1c4eHRCOFlyNkw5NE4zUjIxZVZHemtkRjRjd0pTSXgyU19palM5Q3dQSkZYSlFUSDVWbl8xOHFLSzVxYktVTUpwNTR5OWJkOGV3?oc=5",
-      "title": "Enchentes no Nepal: 300 famílias recebem ajuda emergencial - Portas Abertas",
-      "content_text": "Enchentes no Nepal: 300 famílias recebem ajuda emergencial - Portas Abertas",
-      "date_published": "2026-09-28T11:00:00.000Z",
+      "id": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQQ0ZtNnlFNTJKQ21WMUxMYUhEMGZfT0NwRDYzV21NNk9CQ1dYbVZ4SjBfQkJJRmFTWUJWeFh6Umh3bklYM3labGhMUnJlNk9ZNlN1SEd0Z2lFSlYybzl4cEdrcjcyR2hlMnU2OEtSeHZRd25WWGh2UWxVZFB5TnZvWVBJa3JEbGJnNU55UFZBN0gwemlSdW11a04wUk5qWWhXQUljTnhR?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMipgFBVV95cUxQQ0ZtNnlFNTJKQ21WMUxMYUhEMGZfT0NwRDYzV21NNk9CQ1dYbVZ4SjBfQkJJRmFTWUJWeFh6Umh3bklYM3labGhMUnJlNk9ZNlN1SEd0Z2lFSlYybzl4cEdrcjcyR2hlMnU2OEtSeHZRd25WWGh2UWxVZFB5TnZvWVBJa3JEbGJnNU55UFZBN0gwemlSdW11a04wUk5qWWhXQUljTnhR?oc=5",
+      "title": "Igreja cristã histórica é confiscada no Irã - Portas Abertas",
+      "content_text": "Igreja cristã histórica é confiscada no Irã - Portas Abertas",
+      "date_published": "2026-09-29T11:00:00.000Z",
       "tags": [
         "Igreja Perseguida"
       ],
       "authors": [
         {
           "name": "Google News - Cristãos Perseguidos"
+        }
+      ]
+    },
+    {
+      "id": "https://radio93.com.br/noticias/giro-cristao/comeca-campanha-internacional-de-oracao-pelo-fim-do-aborto/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/comeca-campanha-internacional-de-oracao-pelo-fim-do-aborto/",
+      "title": "Começa campanha internacional de oração pelo fim do aborto",
+      "content_text": "“40 Dias pela Vida” também vai acontecer no Brasil. The post Começa campanha internacional de oração pelo fim do aborto appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-09-29T09:00:32.000Z",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Radio 93 - Giro Cristão"
+        }
+      ]
+    },
+    {
+      "id": "https://radio93.com.br/noticias/giro-cristao/china-proibe-cristaos-de-mencionar-jesus-e-senhor-em-cancoes/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/china-proibe-cristaos-de-mencionar-jesus-e-senhor-em-cancoes/",
+      "title": "China proíbe cristãos de mencionar “Jesus” e “Senhor” em canções",
+      "content_text": "Autoridades governamentais invadiram igreja doméstica. The post China proíbe cristãos de mencionar “Jesus” e “Senhor” em canções appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-09-29T03:05:13.000Z",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Radio 93 - Giro Cristão"
         }
       ]
     }
