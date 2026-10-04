@@ -1,51 +1,19 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-10-03T14:35:38.706542+00:00",
-  "total_articles": 4,
+  "last_updated": "2026-10-04T15:10:35.211564+00:00",
+  "total_articles": 1,
   "sources": [
-    "Folha Gospel",
-    "Google News - Cristãos Perseguidos",
-    "Radio 93 - Giro Cristão"
+    "Google News - Cristãos Perseguidos"
   ],
   "articles": [
     {
-      "title": "Líderes religiosos ganham influência sobre o voto na reta final da eleição, aponta Datafolha",
-      "summary": "Pesquisa mostra aumento da influência de pastores, padres e outros líderes de igrejas na decisão eleitoral, especialmente entre evangélicos A influência de líderes religiosos sobre a escolha do voto c...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/lideres-religiosos-ganham-influencia-sobre-o-voto-na-reta-final-da-eleicao-aponta-datafolha/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/urnaeletronica_biblia-e1791020668887.png",
-      "date": "2026-10-03T12:45:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Crianças recebem livros de colorir bíblicos na Ásia Central - Portas Abertas",
-      "summary": "Crianças recebem livros de colorir bíblicos na Ásia Central - Portas Abertas",
+      "title": "“Deus não me abandonou”: a fé de Abed na África Oriental - Portas Abertas",
+      "summary": "“Deus não me abandonou”: a fé de Abed na África Oriental - Portas Abertas",
       "source": "Google News - Cristãos Perseguidos",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxQQXV2UzdUSThZT0gzMUNWVDhBdXl1blFHMnRYQkNYWi1xcGs3ci1KZGRpeWVDWmVaU1B2TExiblFKemtjSWtiT0tZbzhvdkswX3cyQW1FMnR5WE92emlhNlpsb1NUU0JVc0VFUG44akhObkMxQzJCWmltQVMzQVRZTVVKTWIyQ29lVmthSU1oQklxdS12c0VWWVpiWUR0X2lPT1hEWTl2cmlUUnp2QjlqX0FmNmJGNnNXRm5z?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxNWFpWUlpDa090MHVZNEtfSU10X2lpaS1NN1o5OHk4QVl3aDhibTM2TElxZnRzZ0tEYUpaX3Exd3pfQ0JoY1o5QnM1WUt3T09BbTlGRFZRcUtvaEI4ZXlaWjNmZFJjZkVwRC1GbjhZY0RJS2tEb0tvZkdsZzFsaEk5NWNaSFlkVm5TdDBIV1I1eGVTa0tpaDQ3d3d4NjVoaGJ1TjduamxLdWNrdw?oc=5",
       "category": "Igreja Perseguida",
-      "image_url": "",
-      "date": "2026-10-03T11:00:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Professor aposentado escreve Novo Testamento à mão",
-      "summary": "\"Encher a mente com a Palavra”. The post Professor aposentado escreve Novo Testamento à mão appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/professor-aposentado-escreve-novo-testamento-a-mao/",
-      "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-10-03T09:00:27+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Autoridades chinesas apreendem materiais evangelísticos",
-      "summary": "Igreja teve que deixar imóvel onde ralizava cultos. The post Autoridades chinesas apreendem materiais evangelísticos appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/autoridades-chinesas-apreendem-materiais-evangelisticos/",
-      "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-10-03T03:05:31+00:00",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "date": "2026-10-04T11:00:00+00:00",
       "publication_date_verified": true
     }
   ]
