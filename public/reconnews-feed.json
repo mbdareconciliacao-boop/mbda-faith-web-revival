@@ -7,17 +7,95 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
-      "id": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQTU1bjJQZ1Utd0ZkZnhZeDhxck5MSTlRRUFxNE5IbmYxTklYUmY2YVlucHRUWTRHNUF6dy1TNWRUQWpGVkNhVjlieEUtM05taEVad0JpcnVVVmpSYWNnVkIyZTNIQXhvR3FXaUlpUUhTUHFoQjI2MGNtMUxEcFZxdFU0aDQ3TEUzdm5GcjY4RjkzZ0lGTl8yM0kxbng4TGxGWC1fbU9DUmlwYkdWUDN3YzN3?oc=5",
-      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNQTU1bjJQZ1Utd0ZkZnhZeDhxck5MSTlRRUFxNE5IbmYxTklYUmY2YVlucHRUWTRHNUF6dy1TNWRUQWpGVkNhVjlieEUtM05taEVad0JpcnVVVmpSYWNnVkIyZTNIQXhvR3FXaUlpUUhTUHFoQjI2MGNtMUxEcFZxdFU0aDQ3TEUzdm5GcjY4RjkzZ0lGTl8yM0kxbng4TGxGWC1fbU9DUmlwYkdWUDN3YzN3?oc=5",
-      "title": "Dignidade da pessoa humana: da “Imago Dei” à “Imago Hominis” - conteudojuridico.com.br",
-      "content_text": "Dignidade da pessoa humana: da “Imago Dei” à “Imago Hominis” - conteudojuridico.com.br",
-      "date_published": "2026-10-05T05:01:16.000Z",
+      "id": "https://folhagospel.com/eleicoes-2026-candidatos-ligados-a-grandes-igrejas-enfrentam-derrotas-e-resultados-surpreendentes/",
+      "url": "https://folhagospel.com/eleicoes-2026-candidatos-ligados-a-grandes-igrejas-enfrentam-derrotas-e-resultados-surpreendentes/",
+      "title": "Eleições 2026: candidatos ligados a grandes igrejas enfrentam derrotas e resultados surpreendentes",
+      "content_text": "Candidatos ligados à Assembleia de Deus, Universal, Quadrangular e Igreja da Graça tiveram resultados distintos, com nomes tradicionais ficando fora das vagas. As eleições de 2026 impuseram uma combin...",
+      "date_published": "2026-10-06T12:40:00.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/02/Urna-eletronica-Foto-Reproducao.jpg",
       "tags": [
-        "Patrística"
+        "Notícias Cristãs"
       ],
       "authors": [
         {
-          "name": "Patrística News"
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTHV4TUYxNUh2a3M5X0lCNjJPeGR1R19mNTdiMFRpamtJNFExZ2xyTU94Wnc0d3E5UVpNSFhsUUN6TXRoNS1ZZDJJVVFZYjdKVkFFY1owc0k3N0k4M0t1TjdrVFVZbUJKaXAyb3M2WDhJV0FXNWVVb0xvMFZCLUpjNmpDRmdzMWNwR1FCaHZYTld2VC1KeE53ZFM3LU1nNlktb09Yb0RkbXRLc2JjVUdZMV9uNTNvRlMtbjRrekZR?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxQTHV4TUYxNUh2a3M5X0lCNjJPeGR1R19mNTdiMFRpamtJNFExZ2xyTU94Wnc0d3E5UVpNSFhsUUN6TXRoNS1ZZDJJVVFZYjdKVkFFY1owc0k3N0k4M0t1TjdrVFVZbUJKaXAyb3M2WDhJV0FXNWVVb0xvMFZCLUpjNmpDRmdzMWNwR1FCaHZYTld2VC1KeE53ZFM3LU1nNlktb09Yb0RkbXRLc2JjVUdZMV9uNTNvRlMtbjRrekZR?oc=5",
+      "title": "Cristãos presos no Iêmen continuam falando de Jesus - Portas Abertas",
+      "content_text": "Cristãos presos no Iêmen continuam falando de Jesus - Portas Abertas",
+      "date_published": "2026-10-06T11:00:00.000Z",
+      "tags": [
+        "Igreja Perseguida"
+      ],
+      "authors": [
+        {
+          "name": "Google News - Cristãos Perseguidos"
+        }
+      ]
+    },
+    {
+      "id": "https://folhagospel.com/china-detem-pastor-protestante-por-organizar-atividades-religiosas-ilegais/",
+      "url": "https://folhagospel.com/china-detem-pastor-protestante-por-organizar-atividades-religiosas-ilegais/",
+      "title": "China detém pastor protestante por ‘organizar atividades religiosas ilegais’",
+      "content_text": "As autoridades chinesas detiveram o pastor protestante An Yankui em sua casa, sob suspeita de “organizar atividades religiosas ilegais”, em meio a uma repressão contínua contra igrejas não registradas...",
+      "date_published": "2026-10-06T09:44:14.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2025/09/Bandeira-da-China-acenando-em-um-mastro-em-um-ceu-azul-Foto-Canva-Pro.jpg",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://folhagospel.com/criadora-conteudo-crista-condenada-cuba-critica-regime/",
+      "url": "https://folhagospel.com/criadora-conteudo-crista-condenada-cuba-critica-regime/",
+      "title": "Justiça cubana condena criadora de conteúdo cristã e a mãe a dois anos de restrição de liberdade",
+      "content_text": "Justiça de Cuba condena criadora de conteúdo cristã e sua mãe após filmarem um agente do Estado. Entenda o impacto do caso e as reações internacionais sobre Cuba. The post Justiça cubana condena criad...",
+      "date_published": "2026-10-06T09:34:47.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/10/criadora-conteudo-crista-condenada-cuba-critica-regime.webp",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://radio93.com.br/noticias/giro-cristao/sao-paulo-tera-dia-universal-de-oracao/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/sao-paulo-tera-dia-universal-de-oracao/",
+      "title": "São Paulo terá Dia Universal de Oração",
+      "content_text": "São Paulo terá Dia Universal de Oração",
+      "date_published": "2026-10-06T09:00:51.000Z",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Radio 93 - Giro Cristão"
+        }
+      ]
+    },
+    {
+      "id": "https://radio93.com.br/noticias/giro-cristao/pentagono-cria-gabinete-religioso-de-apoio-aos-militares/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/pentagono-cria-gabinete-religioso-de-apoio-aos-militares/",
+      "title": "Pentágono cria gabinete religioso de apoio aos militares",
+      "content_text": "\"Nossa pasta está vestindo a armadura completa de Deus\". The post Pentágono cria gabinete religioso de apoio aos militares appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-10-06T03:05:16.000Z",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Radio 93 - Giro Cristão"
         }
       ]
     }
