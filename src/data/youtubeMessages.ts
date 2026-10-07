@@ -2,6 +2,21 @@
 import type { Message } from './contentCatalog.ts';
 export const youtubeMessages: Message[] = [
   {
+    "slug": "video-6635615938646970317151",
+    "title": "O Princípio Regulador do Culto: Liberdade, Ordem e Edificação | João 4:23-24",
+    "description": "📅 30/09/2026 – Quarta-feira | 20h ⛪ Culto de Oração e Palavra Nesta reunião, damos continuidade ao estudo sobre “Em Espírito e em Verdade”, aprofundando a compreensão do Princípio Regulador do Culto e sua aplicação à vida da igreja. A partir das palavras de Jesus em João 4:23-24, somos conduzidos a refletir sobre…",
+    "date": "7 de outubro de 2026",
+    "dateTime": "2026-10-07T15:53:30Z",
+    "image": "https://i.ytimg.com/vi/f5aY8dip1qQ/hqdefault.jpg",
+    "imageAlt": "O Princípio Regulador do Culto: Liberdade, Ordem e Edificação | João 4:23-24",
+    "youtubeId": "f5aY8dip1qQ",
+    "source": "https://www.youtube.com/watch?v=f5aY8dip1qQ",
+    "topics": [
+      "Canal da igreja"
+    ],
+    "relatedStudies": []
+  },
+  {
     "slug": "video-62716773664b3073396630",
     "title": "Culto | O Princípio Regulador do Culto: Adoração Bíblica, Liberdade e Serviço a Deus | João 4:23-24",
     "description": "📅 16/09/2026 – Quarta-feira | 20h ⛪ Culto de Oração e Ministração da Palavra Nesta ministração, damos continuidade ao estudo sobre a essência, a ordem e a prática do culto cristão, refletindo sobre uma pergunta fundamental: como Deus deseja ser adorado? A partir de João 4:23-24, somos conduzidos a compreender que…",
@@ -281,21 +296,6 @@ export const youtubeMessages: Message[] = [
     "imageAlt": "A Mulher Sunamita: Fidelidade nos Tempos Bons e nos Tempos Difíceis | II Reis 4 e 8",
     "youtubeId": "H8kIJHKwpog",
     "source": "https://www.youtube.com/watch?v=H8kIJHKwpog",
-    "topics": [
-      "Canal da igreja"
-    ],
-    "relatedStudies": []
-  },
-  {
-    "slug": "video-5a5559436144686f575367",
-    "title": "unknown",
-    "description": "#CapCut Fiz este vídeo incrível com o CapCut. Abra o link para experimentar: capcut.com/tools/desktop-video-editor",
-    "date": "1 de julho de 2026",
-    "dateTime": "2026-07-01T15:19:20Z",
-    "image": "https://i.ytimg.com/vi/ZUYCaDhoWSg/hqdefault.jpg",
-    "imageAlt": "unknown",
-    "youtubeId": "ZUYCaDhoWSg",
-    "source": "https://www.youtube.com/watch?v=ZUYCaDhoWSg",
     "topics": [
       "Canal da igreja"
     ],
