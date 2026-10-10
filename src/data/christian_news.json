@@ -1,40 +1,40 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-10-09T16:50:01.005547+00:00",
+  "last_updated": "2026-10-10T15:44:04.008554+00:00",
   "total_articles": 3,
   "sources": [
-    "Google News - Cristãos Perseguidos",
+    "Folha Gospel",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Nigéria: agricultores cristãos recebem apoio para cultivar - Portas Abertas",
-      "summary": "Nigéria: agricultores cristãos recebem apoio para cultivar - Portas Abertas",
-      "source": "Google News - Cristãos Perseguidos",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQWmdSdDhlaGp6cTdMejhsd2doSjBfcmtGZ1EtcDZPX1RNbzBxOTZTYTV3OWI2cXZxdjVZYTZ4ZFh0NXhNNDdNZnhfYWFYRHJvaTllNzJydXZTc0pUSkZYaVA5OWc3YXFhdERLOTZBZDMxaEl1YXE1UFc4ZUMtRTNSaHByZ2tPT0EzR0xidGJCYzRrY3I3dGlNYU1mZExudlpfMEZkeDRQWmdscUJNYU5VVEdrUFFMUkR4?oc=5",
-      "category": "Igreja Perseguida",
-      "image_url": "",
-      "date": "2026-10-09T11:00:00+00:00",
+      "title": "Televangelista americano Jim Bakker morre aos 86 anos",
+      "summary": "Faleceu aos 86 anos Jim Bakker, televangelista americano cujo império religioso desmoronou após escândalos de fraudes financeiras e controvérsias sexuais. The post Televangelista americano Jim Bakker ...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/morre-jim-bakker-televangelista-fraudes-escandalos/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/morre-jim-bakker-televangelista-fraudes-escandalos.webp",
+      "date": "2026-10-10T10:59:58+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Missão distribui camas para crianças africanas que nunca dormiram em colchão",
-      "summary": "World Challenge cuida de órfãos e viúvas ao redor do mundo. The post Missão distribui camas para crianças africanas que nunca dormiram em colchão appeared first on Rádio 93FM-RJ.",
+      "title": "Mãe ora por filho atleta e cena viraliza",
+      "summary": "Ameer Speed foi até à arquibancada para receber oração. The post Mãe ora por filho atleta e cena viraliza appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/missao-distribui-camas-para-criancas-africanas-que-nunca-dormiram-em-colchao/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/mae-ora-por-filho-atleta-e-cena-viraliza/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-10-09T09:00:04+00:00",
+      "date": "2026-10-10T09:00:42+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Governador decreta toque de recolher em algumas regiões da Nigéria",
-      "summary": "Decisão ocorre após morte de pastor no estado de Plateau. The post Governador decreta toque de recolher em algumas regiões da Nigéria appeared first on Rádio 93FM-RJ.",
+      "title": "“Caminhada em Defesa da Vida e da Família” acontece em Copocabana neste domingo",
+      "summary": "Mobilização defende vida humana desde a concepção. The post “Caminhada em Defesa da Vida e da Família” acontece em Copocabana neste domingo appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/governador-decreta-toque-de-recolher-em-algumas-regioes-da-nigeria/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/caminhada-em-defesa-da-vida-e-da-familia-acontece-em-copocabana-neste-domingo/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-10-09T03:05:57+00:00",
+      "date": "2026-10-10T03:05:25+00:00",
       "publication_date_verified": true
     }
   ]

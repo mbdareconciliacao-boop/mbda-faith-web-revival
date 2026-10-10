@@ -7,26 +7,27 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
-      "id": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQWmdSdDhlaGp6cTdMejhsd2doSjBfcmtGZ1EtcDZPX1RNbzBxOTZTYTV3OWI2cXZxdjVZYTZ4ZFh0NXhNNDdNZnhfYWFYRHJvaTllNzJydXZTc0pUSkZYaVA5OWc3YXFhdERLOTZBZDMxaEl1YXE1UFc4ZUMtRTNSaHByZ2tPT0EzR0xidGJCYzRrY3I3dGlNYU1mZExudlpfMEZkeDRQWmdscUJNYU5VVEdrUFFMUkR4?oc=5",
-      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxQWmdSdDhlaGp6cTdMejhsd2doSjBfcmtGZ1EtcDZPX1RNbzBxOTZTYTV3OWI2cXZxdjVZYTZ4ZFh0NXhNNDdNZnhfYWFYRHJvaTllNzJydXZTc0pUSkZYaVA5OWc3YXFhdERLOTZBZDMxaEl1YXE1UFc4ZUMtRTNSaHByZ2tPT0EzR0xidGJCYzRrY3I3dGlNYU1mZExudlpfMEZkeDRQWmdscUJNYU5VVEdrUFFMUkR4?oc=5",
-      "title": "Nigéria: agricultores cristãos recebem apoio para cultivar - Portas Abertas",
-      "content_text": "Nigéria: agricultores cristãos recebem apoio para cultivar - Portas Abertas",
-      "date_published": "2026-10-09T11:00:00.000Z",
+      "id": "https://folhagospel.com/morre-jim-bakker-televangelista-fraudes-escandalos/",
+      "url": "https://folhagospel.com/morre-jim-bakker-televangelista-fraudes-escandalos/",
+      "title": "Televangelista americano Jim Bakker morre aos 86 anos",
+      "content_text": "Faleceu aos 86 anos Jim Bakker, televangelista americano cujo império religioso desmoronou após escândalos de fraudes financeiras e controvérsias sexuais. The post Televangelista americano Jim Bakker ...",
+      "date_published": "2026-10-10T10:59:58.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/10/morre-jim-bakker-televangelista-fraudes-escandalos.webp",
       "tags": [
-        "Igreja Perseguida"
+        "Notícias Cristãs"
       ],
       "authors": [
         {
-          "name": "Google News - Cristãos Perseguidos"
+          "name": "Folha Gospel"
         }
       ]
     },
     {
-      "id": "https://radio93.com.br/noticias/giro-cristao/missao-distribui-camas-para-criancas-africanas-que-nunca-dormiram-em-colchao/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/missao-distribui-camas-para-criancas-africanas-que-nunca-dormiram-em-colchao/",
-      "title": "Missão distribui camas para crianças africanas que nunca dormiram em colchão",
-      "content_text": "World Challenge cuida de órfãos e viúvas ao redor do mundo. The post Missão distribui camas para crianças africanas que nunca dormiram em colchão appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-10-09T09:00:04.000Z",
+      "id": "https://radio93.com.br/noticias/giro-cristao/mae-ora-por-filho-atleta-e-cena-viraliza/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/mae-ora-por-filho-atleta-e-cena-viraliza/",
+      "title": "Mãe ora por filho atleta e cena viraliza",
+      "content_text": "Ameer Speed foi até à arquibancada para receber oração. The post Mãe ora por filho atleta e cena viraliza appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-10-10T09:00:42.000Z",
       "tags": [
         "Notícias Cristãs"
       ],
@@ -37,11 +38,11 @@
       ]
     },
     {
-      "id": "https://radio93.com.br/noticias/giro-cristao/governador-decreta-toque-de-recolher-em-algumas-regioes-da-nigeria/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/governador-decreta-toque-de-recolher-em-algumas-regioes-da-nigeria/",
-      "title": "Governador decreta toque de recolher em algumas regiões da Nigéria",
-      "content_text": "Decisão ocorre após morte de pastor no estado de Plateau. The post Governador decreta toque de recolher em algumas regiões da Nigéria appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-10-09T03:05:57.000Z",
+      "id": "https://radio93.com.br/noticias/giro-cristao/caminhada-em-defesa-da-vida-e-da-familia-acontece-em-copocabana-neste-domingo/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/caminhada-em-defesa-da-vida-e-da-familia-acontece-em-copocabana-neste-domingo/",
+      "title": "“Caminhada em Defesa da Vida e da Família” acontece em Copocabana neste domingo",
+      "content_text": "Mobilização defende vida humana desde a concepção. The post “Caminhada em Defesa da Vida e da Família” acontece em Copocabana neste domingo appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-10-10T03:05:25.000Z",
       "tags": [
         "Notícias Cristãs"
       ],
