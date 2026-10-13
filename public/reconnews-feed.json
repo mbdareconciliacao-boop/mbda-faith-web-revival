@@ -7,18 +7,64 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
-      "id": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPYU9hZnlUOWRyQmlSOUd0YmRVVzBNQ29NUlNEZGM3cEtOeHdOZ05EVEtqTFVMdWt6RWFjMW1lV3RnZzR5dFhHNUJQYUNDQjBjRjdRUUM4a3o1UFBTYndpSElZNkdpQnQ4TlNBQVo4UmFRN1RLUWtwdHZRaUZaTWJubm9OcXVJZzd6eUdQeHFTN2YyQ2JyYlBiQWZiTW5Xa05JLTQzOEpIdk5lWlZWaW1nb0ZBdUdTOGFPN3Rz?oc=5",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxPYU9hZnlUOWRyQmlSOUd0YmRVVzBNQ29NUlNEZGM3cEtOeHdOZ05EVEtqTFVMdWt6RWFjMW1lV3RnZzR5dFhHNUJQYUNDQjBjRjdRUUM4a3o1UFBTYndpSElZNkdpQnQ4TlNBQVo4UmFRN1RLUWtwdHZRaUZaTWJubm9OcXVJZzd6eUdQeHFTN2YyQ2JyYlBiQWZiTW5Xa05JLTQzOEpIdk5lWlZWaW1nb0ZBdUdTOGFPN3Rz?oc=5",
-      "title": "Ásia Central: Bíblia infantil aproxima família curda de Deus - Portas Abertas",
-      "content_text": "Ásia Central: Bíblia infantil aproxima família curda de Deus - Portas Abertas",
-      "date_published": "2026-10-12T11:00:00.000Z",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "id": "https://folhagospel.com/ex-muculmano-relata-conversao-radical-e-o-preco-de-seguir-o-cristianismo/",
+      "url": "https://folhagospel.com/ex-muculmano-relata-conversao-radical-e-o-preco-de-seguir-o-cristianismo/",
+      "title": "Ex-muçulmano Ahmed Joktan relata trajetória de conversão ao cristianismo em evento nos EUA",
+      "content_text": "Conheça a história de Ahmed Joktan, ex-muçulmano saudita que enfrentou severa perseguição familiar e agressões físicas após se converter ao cristianismo. The post Ex-muçulmano Ahmed Joktan relata traj...",
+      "date_published": "2026-10-13T11:53:00.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/10/ex-muculmano-relata-conversao-radical-e-o-preco-de-seguir-o-cristianismo.webp",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQQjhTN1N6NjFldTRUcTRVZE9vbXFIY2NybXVqYkhRaWRJQ0hYQWVxNnlwMG1OZ0tVYUxqalFOMVNIcXB1RUZzQVRZenJOR0d4OEdVRF9JSGk2MDk0MUt1a1l6R191NG9wZ3dmZUpHUUZ5bHJOMHJDcjVxTTZYYWxxZ3htMS1majU2aGhYZVBHRmp5d0EzeDVOR09pUkhnUHBZcVd0cWtrN1Npdw?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMiqgFBVV95cUxQQjhTN1N6NjFldTRUcTRVZE9vbXFIY2NybXVqYkhRaWRJQ0hYQWVxNnlwMG1OZ0tVYUxqalFOMVNIcXB1RUZzQVRZenJOR0d4OEdVRF9JSGk2MDk0MUt1a1l6R191NG9wZ3dmZUpHUUZ5bHJOMHJDcjVxTTZYYWxxZ3htMS1majU2aGhYZVBHRmp5d0EzeDVOR09pUkhnUHBZcVd0cWtrN1Npdw?oc=5",
+      "title": "Pastor na Nigéria compartilha desafios do luto após perdas na família - Portas Abertas",
+      "content_text": "Pastor na Nigéria compartilha desafios do luto após perdas na família - Portas Abertas",
+      "date_published": "2026-10-13T11:00:00.000Z",
       "tags": [
         "Igreja Perseguida"
       ],
       "authors": [
         {
           "name": "Google News - Cristãos Perseguidos"
+        }
+      ]
+    },
+    {
+      "id": "https://folhagospel.com/chile-registra-quase-uma-nova-igreja-evangelica-por-dia-aponta-levantamento/",
+      "url": "https://folhagospel.com/chile-registra-quase-uma-nova-igreja-evangelica-por-dia-aponta-levantamento/",
+      "title": "Chile registra quase uma nova igreja evangélica por dia, aponta levantamento",
+      "content_text": "País contabilizou 82 novas entidades religiosas em três meses; censo nacional indica que 16,3% da população com mais de 15 anos se identifica como evangélica ou protestante. O Chile registrou a criaçã...",
+      "date_published": "2026-10-13T10:15:00.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2025/07/Bandeira-do-Chile-na-Praca-da-Cidadania-na-capital-Santiago-Foto-Canva-Pro.jpg",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://radio93.com.br/noticias/giro-cristao/especialistas-alertam-para-expansao-do-suicidio-assistido-no-canada/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/especialistas-alertam-para-expansao-do-suicidio-assistido-no-canada/",
+      "title": "Especialistas alertam para expansão do suicídio assistido no Canadá",
+      "content_text": "Pacientes estão procurando a morte por causas de infelicidade cotidiana. The post Especialistas alertam para expansão do suicídio assistido no Canadá appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-10-13T03:05:25.000Z",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Radio 93 - Giro Cristão"
         }
       ]
     }
