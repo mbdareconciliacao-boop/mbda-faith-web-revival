@@ -1,81 +1,40 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-10-16T14:32:50.937190+00:00",
-  "total_articles": 7,
+  "last_updated": "2026-10-17T13:28:56.082799+00:00",
+  "total_articles": 3,
   "sources": [
-    "Folha Gospel",
     "Google News - Cristãos Perseguidos",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Pesquisa inédita monitora mais de 7.000 cultos e missas e aponta frequência de propaganda eleitoral em igrejas",
-      "summary": "Estudo inédito monitora 13 mil horas de cultos e missas para revelar a real influência da propaganda política nas eleições brasileiras em templos religiosos. The post Pesquisa inédita monitora mais de...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/estudo-revela-comportamento-politico-em-templos-religiosos-durante-eleicoes/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2022/11/Culto-evangelico-Imagem-Canva-Pro.jpg",
-      "date": "2026-10-16T13:45:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Filha de Jim Bakker pede desculpas por danos causados pelo ministério da família",
-      "summary": "Tammy Sue Bakker afirma que deixou o ministério do pai em 2022 por discordar das mensagens divulgadas e pede que cristãos demonstrem acolhimento à comunidade LGBT após a morte do televangelista. Tammy...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/filha-de-jim-bakker-pede-desculpas-por-danos-causados-pelo-ministerio-da-familia/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/142440_w_850_5611.webp",
-      "date": "2026-10-16T12:52:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Aliança evangélica cria rede de apoio habitacional para famílias na Espanha",
-      "summary": "Iniciativa mobiliza igrejas em todo o país para combater o déficit de moradias dignas durante período de instabilidade social e política na Espanha Diante do agravamento da crise habitacional e dos cr...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/alianca-evangelica-cria-rede-de-apoio-habitacional-para-familias-na-espanha/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/11/Bandeira-da-Espanha-entre-as-torres-de-uma-igreja-Foto-Folha-Gospel-Canva-IA.jpg",
-      "date": "2026-10-16T11:38:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Nove cristãos são mortos em novo ataque em Benue, Nigéria - Portas Abertas",
-      "summary": "Nove cristãos são mortos em novo ataque em Benue, Nigéria - Portas Abertas",
+      "title": "Cristã é expulsa de casa após conversão na Ásia Central - Portas Abertas",
+      "summary": "Cristã é expulsa de casa após conversão na Ásia Central - Portas Abertas",
       "source": "Google News - Cristãos Perseguidos",
-      "url": "https://news.google.com/rss/articles/CBMisAFBVV95cUxNNGlYVWlPaHBCM0Y0WWtWRTVpbGRUNnlhSVBUalR4QS1OWjdEQlZsdWxJU3hGMC1NcHVHNW1ZaDA5anlpNWtUTUd3VnF5N0I0aC1TcXhCSkJ2M3dGNWh0dzc2dG43WnVMakFtTVBxTGY1YkJwX2NUWVl1SXNIdlpOaGlHa1Utclpubjl6UDRCcXNGZ3AtbGk0UTh1UVYtVkREaXNldWRtWDEydnhaSi1ENA?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNdlllS3RMUmdQTXlQdG9iR1VhQ1ZkRkFQbnNKeUFpUkxZMUM5OHQ3cUM2R2pPMDJlcTNiUlFna1E1TzhILVo5ZHZBd3NNanFmM1FSMlRJYWdrQkljdVhrbUZBal8zbXMzUFdQZWN5Mlhnei1CRHRsUkowcTliRnJQNWdDR1EtSUNadDFUN21kT0ZCUzBFeUZsMEZWOG9DZXhNSkExS0FPbTNWX0xtckEwS2kxQ19pdw?oc=5",
       "category": "Igreja Perseguida",
       "image_url": "",
-      "date": "2026-10-16T11:00:00+00:00",
+      "date": "2026-10-17T11:00:00+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Polícia prende 24 sul-coreanos sob acusação de atividades religiosas ilegais no Nepal",
-      "summary": "Autoridades nepalesas detiveram um grupo de sul-coreanos durante uma atividade interna realizada em uma faculdade teologica no distrito de Morang Vinte e quatro cristãos sul-coreanos foram presos pela...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/policia-prende-24-sul-coreanos-sob-acusacao-de-atividades-religiosas-ilegais-no-nepal/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/policia-nepal-prende-24-sul-coreanos-instituicao-biblica-768x5761-1.jpg",
-      "date": "2026-10-16T10:10:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "YouVersion anuncia lançamento de Desafio Bíblico de 30 Dias",
-      "summary": "Ação vai acontecer em vários países ao mesmo tempo. The post YouVersion anuncia lançamento de Desafio Bíblico de 30 Dias appeared first on Rádio 93FM-RJ.",
+      "title": "Milhares de cristãos se reúnem nas ruas de Buenos Aires",
+      "summary": "Chuva não impediu ações culturais cristãs. The post Milhares de cristãos se reúnem nas ruas de Buenos Aires appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/youversion-anuncia-lancamento-de-desafio-biblico-de-30-dias/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/milhares-de-cristaos-se-reunem-nas-ruas-de-buenos-aires/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-10-16T09:00:36+00:00",
+      "date": "2026-10-17T09:00:56+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Cristãos apresentam plano para ajudar na crise habitacional da Espanha",
-      "summary": "Proposto reúne igrejas, advogados, assistentes sociais e empresários. The post Cristãos apresentam plano para ajudar na crise habitacional da Espanha appeared first on Rádio 93FM-RJ.",
+      "title": "Nove em cada dez cristãos já tiveram respostas de oração milagrosas",
+      "summary": "Pesquisa foi realizada nos Estados Unidos. The post Nove em cada dez cristãos já tiveram respostas de oração milagrosas appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/cristaos-apresentam-plano-para-ajudar-na-crise-habitacional-da-espanha/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/nove-em-cada-dez-cristaos-ja-tiveram-respostas-de-oracao-milagrosas/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-10-16T03:05:51+00:00",
+      "date": "2026-10-17T03:05:09+00:00",
       "publication_date_verified": true
     }
   ]
