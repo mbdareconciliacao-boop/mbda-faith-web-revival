@@ -2,6 +2,21 @@
 import type { Message } from './contentCatalog.ts';
 export const youtubeMessages: Message[] = [
   {
+    "slug": "video-524853677a3753616e5f77",
+    "title": "O Princípio Regulador do Culto: Ordem, Liderança e Edificação | João 4:23-24",
+    "description": "📅 14/10/2026 – Quarta-feira | 20h ⛪ 5º Encontro Teológico — 7ª Palestra 📚 Série de estudos: Em Espírito e em Verdade Nesta sétima palestra do nosso 5º Encontro Teológico, damos continuidade ao estudo sobre o princípio regulador do culto, refletindo sobre os fundamentos bíblicos que orientam a adoração cristã e a…",
+    "date": "17 de outubro de 2026",
+    "dateTime": "2026-10-17T16:33:42Z",
+    "image": "https://i.ytimg.com/vi/RHSgz7San_w/hqdefault.jpg",
+    "imageAlt": "O Princípio Regulador do Culto: Ordem, Liderança e Edificação | João 4:23-24",
+    "youtubeId": "RHSgz7San_w",
+    "source": "https://www.youtube.com/watch?v=RHSgz7San_w",
+    "topics": [
+      "Canal da igreja"
+    ],
+    "relatedStudies": []
+  },
+  {
     "slug": "video-6635615938646970317151",
     "title": "O Princípio Regulador do Culto: Liberdade, Ordem e Edificação | João 4:23-24",
     "description": "📅 30/09/2026 – Quarta-feira | 20h ⛪ Culto de Oração e Palavra Nesta reunião, damos continuidade ao estudo sobre “Em Espírito e em Verdade”, aprofundando a compreensão do Princípio Regulador do Culto e sua aplicação à vida da igreja. A partir das palavras de Jesus em João 4:23-24, somos conduzidos a refletir sobre…",
@@ -281,21 +296,6 @@ export const youtubeMessages: Message[] = [
     "imageAlt": "unknown",
     "youtubeId": "L4hdegUPjPw",
     "source": "https://www.youtube.com/watch?v=L4hdegUPjPw",
-    "topics": [
-      "Canal da igreja"
-    ],
-    "relatedStudies": []
-  },
-  {
-    "slug": "video-48386b494a484b77706f67",
-    "title": "A Mulher Sunamita: Fidelidade nos Tempos Bons e nos Tempos Difíceis | II Reis 4 e 8",
-    "description": "📅 14/06/2026 – Domingo | 11h Nesta ministração, somos conduzidos à história da mulher sunamita, registrada em II Reis 4 e II Reis 8, uma das narrativas mais marcantes do Antigo Testamento sobre fé, obediência, perseverança e a soberania de Deus em todas as circunstâncias da vida. A mensagem apresenta a trajetória…",
-    "date": "1 de julho de 2026",
-    "dateTime": "2026-07-01T17:31:46Z",
-    "image": "https://i.ytimg.com/vi/H8kIJHKwpog/hqdefault.jpg",
-    "imageAlt": "A Mulher Sunamita: Fidelidade nos Tempos Bons e nos Tempos Difíceis | II Reis 4 e 8",
-    "youtubeId": "H8kIJHKwpog",
-    "source": "https://www.youtube.com/watch?v=H8kIJHKwpog",
     "topics": [
       "Canal da igreja"
     ],
