@@ -1,40 +1,19 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-10-17T13:28:56.082799+00:00",
-  "total_articles": 3,
+  "last_updated": "2026-10-18T13:47:41.870777+00:00",
+  "total_articles": 1,
   "sources": [
-    "Google News - Cristãos Perseguidos",
-    "Radio 93 - Giro Cristão"
+    "Google News - Cristãos Perseguidos"
   ],
   "articles": [
     {
-      "title": "Cristã é expulsa de casa após conversão na Ásia Central - Portas Abertas",
-      "summary": "Cristã é expulsa de casa após conversão na Ásia Central - Portas Abertas",
+      "title": "Cristãos em Mianmar reconstroem suas vidas após o terremoto - Portas Abertas",
+      "summary": "Cristãos em Mianmar reconstroem suas vidas após o terremoto - Portas Abertas",
       "source": "Google News - Cristãos Perseguidos",
-      "url": "https://news.google.com/rss/articles/CBMitgFBVV95cUxNdlllS3RMUmdQTXlQdG9iR1VhQ1ZkRkFQbnNKeUFpUkxZMUM5OHQ3cUM2R2pPMDJlcTNiUlFna1E1TzhILVo5ZHZBd3NNanFmM1FSMlRJYWdrQkljdVhrbUZBal8zbXMzUFdQZWN5Mlhnei1CRHRsUkowcTliRnJQNWdDR1EtSUNadDFUN21kT0ZCUzBFeUZsMEZWOG9DZXhNSkExS0FPbTNWX0xtckEwS2kxQ19pdw?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOMUx4eUtrRzdrMEdydUtjS0p4ZTU5Nm56V3V2Zl84TDdYRTBwbHlGczJzTDhYVUNuR3Q4MmFtdGNWOFoyTG1UNlU2WmdBd2pscTF5dHR3WGRqak5fZEpjc3FmUUdJUW1ZSEFmeVdIMXhtQUFZenIyTG9VYm9BN1JESzVIek1RUG1wYUl5V0xVMmZVeVIzbWNfUWczZ1Jtam9zM1oxcQ?oc=5",
       "category": "Igreja Perseguida",
-      "image_url": "",
-      "date": "2026-10-17T11:00:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Milhares de cristãos se reúnem nas ruas de Buenos Aires",
-      "summary": "Chuva não impediu ações culturais cristãs. The post Milhares de cristãos se reúnem nas ruas de Buenos Aires appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/milhares-de-cristaos-se-reunem-nas-ruas-de-buenos-aires/",
-      "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-10-17T09:00:56+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Nove em cada dez cristãos já tiveram respostas de oração milagrosas",
-      "summary": "Pesquisa foi realizada nos Estados Unidos. The post Nove em cada dez cristãos já tiveram respostas de oração milagrosas appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/nove-em-cada-dez-cristaos-ja-tiveram-respostas-de-oracao-milagrosas/",
-      "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-10-17T03:05:09+00:00",
+      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "date": "2026-10-18T11:00:00+00:00",
       "publication_date_verified": true
     }
   ]
