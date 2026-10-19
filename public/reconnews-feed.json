@@ -7,12 +7,27 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
-      "id": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOMUx4eUtrRzdrMEdydUtjS0p4ZTU5Nm56V3V2Zl84TDdYRTBwbHlGczJzTDhYVUNuR3Q4MmFtdGNWOFoyTG1UNlU2WmdBd2pscTF5dHR3WGRqak5fZEpjc3FmUUdJUW1ZSEFmeVdIMXhtQUFZenIyTG9VYm9BN1JESzVIek1RUG1wYUl5V0xVMmZVeVIzbWNfUWczZ1Jtam9zM1oxcQ?oc=5",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOMUx4eUtrRzdrMEdydUtjS0p4ZTU5Nm56V3V2Zl84TDdYRTBwbHlGczJzTDhYVUNuR3Q4MmFtdGNWOFoyTG1UNlU2WmdBd2pscTF5dHR3WGRqak5fZEpjc3FmUUdJUW1ZSEFmeVdIMXhtQUFZenIyTG9VYm9BN1JESzVIek1RUG1wYUl5V0xVMmZVeVIzbWNfUWczZ1Jtam9zM1oxcQ?oc=5",
-      "title": "Cristãos em Mianmar reconstroem suas vidas após o terremoto - Portas Abertas",
-      "content_text": "Cristãos em Mianmar reconstroem suas vidas após o terremoto - Portas Abertas",
-      "date_published": "2026-10-18T11:00:00.000Z",
-      "image": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
+      "id": "https://folhagospel.com/pastor-e-esposa-sao-assassinados-em-frente-a-casa-no-mexico-policia-detem-suspeito/",
+      "url": "https://folhagospel.com/pastor-e-esposa-sao-assassinados-em-frente-a-casa-no-mexico-policia-detem-suspeito/",
+      "title": "Pastor e esposa são assassinados em frente à casa no México; polícia detém suspeito",
+      "content_text": "Um pastor e sua esposa foram mortos a tiros por dois homens em frente à sua casa na cidade de Irapuato, no México, na madrugada de quinta-feira, pouco depois de ele ter oficiado um funeral. O pastor Á...",
+      "date_published": "2026-10-19T11:04:44.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2024/12/Bandeira-do-Mexico-no-Palacio-Nacional-sede-do-governo-na-Cidade-do-Mexico-Foto-Canva-pro.jpg",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRTZhY09yS0JHczA2dTJYRHpRQlJDLVQ0WTlaajluelpkd25fMjNWaWg4ZVNVNi1icVB3QjRZcHJuOXlpd2NXM2VBcVE5dkYzYUFOUi11ekxuUWF3ZVF1bUc1R3Y1UnJBRi1RVFhlSVc3bkZQVURHT1JiaGZWY20zcm1NaEpPODBub012aTg4Y003cHVxZnZKRWRXOG80eG4yeklMd0tKQldEQks1NDlpanB0cTI?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRTZhY09yS0JHczA2dTJYRHpRQlJDLVQ0WTlaajluelpkd25fMjNWaWg4ZVNVNi1icVB3QjRZcHJuOXlpd2NXM2VBcVE5dkYzYUFOUi11ekxuUWF3ZVF1bUc1R3Y1UnJBRi1RVFhlSVc3bkZQVURHT1JiaGZWY20zcm1NaEpPODBub012aTg4Y003cHVxZnZKRWRXOG80eG4yeklMd0tKQldEQks1NDlpanB0cTI?oc=5",
+      "title": "Eritreia: cristã morre após anos de detenção por sua fé - Portas Abertas",
+      "content_text": "Eritreia: cristã morre após anos de detenção por sua fé - Portas Abertas",
+      "date_published": "2026-10-19T11:00:00.000Z",
       "tags": [
         "Igreja Perseguida"
       ],

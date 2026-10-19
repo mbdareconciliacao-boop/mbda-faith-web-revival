@@ -1,19 +1,30 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-10-18T13:47:41.870777+00:00",
-  "total_articles": 1,
+  "last_updated": "2026-10-19T16:49:21.184125+00:00",
+  "total_articles": 2,
   "sources": [
+    "Folha Gospel",
     "Google News - Cristãos Perseguidos"
   ],
   "articles": [
     {
-      "title": "Cristãos em Mianmar reconstroem suas vidas após o terremoto - Portas Abertas",
-      "summary": "Cristãos em Mianmar reconstroem suas vidas após o terremoto - Portas Abertas",
+      "title": "Pastor e esposa são assassinados em frente à casa no México; polícia detém suspeito",
+      "summary": "Um pastor e sua esposa foram mortos a tiros por dois homens em frente à sua casa na cidade de Irapuato, no México, na madrugada de quinta-feira, pouco depois de ele ter oficiado um funeral. O pastor Á...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/pastor-e-esposa-sao-assassinados-em-frente-a-casa-no-mexico-policia-detem-suspeito/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2024/12/Bandeira-do-Mexico-no-Palacio-Nacional-sede-do-governo-na-Cidade-do-Mexico-Foto-Canva-pro.jpg",
+      "date": "2026-10-19T11:04:44+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Eritreia: cristã morre após anos de detenção por sua fé - Portas Abertas",
+      "summary": "Eritreia: cristã morre após anos de detenção por sua fé - Portas Abertas",
       "source": "Google News - Cristãos Perseguidos",
-      "url": "https://news.google.com/rss/articles/CBMipAFBVV95cUxOMUx4eUtrRzdrMEdydUtjS0p4ZTU5Nm56V3V2Zl84TDdYRTBwbHlGczJzTDhYVUNuR3Q4MmFtdGNWOFoyTG1UNlU2WmdBd2pscTF5dHR3WGRqak5fZEpjc3FmUUdJUW1ZSEFmeVdIMXhtQUFZenIyTG9VYm9BN1JESzVIek1RUG1wYUl5V0xVMmZVeVIzbWNfUWczZ1Jtam9zM1oxcQ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPRTZhY09yS0JHczA2dTJYRHpRQlJDLVQ0WTlaajluelpkd25fMjNWaWg4ZVNVNi1icVB3QjRZcHJuOXlpd2NXM2VBcVE5dkYzYUFOUi11ekxuUWF3ZVF1bUc1R3Y1UnJBRi1RVFhlSVc3bkZQVURHT1JiaGZWY20zcm1NaEpPODBub012aTg4Y003cHVxZnZKRWRXOG80eG4yeklMd0tKQldEQks1NDlpanB0cTI?oc=5",
       "category": "Igreja Perseguida",
-      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "date": "2026-10-18T11:00:00+00:00",
+      "image_url": "",
+      "date": "2026-10-19T11:00:00+00:00",
       "publication_date_verified": true
     }
   ]
