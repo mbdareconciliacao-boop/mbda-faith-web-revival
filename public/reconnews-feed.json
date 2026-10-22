@@ -7,11 +7,27 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
-      "id": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdVU3VFdNeHEyT3dyaU80c1FwZmJRQVNuZmt5dXM1NURVZ0g3ZXRkdmtTQXJRTkF1d1F1MG9SYkdFUUR1OWE2S3dDTW9lUVg0R0laV3JOWXdqMmdKZlhJcS1iNjJvbC1pNWNQZm9PWVpOeW5RbWF3X2dIVVdkTHljMk01T3ZrbllUVFJhQ0tMWmliNFdOUVpvMzVTLWliZDFTWDJuNENSVW1aQmJmblNTYXI4M3RCZ1Nidm1R?oc=5",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdVU3VFdNeHEyT3dyaU80c1FwZmJRQVNuZmt5dXM1NURVZ0g3ZXRkdmtTQXJRTkF1d1F1MG9SYkdFUUR1OWE2S3dDTW9lUVg0R0laV3JOWXdqMmdKZlhJcS1iNjJvbC1pNWNQZm9PWVpOeW5RbWF3X2dIVVdkTHljMk01T3ZrbllUVFJhQ0tMWmliNFdOUVpvMzVTLWliZDFTWDJuNENSVW1aQmJmblNTYXI4M3RCZ1Nidm1R?oc=5",
-      "title": "Conflito no Iêmen amplia crise humanitária e afeta cristãos - Portas Abertas",
-      "content_text": "Conflito no Iêmen amplia crise humanitária e afeta cristãos - Portas Abertas",
-      "date_published": "2026-10-21T11:00:00.000Z",
+      "id": "https://folhagospel.com/uso-diario-de-aplicativos-biblicos-cresce-72em-paises-da-africa/",
+      "url": "https://folhagospel.com/uso-diario-de-aplicativos-biblicos-cresce-72em-paises-da-africa/",
+      "title": "Uso diário de aplicativos bíblicos cresce 72% em países da África",
+      "content_text": "Levantamento da YouVersion aponta aumento de 63% na África Subsaariana em 2026, quase cinco vezes acima da média global. No mundo, 18,5 milhões de pessoas acessam diariamente os aplicativos da platafo...",
+      "date_published": "2026-10-22T11:26:00.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/10/image-7.png",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOUTdOcV9WNVo2Znd4bTdLbXZkQThleFRIa2NRSWNZN2VHZ0NSWWZJVk94c09PNlVaSE5FUVRQWHhuSnFrVC15R2R6TW0wR1J3NXRLeUtiRmtJU3R1d1J0eVBYeEhZeGJYR3Z4ZG1kdVpORW5jeTByVTdYQzBUUElOeF9ta1cwc1pMN0pYcndFaGhSMEdUU0lWMDVZTzRJTFViZTYwenhCRnZfX19vNFNJ?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOUTdOcV9WNVo2Znd4bTdLbXZkQThleFRIa2NRSWNZN2VHZ0NSWWZJVk94c09PNlVaSE5FUVRQWHhuSnFrVC15R2R6TW0wR1J3NXRLeUtiRmtJU3R1d1J0eVBYeEhZeGJYR3Z4ZG1kdVpORW5jeTByVTdYQzBUUElOeF9ta1cwc1pMN0pYcndFaGhSMEdUU0lWMDVZTzRJTFViZTYwenhCRnZfX19vNFNJ?oc=5",
+      "title": "Como é a recuperação de quem sobrevive aos ataques extremistas na Nigéria? - Portas Abertas",
+      "content_text": "Como é a recuperação de quem sobrevive aos ataques extremistas na Nigéria? - Portas Abertas",
+      "date_published": "2026-10-22T11:00:00.000Z",
       "tags": [
         "Igreja Perseguida"
       ],
@@ -22,26 +38,43 @@
       ]
     },
     {
-      "id": "https://radio93.com.br/noticias/giro-cristao/cai-numero-de-adolescentes-gays-e-bissexuais-nos-estados-unidos/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/cai-numero-de-adolescentes-gays-e-bissexuais-nos-estados-unidos/",
-      "title": "Cai número de adolescentes gays e bissexuais nos Estados Unidos",
-      "content_text": "Redução foi maior entre meninas. The post Cai número de adolescentes gays e bissexuais nos Estados Unidos appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-10-21T09:00:05.000Z",
+      "id": "https://folhagospel.com/pastor-luiz-sayao-internado-uti-avc/",
+      "url": "https://folhagospel.com/pastor-luiz-sayao-internado-uti-avc/",
+      "title": "Pastor Luiz Sayão é internado em UTI após sofrer novo AVC",
+      "content_text": "O teólogo e pastor Luiz Sayão está internado na UTI após sofrer um novo AVC em São Paulo. A comunidade religiosa se mobiliza em oração por sua recuperação. The post Pastor Luiz Sayão é internado em UT...",
+      "date_published": "2026-10-22T09:40:42.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/10/pastor-luiz-sayao-internado-uti-avc.webp",
       "tags": [
         "Notícias Cristãs"
       ],
       "authors": [
         {
-          "name": "Radio 93 - Giro Cristão"
+          "name": "Folha Gospel"
         }
       ]
     },
     {
-      "id": "https://radio93.com.br/noticias/giro-cristao/alianca-evangelica-da-albania-pede-oracoes-pelo-pais/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/alianca-evangelica-da-albania-pede-oracoes-pelo-pais/",
-      "title": "Aliança Evangélica da Albânia pede orações pelo país",
-      "content_text": "Protestos têm aumentado tensão e crise. The post Aliança Evangélica da Albânia pede orações pelo país appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-10-21T03:05:46.000Z",
+      "id": "https://folhagospel.com/onda-de-vandalismo-na-franca-atinge-sinagoga-e-comercios-judaicos/",
+      "url": "https://folhagospel.com/onda-de-vandalismo-na-franca-atinge-sinagoga-e-comercios-judaicos/",
+      "title": "Onda de vandalismo na França atinge sinagoga e comércios judaicos",
+      "content_text": "Instabilidade social na França deixa rastro de destruição em instituições religiosas e estabelecimentos comerciais durante protestos recentes Manifestações marcadas pelo aumento do custo de vida e des...",
+      "date_published": "2026-10-22T09:16:32.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/10/onda-de-vandalismo-na-franca-atinge-sinagoga-e-comercios-judaicos-1024x5121-1.jpg",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://radio93.com.br/noticias/giro-cristao/pastor-e-espancado-ate-a-morte-na-colombia/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/pastor-e-espancado-ate-a-morte-na-colombia/",
+      "title": "Pastor é espancado até a morte na Colômbia",
+      "content_text": "Agressores eram membros de gangue que líder religioso estava evangelizando. The post Pastor é espancado até a morte na Colômbia appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-10-22T03:05:27.000Z",
       "tags": [
         "Notícias Cristãs"
       ],

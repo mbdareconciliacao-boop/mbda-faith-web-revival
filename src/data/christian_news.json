@@ -1,40 +1,61 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-10-21T14:53:41.057829+00:00",
-  "total_articles": 3,
+  "last_updated": "2026-10-22T14:53:33.631393+00:00",
+  "total_articles": 5,
   "sources": [
+    "Folha Gospel",
     "Google News - Cristãos Perseguidos",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Conflito no Iêmen amplia crise humanitária e afeta cristãos - Portas Abertas",
-      "summary": "Conflito no Iêmen amplia crise humanitária e afeta cristãos - Portas Abertas",
+      "title": "Uso diário de aplicativos bíblicos cresce 72% em países da África",
+      "summary": "Levantamento da YouVersion aponta aumento de 63% na África Subsaariana em 2026, quase cinco vezes acima da média global. No mundo, 18,5 milhões de pessoas acessam diariamente os aplicativos da platafo...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/uso-diario-de-aplicativos-biblicos-cresce-72em-paises-da-africa/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/image-7.png",
+      "date": "2026-10-22T11:26:00+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Como é a recuperação de quem sobrevive aos ataques extremistas na Nigéria? - Portas Abertas",
+      "summary": "Como é a recuperação de quem sobrevive aos ataques extremistas na Nigéria? - Portas Abertas",
       "source": "Google News - Cristãos Perseguidos",
-      "url": "https://news.google.com/rss/articles/CBMiuwFBVV95cUxNdVU3VFdNeHEyT3dyaU80c1FwZmJRQVNuZmt5dXM1NURVZ0g3ZXRkdmtTQXJRTkF1d1F1MG9SYkdFUUR1OWE2S3dDTW9lUVg0R0laV3JOWXdqMmdKZlhJcS1iNjJvbC1pNWNQZm9PWVpOeW5RbWF3X2dIVVdkTHljMk01T3ZrbllUVFJhQ0tMWmliNFdOUVpvMzVTLWliZDFTWDJuNENSVW1aQmJmblNTYXI4M3RCZ1Nidm1R?oc=5",
+      "url": "https://news.google.com/rss/articles/CBMirwFBVV95cUxOUTdOcV9WNVo2Znd4bTdLbXZkQThleFRIa2NRSWNZN2VHZ0NSWWZJVk94c09PNlVaSE5FUVRQWHhuSnFrVC15R2R6TW0wR1J3NXRLeUtiRmtJU3R1d1J0eVBYeEhZeGJYR3Z4ZG1kdVpORW5jeTByVTdYQzBUUElOeF9ta1cwc1pMN0pYcndFaGhSMEdUU0lWMDVZTzRJTFViZTYwenhCRnZfX19vNFNJ?oc=5",
       "category": "Igreja Perseguida",
       "image_url": "",
-      "date": "2026-10-21T11:00:00+00:00",
+      "date": "2026-10-22T11:00:00+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Cai número de adolescentes gays e bissexuais nos Estados Unidos",
-      "summary": "Redução foi maior entre meninas. The post Cai número de adolescentes gays e bissexuais nos Estados Unidos appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/cai-numero-de-adolescentes-gays-e-bissexuais-nos-estados-unidos/",
+      "title": "Pastor Luiz Sayão é internado em UTI após sofrer novo AVC",
+      "summary": "O teólogo e pastor Luiz Sayão está internado na UTI após sofrer um novo AVC em São Paulo. A comunidade religiosa se mobiliza em oração por sua recuperação. The post Pastor Luiz Sayão é internado em UT...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/pastor-luiz-sayao-internado-uti-avc/",
       "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-10-21T09:00:05+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/pastor-luiz-sayao-internado-uti-avc.webp",
+      "date": "2026-10-22T09:40:42+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Aliança Evangélica da Albânia pede orações pelo país",
-      "summary": "Protestos têm aumentado tensão e crise. The post Aliança Evangélica da Albânia pede orações pelo país appeared first on Rádio 93FM-RJ.",
+      "title": "Onda de vandalismo na França atinge sinagoga e comércios judaicos",
+      "summary": "Instabilidade social na França deixa rastro de destruição em instituições religiosas e estabelecimentos comerciais durante protestos recentes Manifestações marcadas pelo aumento do custo de vida e des...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/onda-de-vandalismo-na-franca-atinge-sinagoga-e-comercios-judaicos/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/onda-de-vandalismo-na-franca-atinge-sinagoga-e-comercios-judaicos-1024x5121-1.jpg",
+      "date": "2026-10-22T09:16:32+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Pastor é espancado até a morte na Colômbia",
+      "summary": "Agressores eram membros de gangue que líder religioso estava evangelizando. The post Pastor é espancado até a morte na Colômbia appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/alianca-evangelica-da-albania-pede-oracoes-pelo-pais/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/pastor-e-espancado-ate-a-morte-na-colombia/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-10-21T03:05:46+00:00",
+      "date": "2026-10-22T03:05:27+00:00",
       "publication_date_verified": true
     }
   ]
