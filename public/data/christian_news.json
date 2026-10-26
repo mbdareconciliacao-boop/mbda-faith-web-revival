@@ -1,9 +1,8 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-10-25T14:06:42.466813+00:00",
-  "total_articles": 13,
+  "last_updated": "2026-10-26T16:28:37.925050+00:00",
+  "total_articles": 3,
   "sources": [
-    "Folha Gospel",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
@@ -35,106 +34,6 @@
       "category": "Notícias Cristãs",
       "image_url": "",
       "date": "2026-10-24T00:00:03+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "ChatGPT recebe 70 milhões de consultas religiosas; a maioria é sobre o Islã, seguido pelo Cristianismo",
-      "summary": "De acordo com uma análise recente da OpenAI, empresa criadora do chatbot de inteligência artificial, das 70 milhões de solicitações relacionadas à religião que o ChatGPT recebe semanalmente, quase met...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/chatgpt-recebe-70-milhoes-de-consultas-religiosas-a-maioria-e-sobre-o-isla-seguido-pelo-cristianismo/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/image-8.png",
-      "date": "2026-10-23T16:05:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Ministério Público recomenda fim de orações como atividade oficial em escolas de Cuiabá",
-      "summary": "Ministério Público de MT recomenda que escolas municipais de Cuiabá suspendam orações obrigatórias após denúncia sobre prática religiosa em unidade escolar. The post Ministério Público recomenda fim d...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/ministerio-publico-recomenda-fim-de-oracoes-nas-escolas-municipais-de-cuiaba/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/ministerio-publico-recomenda-fim-de-oracoes-nas-escolas-municipais-de-cuiaba.webp",
-      "date": "2026-10-23T13:15:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "“Clama, Brasil!” reúne evangélicos e católicos no Centro do Rio nesta sexta",
-      "summary": "Evento acontece a partir das 17h, no Largo da Carioca. The post “Clama, Brasil!” reúne evangélicos e católicos no Centro do Rio nesta sexta appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/clama-brasil-reune-evangelicos-e-catolicos-no-centro-do-rio-nesta-sexta/",
-      "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-10-23T13:10:56+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Visão Mundial alerta que o aumento dos preços dos alimentos coloca em risco o futuro de crianças em todo o mundo",
-      "summary": "O aumento dos preços dos alimentos está colocando em risco o futuro de milhões de crianças em todo o mundo, já que famílias em muitos países lutam para comprar o básico, alerta um novo relatório de um...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/visao-mundial-alerta-que-o-aumento-dos-precos-dos-alimentos-coloca-em-risco-o-futuro-de-criancas-em-todo-o-mundo/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/image-9.png",
-      "date": "2026-10-23T11:10:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Líder de seita é condenado pelo assassinato de 191 pessoas no Quênia",
-      "summary": "Justiça do Quênia condena líder de seita Paul Mackenzie pelo assassinato de 190 crianças em massacre relacionado a jejum forçado em Shakahola. Saiba mais. The post Líder de seita é condenado pelo assa...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/lider-seita-kenia-condenado-massacre-criancas/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/lider-seita-kenia-condenado-massacre-criancas.webp",
-      "date": "2026-10-23T09:50:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Aumenta hostilidade contra cristãos em Jerusalém",
-      "summary": "Terceiro trimestre registrou aumento de assédios. The post Aumenta hostilidade contra cristãos em Jerusalém appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/aumenta-hostilidade-contra-cristaos-em-jerusalem/",
-      "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-10-23T09:00:57+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Mais de 10 milhões de crianças foram evangelizadas ao redor do mundo",
-      "summary": "Ministério realizou ações na África, Ásia, Oceania e América do Sul. The post Mais de 10 milhões de crianças foram evangelizadas ao redor do mundo appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/mais-de-10-milhoes-de-criancas-foram-evangelizadas-ao-redor-do-mundo/",
-      "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-10-23T03:05:39+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "STF forma maioria para derrubar lei do Maranhão sobre atividades escolares de gênero",
-      "summary": "STF forma maioria para derrubar lei do Maranhão que permitia aos pais restringir aulas sobre gênero e diversidade sexual nas escolas brasileiras. Entenda. The post STF forma maioria para derrubar lei ...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/stf-forma-maioria-contra-lei-maranhao-sobre-genero-nas-escolas/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/stf-forma-maioria-contra-lei-maranhao-sobre-genero-nas-escolas.webp",
-      "date": "2026-10-22T20:33:04+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Grupo invade igreja e agride pastor durante ensaio em SP",
-      "summary": "Grupo invade Assembleia de Deus em Itu, agride pastor com cadeiras e profere ameaças de morte durante ensaio infantil. Polícia investiga o caso de violência. The post Grupo invade igreja e agride past...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/grupo-invade-igreja-agride-fieis-e-ameaca-pastor-em-itu/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/grupo-invade-igreja-agride-fieis-e-ameaca-pastor-em-itu.webp",
-      "date": "2026-10-22T19:41:20+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Pesquisa revela alguns dos motivos pelos quais os jovens frequentam a igreja",
-      "summary": "Uma nova pesquisa trouxe mais informações sobre os motivos pelos quais os jovens nos EUA frequentam a igreja, sendo que o desejo de se reconectar com a fé, como era de se esperar, ficou em primeiro lu...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/pesquisa-revela-alguns-dos-motivos-pelos-quais-os-jovens-frequentam-a-igreja/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/02/jovens-adorando-a-deus-durante-culto.jpg",
-      "date": "2026-10-22T14:53:00+00:00",
       "publication_date_verified": true
     }
   ]
