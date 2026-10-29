@@ -1,29 +1,40 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-10-28T16:27:23.169851+00:00",
-  "total_articles": 2,
+  "last_updated": "2026-10-29T16:36:20.219310+00:00",
+  "total_articles": 3,
   "sources": [
+    "Folha Gospel",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Pastores criticam nova lei assinada por governador da Califórnia",
-      "summary": "Medida pode prejudicar pessoas que seguem ensinamentos bíblicos sobre sexualidade e gênero. The post Pastores criticam nova lei assinada por governador da Califórnia appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/pastores-criticam-nova-lei-assinada-por-governador-da-california/",
+      "title": "População muçulmana na Europa atinge 50 milhões de pessoas",
+      "summary": "A população muçulmana na Europa chega a 50 milhões, consolidando-se como a segunda maior religião. Entenda os dados demográficos e as causas desse crescimento. The post População muçulmana na Europa a...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/populacao-muculmana-na-europa-atinge-50-milhoes/",
       "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-10-28T09:00:56+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/populacao-muculmana-na-europa-atinge-50-milhoes.webp",
+      "date": "2026-10-29T09:47:11+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Mais de 60 cristãos são mortos na Etiópia",
-      "summary": "Igreja local disse que ataques estão aumentando. The post Mais de 60 cristãos são mortos na Etiópia appeared first on Rádio 93FM-RJ.",
+      "title": "Mel Gibson pede que igrejas orem por novo filme",
+      "summary": "“A Ressurreição de Cristo” chega aos cinemas no próximo ano. The post Mel Gibson pede que igrejas orem por novo filme appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/mais-de-60-cristaos-sao-mortos-na-etiopia/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/mel-gibson-pede-que-igrejas-orem-por-novo-filme/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-10-28T03:05:04+00:00",
+      "date": "2026-10-29T09:00:40+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Portas Abertas lança kit infantil sobre cristãos perseguidos",
+      "summary": "Material educativo é gratuito. The post Portas Abertas lança kit infantil sobre cristãos perseguidos appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/portas-abertas-lanca-kit-infantil-sobre-cristaos-perseguidos/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-10-29T03:05:37+00:00",
       "publication_date_verified": true
     }
   ]
