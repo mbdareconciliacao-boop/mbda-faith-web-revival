@@ -2,6 +2,21 @@
 import type { Message } from './contentCatalog.ts';
 export const youtubeMessages: Message[] = [
   {
+    "slug": "video-4369595f50377744515659",
+    "title": "O Culto Cristão e as Emoções: Reverência, Entusiasmo e Participação | João 4:23-24",
+    "description": "🗓️ 28/10/2026 – Quarta-feira | 20h ⛪ 5º Encontro Teológico – Série “Em Espírito e em Verdade” 🔥 UM CULTO BÍBLICO, REVERENTE E VIVO! Como deve ser a adoração cristã? Um culto fiel às Escrituras precisa ser necessariamente frio e formal? Ou podemos expressar entusiasmo, alegria, tristeza pelo pecado, amor e…",
+    "date": "30 de outubro de 2026",
+    "dateTime": "2026-10-30T15:30:17Z",
+    "image": "https://i.ytimg.com/vi/CiY_P7wDQVY/hqdefault.jpg",
+    "imageAlt": "O Culto Cristão e as Emoções: Reverência, Entusiasmo e Participação | João 4:23-24",
+    "youtubeId": "CiY_P7wDQVY",
+    "source": "https://www.youtube.com/watch?v=CiY_P7wDQVY",
+    "topics": [
+      "Canal da igreja"
+    ],
+    "relatedStudies": []
+  },
+  {
     "slug": "video-524853677a3753616e5f77",
     "title": "O Princípio Regulador do Culto: Ordem, Liderança e Edificação | João 4:23-24",
     "description": "📅 14/10/2026 – Quarta-feira | 20h ⛪ 5º Encontro Teológico — 7ª Palestra 📚 Série de estudos: Em Espírito e em Verdade Nesta sétima palestra do nosso 5º Encontro Teológico, damos continuidade ao estudo sobre o princípio regulador do culto, refletindo sobre os fundamentos bíblicos que orientam a adoração cristã e a…",
@@ -281,21 +296,6 @@ export const youtubeMessages: Message[] = [
     "imageAlt": "unknown",
     "youtubeId": "h1Q6SxwWf-g",
     "source": "https://www.youtube.com/watch?v=h1Q6SxwWf-g",
-    "topics": [
-      "Canal da igreja"
-    ],
-    "relatedStudies": []
-  },
-  {
-    "slug": "video-4c346864656755506a5077",
-    "title": "unknown",
-    "description": "#CapCut Fiz este vídeo incrível com o CapCut. Abra o link para experimentar: capcut.com/tools/desktop-video-editor",
-    "date": "8 de julho de 2026",
-    "dateTime": "2026-07-08T04:06:15Z",
-    "image": "https://i.ytimg.com/vi/L4hdegUPjPw/hqdefault.jpg",
-    "imageAlt": "unknown",
-    "youtubeId": "L4hdegUPjPw",
-    "source": "https://www.youtube.com/watch?v=L4hdegUPjPw",
     "topics": [
       "Canal da igreja"
     ],
