@@ -1,40 +1,50 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-10-29T16:36:20.219310+00:00",
-  "total_articles": 3,
+  "last_updated": "2026-10-30T16:31:54.323617+00:00",
+  "total_articles": 4,
   "sources": [
     "Folha Gospel",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "População muçulmana na Europa atinge 50 milhões de pessoas",
-      "summary": "A população muçulmana na Europa chega a 50 milhões, consolidando-se como a segunda maior religião. Entenda os dados demográficos e as causas desse crescimento. The post População muçulmana na Europa a...",
+      "title": "Polícia Federal faz buscas em endereços ligados ao pastor Márcio Poncio",
+      "summary": "Nona fase da Operação Unha e Carne cumpriu quatro mandados no Rio e apura suspeitas de lavagem de dinheiro e ocultação de patrimônio. A Polícia Federal realizou, nesta quinta-feira (29), quatro mandad...",
       "source": "Folha Gospel",
-      "url": "https://folhagospel.com/populacao-muculmana-na-europa-atinge-50-milhoes/",
+      "url": "https://folhagospel.com/policia-federal-faz-buscas-em-enderecos-ligados-ao-pastor-marcio-poncio/",
       "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/populacao-muculmana-na-europa-atinge-50-milhoes.webp",
-      "date": "2026-10-29T09:47:11+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/07/Pastor-Marcio-Poncio.jpg",
+      "date": "2026-10-30T13:11:46+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Mel Gibson pede que igrejas orem por novo filme",
-      "summary": "“A Ressurreição de Cristo” chega aos cinemas no próximo ano. The post Mel Gibson pede que igrejas orem por novo filme appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/mel-gibson-pede-que-igrejas-orem-por-novo-filme/",
+      "title": "Silas Malafaia chama filhos de Bolsonaro de “jumentos” após carta de Flávio",
+      "summary": "Em mensagens privadas, pastor criticou a condução política da família Bolsonaro, apesar de ter defendido publicamente a ida do senador aos Estados Unidos. O pastor Silas Malafaia criticou duramente os...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/silas-malafaia-chama-filhos-de-bolsonaro-de-jumentos-apos-carta-de-flavio/",
       "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-10-29T09:00:40+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/SilasMalafaia_FlavioeEduardoBolsonaro.jpg",
+      "date": "2026-10-30T12:55:46+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Portas Abertas lança kit infantil sobre cristãos perseguidos",
-      "summary": "Material educativo é gratuito. The post Portas Abertas lança kit infantil sobre cristãos perseguidos appeared first on Rádio 93FM-RJ.",
+      "title": "TV cristã via satélite é lançada no Afeganistão",
+      "summary": "Mozhda TV vai levar Evangelho ao país. The post TV cristã via satélite é lançada no Afeganistão appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/portas-abertas-lanca-kit-infantil-sobre-cristaos-perseguidos/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/tv-crista-via-satelite-e-lancada-no-afeganistao/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-10-29T03:05:37+00:00",
+      "date": "2026-10-30T09:00:16+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Cristãos são convocados para dar apoio às vítimas de acidente de trem na Espanha",
+      "summary": "Federação de Entidades Religiosas Evangélicas da Espanha pediu que igrejas acompanhem familiares da tragédia. The post Cristãos são convocados para dar apoio às vítimas de acidente de trem na Espanha ...",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/cristaos-sao-convocados-para-dar-apoio-as-vitimas-de-acidente-de-trem-na-espanha/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-10-30T03:05:56+00:00",
       "publication_date_verified": true
     }
   ]

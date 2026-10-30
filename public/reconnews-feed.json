@@ -7,12 +7,12 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
-      "id": "https://folhagospel.com/populacao-muculmana-na-europa-atinge-50-milhoes/",
-      "url": "https://folhagospel.com/populacao-muculmana-na-europa-atinge-50-milhoes/",
-      "title": "População muçulmana na Europa atinge 50 milhões de pessoas",
-      "content_text": "A população muçulmana na Europa chega a 50 milhões, consolidando-se como a segunda maior religião. Entenda os dados demográficos e as causas desse crescimento. The post População muçulmana na Europa a...",
-      "date_published": "2026-10-29T09:47:11.000Z",
-      "image": "https://folhagospel.com/wp-content/uploads/2026/10/populacao-muculmana-na-europa-atinge-50-milhoes.webp",
+      "id": "https://folhagospel.com/policia-federal-faz-buscas-em-enderecos-ligados-ao-pastor-marcio-poncio/",
+      "url": "https://folhagospel.com/policia-federal-faz-buscas-em-enderecos-ligados-ao-pastor-marcio-poncio/",
+      "title": "Polícia Federal faz buscas em endereços ligados ao pastor Márcio Poncio",
+      "content_text": "Nona fase da Operação Unha e Carne cumpriu quatro mandados no Rio e apura suspeitas de lavagem de dinheiro e ocultação de patrimônio. A Polícia Federal realizou, nesta quinta-feira (29), quatro mandad...",
+      "date_published": "2026-10-30T13:11:46.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/07/Pastor-Marcio-Poncio.jpg",
       "tags": [
         "Notícias Cristãs"
       ],
@@ -23,11 +23,27 @@
       ]
     },
     {
-      "id": "https://radio93.com.br/noticias/giro-cristao/mel-gibson-pede-que-igrejas-orem-por-novo-filme/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/mel-gibson-pede-que-igrejas-orem-por-novo-filme/",
-      "title": "Mel Gibson pede que igrejas orem por novo filme",
-      "content_text": "“A Ressurreição de Cristo” chega aos cinemas no próximo ano. The post Mel Gibson pede que igrejas orem por novo filme appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-10-29T09:00:40.000Z",
+      "id": "https://folhagospel.com/silas-malafaia-chama-filhos-de-bolsonaro-de-jumentos-apos-carta-de-flavio/",
+      "url": "https://folhagospel.com/silas-malafaia-chama-filhos-de-bolsonaro-de-jumentos-apos-carta-de-flavio/",
+      "title": "Silas Malafaia chama filhos de Bolsonaro de “jumentos” após carta de Flávio",
+      "content_text": "Em mensagens privadas, pastor criticou a condução política da família Bolsonaro, apesar de ter defendido publicamente a ida do senador aos Estados Unidos. O pastor Silas Malafaia criticou duramente os...",
+      "date_published": "2026-10-30T12:55:46.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/10/SilasMalafaia_FlavioeEduardoBolsonaro.jpg",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Folha Gospel"
+        }
+      ]
+    },
+    {
+      "id": "https://radio93.com.br/noticias/giro-cristao/tv-crista-via-satelite-e-lancada-no-afeganistao/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/tv-crista-via-satelite-e-lancada-no-afeganistao/",
+      "title": "TV cristã via satélite é lançada no Afeganistão",
+      "content_text": "Mozhda TV vai levar Evangelho ao país. The post TV cristã via satélite é lançada no Afeganistão appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-10-30T09:00:16.000Z",
       "tags": [
         "Notícias Cristãs"
       ],
@@ -38,11 +54,11 @@
       ]
     },
     {
-      "id": "https://radio93.com.br/noticias/giro-cristao/portas-abertas-lanca-kit-infantil-sobre-cristaos-perseguidos/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/portas-abertas-lanca-kit-infantil-sobre-cristaos-perseguidos/",
-      "title": "Portas Abertas lança kit infantil sobre cristãos perseguidos",
-      "content_text": "Material educativo é gratuito. The post Portas Abertas lança kit infantil sobre cristãos perseguidos appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-10-29T03:05:37.000Z",
+      "id": "https://radio93.com.br/noticias/giro-cristao/cristaos-sao-convocados-para-dar-apoio-as-vitimas-de-acidente-de-trem-na-espanha/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/cristaos-sao-convocados-para-dar-apoio-as-vitimas-de-acidente-de-trem-na-espanha/",
+      "title": "Cristãos são convocados para dar apoio às vítimas de acidente de trem na Espanha",
+      "content_text": "Federação de Entidades Religiosas Evangélicas da Espanha pediu que igrejas acompanhem familiares da tragédia. The post Cristãos são convocados para dar apoio às vítimas de acidente de trem na Espanha ...",
+      "date_published": "2026-10-30T03:05:56.000Z",
       "tags": [
         "Notícias Cristãs"
       ],
