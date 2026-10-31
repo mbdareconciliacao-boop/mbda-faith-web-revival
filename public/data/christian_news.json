@@ -1,50 +1,40 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-10-30T16:31:54.323617+00:00",
-  "total_articles": 4,
+  "last_updated": "2026-10-31T15:38:36.376101+00:00",
+  "total_articles": 3,
   "sources": [
     "Folha Gospel",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Polícia Federal faz buscas em endereços ligados ao pastor Márcio Poncio",
-      "summary": "Nona fase da Operação Unha e Carne cumpriu quatro mandados no Rio e apura suspeitas de lavagem de dinheiro e ocultação de patrimônio. A Polícia Federal realizou, nesta quinta-feira (29), quatro mandad...",
+      "title": "Dia da Reforma Protestante: 7 fatos pouco conhecidos sobre Martinho Lutero",
+      "summary": "O Dia da Reforma é o aniversário de quando o monge alemão Martinho Lutero pregou suas 95 teses na porta de uma igreja em Wittenberg, em 1517, dando início à Reforma Protestante. Ao longo dos mais de c...",
       "source": "Folha Gospel",
-      "url": "https://folhagospel.com/policia-federal-faz-buscas-em-enderecos-ligados-ao-pastor-marcio-poncio/",
+      "url": "https://folhagospel.com/dia-da-reforma-protestante-7-fatos-pouco-conhecidos-sobre-martinho-lutero/",
       "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/07/Pastor-Marcio-Poncio.jpg",
-      "date": "2026-10-30T13:11:46+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2024/10/Martinho-Lutero-Foto-Canva.jpg",
+      "date": "2026-10-31T15:16:31+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Silas Malafaia chama filhos de Bolsonaro de “jumentos” após carta de Flávio",
-      "summary": "Em mensagens privadas, pastor criticou a condução política da família Bolsonaro, apesar de ter defendido publicamente a ida do senador aos Estados Unidos. O pastor Silas Malafaia criticou duramente os...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/silas-malafaia-chama-filhos-de-bolsonaro-de-jumentos-apos-carta-de-flavio/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/10/SilasMalafaia_FlavioeEduardoBolsonaro.jpg",
-      "date": "2026-10-30T12:55:46+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "TV cristã via satélite é lançada no Afeganistão",
-      "summary": "Mozhda TV vai levar Evangelho ao país. The post TV cristã via satélite é lançada no Afeganistão appeared first on Rádio 93FM-RJ.",
+      "title": "Rede de lojas de varejo chama atenção por não vender itens de Halloween",
+      "summary": "\"Escolha dos proprietários transmite princípios cristãos\". The post Rede de lojas de varejo chama atenção por não vender itens de Halloween appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/tv-crista-via-satelite-e-lancada-no-afeganistao/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/rede-de-lojas-de-varejo-chama-atencao-por-nao-vender-itens-de-halloween/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-10-30T09:00:16+00:00",
+      "date": "2026-10-31T09:00:40+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Cristãos são convocados para dar apoio às vítimas de acidente de trem na Espanha",
-      "summary": "Federação de Entidades Religiosas Evangélicas da Espanha pediu que igrejas acompanhem familiares da tragédia. The post Cristãos são convocados para dar apoio às vítimas de acidente de trem na Espanha ...",
+      "title": "Angel Studios proíbe nudez, sexo e palavrões em seus filmes",
+      "summary": "Distribuidora criou conjunto de regras para seus lançamentos. The post Angel Studios proíbe nudez, sexo e palavrões em seus filmes appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/cristaos-sao-convocados-para-dar-apoio-as-vitimas-de-acidente-de-trem-na-espanha/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/angel-studios-proibe-nudez-sexo-e-palavroes-em-seus-filmes/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-10-30T03:05:56+00:00",
+      "date": "2026-10-31T03:05:02+00:00",
       "publication_date_verified": true
     }
   ]
