@@ -7,48 +7,18 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
-      "id": "https://folhagospel.com/dia-da-reforma-protestante-7-fatos-pouco-conhecidos-sobre-martinho-lutero/",
-      "url": "https://folhagospel.com/dia-da-reforma-protestante-7-fatos-pouco-conhecidos-sobre-martinho-lutero/",
-      "title": "Dia da Reforma Protestante: 7 fatos pouco conhecidos sobre Martinho Lutero",
-      "content_text": "O Dia da Reforma é o aniversário de quando o monge alemão Martinho Lutero pregou suas 95 teses na porta de uma igreja em Wittenberg, em 1517, dando início à Reforma Protestante. Ao longo dos mais de c...",
-      "date_published": "2026-10-31T15:16:31.000Z",
-      "image": "https://folhagospel.com/wp-content/uploads/2024/10/Martinho-Lutero-Foto-Canva.jpg",
+      "id": "https://folhagospel.com/discurso-de-que-votar-na-esquerda-e-pecado-perde-forca-entre-evangelicos-analisa-sociologo/",
+      "url": "https://folhagospel.com/discurso-de-que-votar-na-esquerda-e-pecado-perde-forca-entre-evangelicos-analisa-sociologo/",
+      "title": "Discurso de que votar na esquerda é pecado perde força entre evangélicos, analisa sociólogo",
+      "content_text": "Artigo de Valdinei Ferreira para a Folha de S.Paulo aponta mudanças no debate político-religioso e questiona a associação entre fé cristã e oposição à esquerda. O uso de argumentos religiosos para afa...",
+      "date_published": "2026-11-01T13:41:27.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2024/10/lula-recebe-oracao-evangelicos.jpeg",
       "tags": [
         "Notícias Cristãs"
       ],
       "authors": [
         {
           "name": "Folha Gospel"
-        }
-      ]
-    },
-    {
-      "id": "https://radio93.com.br/noticias/giro-cristao/rede-de-lojas-de-varejo-chama-atencao-por-nao-vender-itens-de-halloween/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/rede-de-lojas-de-varejo-chama-atencao-por-nao-vender-itens-de-halloween/",
-      "title": "Rede de lojas de varejo chama atenção por não vender itens de Halloween",
-      "content_text": "\"Escolha dos proprietários transmite princípios cristãos\". The post Rede de lojas de varejo chama atenção por não vender itens de Halloween appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-10-31T09:00:40.000Z",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Radio 93 - Giro Cristão"
-        }
-      ]
-    },
-    {
-      "id": "https://radio93.com.br/noticias/giro-cristao/angel-studios-proibe-nudez-sexo-e-palavroes-em-seus-filmes/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/angel-studios-proibe-nudez-sexo-e-palavroes-em-seus-filmes/",
-      "title": "Angel Studios proíbe nudez, sexo e palavrões em seus filmes",
-      "content_text": "Distribuidora criou conjunto de regras para seus lançamentos. The post Angel Studios proíbe nudez, sexo e palavrões em seus filmes appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-10-31T03:05:02.000Z",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Radio 93 - Giro Cristão"
         }
       ]
     }
