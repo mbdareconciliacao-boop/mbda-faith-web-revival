@@ -1,60 +1,50 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-11-02T20:00:10.908057+00:00",
-  "total_articles": 5,
+  "last_updated": "2026-11-03T17:32:05.632563+00:00",
+  "total_articles": 4,
   "sources": [
     "Folha Gospel",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Discurso de que votar na esquerda é pecado perde força entre evangélicos, analisa sociólogo",
-      "summary": "Artigo de Valdinei Ferreira para a Folha de S.Paulo aponta mudanças no debate político-religioso e questiona a associação entre fé cristã e oposição à esquerda. O uso de argumentos religiosos para afa...",
+      "title": "Ministério da Justiça altera classificação de desenhos bíblicos da Record",
+      "summary": "Nova classificação do programa Record Kids: Desenhos Bíblicos restringe a exibição da animação que agora é indicada para maiores de 12 anos O Ministério da Justiça oficializou a retirada da classifica...",
       "source": "Folha Gospel",
-      "url": "https://folhagospel.com/discurso-de-que-votar-na-esquerda-e-pecado-perde-forca-entre-evangelicos-analisa-sociologo/",
+      "url": "https://folhagospel.com/ministerio-da-justica-altera-classificacao-de-desenhos-biblicos-da-record/",
       "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2024/10/lula-recebe-oracao-evangelicos.jpeg",
-      "date": "2026-11-01T13:41:27+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/image-1.png",
+      "date": "2026-11-03T14:05:10+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Dia da Reforma Protestante: 7 fatos pouco conhecidos sobre Martinho Lutero",
-      "summary": "O Dia da Reforma é o aniversário de quando o monge alemão Martinho Lutero pregou suas 95 teses na porta de uma igreja em Wittenberg, em 1517, dando início à Reforma Protestante. Ao longo dos mais de c...",
+      "title": "Presidente da Ucrânia rebate críticas de que seu país está perseguindo cristãos",
+      "summary": "Presidente ucraniano nega acusações de repressão a grupos religiosos e destaca o papel da unidade nacional para o enfrentamento da invasão russa O presidente da Ucrânia, Volodymyr Zelensky, refutou fo...",
       "source": "Folha Gospel",
-      "url": "https://folhagospel.com/dia-da-reforma-protestante-7-fatos-pouco-conhecidos-sobre-martinho-lutero/",
+      "url": "https://folhagospel.com/presidente-da-ucrania-rebate-criticas-de-que-seu-pais-esta-perseguindo-cristaos/",
       "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2024/10/Martinho-Lutero-Foto-Canva.jpg",
-      "date": "2026-10-31T15:16:31+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2025/04/Presidente-da-Ucrania-Volodymyr-Zelensky.jpeg",
+      "date": "2026-11-03T10:15:00+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Rede de lojas de varejo chama atenção por não vender itens de Halloween",
-      "summary": "\"Escolha dos proprietários transmite princípios cristãos\". The post Rede de lojas de varejo chama atenção por não vender itens de Halloween appeared first on Rádio 93FM-RJ.",
+      "title": "Filme cristão de Natal estreia em novembro na Netflix",
+      "summary": "“The Gospel of Christmas” reúne grandes nomes da música gospel americana. The post Filme cristão de Natal estreia em novembro na Netflix appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/rede-de-lojas-de-varejo-chama-atencao-por-nao-vender-itens-de-halloween/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/filme-cristao-de-natal-estreia-em-novembro-na-netflix/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-10-31T09:00:40+00:00",
+      "date": "2026-11-03T09:00:00+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Angel Studios proíbe nudez, sexo e palavrões em seus filmes",
-      "summary": "Distribuidora criou conjunto de regras para seus lançamentos. The post Angel Studios proíbe nudez, sexo e palavrões em seus filmes appeared first on Rádio 93FM-RJ.",
+      "title": "Cristãos iranianos são fortalecidos em cultos online",
+      "summary": "Fonte de inspiração no meio da perseguição. The post Cristãos iranianos são fortalecidos em cultos online appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/angel-studios-proibe-nudez-sexo-e-palavroes-em-seus-filmes/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/cristaos-iranianos-sao-fortalecidos-em-cultos-online/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-10-31T03:05:02+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Pesquisa revela que adolescentes buscam primeiro conselho dos pais",
-      "summary": "Mãe é mais procurada pela maioria. The post Pesquisa revela que adolescentes buscam primeiro conselho dos pais appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/pesquisa-revela-que-adolescentes-buscam-primeiro-conselho-dos-pais/",
-      "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-10-31T00:00:02+00:00",
+      "date": "2026-11-03T03:05:54+00:00",
       "publication_date_verified": true
     }
   ]
