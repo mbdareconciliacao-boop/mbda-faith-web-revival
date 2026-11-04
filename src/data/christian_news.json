@@ -1,50 +1,40 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-11-03T17:32:05.632563+00:00",
-  "total_articles": 4,
+  "last_updated": "2026-11-04T17:45:16.943808+00:00",
+  "total_articles": 3,
   "sources": [
     "Folha Gospel",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Ministério da Justiça altera classificação de desenhos bíblicos da Record",
-      "summary": "Nova classificação do programa Record Kids: Desenhos Bíblicos restringe a exibição da animação que agora é indicada para maiores de 12 anos O Ministério da Justiça oficializou a retirada da classifica...",
+      "title": "Igreja Ortodoxa Etíope pede maior proteção após mais de 60 cristãos mortos em ataques",
+      "summary": "Mais de 60 cristãos ortodoxos etíopes foram mortos em dois ataques na região de Oromia, na Etiópia, levando a Igreja Ortodoxa do país a pedir maior proteção aos civis e punição aos responsáveis. A Igr...",
       "source": "Folha Gospel",
-      "url": "https://folhagospel.com/ministerio-da-justica-altera-classificacao-de-desenhos-biblicos-da-record/",
+      "url": "https://folhagospel.com/igreja-ortodoxa-etiope-pede-maior-protecao-apos-mais-de-60-cristaos-mortos-em-ataques/",
       "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/image-1.png",
-      "date": "2026-11-03T14:05:10+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/04/image-11.png",
+      "date": "2026-11-04T10:00:00+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Presidente da Ucrânia rebate críticas de que seu país está perseguindo cristãos",
-      "summary": "Presidente ucraniano nega acusações de repressão a grupos religiosos e destaca o papel da unidade nacional para o enfrentamento da invasão russa O presidente da Ucrânia, Volodymyr Zelensky, refutou fo...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/presidente-da-ucrania-rebate-criticas-de-que-seu-pais-esta-perseguindo-cristaos/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2025/04/Presidente-da-Ucrania-Volodymyr-Zelensky.jpeg",
-      "date": "2026-11-03T10:15:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Filme cristão de Natal estreia em novembro na Netflix",
-      "summary": "“The Gospel of Christmas” reúne grandes nomes da música gospel americana. The post Filme cristão de Natal estreia em novembro na Netflix appeared first on Rádio 93FM-RJ.",
+      "title": "Quem lê a Bíblia regularmente é mais propenso a perdoar",
+      "summary": "Dados são de pesquisa da Sociedade Bíblica Americana. The post Quem lê a Bíblia regularmente é mais propenso a perdoar appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/filme-cristao-de-natal-estreia-em-novembro-na-netflix/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/quem-le-a-biblia-regularmente-e-mais-propenso-a-perdoar/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-11-03T09:00:00+00:00",
+      "date": "2026-11-04T09:00:03+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Cristãos iranianos são fortalecidos em cultos online",
-      "summary": "Fonte de inspiração no meio da perseguição. The post Cristãos iranianos são fortalecidos em cultos online appeared first on Rádio 93FM-RJ.",
+      "title": "Canadenses desconfiam de Cristianismo",
+      "summary": "Pesquisa revelou separação entre figura de Jesus e aqueles que O representam. The post Canadenses desconfiam de Cristianismo appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/cristaos-iranianos-sao-fortalecidos-em-cultos-online/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/canadenses-desconfiam-de-cristianismo/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-11-03T03:05:54+00:00",
+      "date": "2026-11-04T03:05:19+00:00",
       "publication_date_verified": true
     }
   ]
