@@ -1,50 +1,29 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-11-06T17:10:24.277680+00:00",
-  "total_articles": 4,
+  "last_updated": "2026-11-07T16:06:58.812663+00:00",
+  "total_articles": 2,
   "sources": [
-    "Folha Gospel",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Projeção de fechamento de 100 mil igrejas nos EUA é contestada por análise de dados",
-      "summary": "Especialista citado pelo Christian Post afirma que os dados apontam uma redução gradual, e não uma onda de encerramentos. Uma previsão de que aproximadamente 100 mil igrejas nos Estados Unidos poderão...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/projecao-de-fechamento-de-100-mil-igrejas-nos-eua-e-contestada-por-analise-de-dados/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/Igreja-vazia-nos-EUA.jpg",
-      "date": "2026-11-06T14:20:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Líder evangélico vê derrota do Partido Republicano nos EUA como possível “castigo divino”",
-      "summary": "Tony Perkins afirma que o Partido Republicano se afastou de valores cristãos, especialmente na defesa da vida, e defende que os eleitores evangélicos não considerem garantido o apoio à legenda. O líde...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/lider-evangelico-ve-derrota-do-partido-republicano-nos-eua-como-possivel-castigo-divino/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/Militantes_Partido_Republicano_oracao_EUA.jpg",
-      "date": "2026-11-06T11:15:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Cruzada evangelística reúne mais de 150 mil pessoas na Venezuela",
-      "summary": "Forte chuva não impediu pregação do Evangelho. The post Cruzada evangelística reúne mais de 150 mil pessoas na Venezuela appeared first on Rádio 93FM-RJ.",
+      "title": "“Zero D.C.” é novo filme cristãos que chega aos cinemas em dezembro",
+      "summary": "Longa representa nascimento de Jesus com ótica dramática, política e humana. The post “Zero D.C.” é novo filme cristãos que chega aos cinemas em dezembro appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/cruzada-evangelistica-reune-mais-de-150-mil-pessoas-na-venezuela/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/zero-d-c-e-novo-filme-cristaos-que-chega-aos-cinemas-em-dezembro/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-11-06T09:00:27+00:00",
+      "date": "2026-11-07T09:00:43+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Estátua de Jesus é decapitada na Inglaterra",
-      "summary": "Episódio é investigado como crime de ódio. The post Estátua de Jesus é decapitada na Inglaterra appeared first on Rádio 93FM-RJ.",
+      "title": "Cresce perseguição aos cristãos em 2026",
+      "summary": "Dados são de relatórios publicados na Alemanha. The post Cresce perseguição aos cristãos em 2026 appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/estatua-de-jesus-e-decapitada-na-inglaterra/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/cresce-perseguicao-aos-cristaos-em-2026/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-11-06T03:05:39+00:00",
+      "date": "2026-11-07T03:05:55+00:00",
       "publication_date_verified": true
     }
   ]
