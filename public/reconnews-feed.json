@@ -7,12 +7,12 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
-      "id": "https://folhagospel.com/investigacao-aponta-abusos-sexuais-cometidos-por-pastor-em-itaquaquecetuba/",
-      "url": "https://folhagospel.com/investigacao-aponta-abusos-sexuais-cometidos-por-pastor-em-itaquaquecetuba/",
-      "title": "Polícia investiga denúncia de abuso sexual contra pastor em SP",
-      "content_text": "Polícia investiga pastor de Itaquaquecetuba por denúncias de abuso sexual contra uma adolescente durante três anos. Autoridades ouvem testemunhas e apuram caso. The post Polícia investiga denúncia de ...",
-      "date_published": "2026-11-07T14:40:00.000Z",
-      "image": "https://folhagospel.com/wp-content/uploads/2024/05/Mulher-chorando-por-abuso-e-a-sombra-de-uma-mao-Foto-Canva-Pro.jpg",
+      "id": "https://folhagospel.com/professor-cristao-e-assassinado-em-emboscada-apos-abrigar-ex-muculmanos-em-uganda/",
+      "url": "https://folhagospel.com/professor-cristao-e-assassinado-em-emboscada-apos-abrigar-ex-muculmanos-em-uganda/",
+      "title": "Professor cristão é assassinado em emboscada após abrigar ex-muçulmanos em Uganda",
+      "content_text": "Professor cristão é assassinado em emboscada após abrigar ex-muçulmanos em Uganda Benjamin Kule Mayani, um professor de 45 anos, foi morto na noite de 29 de setembro na região de Kisinga, no oeste de ...",
+      "date_published": "2026-11-09T11:37:36.000Z",
+      "image": "https://folhagospel.com/wp-content/uploads/2026/11/professor-cristao-assassinado-emboscada-uganda-1024x5121-1.jpg",
       "tags": [
         "Notícias Cristãs"
       ],
@@ -23,27 +23,11 @@
       ]
     },
     {
-      "id": "https://folhagospel.com/igreja-historica-canada-centro-cultural/",
-      "url": "https://folhagospel.com/igreja-historica-canada-centro-cultural/",
-      "title": "Igreja é transformada em centro cultural após fechar por falta de membros no Canadá",
-      "content_text": "Igreja histórica em Quebec é transformada em centro cultural após anos de abandono. Prefeitura investe na revitalização do templo para fomentar a comunidade. The post Igreja é transformada em centro c...",
-      "date_published": "2026-11-07T12:33:24.000Z",
-      "image": "https://folhagospel.com/wp-content/uploads/2026/11/igreja-historica-canada-centro-cultural.webp",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Folha Gospel"
-        }
-      ]
-    },
-    {
-      "id": "https://radio93.com.br/noticias/giro-cristao/zero-d-c-e-novo-filme-cristaos-que-chega-aos-cinemas-em-dezembro/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/zero-d-c-e-novo-filme-cristaos-que-chega-aos-cinemas-em-dezembro/",
-      "title": "“Zero D.C.” é novo filme cristãos que chega aos cinemas em dezembro",
-      "content_text": "Longa representa nascimento de Jesus com ótica dramática, política e humana. The post “Zero D.C.” é novo filme cristãos que chega aos cinemas em dezembro appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-11-07T09:00:43.000Z",
+      "id": "https://radio93.com.br/noticias/giro-cristao/cristao-e-brutalmente-assassinado-em-uganda/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/cristao-e-brutalmente-assassinado-em-uganda/",
+      "title": "Cristão é brutalmente assassinado em Uganda",
+      "content_text": "Professor abrigou ex-muçulmanos em casa. The post Cristão é brutalmente assassinado em Uganda appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-11-09T11:02:31.000Z",
       "tags": [
         "Notícias Cristãs"
       ],
@@ -54,11 +38,11 @@
       ]
     },
     {
-      "id": "https://radio93.com.br/noticias/giro-cristao/cresce-perseguicao-aos-cristaos-em-2026/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/cresce-perseguicao-aos-cristaos-em-2026/",
-      "title": "Cresce perseguição aos cristãos em 2026",
-      "content_text": "Dados são de relatórios publicados na Alemanha. The post Cresce perseguição aos cristãos em 2026 appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-11-07T03:05:55.000Z",
+      "id": "https://radio93.com.br/noticias/giro-cristao/vereadores-de-natal-aprovam-dia-municipal-da-biblia/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/vereadores-de-natal-aprovam-dia-municipal-da-biblia/",
+      "title": "Vereadores de Natal aprovam Dia Municipal da Bíblia",
+      "content_text": "Projeto de lei foi aprovado por unanimidade. The post Vereadores de Natal aprovam Dia Municipal da Bíblia appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-11-09T10:58:54.000Z",
       "tags": [
         "Notícias Cristãs"
       ],
@@ -69,110 +53,17 @@
       ]
     },
     {
-      "id": "https://radio93.com.br/noticias/giro-cristao/biblias-sao-distribuidas-em-presidios-federais/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/biblias-sao-distribuidas-em-presidios-federais/",
-      "title": "Bíblias são distribuídas em presídios federais",
-      "content_text": "Parceria entre SBB e Ministério Atrás das Grades alcançou população carcerária. The post Bíblias são distribuídas em presídios federais appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-11-07T00:00:00.000Z",
+      "id": "https://radio93.com.br/noticias/giro-cristao/onu-volta-a-acompanhar-situacao-de-cristaos-no-ira/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/onu-volta-a-acompanhar-situacao-de-cristaos-no-ira/",
+      "title": "ONU volta a acompanhar situação de cristãos no Irã",
+      "content_text": "País respondeu apenas uma das oito comunicações enviadas pela organização. The post ONU volta a acompanhar situação de cristãos no Irã appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-11-09T10:54:44.000Z",
       "tags": [
         "Notícias Cristãs"
       ],
       "authors": [
         {
           "name": "Radio 93 - Giro Cristão"
-        }
-      ]
-    },
-    {
-      "id": "https://folhagospel.com/projecao-de-fechamento-de-100-mil-igrejas-nos-eua-e-contestada-por-analise-de-dados/",
-      "url": "https://folhagospel.com/projecao-de-fechamento-de-100-mil-igrejas-nos-eua-e-contestada-por-analise-de-dados/",
-      "title": "Projeção de fechamento de 100 mil igrejas nos EUA é contestada por análise de dados",
-      "content_text": "Especialista citado pelo Christian Post afirma que os dados apontam uma redução gradual, e não uma onda de encerramentos. Uma previsão de que aproximadamente 100 mil igrejas nos Estados Unidos poderão...",
-      "date_published": "2026-11-06T14:20:00.000Z",
-      "image": "https://folhagospel.com/wp-content/uploads/2026/11/Igreja-vazia-nos-EUA.jpg",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Folha Gospel"
-        }
-      ]
-    },
-    {
-      "id": "https://folhagospel.com/lider-evangelico-ve-derrota-do-partido-republicano-nos-eua-como-possivel-castigo-divino/",
-      "url": "https://folhagospel.com/lider-evangelico-ve-derrota-do-partido-republicano-nos-eua-como-possivel-castigo-divino/",
-      "title": "Líder evangélico vê derrota do Partido Republicano nos EUA como possível “castigo divino”",
-      "content_text": "Tony Perkins afirma que o Partido Republicano se afastou de valores cristãos, especialmente na defesa da vida, e defende que os eleitores evangélicos não considerem garantido o apoio à legenda. O líde...",
-      "date_published": "2026-11-06T11:15:00.000Z",
-      "image": "https://folhagospel.com/wp-content/uploads/2026/11/Militantes_Partido_Republicano_oracao_EUA.jpg",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Folha Gospel"
-        }
-      ]
-    },
-    {
-      "id": "https://radio93.com.br/noticias/giro-cristao/cruzada-evangelistica-reune-mais-de-150-mil-pessoas-na-venezuela/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/cruzada-evangelistica-reune-mais-de-150-mil-pessoas-na-venezuela/",
-      "title": "Cruzada evangelística reúne mais de 150 mil pessoas na Venezuela",
-      "content_text": "Forte chuva não impediu pregação do Evangelho. The post Cruzada evangelística reúne mais de 150 mil pessoas na Venezuela appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-11-06T09:00:27.000Z",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Radio 93 - Giro Cristão"
-        }
-      ]
-    },
-    {
-      "id": "https://radio93.com.br/noticias/giro-cristao/estatua-de-jesus-e-decapitada-na-inglaterra/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/estatua-de-jesus-e-decapitada-na-inglaterra/",
-      "title": "Estátua de Jesus é decapitada na Inglaterra",
-      "content_text": "Episódio é investigado como crime de ódio. The post Estátua de Jesus é decapitada na Inglaterra appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-11-06T03:05:39.000Z",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Radio 93 - Giro Cristão"
-        }
-      ]
-    },
-    {
-      "id": "https://radio93.com.br/noticias/giro-cristao/pesquisa-revela-falta-de-sucessores-de-ministros-de-louvor-nos-estados-unidos/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/pesquisa-revela-falta-de-sucessores-de-ministros-de-louvor-nos-estados-unidos/",
-      "title": "Pesquisa revela falta de sucessores de ministros de louvor nos Estados Unidos",
-      "content_text": "Dados preocupam igrejas batistas. The post Pesquisa revela falta de sucessores de ministros de louvor nos Estados Unidos appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-11-06T00:00:14.000Z",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Radio 93 - Giro Cristão"
-        }
-      ]
-    },
-    {
-      "id": "https://folhagospel.com/brasileiros-presos-no-nepal-acusados-atividade-missionaria/",
-      "url": "https://folhagospel.com/brasileiros-presos-no-nepal-acusados-atividade-missionaria/",
-      "title": "Polícia prende três brasileiros por suspeita de atividade missionária no Nepal",
-      "content_text": "Três brasileiros estão entre os dez estrangeiros detidos no Nepal sob acusação de realizar atividades missionárias sem autorização durante ações sociais locais. The post Polícia prende três brasileiro...",
-      "date_published": "2026-11-05T23:38:17.000Z",
-      "image": "https://folhagospel.com/wp-content/uploads/2026/06/image-34.png",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Folha Gospel"
         }
       ]
     }
