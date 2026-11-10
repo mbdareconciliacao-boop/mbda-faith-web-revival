@@ -1,50 +1,90 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-11-09T20:25:43.594906+00:00",
-  "total_articles": 4,
+  "last_updated": "2026-11-10T17:29:45.779529+00:00",
+  "total_articles": 8,
   "sources": [
     "Folha Gospel",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Professor cristão é assassinado em emboscada após abrigar ex-muçulmanos em Uganda",
-      "summary": "Professor cristão é assassinado em emboscada após abrigar ex-muçulmanos em Uganda Benjamin Kule Mayani, um professor de 45 anos, foi morto na noite de 29 de setembro na região de Kisinga, no oeste de ...",
+      "title": "Pastor Gustavo Knauer, líder da ADVEC Alphaville, morre após acidente de moto",
+      "summary": "Faleceu o pastor Gustavo Knauer, líder da ADVEC Alphaville, após acidente de moto na Grande São Paulo. A notícia causa comoção entre lideranças evangélicas. The post Pastor Gustavo Knauer, líder da AD...",
       "source": "Folha Gospel",
-      "url": "https://folhagospel.com/professor-cristao-e-assassinado-em-emboscada-apos-abrigar-ex-muculmanos-em-uganda/",
+      "url": "https://folhagospel.com/falecimento-pastor-gustavo-knauer-advec-alphaville/",
       "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/professor-cristao-assassinado-emboscada-uganda-1024x5121-1.jpg",
-      "date": "2026-11-09T11:37:36+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/falecimento-pastor-gustavo-knauer-advec-alphaville.webp",
+      "date": "2026-11-10T15:17:30+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Cristão é brutalmente assassinado em Uganda",
-      "summary": "Professor abrigou ex-muçulmanos em casa. The post Cristão é brutalmente assassinado em Uganda appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/cristao-e-brutalmente-assassinado-em-uganda/",
+      "title": "Violência comunitária no Sudão do Sul interrompe cultos e deixa mortos",
+      "summary": "Locais de adoração que serviam como refúgio comunitário acabam atingidos pela escalada da hostilidade O cenário de instabilidade e os conflitos armados locais continuam cobrando um preço alarmante das...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/violencia-comunitaria-no-sudao-do-sul-interrompe-cultos-e-deixa-mortos/",
       "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-11-09T11:02:31+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/02/5f1181bf04295_Sudan11.png",
+      "date": "2026-11-10T14:36:35+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Vereadores de Natal aprovam Dia Municipal da Bíblia",
-      "summary": "Projeto de lei foi aprovado por unanimidade. The post Vereadores de Natal aprovam Dia Municipal da Bíblia appeared first on Rádio 93FM-RJ.",
+      "title": "Psicóloga lança devocional para acompanhar gestantes até pós-parto",
+      "summary": "Obra propõe acompanhamento emocional e espiritual da gravidez ao puerpério. The post Psicóloga lança devocional para acompanhar gestantes até pós-parto appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/vereadores-de-natal-aprovam-dia-municipal-da-biblia/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/psicologa-lanca-devocional-para-acompanhar-gestantes-ate-pos-parto/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-11-09T10:58:54+00:00",
+      "date": "2026-11-10T14:14:04+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "ONU volta a acompanhar situação de cristãos no Irã",
-      "summary": "País respondeu apenas uma das oito comunicações enviadas pela organização. The post ONU volta a acompanhar situação de cristãos no Irã appeared first on Rádio 93FM-RJ.",
+      "title": "Governo do Irã classifica cristãos como ameaças à segurança, denuncia relatora da ONU",
+      "summary": "Comunidade internacional é instada a adotar medidas diplomáticas firmes diante dos abusos relatados De acordo com o Relatora Especial da ONU sobre direitos humanos no Irã, apenas uma das oito comunica...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/governo-do-ira-classifica-cristaos-como-ameacas-a-seguranca-denuncia-relatora-da-onu/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/07/Topo-de-uma-igreja-com-a-bandeira-do-Ira-Foto-Canva-IA.jpg",
+      "date": "2026-11-10T13:25:21+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Ataque aéreo em Mianmar deixa três estudantes mortas em escola bíblica",
+      "summary": "Bombardeio das forças armadas de Mianmar atinge instituição cristã e gera condenação internacional após morte de jovens em escola bíblica no Karen Um ataque aéreo seguido por uma ofensiva com drones a...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/ataque-aereo-em-mianmar-deixa-tres-estudantes-mortas-em-escola-biblica/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/ataque-aereo-mianmar-escola-biblica-mortes-1024x5721-1.jpg",
+      "date": "2026-11-10T12:58:47+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Atacante do Flamengo prega e mais de 800 se convertem",
+      "summary": "Pedro testemunhou e convidou pessoas a entregarem suas vidas a Jesus. The post Atacante do Flamengo prega e mais de 800 se convertem appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/onu-volta-a-acompanhar-situacao-de-cristaos-no-ira/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/atacante-do-flamengo-prega-e-mais-de-800-se-convertem/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-11-09T10:54:44+00:00",
+      "date": "2026-11-10T11:15:11+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "“Desenhos Bíblicos” alcançam segundo lugar de audiência",
+      "summary": "Atração da Record cresceu após polêmica com governo. The post “Desenhos Bíblicos” alcançam segundo lugar de audiência appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/desenhos-biblicos-alcancam-segundo-lugar-de-audiencia/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-11-10T11:09:43+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Justiça multa cristãos no Quirguistão",
+      "summary": "Acusação é de participação em igreja extremista. The post Justiça multa cristãos no Quirguistão appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/justica-condena-cristaos-no-quirguistao/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-11-10T11:02:35+00:00",
       "publication_date_verified": true
     }
   ]
