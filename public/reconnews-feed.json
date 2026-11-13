@@ -7,91 +7,11 @@
   "description": "Referências de notícias cristãs, com acesso à fonte original.",
   "items": [
     {
-      "id": "https://folhagospel.com/pastores-e-influenciadores-evangelicos-acusam-enem-de-preconceito-religioso/",
-      "url": "https://folhagospel.com/pastores-e-influenciadores-evangelicos-acusam-enem-de-preconceito-religioso/",
-      "title": "Pastores e influenciadores evangélicos acusam Enem de preconceito religioso",
-      "content_text": "Questão sobre misoginia em sermões da Europa medieval provocou críticas nas redes sociais; Inep afirma que o objetivo é interpretar um discurso histórico, e não concordar com ele. Uma questão do Exame...",
-      "date_published": "2026-11-12T16:54:27.000Z",
-      "image": "https://folhagospel.com/wp-content/uploads/2026/11/image-5-e1794502381975.png",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Folha Gospel"
-        }
-      ]
-    },
-    {
-      "id": "https://folhagospel.com/prefeituras-aprovaram-leis-para-transferir-terrenos-publicos-para-igrejas-mostra-levantamento/",
-      "url": "https://folhagospel.com/prefeituras-aprovaram-leis-para-transferir-terrenos-publicos-para-igrejas-mostra-levantamento/",
-      "title": "Prefeituras aprovaram leis para transferir terrenos públicos para igrejas, mostra levantamento",
-      "content_text": "Levantamento identificou quase 5 mil normas em 24 estados; em 45% dos casos, os imóveis foram destinados exclusivamente a atividades religiosas. Um levantamento do Observatório do Estado Laico identif...",
-      "date_published": "2026-11-12T16:19:20.000Z",
-      "image": "https://folhagospel.com/wp-content/uploads/2024/12/Pessoas-louvando-culto-igreja-canva-pro.jpg",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Folha Gospel"
-        }
-      ]
-    },
-    {
-      "id": "https://folhagospel.com/cristao-egipcio-morto-na-libia-apos-se-recusar-a-negar-jesus/",
-      "url": "https://folhagospel.com/cristao-egipcio-morto-na-libia-apos-se-recusar-a-negar-jesus/",
-      "title": "Cristão egípcio morto na Líbia após se recusar a negar Jesus",
-      "content_text": "Um cristão egípcio de 20 anos foi morto pelo Estado Islâmico (ISIS) na Líbia depois de se recusar a negar Jesus e se converter ao islamismo enquanto estava em cativeiro sob o controle de seus combaten...",
-      "date_published": "2026-11-12T14:11:51.000Z",
-      "image": "https://folhagospel.com/wp-content/uploads/2026/11/featured-image-17891209166221.webp",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Folha Gospel"
-        }
-      ]
-    },
-    {
-      "id": "https://folhagospel.com/ataques-daesh-republica-democratica-congo-deixam-mortos/",
-      "url": "https://folhagospel.com/ataques-daesh-republica-democratica-congo-deixam-mortos/",
-      "title": "Grupo extremista mata 77 cristãos e sequestra moradores na República Democrática do Congo",
-      "content_text": "Extremistas do Estado Islâmico assassinaram 77 cristãos e sequestraram cem pessoas na República Democrática do Congo. Saiba mais sobre a crise no leste do país. The post Grupo extremista mata 77 crist...",
-      "date_published": "2026-11-12T13:53:22.000Z",
-      "image": "https://folhagospel.com/wp-content/uploads/2026/11/ataques-daesh-republica-democratica-congo-deixam-mortos.webp",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Folha Gospel"
-        }
-      ]
-    },
-    {
-      "id": "https://folhagospel.com/evangelicos-alemaes-pedem-desculpas-ao-povo-judeu-por-suas-acoes-em-relacao-ao-nazismo/",
-      "url": "https://folhagospel.com/evangelicos-alemaes-pedem-desculpas-ao-povo-judeu-por-suas-acoes-em-relacao-ao-nazismo/",
-      "title": "Evangélicos alemães pedem desculpas ao povo judeu por suas ações em relação ao nazismo",
-      "content_text": "Em comunicado, a Aliança Evangélica Alemã pede “perdão pelos erros de nossos antepassados ​​e pelas injustiças cometidas pela Igreja e pelos cristãos”. O documento é “uma emenda e extensão” de sua Con...",
-      "date_published": "2026-11-12T11:21:02.000Z",
-      "image": "https://folhagospel.com/wp-content/uploads/2026/11/image-3-e1794482261657.png",
-      "tags": [
-        "Notícias Cristãs"
-      ],
-      "authors": [
-        {
-          "name": "Folha Gospel"
-        }
-      ]
-    },
-    {
-      "id": "https://radio93.com.br/noticias/giro-cristao/cristaos-sao-decapitados-em-mocambique/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/cristaos-sao-decapitados-em-mocambique/",
-      "title": "Cristãos são decapitados em Moçambique",
-      "content_text": "Ataques foram atribuídos ao Estado Islâmico. The post Cristãos são decapitados em Moçambique appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-11-12T11:02:49.000Z",
+      "id": "https://radio93.com.br/noticias/giro-cristao/doacoes-as-igrejas-representam-quase-metade-da-caridade-dos-americanos/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/doacoes-as-igrejas-representam-quase-metade-da-caridade-dos-americanos/",
+      "title": "Doações às igrejas representam quase metade da caridade dos americanos",
+      "content_text": "Dados são de pesquisa da Sociedade Bíblica Americana. The post Doações às igrejas representam quase metade da caridade dos americanos appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-11-13T11:01:28.000Z",
       "tags": [
         "Notícias Cristãs"
       ],
@@ -102,11 +22,26 @@
       ]
     },
     {
-      "id": "https://radio93.com.br/noticias/giro-cristao/mais-de-300-estudantes-se-convertem-em-universidade-dos-estados-unidos/",
-      "url": "https://radio93.com.br/noticias/giro-cristao/mais-de-300-estudantes-se-convertem-em-universidade-dos-estados-unidos/",
-      "title": "Mais de 300 estudantes se convertem em universidade dos Estados Unidos",
-      "content_text": "Universitários também decidiram se batizar no campus. The post Mais de 300 estudantes se convertem em universidade dos Estados Unidos appeared first on Rádio 93FM-RJ.",
-      "date_published": "2026-11-12T10:59:09.000Z",
+      "id": "https://radio93.com.br/noticias/giro-cristao/cafes-cristaos-se-tornam-point-de-jovens-na-india/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/cafes-cristaos-se-tornam-point-de-jovens-na-india/",
+      "title": "Cafés cristãos se tornam point de jovens na Índia",
+      "content_text": "Nova geração quer viver fé fora das quatro paredes. The post Cafés cristãos se tornam point de jovens na Índia appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-11-13T10:56:46.000Z",
+      "tags": [
+        "Notícias Cristãs"
+      ],
+      "authors": [
+        {
+          "name": "Radio 93 - Giro Cristão"
+        }
+      ]
+    },
+    {
+      "id": "https://radio93.com.br/noticias/giro-cristao/pastores-sao-multados-na-russia/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/pastores-sao-multados-na-russia/",
+      "title": "Pastores são multados na Rússia",
+      "content_text": "Biblioteca das igrejas tinha materiais de missão cristã \"indesejada\" pelo governo. The post Pastores são multados na Rússia appeared first on Rádio 93FM-RJ.",
+      "date_published": "2026-11-13T10:43:09.000Z",
       "tags": [
         "Notícias Cristãs"
       ],

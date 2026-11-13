@@ -1,80 +1,39 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-11-12T17:55:27.249719+00:00",
-  "total_articles": 7,
+  "last_updated": "2026-11-13T17:31:13.824758+00:00",
+  "total_articles": 3,
   "sources": [
-    "Folha Gospel",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Pastores e influenciadores evangélicos acusam Enem de preconceito religioso",
-      "summary": "Questão sobre misoginia em sermões da Europa medieval provocou críticas nas redes sociais; Inep afirma que o objetivo é interpretar um discurso histórico, e não concordar com ele. Uma questão do Exame...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/pastores-e-influenciadores-evangelicos-acusam-enem-de-preconceito-religioso/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/image-5-e1794502381975.png",
-      "date": "2026-11-12T16:54:27+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Prefeituras aprovaram leis para transferir terrenos públicos para igrejas, mostra levantamento",
-      "summary": "Levantamento identificou quase 5 mil normas em 24 estados; em 45% dos casos, os imóveis foram destinados exclusivamente a atividades religiosas. Um levantamento do Observatório do Estado Laico identif...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/prefeituras-aprovaram-leis-para-transferir-terrenos-publicos-para-igrejas-mostra-levantamento/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2024/12/Pessoas-louvando-culto-igreja-canva-pro.jpg",
-      "date": "2026-11-12T16:19:20+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Cristão egípcio morto na Líbia após se recusar a negar Jesus",
-      "summary": "Um cristão egípcio de 20 anos foi morto pelo Estado Islâmico (ISIS) na Líbia depois de se recusar a negar Jesus e se converter ao islamismo enquanto estava em cativeiro sob o controle de seus combaten...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/cristao-egipcio-morto-na-libia-apos-se-recusar-a-negar-jesus/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/featured-image-17891209166221.webp",
-      "date": "2026-11-12T14:11:51+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Grupo extremista mata 77 cristãos e sequestra moradores na República Democrática do Congo",
-      "summary": "Extremistas do Estado Islâmico assassinaram 77 cristãos e sequestraram cem pessoas na República Democrática do Congo. Saiba mais sobre a crise no leste do país. The post Grupo extremista mata 77 crist...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/ataques-daesh-republica-democratica-congo-deixam-mortos/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/ataques-daesh-republica-democratica-congo-deixam-mortos.webp",
-      "date": "2026-11-12T13:53:22+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Evangélicos alemães pedem desculpas ao povo judeu por suas ações em relação ao nazismo",
-      "summary": "Em comunicado, a Aliança Evangélica Alemã pede “perdão pelos erros de nossos antepassados ​​e pelas injustiças cometidas pela Igreja e pelos cristãos”. O documento é “uma emenda e extensão” de sua Con...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/evangelicos-alemaes-pedem-desculpas-ao-povo-judeu-por-suas-acoes-em-relacao-ao-nazismo/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/image-3-e1794482261657.png",
-      "date": "2026-11-12T11:21:02+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Cristãos são decapitados em Moçambique",
-      "summary": "Ataques foram atribuídos ao Estado Islâmico. The post Cristãos são decapitados em Moçambique appeared first on Rádio 93FM-RJ.",
+      "title": "Doações às igrejas representam quase metade da caridade dos americanos",
+      "summary": "Dados são de pesquisa da Sociedade Bíblica Americana. The post Doações às igrejas representam quase metade da caridade dos americanos appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/cristaos-sao-decapitados-em-mocambique/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/doacoes-as-igrejas-representam-quase-metade-da-caridade-dos-americanos/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-11-12T11:02:49+00:00",
+      "date": "2026-11-13T11:01:28+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Mais de 300 estudantes se convertem em universidade dos Estados Unidos",
-      "summary": "Universitários também decidiram se batizar no campus. The post Mais de 300 estudantes se convertem em universidade dos Estados Unidos appeared first on Rádio 93FM-RJ.",
+      "title": "Cafés cristãos se tornam point de jovens na Índia",
+      "summary": "Nova geração quer viver fé fora das quatro paredes. The post Cafés cristãos se tornam point de jovens na Índia appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/mais-de-300-estudantes-se-convertem-em-universidade-dos-estados-unidos/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/cafes-cristaos-se-tornam-point-de-jovens-na-india/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-11-12T10:59:09+00:00",
+      "date": "2026-11-13T10:56:46+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Pastores são multados na Rússia",
+      "summary": "Biblioteca das igrejas tinha materiais de missão cristã \"indesejada\" pelo governo. The post Pastores são multados na Rússia appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/pastores-sao-multados-na-russia/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-11-13T10:43:09+00:00",
       "publication_date_verified": true
     }
   ]
