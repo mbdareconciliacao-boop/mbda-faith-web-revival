@@ -2,6 +2,21 @@
 import type { Message } from './contentCatalog.ts';
 export const youtubeMessages: Message[] = [
   {
+    "slug": "video-5a6d4b6f63384b644f7667",
+    "title": "A Palavra e os Sacramentos: Como Deus Fala à Sua Igreja | João 4:23-24 | Em Espírito e em Verdade",
+    "description": "📅 **11/11/2026 – Quarta-feira | 20h** ⛪ **Ministério Bíblico da Reconciliação (MBdaR)** 📚 **Série de Estudos: Em Espírito e em Verdade** Nesta aula, damos continuidade ao estudo bíblico sobre a natureza, os princípios e a prática do culto cristão. A partir de João 4:23-24, somos conduzidos a compreender que a…",
+    "date": "16 de novembro de 2026",
+    "dateTime": "2026-11-16T03:06:50Z",
+    "image": "https://i.ytimg.com/vi/ZmKoc8KdOvg/hqdefault.jpg",
+    "imageAlt": "A Palavra e os Sacramentos: Como Deus Fala à Sua Igreja | João 4:23-24 | Em Espírito e em Verdade",
+    "youtubeId": "ZmKoc8KdOvg",
+    "source": "https://www.youtube.com/watch?v=ZmKoc8KdOvg",
+    "topics": [
+      "Canal da igreja"
+    ],
+    "relatedStudies": []
+  },
+  {
     "slug": "video-4369595f50377744515659",
     "title": "O Culto Cristão e as Emoções: Reverência, Entusiasmo e Participação | João 4:23-24",
     "description": "🗓️ 28/10/2026 – Quarta-feira | 20h ⛪ 5º Encontro Teológico – Série “Em Espírito e em Verdade” 🔥 UM CULTO BÍBLICO, REVERENTE E VIVO! Como deve ser a adoração cristã? Um culto fiel às Escrituras precisa ser necessariamente frio e formal? Ou podemos expressar entusiasmo, alegria, tristeza pelo pecado, amor e…",
@@ -281,21 +296,6 @@ export const youtubeMessages: Message[] = [
     "imageAlt": "A Urgência da Evangelização e o Chamado ao Discipulado | Filipenses 1:12-18 | A Missão da Igreja",
     "youtubeId": "c5KCiwMnDoY",
     "source": "https://www.youtube.com/watch?v=c5KCiwMnDoY",
-    "topics": [
-      "Canal da igreja"
-    ],
-    "relatedStudies": []
-  },
-  {
-    "slug": "video-6831513653787757662d67",
-    "title": "unknown",
-    "description": "#CapCut Fiz este vídeo incrível com o CapCut. Abra o link para experimentar: capcut.com/tools/desktop-video-editor",
-    "date": "13 de julho de 2026",
-    "dateTime": "2026-07-13T18:48:20Z",
-    "image": "https://i.ytimg.com/vi/h1Q6SxwWf-g/hqdefault.jpg",
-    "imageAlt": "unknown",
-    "youtubeId": "h1Q6SxwWf-g",
-    "source": "https://www.youtube.com/watch?v=h1Q6SxwWf-g",
     "topics": [
       "Canal da igreja"
     ],
