@@ -1,19 +1,81 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-11-15T16:48:29.678558+00:00",
-  "total_articles": 1,
+  "last_updated": "2026-11-16T20:01:28.122394+00:00",
+  "total_articles": 7,
   "sources": [
-    "Folha Gospel"
+    "Folha Gospel",
+    "Google News - Cristãos Perseguidos",
+    "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Lideranças evangélicas defendem fim da polarização e reaproximação com Lula",
-      "summary": "Durante a abertura da Expo Cristã, pastores pediram pacificação política e retomada do diálogo com o governo federal; nos bastidores, houve críticas à campanha do senador e à atuação da família Bolson...",
+      "title": "Ucrânia registra crescimento do protestantismo enquanto a guerra continua",
+      "summary": "Pesquisas sugerem que o protestantismo está crescendo na Ucrânia, com um crescimento particularmente expressivo em áreas próximas à linha de frente do conflito com a Rússia. Um relatório do Centro Raz...",
       "source": "Folha Gospel",
-      "url": "https://folhagospel.com/liderancas-evangelicas-defendem-fim-da-polarizacao-e-reaproximacao-com-lula/",
+      "url": "https://folhagospel.com/ucrania-registra-crescimento-do-protestantismo-enquanto-a-guerra-continua/",
       "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/image-6.png",
-      "date": "2026-11-15T15:17:13+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/04/image-17-e1776506788416.png",
+      "date": "2026-11-16T14:48:34+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Autoridades apoiam construção de igreja apesar dos protestos muçulmanos na Indonésia",
+      "summary": "As autoridades da Indonésia autorizaram recentemente a continuidade da construção de templos em duas igrejas em províncias diferentes, apesar dos fortes protestos de grupos muçulmanos. Centenas de mor...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/autoridades-apoiam-construcao-de-igreja-apesar-dos-protestos-muculmanos-na-indonesia/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2023/06/Igreja-protestante-na-Indonesia-Foto-Canva-Pro.jpg",
+      "date": "2026-11-16T14:43:31+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Muçulmanos condenados à morte pelo assassinato de dois evangelistas em Uganda",
+      "summary": "Um juiz em Uganda condenou cinco muçulmanos à morte pelo assassinato de dois evangelistas cristãos em 2024, segundo fontes. Outros três muçulmanos também receberam sentenças de morte por estarem prese...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/muculmanos-condenados-a-morte-pelo-assassinato-de-dois-evangelistas-em-uganda/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2023/03/Bandeira-de-Uganda-tendo-ao-fundo-a-cidade-de-Kampala-Foto-Montagem-FolhaGospelCanva-Pro.jpg",
+      "date": "2026-11-16T14:39:43+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Talibã proíbe que médicos homens atendam mulheres no Afeganistão",
+      "summary": "Até casos graves são proibidos. The post Talibã proíbe que médicos homens atendam mulheres no Afeganistão appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/taliba-proibe-que-medicos-homens-atendam-mulheres-no-afeganistao/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-11-16T11:06:24+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Termo “Cristianofobia” é incluído no dicionário espanhol",
+      "summary": "Fundação Espanhola de Advogados Cristãos fez campanha para inclusão do termo. The post Termo “Cristianofobia” é incluído no dicionário espanhol appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/termo-cristianofobia-e-incluido-no-dicionario-espanhol/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-11-16T11:02:28+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Nigéria: 17 cristãos sequestrados morrem em cativeiro - Portas Abertas",
+      "summary": "Nigéria: 17 cristãos sequestrados morrem em cativeiro - Portas Abertas",
+      "source": "Google News - Cristãos Perseguidos",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxNTnJZalU2dmRfNi0teWVZS2NwTWItVzgtUkdIbHAyWUpOaTE2ZEZiMk5JbE55ZGVGM1d4ci1tWFRGVW5TSXRyV1liSDFCM1JTY1dMc2h5d0U5Umw2TGtHZ2dhLV9IWXZuRUh4aEpXU3dpNjNwaGRfbG5KWi1ucmg0ZFBDeXc0NDF0X2NNcG1kR2haSVhsdG12THU0c3pMTnBJa3FJaURrT0w0dU1BZF9hTUhn?oc=5",
+      "category": "Igreja Perseguida",
+      "image_url": "",
+      "date": "2026-11-16T11:00:00+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Campanha evangelística quer alcançar cinco milhões de pessoas neste Natal",
+      "summary": "Cristãos do Reino Unido estão sendo convocados. The post Campanha evangelística quer alcançar cinco milhões de pessoas neste Natal appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/campanha-evangelistica-quer-alcancar-cinco-milhoes-de-pessoas-neste-natal/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-11-16T10:56:43+00:00",
       "publication_date_verified": true
     }
   ]
