@@ -1,29 +1,39 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-11-19T18:51:08.506200+00:00",
-  "total_articles": 2,
+  "last_updated": "2026-11-20T18:17:24.127222+00:00",
+  "total_articles": 3,
   "sources": [
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Escola cristã é condenada por homofobia em Pernambuco",
-      "summary": "Instituição terá que pagar 100 mil reais por danos morais. The post Escola cristã é condenada por homofobia em Pernambuco appeared first on Rádio 93FM-RJ.",
+      "title": "Rei Charles III diz que Igreja da Inglaterra deve ter espaço para “todas as crenças”",
+      "summary": "Fala do monarca foi considerada polêmica por cristãos bíblicos. The post Rei Charles III diz que Igreja da Inglaterra deve ter espaço para “todas as crenças” appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/escola-crista-e-condenada-por-homofobia-em-pernambuco/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/rei-charles-iii-diz-que-igreja-da-inglaterra-deve-ter-espaco-para-todas-as-crencas/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-11-19T11:07:05+00:00",
+      "date": "2026-11-20T11:20:06+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Cidade do Espírito Santo vai distribuir Bíblias para alunos de escolas municipais",
-      "summary": "Ação faz parte da Semana de Valorização da Literatura Cristã. The post Cidade do Espírito Santo vai distribuir Bíblias para alunos de escolas municipais appeared first on Rádio 93FM-RJ.",
+      "title": "Autoridades indonésias autorizam construção de igrejas apesar de protestos",
+      "summary": "Grupos muçulmanos têm protestado contra construção de dois templos. The post Autoridades indonésias autorizam construção de igrejas apesar de protestos appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/cidade-do-espirito-santo-vai-distribuir-biblias-para-alunos-de-escolas-municipais/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/autoridades-indonesias-autorizam-construcao-de-igrejas-apesar-de-protestos/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-11-19T11:02:43+00:00",
+      "date": "2026-11-20T11:15:50+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Pesquisa revela que oração em família influencia formação dos jovens",
+      "summary": "Números destacam participação das mães, pais e avós. The post Pesquisa revela que oração em família influencia formação dos jovens appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/pesquisa-revela-que-oracao-em-familia-influencia-formacao-dos-jovens/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-11-20T11:00:03+00:00",
       "publication_date_verified": true
     }
   ]
