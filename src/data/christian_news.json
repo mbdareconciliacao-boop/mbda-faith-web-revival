@@ -1,9 +1,11 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-11-21T17:07:01.486138+00:00",
-  "total_articles": 1,
+  "last_updated": "2026-11-22T17:37:42.880618+00:00",
+  "total_articles": 6,
   "sources": [
-    "Folha Gospel"
+    "Folha Gospel",
+    "Gospel Prime",
+    "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
@@ -14,6 +16,56 @@
       "category": "Notícias Cristãs",
       "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/Felix-Nmecha.jpg",
       "date": "2026-11-21T12:25:38+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Estrela do cinema, Donnie Wahlberg se emociona ao escutar louvor: ‘Te amo, Jesus’",
+      "summary": "O ator e astro pop Donnie Wahlberg tem compartilhado novos momentos de sua recém-descoberta caminhada com Jesus, agradecendo publicamente pela salvação por meio de Cristo. Nesta semana, ele publicou u...",
+      "source": "Gospel Prime",
+      "url": "https://goodprime.co/estrela-cinema-donnie-wahlberg-emociona-louvor-139954/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://goodprime.co/wp-content/uploads/donniewahlbergworship_hdv.png",
+      "date": "2026-11-20T14:26:55+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Cristã é morta por se recusar a casar-se à força com um muçulmano, no Sudão do Sul",
+      "summary": "Uma jovem cristã de 18 anos foi espancada até a morte no Sudão do Sul no início deste mês por se recusar a casar-se à força com um homem muçulmano mais velho. O assassinato teria sido cometido pelo ir...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/crista-e-morta-por-se-recusar-a-casar-se-a-forca-com-um-muculmano-no-sudao-do-sul/",
+      "category": "Notícias Cristãs",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2025/06/Imagem1-161496658567911.jpg",
+      "date": "2026-11-20T11:34:07+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Rei Charles III diz que Igreja da Inglaterra deve ter espaço para “todas as crenças”",
+      "summary": "Fala do monarca foi considerada polêmica por cristãos bíblicos. The post Rei Charles III diz que Igreja da Inglaterra deve ter espaço para “todas as crenças” appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/rei-charles-iii-diz-que-igreja-da-inglaterra-deve-ter-espaco-para-todas-as-crencas/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-11-20T11:20:06+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Autoridades indonésias autorizam construção de igrejas apesar de protestos",
+      "summary": "Grupos muçulmanos têm protestado contra construção de dois templos. The post Autoridades indonésias autorizam construção de igrejas apesar de protestos appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/autoridades-indonesias-autorizam-construcao-de-igrejas-apesar-de-protestos/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-11-20T11:15:50+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Pesquisa revela que oração em família influencia formação dos jovens",
+      "summary": "Números destacam participação das mães, pais e avós. The post Pesquisa revela que oração em família influencia formação dos jovens appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/pesquisa-revela-que-oracao-em-familia-influencia-formacao-dos-jovens/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-11-20T11:00:03+00:00",
       "publication_date_verified": true
     }
   ]
