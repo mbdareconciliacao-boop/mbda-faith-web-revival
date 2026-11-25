@@ -1,61 +1,39 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-11-24T20:31:41.141085+00:00",
-  "total_articles": 5,
+  "last_updated": "2026-11-25T19:46:12.479989+00:00",
+  "total_articles": 3,
   "sources": [
-    "Folha Gospel",
-    "Google News - Cristãos Perseguidos",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Netflix anuncia estreia da comédia cristã “Os Crentes” em dezembro",
-      "summary": "A Netflix lança Os Crentes em 16 de dezembro, comédia nacional que explora o cotidiano de células cristãs com humor, elenco estelar e roteiro especializado. The post Netflix anuncia estreia da comédia...",
-      "source": "Folha Gospel",
-      "url": "https://folhagospel.com/netflix-estreia-serie-os-crentes-com-elenco-cristao/",
-      "category": "Notícias Cristãs",
-      "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/netflix-estreia-serie-os-crentes-com-elenco-cristao.webp",
-      "date": "2026-11-24T12:42:17+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Número de evangélicos no Brasil supera população de São Paulo",
-      "summary": "Estado é o mais populoso do país. The post Número de evangélicos no Brasil supera população de São Paulo appeared first on Rádio 93FM-RJ.",
+      "title": "Congressistas americanos pedem liberdade de cristão egípcio",
+      "summary": "Said Abdelrazek foi preso após deixar Islamismo. The post Congressistas americanos pedem liberdade de cristão egípcio appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/numero-de-evangelicos-no-brasil-supera-populacao-de-sao-paulo/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/congressistas-americanos-pedem-liberdade-de-cristao-egipcio/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-11-24T11:07:03+00:00",
+      "date": "2026-11-25T10:59:29+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Espetáculo com menino Jesus drag queen provoca indignação em cristãos",
-      "summary": "Mais de 75 mil assinaturas pedem cancelamento da apresentação. The post Espetáculo com menino Jesus drag queen provoca indignação em cristãos appeared first on Rádio 93FM-RJ.",
+      "title": "Justiça britânica arquiva processo contra pregador cristão",
+      "summary": "Steve Maile foi preso acusado de criticar o Islã. The post Justiça britânica arquiva processo contra pregador cristão appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/espetaculo-com-menino-jesus-drag-queen-provoca-indignacao-em-cristaos/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/justica-britanica-arquiva-processo-contra-pregador-cristao/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-11-24T11:01:59+00:00",
+      "date": "2026-11-25T10:55:50+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Líderes cristãos discutem efeitos de nova lei em Burkina Faso - Portas Abertas",
-      "summary": "Líderes cristãos discutem efeitos de nova lei em Burkina Faso - Portas Abertas",
-      "source": "Google News - Cristãos Perseguidos",
-      "url": "https://news.google.com/rss/articles/CBMivgFBVV95cUxPdGtRbUQ0MjFsUTRGN21SOVAwVWwyOGJhaTdDbmlJVkVPeG1tWmtVbWtaRWZIaTJHd3N5OUt0WktxMGI1YUpEWmhfb0ZoZ1NsWFdpSlU0YVlBeU14Vm0wVFRxUm12SVBabnAzUjJ3cEFJd3RQTy11V2dPQWc4RWwza2lpdmJZZ2RSMmtOdG9KTGwzb3MwbjBkb1RWZ2pKQkZZN0lpMndrVEt2SUFiajVDdHhLMTAwMnZUQlNtMWVB?oc=5",
-      "category": "Igreja Perseguida",
-      "image_url": "https://lh3.googleusercontent.com/J6_coFbogxhRI9iM864NL_liGXvsQp2AupsKei7z0cNNfDvGUmWUy20nuUhkREQyrpY4bEeIBuc=s0-w300-rw",
-      "date": "2026-11-24T11:00:00+00:00",
-      "publication_date_verified": true
-    },
-    {
-      "title": "Felix Nmecha volta a expressar fé em campo",
-      "summary": "Felix Nmecha volta a expressar fé em campo",
+      "title": "Nova lei preocupa líderes cristãos em Burkina Faso",
+      "summary": "Lei sobre liberdade religiosa tem levantado dúvidas. The post Nova lei preocupa líderes cristãos em Burkina Faso appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/felix-nmecha-volta-a-expressar-fe-em-campo/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/nova-lei-preocupa-lideres-cristaos-em-burkina-faso/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-11-24T10:57:17+00:00",
+      "date": "2026-11-25T10:50:37+00:00",
       "publication_date_verified": true
     }
   ]
