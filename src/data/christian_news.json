@@ -1,39 +1,60 @@
 {
   "schema_version": 2,
-  "last_updated": "2026-11-25T19:46:12.479989+00:00",
-  "total_articles": 3,
+  "last_updated": "2026-11-26T19:26:51.936880+00:00",
+  "total_articles": 5,
   "sources": [
+    "Folha Gospel",
     "Radio 93 - Giro Cristão"
   ],
   "articles": [
     {
-      "title": "Congressistas americanos pedem liberdade de cristão egípcio",
-      "summary": "Said Abdelrazek foi preso após deixar Islamismo. The post Congressistas americanos pedem liberdade de cristão egípcio appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/congressistas-americanos-pedem-liberdade-de-cristao-egipcio/",
+      "title": "Pastor é morto a facadas durante culto em Goiás; suspeito diz que queria assumir liderança",
+      "summary": "Crime ocorreu na Igreja Evangélica Pentecostal Luz e Vida. Vítima de 61 anos recebeu socorro do Samu, mas não resistiu aos golpes de faca sofridos no templo Uma tragédia abalou a comunidade cristã de ...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/pastor-e-morto-a-facadas-durante-culto-em-goias-suspeito-diz-que-queria-assumir-lideranca/",
       "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-11-25T10:59:29+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/Homem-com-algemas.jpg",
+      "date": "2026-11-26T14:19:19+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Justiça britânica arquiva processo contra pregador cristão",
-      "summary": "Steve Maile foi preso acusado de criticar o Islã. The post Justiça britânica arquiva processo contra pregador cristão appeared first on Rádio 93FM-RJ.",
-      "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/justica-britanica-arquiva-processo-contra-pregador-cristao/",
+      "title": "Petição contra show de drag queen já tem mais de 100 mil assinaturas após polêmico cartaz com Jesus",
+      "summary": "Petição com 75 mil assinaturas exige cancelamento de show drag em Londres após uso de imagem ofensiva do Menino Jesus em divulgação. Entenda a polêmica. The post Petição contra show de drag queen já t...",
+      "source": "Folha Gospel",
+      "url": "https://folhagospel.com/peticao-exige-cancelamento-de-show-drag-em-londres-apos-polemica-religiosa/",
       "category": "Notícias Cristãs",
-      "image_url": "",
-      "date": "2026-11-25T10:55:50+00:00",
+      "image_url": "https://folhagospel.com/wp-content/uploads/2026/11/peticao-exige-cancelamento-de-show-drag-em-londres-apos-polemica-religiosa-e1795701374121.webp",
+      "date": "2026-11-26T13:56:43+00:00",
       "publication_date_verified": true
     },
     {
-      "title": "Nova lei preocupa líderes cristãos em Burkina Faso",
-      "summary": "Lei sobre liberdade religiosa tem levantado dúvidas. The post Nova lei preocupa líderes cristãos em Burkina Faso appeared first on Rádio 93FM-RJ.",
+      "title": "Pastor chinês de 70 anos permanece preso sem sentença",
+      "summary": "Esposa do pastor também está presa. The post Pastor chinês de 70 anos permanece preso sem sentença appeared first on Rádio 93FM-RJ.",
       "source": "Radio 93 - Giro Cristão",
-      "url": "https://radio93.com.br/noticias/giro-cristao/nova-lei-preocupa-lideres-cristaos-em-burkina-faso/",
+      "url": "https://radio93.com.br/noticias/giro-cristao/pastor-chines-de-70-anos-permanece-preso-sem-sentenca/",
       "category": "Notícias Cristãs",
       "image_url": "",
-      "date": "2026-11-25T10:50:37+00:00",
+      "date": "2026-11-26T11:01:31+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Pesquisa revela que cada vez mais jovens aguardam pelo casamento para ter relação sexual",
+      "summary": "Mudança de comportamento chamou atenção de pesquisadores. The post Pesquisa revela que cada vez mais jovens aguardam pelo casamento para ter relação sexual appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/pesquisa-revela-que-cada-vez-mais-jovens-aguardam-pelo-casamento-para-ter-relacao-sexual/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-11-26T10:58:44+00:00",
+      "publication_date_verified": true
+    },
+    {
+      "title": "Jovens cristãs são agredidas na Índia",
+      "summary": "Moradores de uma comunidade acusaram de tentativa de conversão de criança. The post Jovens cristãs são agredidas na Índia appeared first on Rádio 93FM-RJ.",
+      "source": "Radio 93 - Giro Cristão",
+      "url": "https://radio93.com.br/noticias/giro-cristao/jovens-cristas-sao-agredidas-na-india/",
+      "category": "Notícias Cristãs",
+      "image_url": "",
+      "date": "2026-11-26T10:55:38+00:00",
       "publication_date_verified": true
     }
   ]
